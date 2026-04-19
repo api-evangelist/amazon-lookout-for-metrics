@@ -1,0 +1,6 @@
+{
+  "RoleArn": "arn:aws:lookoutmetrics:us-east-1:123456789012:AnomalyDetector:my-detector",
+  "TemplatedPathList": "example-value",
+  "HistoricalDataPathList": "example-value",
+  "FileFormatDescriptor": "example-value"
+}

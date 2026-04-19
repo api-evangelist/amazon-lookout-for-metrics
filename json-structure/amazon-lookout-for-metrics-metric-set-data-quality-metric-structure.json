@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-metric-set-data-quality-metric-structure.json",
+  "name": "MetricSetDataQualityMetric",
+  "description": "An array of <code>DataQualityMetric</code> objects that describes one or more data quality metrics.",
+  "type": "object",
+  "properties": {
+    "MetricSetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the data quality metric array."
+        }
+      ]
+    },
+    "DataQualityMetricList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataQualityMetricList"
+        },
+        {
+          "description": "The array of data quality metrics contained in the data quality metric set."
+        }
+      ]
+    }
+  }
+}

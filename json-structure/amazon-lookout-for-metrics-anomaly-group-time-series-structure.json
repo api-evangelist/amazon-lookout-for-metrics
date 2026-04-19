@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-anomaly-group-time-series-structure.json",
+  "name": "AnomalyGroupTimeSeries",
+  "description": "An anomalous metric in an anomaly group.",
+  "type": "object",
+  "properties": {
+    "AnomalyGroupId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UUID"
+        },
+        {
+          "description": "The ID of the anomaly group."
+        }
+      ]
+    },
+    "TimeSeriesId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeSeriesId"
+        },
+        {
+          "description": "The ID of the metric."
+        }
+      ]
+    }
+  },
+  "required": [
+    "AnomalyGroupId"
+  ]
+}

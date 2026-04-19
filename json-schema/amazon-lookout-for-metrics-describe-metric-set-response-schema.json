@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-describe-metric-set-response-schema.json",
+  "title": "DescribeMetricSetResponse",
+  "description": "DescribeMetricSetResponse schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "MetricSetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the dataset."
+        }
+      ]
+    },
+    "AnomalyDetectorArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the detector that contains the dataset."
+        }
+      ]
+    },
+    "MetricSetName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricSetName"
+        },
+        {
+          "description": "The name of the dataset."
+        }
+      ]
+    },
+    "MetricSetDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricSetDescription"
+        },
+        {
+          "description": "The dataset's description."
+        }
+      ]
+    },
+    "CreationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time at which the dataset was created."
+        }
+      ]
+    },
+    "LastModificationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time at which the dataset was last modified."
+        }
+      ]
+    },
+    "Offset": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Offset"
+        },
+        {
+          "description": "After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources."
+        }
+      ]
+    },
+    "MetricList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricList"
+        },
+        {
+          "description": "A list of the metrics defined by the dataset."
+        }
+      ]
+    },
+    "TimestampColumn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimestampColumn"
+        },
+        {
+          "description": "Contains information about the column used for tracking time in your source data."
+        }
+      ]
+    },
+    "DimensionList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DimensionList"
+        },
+        {
+          "description": "A list of the dimensions chosen for analysis."
+        }
+      ]
+    },
+    "MetricSetFrequency": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Frequency"
+        },
+        {
+          "description": "The interval at which the data will be analyzed for anomalies."
+        }
+      ]
+    },
+    "Timezone": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timezone"
+        },
+        {
+          "description": "The time zone in which the dataset's data was recorded."
+        }
+      ]
+    },
+    "MetricSource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricSource"
+        },
+        {
+          "description": "Contains information about the dataset's source data."
+        }
+      ]
+    },
+    "DimensionFilterList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricSetDimensionFilterList"
+        },
+        {
+          "description": "The dimensions and their values that were used to filter the dataset."
+        }
+      ]
+    }
+  }
+}

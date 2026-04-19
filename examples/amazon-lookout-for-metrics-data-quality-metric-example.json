@@ -1,0 +1,6 @@
+{
+  "MetricType": "revenue",
+  "MetricDescription": "Automated anomaly detection for business metrics",
+  "RelatedColumnName": "my-anomaly-detector",
+  "MetricValue": "revenue"
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-subnet-id-structure.json",
+  "name": "SubnetId",
+  "description": "SubnetId schema from Amazon Lookout for Metrics API",
+  "type": "string",
+  "pattern": "[\\-0-9a-zA-Z]+",
+  "maxLength": 255
+}

@@ -1,0 +1,8 @@
+{
+  "S3SourceConfig": "example-value",
+  "AppFlowConfig": "example-value",
+  "CloudWatchConfig": "example-value",
+  "RDSSourceConfig": "example-value",
+  "RedshiftSourceConfig": "example-value",
+  "AthenaSourceConfig": "example-value"
+}

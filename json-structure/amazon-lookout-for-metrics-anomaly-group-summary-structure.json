@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-anomaly-group-summary-structure.json",
+  "name": "AnomalyGroupSummary",
+  "description": "Details about a group of anomalous metrics.",
+  "type": "object",
+  "properties": {
+    "StartTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimestampString"
+        },
+        {
+          "description": "The start time for the group."
+        }
+      ]
+    },
+    "EndTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimestampString"
+        },
+        {
+          "description": "The end time for the group."
+        }
+      ]
+    },
+    "AnomalyGroupId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UUID"
+        },
+        {
+          "description": "The ID of the anomaly group."
+        }
+      ]
+    },
+    "AnomalyGroupScore": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Score"
+        },
+        {
+          "description": "The severity score of the group."
+        }
+      ]
+    },
+    "PrimaryMetricName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricName"
+        },
+        {
+          "description": "The name of the primary affected measure for the group."
+        }
+      ]
+    }
+  }
+}

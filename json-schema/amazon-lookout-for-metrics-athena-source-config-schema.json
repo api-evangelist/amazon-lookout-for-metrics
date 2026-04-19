@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-athena-source-config-schema.json",
+  "title": "AthenaSourceConfig",
+  "description": "Details about an Amazon Athena datasource.",
+  "type": "object",
+  "properties": {
+    "RoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "An IAM role that gives Amazon Lookout for Metrics permission to access the data."
+        }
+      ]
+    },
+    "DatabaseName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AthenaDatabaseName"
+        },
+        {
+          "description": "The database's name."
+        }
+      ]
+    },
+    "DataCatalog": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AthenaDataCatalog"
+        },
+        {
+          "description": "The database's data catalog."
+        }
+      ]
+    },
+    "TableName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AthenaTableName"
+        },
+        {
+          "description": "The database's table name."
+        }
+      ]
+    },
+    "WorkGroupName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AthenaWorkGroupName"
+        },
+        {
+          "description": "The database's work group name."
+        }
+      ]
+    },
+    "S3ResultsPath": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AthenaS3ResultsPath"
+        },
+        {
+          "description": "The database's results path."
+        }
+      ]
+    },
+    "BackTestConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BackTestConfiguration"
+        },
+        {
+          "description": "Settings for backtest mode."
+        }
+      ]
+    }
+  }
+}

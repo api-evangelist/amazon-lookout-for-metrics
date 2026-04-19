@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-filter-schema.json",
+  "title": "Filter",
+  "description": "Describes a filter for choosing a subset of dimension values. Each filter consists of the dimension that you want to include and the condition statement. The condition statement is specified in the <code>FilterOperation</code> object.",
+  "type": "object",
+  "properties": {
+    "DimensionValue": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DimensionValue"
+        },
+        {
+          "description": "The value that you want to include in the filter."
+        }
+      ]
+    },
+    "FilterOperation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FilterOperation"
+        },
+        {
+          "description": "The condition to apply."
+        }
+      ]
+    }
+  }
+}

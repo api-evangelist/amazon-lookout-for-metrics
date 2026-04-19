@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-create-metric-set-request-structure.json",
+  "name": "CreateMetricSetRequest",
+  "description": "CreateMetricSetRequest schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "AnomalyDetectorArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the anomaly detector that will use the dataset."
+        }
+      ]
+    },
+    "MetricSetName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricSetName"
+        },
+        {
+          "description": "The name of the dataset."
+        }
+      ]
+    },
+    "MetricSetDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricSetDescription"
+        },
+        {
+          "description": "A description of the dataset you are creating."
+        }
+      ]
+    },
+    "MetricList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricList"
+        },
+        {
+          "description": "A list of metrics that the dataset will contain."
+        }
+      ]
+    },
+    "Offset": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Offset"
+        },
+        {
+          "description": "After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources."
+        }
+      ]
+    },
+    "TimestampColumn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimestampColumn"
+        },
+        {
+          "description": "Contains information about the column used for tracking time in your source data."
+        }
+      ]
+    },
+    "DimensionList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DimensionList"
+        },
+        {
+          "description": "A list of the fields you want to treat as dimensions."
+        }
+      ]
+    },
+    "MetricSetFrequency": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Frequency"
+        },
+        {
+          "description": "The frequency with which the source data will be analyzed for anomalies."
+        }
+      ]
+    },
+    "MetricSource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricSource"
+        },
+        {
+          "description": "Contains information about how the source data should be interpreted."
+        }
+      ]
+    },
+    "Timezone": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timezone"
+        },
+        {
+          "description": "The time zone in which your source data was recorded."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "A list of <a href=\"https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html\">tags</a> to apply to the dataset."
+        }
+      ]
+    },
+    "DimensionFilterList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricSetDimensionFilterList"
+        },
+        {
+          "description": "A list of filters that specify which data is kept for anomaly detection."
+        }
+      ]
+    }
+  },
+  "required": [
+    "AnomalyDetectorArn",
+    "MetricSetName",
+    "MetricList",
+    "MetricSource"
+  ]
+}

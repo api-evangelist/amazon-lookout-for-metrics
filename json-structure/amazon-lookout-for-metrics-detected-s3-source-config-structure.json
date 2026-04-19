@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-detected-s3-source-config-structure.json",
+  "name": "DetectedS3SourceConfig",
+  "description": "An inferred source configuration.",
+  "type": "object",
+  "properties": {
+    "FileFormatDescriptor": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DetectedFileFormatDescriptor"
+        },
+        {
+          "description": "The source's file format descriptor."
+        }
+      ]
+    }
+  }
+}

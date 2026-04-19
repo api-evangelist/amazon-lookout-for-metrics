@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-detect-metric-set-config-request-structure.json",
+  "name": "DetectMetricSetConfigRequest",
+  "description": "DetectMetricSetConfigRequest schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "AnomalyDetectorArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "An anomaly detector ARN."
+        }
+      ]
+    },
+    "AutoDetectionMetricSource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AutoDetectionMetricSource"
+        },
+        {
+          "description": "A data source."
+        }
+      ]
+    }
+  },
+  "required": [
+    "AnomalyDetectorArn",
+    "AutoDetectionMetricSource"
+  ]
+}

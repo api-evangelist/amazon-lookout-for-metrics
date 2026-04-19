@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-delete-alert-response-structure.json",
+  "name": "DeleteAlertResponse",
+  "description": "DeleteAlertResponse schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {}
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-json-format-descriptor-structure.json",
+  "name": "JsonFormatDescriptor",
+  "description": "Contains information about how a source JSON data file should be analyzed.",
+  "type": "object",
+  "properties": {
+    "FileCompression": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JsonFileCompression"
+        },
+        {
+          "description": "The level of compression of the source CSV file."
+        }
+      ]
+    },
+    "Charset": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Charset"
+        },
+        {
+          "description": "The character set in which the source JSON file is written."
+        }
+      ]
+    }
+  }
+}

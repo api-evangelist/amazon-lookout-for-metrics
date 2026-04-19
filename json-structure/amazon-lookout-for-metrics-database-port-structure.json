@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-database-port-structure.json",
+  "name": "DatabasePort",
+  "description": "DatabasePort schema from Amazon Lookout for Metrics API",
+  "type": "int32",
+  "minimum": 1,
+  "maximum": 65535
+}

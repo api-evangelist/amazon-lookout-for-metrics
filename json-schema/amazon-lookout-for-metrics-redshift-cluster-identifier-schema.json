@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-redshift-cluster-identifier-schema.json",
+  "title": "RedshiftClusterIdentifier",
+  "description": "RedshiftClusterIdentifier schema from Amazon Lookout for Metrics API",
+  "type": "string",
+  "pattern": "^[a-z](?!.*--)(?!.*-$)[0-9a-z\\-]*$",
+  "minLength": 1,
+  "maxLength": 63
+}

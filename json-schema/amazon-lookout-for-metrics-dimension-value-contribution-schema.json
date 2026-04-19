@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-dimension-value-contribution-schema.json",
+  "title": "DimensionValueContribution",
+  "description": "The severity of a value of a dimension that contributed to an anomaly.",
+  "type": "object",
+  "properties": {
+    "DimensionValue": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DimensionValue"
+        },
+        {
+          "description": "The value of the dimension."
+        }
+      ]
+    },
+    "ContributionScore": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Score"
+        },
+        {
+          "description": "The severity score of the value."
+        }
+      ]
+    }
+  }
+}

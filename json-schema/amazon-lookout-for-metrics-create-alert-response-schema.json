@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-create-alert-response-schema.json",
+  "title": "CreateAlertResponse",
+  "description": "CreateAlertResponse schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "AlertArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the alert."
+        }
+      ]
+    }
+  }
+}

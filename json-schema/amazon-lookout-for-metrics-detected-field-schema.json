@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-detected-field-schema.json",
+  "title": "DetectedField",
+  "description": "An inferred field.",
+  "type": "object",
+  "properties": {
+    "Value": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AttributeValue"
+        },
+        {
+          "description": "The field's value."
+        }
+      ]
+    },
+    "Confidence": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Confidence"
+        },
+        {
+          "description": "The field's confidence."
+        }
+      ]
+    },
+    "Message": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Message"
+        },
+        {
+          "description": "The field's message."
+        }
+      ]
+    }
+  }
+}

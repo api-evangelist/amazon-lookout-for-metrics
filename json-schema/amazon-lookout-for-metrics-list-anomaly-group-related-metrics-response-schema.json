@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-list-anomaly-group-related-metrics-response-schema.json",
+  "title": "ListAnomalyGroupRelatedMetricsResponse",
+  "description": "ListAnomalyGroupRelatedMetricsResponse schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "InterMetricImpactList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InterMetricImpactList"
+        },
+        {
+          "description": "Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The pagination token that's included if more results are available."
+        }
+      ]
+    }
+  }
+}

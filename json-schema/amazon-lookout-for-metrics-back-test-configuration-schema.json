@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-back-test-configuration-schema.json",
+  "title": "BackTestConfiguration",
+  "description": "Settings for backtest mode.",
+  "type": "object",
+  "properties": {
+    "RunBackTestMode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Run a backtest instead of monitoring new data."
+        }
+      ]
+    }
+  },
+  "required": [
+    "RunBackTestMode"
+  ]
+}

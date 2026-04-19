@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-lambda-configuration-structure.json",
+  "name": "LambdaConfiguration",
+  "description": "Contains information about a Lambda configuration.",
+  "type": "object",
+  "properties": {
+    "RoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of an IAM role that has permission to invoke the Lambda function."
+        }
+      ]
+    },
+    "LambdaArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the Lambda function."
+        }
+      ]
+    }
+  },
+  "required": [
+    "RoleArn",
+    "LambdaArn"
+  ]
+}

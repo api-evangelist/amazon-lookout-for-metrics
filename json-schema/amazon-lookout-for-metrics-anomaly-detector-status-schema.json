@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-anomaly-detector-status-schema.json",
+  "title": "AnomalyDetectorStatus",
+  "description": "AnomalyDetectorStatus schema from Amazon Lookout for Metrics API",
+  "type": "string",
+  "enum": [
+    "ACTIVE",
+    "ACTIVATING",
+    "DELETING",
+    "FAILED",
+    "INACTIVE",
+    "LEARNING",
+    "BACK_TEST_ACTIVATING",
+    "BACK_TEST_ACTIVE",
+    "BACK_TEST_COMPLETE",
+    "DEACTIVATED",
+    "DEACTIVATING"
+  ]
+}

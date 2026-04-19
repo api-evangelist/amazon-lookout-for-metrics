@@ -1,0 +1,5 @@
+{
+  "TimeSeriesId": "500123",
+  "DimensionList": "product_category",
+  "MetricValueList": "revenue"
+}

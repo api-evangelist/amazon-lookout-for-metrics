@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-anomaly-group-time-series-feedback-schema.json",
+  "title": "AnomalyGroupTimeSeriesFeedback",
+  "description": "Feedback for an anomalous metric.",
+  "type": "object",
+  "properties": {
+    "AnomalyGroupId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UUID"
+        },
+        {
+          "description": "The ID of the anomaly group."
+        }
+      ]
+    },
+    "TimeSeriesId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeSeriesId"
+        },
+        {
+          "description": "The ID of the metric."
+        }
+      ]
+    },
+    "IsAnomaly": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Feedback on whether the metric is a legitimate anomaly."
+        }
+      ]
+    }
+  },
+  "required": [
+    "AnomalyGroupId",
+    "TimeSeriesId",
+    "IsAnomaly"
+  ]
+}

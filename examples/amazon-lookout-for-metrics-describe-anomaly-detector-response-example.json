@@ -1,0 +1,12 @@
+{
+  "AnomalyDetectorArn": "arn:aws:lookoutmetrics:us-east-1:123456789012:AnomalyDetector:my-detector",
+  "AnomalyDetectorName": "my-anomaly-detector",
+  "AnomalyDetectorDescription": "Automated anomaly detection for business metrics",
+  "AnomalyDetectorConfig": "example-value",
+  "CreationTime": "example-value",
+  "LastModificationTime": "example-value",
+  "Status": "ACTIVE",
+  "FailureReason": "example-value",
+  "KmsKeyArn": "arn:aws:lookoutmetrics:us-east-1:123456789012:AnomalyDetector:my-detector",
+  "FailureType": "example-value"
+}

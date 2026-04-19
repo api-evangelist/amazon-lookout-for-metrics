@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-relationship-type-structure.json",
+  "name": "RelationshipType",
+  "description": "RelationshipType schema from Amazon Lookout for Metrics API",
+  "type": "string",
+  "enum": [
+    "CAUSE_OF_INPUT_ANOMALY_GROUP",
+    "EFFECT_OF_INPUT_ANOMALY_GROUP"
+  ]
+}

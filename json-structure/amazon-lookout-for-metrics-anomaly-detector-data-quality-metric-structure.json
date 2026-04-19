@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-anomaly-detector-data-quality-metric-structure.json",
+  "name": "AnomalyDetectorDataQualityMetric",
+  "description": "Aggregated details about the data quality metrics collected for the <code>AnomalyDetectorArn</code> provided in the <a>GetDataQualityMetrics</a> object.",
+  "type": "object",
+  "properties": {
+    "StartTimestamp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The start time for the data quality metrics collection."
+        }
+      ]
+    },
+    "MetricSetDataQualityMetricList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricSetDataQualityMetricList"
+        },
+        {
+          "description": "An array of <code>DataQualityMetricList</code> objects. Each object in the array contains information about a data quality metric."
+        }
+      ]
+    }
+  }
+}

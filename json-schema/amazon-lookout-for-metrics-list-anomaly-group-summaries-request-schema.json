@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-list-anomaly-group-summaries-request-schema.json",
+  "title": "ListAnomalyGroupSummariesRequest",
+  "description": "ListAnomalyGroupSummariesRequest schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "AnomalyDetectorArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the anomaly detector."
+        }
+      ]
+    },
+    "SensitivityThreshold": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitivityThreshold"
+        },
+        {
+          "description": "The minimum severity score for inclusion in the output."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxResults"
+        },
+        {
+          "description": "The maximum number of results to return."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "Specify the pagination token that's returned by a previous request to retrieve the next page of results."
+        }
+      ]
+    }
+  },
+  "required": [
+    "AnomalyDetectorArn",
+    "SensitivityThreshold"
+  ]
+}

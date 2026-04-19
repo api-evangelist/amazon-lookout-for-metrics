@@ -1,0 +1,7 @@
+{
+  "AnomalyGroupId": "500123",
+  "MetricName": "my-anomaly-detector",
+  "TimestampList": "example-value",
+  "NextToken": "example-value",
+  "TimeSeriesList": "example-value"
+}

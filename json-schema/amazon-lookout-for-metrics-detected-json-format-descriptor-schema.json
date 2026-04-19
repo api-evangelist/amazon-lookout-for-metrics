@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-detected-json-format-descriptor-schema.json",
+  "title": "DetectedJsonFormatDescriptor",
+  "description": "A detected JSON format descriptor.",
+  "type": "object",
+  "properties": {
+    "FileCompression": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DetectedField"
+        },
+        {
+          "description": "The format's file compression."
+        }
+      ]
+    },
+    "Charset": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DetectedField"
+        },
+        {
+          "description": "The format's character set."
+        }
+      ]
+    }
+  }
+}

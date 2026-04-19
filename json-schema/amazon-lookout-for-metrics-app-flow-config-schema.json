@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-app-flow-config-schema.json",
+  "title": "AppFlowConfig",
+  "description": "Details about an Amazon AppFlow flow datasource.",
+  "type": "object",
+  "properties": {
+    "RoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "An IAM role that gives Amazon Lookout for Metrics permission to access the flow."
+        }
+      ]
+    },
+    "FlowName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FlowName"
+        },
+        {
+          "description": " name of the flow."
+        }
+      ]
+    }
+  }
+}

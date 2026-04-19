@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-templated-path-schema.json",
+  "title": "TemplatedPath",
+  "description": "TemplatedPath schema from Amazon Lookout for Metrics API",
+  "type": "string",
+  "pattern": "^s3://[a-zA-Z0-9_\\-\\/ {}=]+$",
+  "maxLength": 1024
+}

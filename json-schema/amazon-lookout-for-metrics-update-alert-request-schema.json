@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-update-alert-request-schema.json",
+  "title": "UpdateAlertRequest",
+  "description": "UpdateAlertRequest schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "AlertArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the alert to update."
+        }
+      ]
+    },
+    "AlertDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AlertDescription"
+        },
+        {
+          "description": "A description of the alert."
+        }
+      ]
+    },
+    "AlertSensitivityThreshold": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitivityThreshold"
+        },
+        {
+          "description": "An integer from 0 to 100 specifying the alert sensitivity threshold."
+        }
+      ]
+    },
+    "Action": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Action"
+        },
+        {
+          "description": "Action that will be triggered when there is an alert."
+        }
+      ]
+    },
+    "AlertFilters": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AlertFilters"
+        },
+        {
+          "description": "The configuration of the alert filters, containing MetricList and DimensionFilterList."
+        }
+      ]
+    }
+  },
+  "required": [
+    "AlertArn"
+  ]
+}

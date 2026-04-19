@@ -1,0 +1,7 @@
+{
+  "AnomalyDetectorArn": "arn:aws:lookoutmetrics:us-east-1:123456789012:AnomalyDetector:my-detector",
+  "AnomalyGroupId": "500123",
+  "RelationshipTypeFilter": "example-value",
+  "MaxResults": "example-value",
+  "NextToken": "example-value"
+}

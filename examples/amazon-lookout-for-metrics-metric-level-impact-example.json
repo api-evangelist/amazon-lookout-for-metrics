@@ -1,0 +1,5 @@
+{
+  "MetricName": "my-anomaly-detector",
+  "NumTimeSeries": "example-value",
+  "ContributionMatrix": "example-value"
+}

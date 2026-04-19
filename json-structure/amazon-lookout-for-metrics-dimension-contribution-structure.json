@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-dimension-contribution-structure.json",
+  "name": "DimensionContribution",
+  "description": "Details about a dimension that contributed to an anomaly.",
+  "type": "object",
+  "properties": {
+    "DimensionName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ColumnName"
+        },
+        {
+          "description": "The name of the dimension."
+        }
+      ]
+    },
+    "DimensionValueContributionList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DimensionValueContributionList"
+        },
+        {
+          "description": "A list of dimension values that contributed to the anomaly."
+        }
+      ]
+    }
+  }
+}

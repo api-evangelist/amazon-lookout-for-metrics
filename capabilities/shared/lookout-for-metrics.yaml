@@ -1,0 +1,642 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Amazon Lookout for Metrics"
+  description: "Amazon Lookout for Metrics API for automated anomaly detection in business and operational metrics."
+  tags:
+    - Amazon
+    - Anomaly Detection
+    - Machine Learning
+    - Metrics
+    - Monitoring
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+      AWS_REGION: AWS_REGION
+
+capability:
+  consumes:
+    - type: http
+      namespace: lookout-for-metrics
+      baseUri: https://lookoutmetrics.{region}.amazonaws.com
+      description: "Amazon Lookout for Metrics REST API"
+      authentication:
+        type: apikey
+        key: Authorization
+        value: "AWS4-HMAC-SHA256 {{AWS_ACCESS_KEY_ID}}"
+        placement: header
+      resources:
+        - name: anomaly-detectors
+          path: /
+          description: "Manage anomaly detectors"
+          operations:
+            - name: create-anomaly-detector
+              method: POST
+              description: "Create a new anomaly detector"
+              inputParameters:
+                - name: body
+                  in: body
+                  type: object
+                  required: true
+                  description: "Anomaly detector configuration"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: list-anomaly-detectors
+              method: POST
+              description: "List all anomaly detectors"
+              inputParameters:
+                - name: MaxResults
+                  in: body
+                  type: integer
+                  required: false
+                  description: "Maximum number of results"
+                - name: NextToken
+                  in: body
+                  type: string
+                  required: false
+                  description: "Pagination token"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: describe-anomaly-detector
+              method: POST
+              description: "Get details of a specific anomaly detector"
+              inputParameters:
+                - name: AnomalyDetectorArn
+                  in: body
+                  type: string
+                  required: true
+                  description: "ARN of the anomaly detector"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: activate-anomaly-detector
+              method: POST
+              description: "Activate an anomaly detector"
+              inputParameters:
+                - name: AnomalyDetectorArn
+                  in: body
+                  type: string
+                  required: true
+                  description: "ARN of the anomaly detector"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: deactivate-anomaly-detector
+              method: POST
+              description: "Deactivate an anomaly detector"
+              inputParameters:
+                - name: AnomalyDetectorArn
+                  in: body
+                  type: string
+                  required: true
+                  description: "ARN of the anomaly detector"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: delete-anomaly-detector
+              method: POST
+              description: "Delete an anomaly detector"
+              inputParameters:
+                - name: AnomalyDetectorArn
+                  in: body
+                  type: string
+                  required: true
+                  description: "ARN of the anomaly detector"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: update-anomaly-detector
+              method: POST
+              description: "Update an anomaly detector configuration"
+              inputParameters:
+                - name: AnomalyDetectorArn
+                  in: body
+                  type: string
+                  required: true
+                  description: "ARN of the anomaly detector"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: back-test-anomaly-detector
+              method: POST
+              description: "Run a backtest on an anomaly detector"
+              inputParameters:
+                - name: AnomalyDetectorArn
+                  in: body
+                  type: string
+                  required: true
+                  description: "ARN of the anomaly detector"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: metric-sets
+          path: /
+          description: "Manage metric sets (datasets)"
+          operations:
+            - name: create-metric-set
+              method: POST
+              description: "Create a new metric set"
+              inputParameters:
+                - name: body
+                  in: body
+                  type: object
+                  required: true
+                  description: "Metric set configuration"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: list-metric-sets
+              method: POST
+              description: "List all metric sets for a detector"
+              inputParameters:
+                - name: AnomalyDetectorArn
+                  in: body
+                  type: string
+                  required: true
+                  description: "ARN of the anomaly detector"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: describe-metric-set
+              method: POST
+              description: "Get details of a specific metric set"
+              inputParameters:
+                - name: MetricSetArn
+                  in: body
+                  type: string
+                  required: true
+                  description: "ARN of the metric set"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: update-metric-set
+              method: POST
+              description: "Update a metric set configuration"
+              inputParameters:
+                - name: MetricSetArn
+                  in: body
+                  type: string
+                  required: true
+                  description: "ARN of the metric set"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: alerts
+          path: /
+          description: "Manage anomaly alerts"
+          operations:
+            - name: create-alert
+              method: POST
+              description: "Create an alert for anomaly notifications"
+              inputParameters:
+                - name: body
+                  in: body
+                  type: object
+                  required: true
+                  description: "Alert configuration"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: list-alerts
+              method: POST
+              description: "List all alerts for a detector"
+              inputParameters:
+                - name: AnomalyDetectorArn
+                  in: body
+                  type: string
+                  required: false
+                  description: "ARN of the anomaly detector"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: describe-alert
+              method: POST
+              description: "Get details of a specific alert"
+              inputParameters:
+                - name: AlertArn
+                  in: body
+                  type: string
+                  required: true
+                  description: "ARN of the alert"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: delete-alert
+              method: POST
+              description: "Delete an alert"
+              inputParameters:
+                - name: AlertArn
+                  in: body
+                  type: string
+                  required: true
+                  description: "ARN of the alert"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: update-alert
+              method: POST
+              description: "Update an alert configuration"
+              inputParameters:
+                - name: AlertArn
+                  in: body
+                  type: string
+                  required: true
+                  description: "ARN of the alert"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: anomaly-groups
+          path: /
+          description: "Retrieve anomaly group information"
+          operations:
+            - name: get-anomaly-group
+              method: POST
+              description: "Get details of an anomaly group"
+              inputParameters:
+                - name: AnomalyGroupId
+                  in: body
+                  type: string
+                  required: true
+                  description: "ID of the anomaly group"
+                - name: AnomalyDetectorArn
+                  in: body
+                  type: string
+                  required: true
+                  description: "ARN of the anomaly detector"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: list-anomaly-group-summaries
+              method: POST
+              description: "List summaries of anomaly groups"
+              inputParameters:
+                - name: AnomalyDetectorArn
+                  in: body
+                  type: string
+                  required: true
+                  description: "ARN of the anomaly detector"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: list-anomaly-group-related-metrics
+              method: POST
+              description: "List metrics related to an anomaly group"
+              inputParameters:
+                - name: AnomalyDetectorArn
+                  in: body
+                  type: string
+                  required: true
+                  description: "ARN of the anomaly detector"
+                - name: AnomalyGroupId
+                  in: body
+                  type: string
+                  required: true
+                  description: "ID of the anomaly group"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: list-anomaly-group-time-series
+              method: POST
+              description: "List time series data for an anomaly group"
+              inputParameters:
+                - name: AnomalyDetectorArn
+                  in: body
+                  type: string
+                  required: true
+                  description: "ARN of the anomaly detector"
+                - name: AnomalyGroupId
+                  in: body
+                  type: string
+                  required: true
+                  description: "ID of the anomaly group"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: feedback
+          path: /
+          description: "Manage anomaly detection feedback"
+          operations:
+            - name: get-feedback
+              method: POST
+              description: "Get feedback for anomaly detections"
+              inputParameters:
+                - name: AnomalyDetectorArn
+                  in: body
+                  type: string
+                  required: true
+                  description: "ARN of the anomaly detector"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: put-feedback
+              method: POST
+              description: "Submit feedback on an anomaly detection"
+              inputParameters:
+                - name: AnomalyDetectorArn
+                  in: body
+                  type: string
+                  required: true
+                  description: "ARN of the anomaly detector"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: lookout-for-metrics-api
+      resources:
+        - path: /v1/anomaly-detectors
+          name: anomaly-detectors
+          description: "Manage anomaly detectors"
+          operations:
+            - method: POST
+              name: create-anomaly-detector
+              description: "Create a new anomaly detector"
+              call: "lookout-for-metrics.create-anomaly-detector"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: GET
+              name: list-anomaly-detectors
+              description: "List all anomaly detectors"
+              call: "lookout-for-metrics.list-anomaly-detectors"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/anomaly-detectors/{id}
+          name: anomaly-detector
+          description: "Single anomaly detector operations"
+          operations:
+            - method: GET
+              name: describe-anomaly-detector
+              description: "Get anomaly detector details"
+              call: "lookout-for-metrics.describe-anomaly-detector"
+              with:
+                AnomalyDetectorArn: "rest.id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: PUT
+              name: update-anomaly-detector
+              description: "Update an anomaly detector"
+              call: "lookout-for-metrics.update-anomaly-detector"
+              with:
+                AnomalyDetectorArn: "rest.id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: DELETE
+              name: delete-anomaly-detector
+              description: "Delete an anomaly detector"
+              call: "lookout-for-metrics.delete-anomaly-detector"
+              with:
+                AnomalyDetectorArn: "rest.id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/alerts
+          name: alerts
+          description: "Manage anomaly alerts"
+          operations:
+            - method: POST
+              name: create-alert
+              description: "Create an alert"
+              call: "lookout-for-metrics.create-alert"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: GET
+              name: list-alerts
+              description: "List alerts"
+              call: "lookout-for-metrics.list-alerts"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/anomaly-groups
+          name: anomaly-groups
+          description: "Anomaly group results"
+          operations:
+            - method: GET
+              name: list-anomaly-group-summaries
+              description: "List anomaly group summaries"
+              call: "lookout-for-metrics.list-anomaly-group-summaries"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/feedback
+          name: feedback
+          description: "Anomaly detection feedback"
+          operations:
+            - method: GET
+              name: get-feedback
+              description: "Get anomaly feedback"
+              call: "lookout-for-metrics.get-feedback"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: put-feedback
+              description: "Submit anomaly feedback"
+              call: "lookout-for-metrics.put-feedback"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9090
+      namespace: lookout-for-metrics-mcp
+      transport: http
+      tools:
+        - name: create-anomaly-detector
+          description: "Create a new Amazon Lookout for Metrics anomaly detector"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: false
+          call: "lookout-for-metrics.create-anomaly-detector"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-anomaly-detectors
+          description: "List all anomaly detectors"
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "lookout-for-metrics.list-anomaly-detectors"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: describe-anomaly-detector
+          description: "Get details of an anomaly detector"
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "lookout-for-metrics.describe-anomaly-detector"
+          with:
+            AnomalyDetectorArn: "tools.AnomalyDetectorArn"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: activate-anomaly-detector
+          description: "Activate an anomaly detector to start detection"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: "lookout-for-metrics.activate-anomaly-detector"
+          with:
+            AnomalyDetectorArn: "tools.AnomalyDetectorArn"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: deactivate-anomaly-detector
+          description: "Deactivate an anomaly detector to stop detection"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: "lookout-for-metrics.deactivate-anomaly-detector"
+          with:
+            AnomalyDetectorArn: "tools.AnomalyDetectorArn"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: delete-anomaly-detector
+          description: "Delete an anomaly detector permanently"
+          hints:
+            readOnly: false
+            destructive: true
+            idempotent: true
+          call: "lookout-for-metrics.delete-anomaly-detector"
+          with:
+            AnomalyDetectorArn: "tools.AnomalyDetectorArn"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-anomaly-group-summaries
+          description: "List summaries of detected anomaly groups"
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "lookout-for-metrics.list-anomaly-group-summaries"
+          with:
+            AnomalyDetectorArn: "tools.AnomalyDetectorArn"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-anomaly-group
+          description: "Get details of a specific anomaly group"
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "lookout-for-metrics.get-anomaly-group"
+          with:
+            AnomalyDetectorArn: "tools.AnomalyDetectorArn"
+            AnomalyGroupId: "tools.AnomalyGroupId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-alert
+          description: "Create an alert for anomaly notifications"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: false
+          call: "lookout-for-metrics.create-alert"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-alerts
+          description: "List all alerts configured for an anomaly detector"
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "lookout-for-metrics.list-alerts"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: put-feedback
+          description: "Submit feedback on anomaly detections to improve accuracy"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: false
+          call: "lookout-for-metrics.put-feedback"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-feedback
+          description: "Retrieve feedback previously submitted for anomaly detections"
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "lookout-for-metrics.get-feedback"
+          with:
+            AnomalyDetectorArn: "tools.AnomalyDetectorArn"
+          outputParameters:
+            - type: object
+              mapping: "$."

@@ -1,0 +1,4 @@
+{
+  "SubnetIdList": "example-value",
+  "SecurityGroupIdList": "https://example.com/resource/123"
+}

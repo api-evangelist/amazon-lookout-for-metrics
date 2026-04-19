@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-list-metric-sets-response-schema.json",
+  "title": "ListMetricSetsResponse",
+  "description": "ListMetricSetsResponse schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "MetricSetSummaryList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricSetSummaryList"
+        },
+        {
+          "description": "A list of the datasets in the AWS Region, with configuration details for each."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. "
+        }
+      ]
+    }
+  }
+}

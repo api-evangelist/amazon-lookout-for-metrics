@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-metric-name-schema.json",
+  "title": "MetricName",
+  "description": "MetricName schema from Amazon Lookout for Metrics API",
+  "type": "string",
+  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9\\-_]*",
+  "maxLength": 256
+}

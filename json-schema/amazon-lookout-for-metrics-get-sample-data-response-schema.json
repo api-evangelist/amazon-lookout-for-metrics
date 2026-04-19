@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-get-sample-data-response-schema.json",
+  "title": "GetSampleDataResponse",
+  "description": "GetSampleDataResponse schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "HeaderValues": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HeaderValueList"
+        },
+        {
+          "description": "A list of header labels for the records."
+        }
+      ]
+    },
+    "SampleRows": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SampleRows"
+        },
+        {
+          "description": "A list of records."
+        }
+      ]
+    }
+  }
+}

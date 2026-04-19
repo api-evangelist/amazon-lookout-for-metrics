@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-create-alert-request-schema.json",
+  "title": "CreateAlertRequest",
+  "description": "CreateAlertRequest schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "AlertName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AlertName"
+        },
+        {
+          "description": "The name of the alert."
+        }
+      ]
+    },
+    "AlertSensitivityThreshold": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitivityThreshold"
+        },
+        {
+          "description": "An integer from 0 to 100 specifying the alert sensitivity threshold."
+        }
+      ]
+    },
+    "AlertDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AlertDescription"
+        },
+        {
+          "description": "A description of the alert."
+        }
+      ]
+    },
+    "AnomalyDetectorArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the detector to which the alert is attached."
+        }
+      ]
+    },
+    "Action": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Action"
+        },
+        {
+          "description": "Action that will be triggered when there is an alert."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "A list of <a href=\"https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html\">tags</a> to apply to the alert."
+        }
+      ]
+    },
+    "AlertFilters": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AlertFilters"
+        },
+        {
+          "description": "The configuration of the alert filters, containing MetricList and DimensionFilterList."
+        }
+      ]
+    }
+  },
+  "required": [
+    "AlertName",
+    "AnomalyDetectorArn",
+    "Action"
+  ]
+}

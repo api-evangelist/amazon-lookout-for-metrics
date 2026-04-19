@@ -1,0 +1,5 @@
+{
+  "RoleArn": "arn:aws:lookoutmetrics:us-east-1:123456789012:AnomalyDetector:my-detector",
+  "SnsTopicArn": "arn:aws:lookoutmetrics:us-east-1:123456789012:AnomalyDetector:my-detector",
+  "SnsFormat": "example-value"
+}

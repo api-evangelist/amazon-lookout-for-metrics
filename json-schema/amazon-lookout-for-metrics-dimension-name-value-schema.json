@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-dimension-name-value-schema.json",
+  "title": "DimensionNameValue",
+  "description": "A dimension name and value.",
+  "type": "object",
+  "properties": {
+    "DimensionName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ColumnName"
+        },
+        {
+          "description": "The name of the dimension."
+        }
+      ]
+    },
+    "DimensionValue": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DimensionValue"
+        },
+        {
+          "description": "The value of the dimension."
+        }
+      ]
+    }
+  },
+  "required": [
+    "DimensionName",
+    "DimensionValue"
+  ]
+}

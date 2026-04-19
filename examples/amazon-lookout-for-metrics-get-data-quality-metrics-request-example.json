@@ -1,0 +1,4 @@
+{
+  "AnomalyDetectorArn": "arn:aws:lookoutmetrics:us-east-1:123456789012:AnomalyDetector:my-detector",
+  "MetricSetArn": "arn:aws:lookoutmetrics:us-east-1:123456789012:AnomalyDetector:my-detector"
+}

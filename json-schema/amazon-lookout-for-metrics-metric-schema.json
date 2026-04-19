@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-metric-schema.json",
+  "title": "Metric",
+  "description": "A calculation made by contrasting a measure and a dimension from your source data.",
+  "type": "object",
+  "properties": {
+    "MetricName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ColumnName"
+        },
+        {
+          "description": "The name of the metric."
+        }
+      ]
+    },
+    "AggregationFunction": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AggregationFunction"
+        },
+        {
+          "description": "The function with which the metric is calculated."
+        }
+      ]
+    },
+    "Namespace": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Namespace"
+        },
+        {
+          "description": "The namespace for the metric."
+        }
+      ]
+    }
+  },
+  "required": [
+    "MetricName",
+    "AggregationFunction"
+  ]
+}

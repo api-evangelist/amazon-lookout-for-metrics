@@ -1,0 +1,11 @@
+{
+  "AlertArn": "arn:aws:lookoutmetrics:us-east-1:123456789012:AnomalyDetector:my-detector",
+  "AnomalyDetectorArn": "arn:aws:lookoutmetrics:us-east-1:123456789012:AnomalyDetector:my-detector",
+  "AlertName": "my-anomaly-detector",
+  "AlertSensitivityThreshold": "example-value",
+  "AlertType": "example-value",
+  "AlertStatus": "ACTIVE",
+  "LastModificationTime": "example-value",
+  "CreationTime": "example-value",
+  "Tags": "example-value"
+}

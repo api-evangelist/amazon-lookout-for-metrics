@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-anomaly-group-statistics-schema.json",
+  "title": "AnomalyGroupStatistics",
+  "description": "Aggregated statistics for a group of anomalous metrics.",
+  "type": "object",
+  "properties": {
+    "EvaluationStartDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimestampString"
+        },
+        {
+          "description": "The start of the time range that was searched."
+        }
+      ]
+    },
+    "TotalCount": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The number of groups found."
+        }
+      ]
+    },
+    "ItemizedMetricStatsList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ItemizedMetricStatsList"
+        },
+        {
+          "description": "Statistics for individual metrics within the group."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,286 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: "Amazon Lookout for Metrics"
+  description: "Unified vocabulary taxonomy for Amazon Lookout for Metrics covering anomaly detection, metric monitoring, alerts, and ML-driven insights."
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: lookout-for-metrics
+      version: "2017-07-25"
+      baseUrl: https://lookoutmetrics.{region}.amazonaws.com
+      status: active
+      description: "Amazon Lookout for Metrics REST API"
+
+  resources:
+    - name: anomaly-detectors
+      apis:
+        - lookout-for-metrics
+      actions:
+        - create
+        - list
+        - describe
+        - update
+        - delete
+        - activate
+        - deactivate
+        - back-test
+    - name: metric-sets
+      apis:
+        - lookout-for-metrics
+      actions:
+        - create
+        - list
+        - describe
+        - update
+    - name: alerts
+      apis:
+        - lookout-for-metrics
+      actions:
+        - create
+        - list
+        - describe
+        - delete
+        - update
+    - name: anomaly-groups
+      apis:
+        - lookout-for-metrics
+      actions:
+        - get
+        - list
+        - list-related-metrics
+        - list-time-series
+    - name: feedback
+      apis:
+        - lookout-for-metrics
+      actions:
+        - get
+        - put
+    - name: data-quality
+      apis:
+        - lookout-for-metrics
+      actions:
+        - get
+    - name: tags
+      apis:
+        - lookout-for-metrics
+      actions:
+        - list
+        - add
+        - remove
+
+  actions:
+    - name: create
+      httpMethods: [POST]
+      pattern: write
+    - name: list
+      httpMethods: [POST, GET]
+      pattern: read
+    - name: describe
+      httpMethods: [POST]
+      pattern: read
+    - name: update
+      httpMethods: [POST]
+      pattern: write
+    - name: delete
+      httpMethods: [POST]
+      pattern: destructive
+    - name: activate
+      httpMethods: [POST]
+      pattern: write
+    - name: deactivate
+      httpMethods: [POST]
+      pattern: write
+    - name: get
+      httpMethods: [POST, GET]
+      pattern: read
+    - name: put
+      httpMethods: [POST]
+      pattern: write
+    - name: back-test
+      httpMethods: [POST]
+      pattern: query
+
+  schemas:
+    core:
+      - AnomalyDetectorConfig
+      - MetricSetSummary
+      - AlertSummary
+      - AnomalyGroupSummary
+      - AnomalyGroupTimeSeries
+    data-sources:
+      - S3SourceConfig
+      - CloudwatchConfig
+      - RDSSourceConfig
+      - RedshiftSourceConfig
+      - AthenaSourceConfig
+      - AppFlowConfig
+    alerts:
+      - SNSConfiguration
+      - LambdaConfiguration
+      - Alert
+      - AlertFilters
+    metrics:
+      - Metric
+      - MetricSource
+      - DimensionFilter
+      - ItemizedMetricStats
+
+  parameters:
+    pagination:
+      - MaxResults
+      - NextToken
+    identifiers:
+      - AnomalyDetectorArn
+      - MetricSetArn
+      - AlertArn
+      - AnomalyGroupId
+    filters:
+      - SensitivityThreshold
+      - StartTime
+      - EndTime
+
+  enums:
+    detector-states:
+      - ACTIVE
+      - ACTIVATING
+      - DELETING
+      - FAILED
+      - INACTIVE
+      - LEARNING
+      - BACK_TEST_ACTIVE
+      - BACK_TEST_COMPLETE
+      - BACK_TEST_FAILED
+    alert-types:
+      - SNS
+      - LAMBDA
+    frequencies:
+      - P1D
+      - PT1H
+      - PT10M
+      - PT5M
+    feedback-types:
+      - ANOMALY
+      - NOT_ANOMALY
+    anomaly-group-export-types:
+      - DIMENSION_VALUES
+      - MEASURES
+
+  authentication:
+    schemes:
+      - type: aws-sigv4
+        name: AWS Signature Version 4
+        description: "AWS Signature Version 4 authentication using access key and secret"
+        apis:
+          - lookout-for-metrics
+
+capability:
+  workflows:
+    - name: Anomaly Detection Operations
+      file: capabilities/anomaly-detection-operations.yaml
+      description: "Workflow for managing anomaly detectors, monitoring anomalies, configuring alerts, and providing feedback"
+      apisComposed:
+        - lookout-for-metrics
+      toolCount: 12
+      personas:
+        - Data Scientist
+        - Operations Engineer
+
+  personas:
+    - id: data-scientist
+      name: "Data Scientist"
+      description: "Manages anomaly detector configuration, metric sets, and feedback to improve ML model accuracy"
+      workflows:
+        - Anomaly Detection Operations
+    - id: operations-engineer
+      name: "Operations Engineer"
+      description: "Monitors anomaly alerts, investigates anomaly groups, and manages detector lifecycle"
+      workflows:
+        - Anomaly Detection Operations
+
+  domains:
+    - name: Anomaly Detection
+      description: "ML-powered detection of anomalies in business and operational metrics"
+      resources:
+        - anomaly-detectors
+        - anomaly-groups
+        - metric-sets
+    - name: Alerting
+      description: "Configuration and management of anomaly alert notifications"
+      resources:
+        - alerts
+    - name: Data Quality
+      description: "Monitoring and assessment of metric data quality"
+      resources:
+        - data-quality
+
+  namespaces:
+    - name: lookout-for-metrics
+      type: consumed
+      baseUri: https://lookoutmetrics.{region}.amazonaws.com
+    - name: anomaly-detection-api
+      type: rest-exposed
+      port: 8080
+    - name: anomaly-detection-mcp
+      type: mcp-exposed
+      port: 9090
+
+  binds:
+    - name: AWS_ACCESS_KEY_ID
+      workflows:
+        - Anomaly Detection Operations
+    - name: AWS_SECRET_ACCESS_KEY
+      workflows:
+        - Anomaly Detection Operations
+    - name: AWS_REGION
+      workflows:
+        - Anomaly Detection Operations
+
+crossReference:
+  - resource: anomaly-detectors
+    operations:
+      - CreateAnomalyDetector
+      - ListAnomalyDetectors
+      - DescribeAnomalyDetector
+      - UpdateAnomalyDetector
+      - DeleteAnomalyDetector
+      - ActivateAnomalyDetector
+      - DeactivateAnomalyDetector
+      - BackTestAnomalyDetector
+    workflows:
+      - Anomaly Detection Operations
+    personas:
+      - Data Scientist
+      - Operations Engineer
+  - resource: anomaly-groups
+    operations:
+      - GetAnomalyGroup
+      - ListAnomalyGroupSummaries
+      - ListAnomalyGroupRelatedMetrics
+      - ListAnomalyGroupTimeSeries
+    workflows:
+      - Anomaly Detection Operations
+    personas:
+      - Operations Engineer
+      - Data Scientist
+  - resource: alerts
+    operations:
+      - CreateAlert
+      - ListAlerts
+      - DescribeAlert
+      - DeleteAlert
+      - UpdateAlert
+    workflows:
+      - Anomaly Detection Operations
+    personas:
+      - Operations Engineer
+  - resource: feedback
+    operations:
+      - GetFeedback
+      - PutFeedback
+    workflows:
+      - Anomaly Detection Operations
+    personas:
+      - Data Scientist

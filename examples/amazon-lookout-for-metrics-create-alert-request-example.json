@@ -1,0 +1,9 @@
+{
+  "AlertName": "my-anomaly-detector",
+  "AlertSensitivityThreshold": "example-value",
+  "AlertDescription": "Automated anomaly detection for business metrics",
+  "AnomalyDetectorArn": "arn:aws:lookoutmetrics:us-east-1:123456789012:AnomalyDetector:my-detector",
+  "Action": "example-value",
+  "Tags": "example-value",
+  "AlertFilters": "example-value"
+}

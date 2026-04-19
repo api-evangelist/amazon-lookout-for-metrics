@@ -1,0 +1,14 @@
+{
+  "AnomalyDetectorArn": "arn:aws:lookoutmetrics:us-east-1:123456789012:AnomalyDetector:my-detector",
+  "MetricSetName": "my-anomaly-detector",
+  "MetricSetDescription": "Automated anomaly detection for business metrics",
+  "MetricList": "revenue",
+  "Offset": "example-value",
+  "TimestampColumn": "example-value",
+  "DimensionList": "product_category",
+  "MetricSetFrequency": "PT1H",
+  "MetricSource": "revenue",
+  "Timezone": "UTC",
+  "Tags": "example-value",
+  "DimensionFilterList": "product_category"
+}

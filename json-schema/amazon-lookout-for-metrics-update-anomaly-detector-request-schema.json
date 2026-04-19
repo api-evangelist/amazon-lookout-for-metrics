@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-update-anomaly-detector-request-schema.json",
+  "title": "UpdateAnomalyDetectorRequest",
+  "description": "UpdateAnomalyDetectorRequest schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "AnomalyDetectorArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the detector to update."
+        }
+      ]
+    },
+    "KmsKeyArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/KmsKeyArn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of an AWS KMS encryption key."
+        }
+      ]
+    },
+    "AnomalyDetectorDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnomalyDetectorDescription"
+        },
+        {
+          "description": "The updated detector description."
+        }
+      ]
+    },
+    "AnomalyDetectorConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnomalyDetectorConfig"
+        },
+        {
+          "description": "Contains information about the configuration to which the detector will be updated."
+        }
+      ]
+    }
+  },
+  "required": [
+    "AnomalyDetectorArn"
+  ]
+}

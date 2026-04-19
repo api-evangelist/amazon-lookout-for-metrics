@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-auto-detection-s3-source-config-structure.json",
+  "name": "AutoDetectionS3SourceConfig",
+  "description": "An auto detection source config.",
+  "type": "object",
+  "properties": {
+    "TemplatedPathList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TemplatedPathList"
+        },
+        {
+          "description": "The config's templated path list."
+        }
+      ]
+    },
+    "HistoricalDataPathList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HistoricalDataPathList"
+        },
+        {
+          "description": "The config's historical data path list."
+        }
+      ]
+    }
+  }
+}

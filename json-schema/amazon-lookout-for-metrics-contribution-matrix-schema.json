@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-contribution-matrix-schema.json",
+  "title": "ContributionMatrix",
+  "description": "Details about dimensions that contributed to an anomaly.",
+  "type": "object",
+  "properties": {
+    "DimensionContributionList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DimensionContributionList"
+        },
+        {
+          "description": "A list of contributing dimensions."
+        }
+      ]
+    }
+  }
+}

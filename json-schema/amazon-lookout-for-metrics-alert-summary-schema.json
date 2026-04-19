@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-alert-summary-schema.json",
+  "title": "AlertSummary",
+  "description": "Provides a summary of an alert's configuration.",
+  "type": "object",
+  "properties": {
+    "AlertArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the alert."
+        }
+      ]
+    },
+    "AnomalyDetectorArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the detector to which the alert is attached."
+        }
+      ]
+    },
+    "AlertName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AlertName"
+        },
+        {
+          "description": "The name of the alert."
+        }
+      ]
+    },
+    "AlertSensitivityThreshold": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitivityThreshold"
+        },
+        {
+          "description": "The minimum severity for an anomaly to trigger the alert."
+        }
+      ]
+    },
+    "AlertType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AlertType"
+        },
+        {
+          "description": "The type of the alert."
+        }
+      ]
+    },
+    "AlertStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AlertStatus"
+        },
+        {
+          "description": "The status of the alert."
+        }
+      ]
+    },
+    "LastModificationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time at which the alert was last modified."
+        }
+      ]
+    },
+    "CreationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time at which the alert was created."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "The alert's <a href=\"https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html\">tags</a>."
+        }
+      ]
+    }
+  }
+}

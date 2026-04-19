@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-update-alert-response-structure.json",
+  "name": "UpdateAlertResponse",
+  "description": "UpdateAlertResponse schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "AlertArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the updated alert."
+        }
+      ]
+    }
+  }
+}

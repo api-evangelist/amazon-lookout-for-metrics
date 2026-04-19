@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-attribute-value-schema.json",
+  "title": "AttributeValue",
+  "description": "An attribute value.",
+  "type": "object",
+  "properties": {
+    "S": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringAttributeValue"
+        },
+        {
+          "description": "A string."
+        }
+      ]
+    },
+    "N": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NumberAttributeValue"
+        },
+        {
+          "description": "A number."
+        }
+      ]
+    },
+    "B": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BinaryAttributeValue"
+        },
+        {
+          "description": "A binary value."
+        }
+      ]
+    },
+    "SS": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringListAttributeValue"
+        },
+        {
+          "description": "A list of strings."
+        }
+      ]
+    },
+    "NS": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NumberListAttributeValue"
+        },
+        {
+          "description": "A list of numbers."
+        }
+      ]
+    },
+    "BS": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BinaryListAttributeValue"
+        },
+        {
+          "description": "A list of binary values."
+        }
+      ]
+    }
+  }
+}

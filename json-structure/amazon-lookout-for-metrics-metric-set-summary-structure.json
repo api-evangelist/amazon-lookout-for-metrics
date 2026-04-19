@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-metric-set-summary-structure.json",
+  "name": "MetricSetSummary",
+  "description": "Contains information about a dataset.",
+  "type": "object",
+  "properties": {
+    "MetricSetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the dataset."
+        }
+      ]
+    },
+    "AnomalyDetectorArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the detector to which the dataset belongs."
+        }
+      ]
+    },
+    "MetricSetDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricSetDescription"
+        },
+        {
+          "description": "The description of the dataset."
+        }
+      ]
+    },
+    "MetricSetName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricSetName"
+        },
+        {
+          "description": "The name of the dataset."
+        }
+      ]
+    },
+    "CreationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time at which the dataset was created."
+        }
+      ]
+    },
+    "LastModificationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time at which the dataset was last modified."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "The dataset's <a href=\"https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html\">tags</a>."
+        }
+      ]
+    }
+  }
+}

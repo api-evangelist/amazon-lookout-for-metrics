@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-put-feedback-request-schema.json",
+  "title": "PutFeedbackRequest",
+  "description": "PutFeedbackRequest schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "AnomalyDetectorArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the anomaly detector."
+        }
+      ]
+    },
+    "AnomalyGroupTimeSeriesFeedback": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnomalyGroupTimeSeriesFeedback"
+        },
+        {
+          "description": "Feedback for an anomalous metric."
+        }
+      ]
+    }
+  },
+  "required": [
+    "AnomalyDetectorArn",
+    "AnomalyGroupTimeSeriesFeedback"
+  ]
+}

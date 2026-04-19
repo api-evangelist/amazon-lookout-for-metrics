@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-time-series-structure.json",
+  "name": "TimeSeries",
+  "description": "Details about a metric. A metric is an aggregation of the values of a measure for a dimension value, such as <i>availability</i> in the <i>us-east-1</i> Region.",
+  "type": "object",
+  "properties": {
+    "TimeSeriesId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeSeriesId"
+        },
+        {
+          "description": "The ID of the metric."
+        }
+      ]
+    },
+    "DimensionList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DimensionNameValueList"
+        },
+        {
+          "description": "The dimensions of the metric."
+        }
+      ]
+    },
+    "MetricValueList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricValueList"
+        },
+        {
+          "description": "The values for the metric."
+        }
+      ]
+    }
+  },
+  "required": [
+    "TimeSeriesId",
+    "DimensionList",
+    "MetricValueList"
+  ]
+}

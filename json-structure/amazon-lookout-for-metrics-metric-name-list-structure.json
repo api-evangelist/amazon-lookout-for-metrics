@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-metric-name-list-structure.json",
+  "name": "MetricNameList",
+  "description": "MetricNameList schema from Amazon Lookout for Metrics API",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/MetricName"
+  },
+  "minItems": 1,
+  "maxItems": 5
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-detected-csv-format-descriptor-structure.json",
+  "name": "DetectedCsvFormatDescriptor",
+  "description": "Properties of an inferred CSV format.",
+  "type": "object",
+  "properties": {
+    "FileCompression": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DetectedField"
+        },
+        {
+          "description": "The format's file compression."
+        }
+      ]
+    },
+    "Charset": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DetectedField"
+        },
+        {
+          "description": "The format's charset."
+        }
+      ]
+    },
+    "ContainsHeader": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DetectedField"
+        },
+        {
+          "description": "Whether the format includes a header."
+        }
+      ]
+    },
+    "Delimiter": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DetectedField"
+        },
+        {
+          "description": "The format's delimiter."
+        }
+      ]
+    },
+    "HeaderList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DetectedField"
+        },
+        {
+          "description": "The format's header list."
+        }
+      ]
+    },
+    "QuoteSymbol": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DetectedField"
+        },
+        {
+          "description": "The format's quote symbol."
+        }
+      ]
+    }
+  }
+}

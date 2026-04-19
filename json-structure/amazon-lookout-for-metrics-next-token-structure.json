@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-next-token-structure.json",
+  "name": "NextToken",
+  "description": "NextToken schema from Amazon Lookout for Metrics API",
+  "type": "string",
+  "pattern": ".*\\S.*",
+  "minLength": 1,
+  "maxLength": 3000
+}

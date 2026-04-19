@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-athena-s3-results-path-structure.json",
+  "name": "AthenaS3ResultsPath",
+  "description": "AthenaS3ResultsPath schema from Amazon Lookout for Metrics API",
+  "type": "string",
+  "pattern": "^s3://[a-z0-9].+$",
+  "maxLength": 1024
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-anomaly-detector-config-structure.json",
+  "name": "AnomalyDetectorConfig",
+  "description": "Contains information about a detector's configuration.",
+  "type": "object",
+  "properties": {
+    "AnomalyDetectorFrequency": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Frequency"
+        },
+        {
+          "description": "The frequency at which the detector analyzes its source data."
+        }
+      ]
+    }
+  }
+}

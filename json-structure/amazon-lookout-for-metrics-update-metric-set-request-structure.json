@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-update-metric-set-request-structure.json",
+  "name": "UpdateMetricSetRequest",
+  "description": "UpdateMetricSetRequest schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "MetricSetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the dataset to update."
+        }
+      ]
+    },
+    "MetricSetDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricSetDescription"
+        },
+        {
+          "description": "The dataset's description."
+        }
+      ]
+    },
+    "MetricList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricList"
+        },
+        {
+          "description": "The metric list."
+        }
+      ]
+    },
+    "Offset": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Offset"
+        },
+        {
+          "description": "After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources."
+        }
+      ]
+    },
+    "TimestampColumn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimestampColumn"
+        },
+        {
+          "description": "The timestamp column."
+        }
+      ]
+    },
+    "DimensionList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DimensionList"
+        },
+        {
+          "description": "The dimension list."
+        }
+      ]
+    },
+    "MetricSetFrequency": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Frequency"
+        },
+        {
+          "description": "The dataset's interval."
+        }
+      ]
+    },
+    "MetricSource": {
+      "$ref": "#/components/schemas/MetricSource"
+    },
+    "DimensionFilterList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricSetDimensionFilterList"
+        },
+        {
+          "description": "Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation."
+        }
+      ]
+    }
+  },
+  "required": [
+    "MetricSetArn"
+  ]
+}

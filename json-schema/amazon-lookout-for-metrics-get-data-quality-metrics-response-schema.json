@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-get-data-quality-metrics-response-schema.json",
+  "title": "GetDataQualityMetricsResponse",
+  "description": "GetDataQualityMetricsResponse schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "AnomalyDetectorDataQualityMetricList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnomalyDetectorDataQualityMetricList"
+        },
+        {
+          "description": "A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you requested."
+        }
+      ]
+    }
+  }
+}

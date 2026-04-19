@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-describe-alert-response-schema.json",
+  "title": "DescribeAlertResponse",
+  "description": "DescribeAlertResponse schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "Alert": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Alert"
+        },
+        {
+          "description": "Contains information about an alert."
+        }
+      ]
+    }
+  }
+}

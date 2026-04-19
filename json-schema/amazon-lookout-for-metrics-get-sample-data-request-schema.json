@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-get-sample-data-request-schema.json",
+  "title": "GetSampleDataRequest",
+  "description": "GetSampleDataRequest schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "S3SourceConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SampleDataS3SourceConfig"
+        },
+        {
+          "description": "A datasource bucket in Amazon S3."
+        }
+      ]
+    }
+  }
+}

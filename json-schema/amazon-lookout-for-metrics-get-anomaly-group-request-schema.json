@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-get-anomaly-group-request-schema.json",
+  "title": "GetAnomalyGroupRequest",
+  "description": "GetAnomalyGroupRequest schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "AnomalyGroupId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UUID"
+        },
+        {
+          "description": "The ID of the anomaly group."
+        }
+      ]
+    },
+    "AnomalyDetectorArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the anomaly detector."
+        }
+      ]
+    }
+  },
+  "required": [
+    "AnomalyGroupId",
+    "AnomalyDetectorArn"
+  ]
+}

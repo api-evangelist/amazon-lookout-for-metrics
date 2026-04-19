@@ -1,0 +1,5 @@
+{
+  "MetricName": "my-anomaly-detector",
+  "AggregationFunction": "example-value",
+  "Namespace": "my-anomaly-detector"
+}

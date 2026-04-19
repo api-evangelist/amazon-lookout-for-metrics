@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-dimension-filter-list-schema.json",
+  "title": "DimensionFilterList",
+  "description": "DimensionFilterList schema from Amazon Lookout for Metrics API",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/DimensionFilter"
+  },
+  "minItems": 1,
+  "maxItems": 5
+}

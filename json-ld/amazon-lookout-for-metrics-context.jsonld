@@ -1,0 +1,468 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "alm": "https://alm.amazonaws.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Action": "alm:Action",
+    "ActivateAnomalyDetectorRequest": "alm:ActivateAnomalyDetectorRequest",
+    "ActivateAnomalyDetectorResponse": "alm:ActivateAnomalyDetectorResponse",
+    "Alert": "alm:Alert",
+    "AlertFilters": "alm:AlertFilters",
+    "AlertSummary": "alm:AlertSummary",
+    "AnomalyDetectorConfig": "alm:AnomalyDetectorConfig",
+    "AnomalyDetectorConfigSummary": "alm:AnomalyDetectorConfigSummary",
+    "AnomalyDetectorDataQualityMetric": "alm:AnomalyDetectorDataQualityMetric",
+    "AnomalyDetectorSummary": "alm:AnomalyDetectorSummary",
+    "AnomalyGroup": "alm:AnomalyGroup",
+    "AnomalyGroupStatistics": "alm:AnomalyGroupStatistics",
+    "AnomalyGroupSummary": "alm:AnomalyGroupSummary",
+    "AnomalyGroupTimeSeries": "alm:AnomalyGroupTimeSeries",
+    "AnomalyGroupTimeSeriesFeedback": "alm:AnomalyGroupTimeSeriesFeedback",
+    "AppFlowConfig": "alm:AppFlowConfig",
+    "AthenaSourceConfig": "alm:AthenaSourceConfig",
+    "AttributeValue": "alm:AttributeValue",
+    "AutoDetectionMetricSource": "alm:AutoDetectionMetricSource",
+    "AutoDetectionS3SourceConfig": "alm:AutoDetectionS3SourceConfig",
+    "BackTestAnomalyDetectorRequest": "alm:BackTestAnomalyDetectorRequest",
+    "BackTestAnomalyDetectorResponse": "alm:BackTestAnomalyDetectorResponse",
+    "BackTestConfiguration": "alm:BackTestConfiguration",
+    "CloudWatchConfig": "alm:CloudWatchConfig",
+    "ContributionMatrix": "alm:ContributionMatrix",
+    "CreateAlertRequest": "alm:CreateAlertRequest",
+    "CreateAlertResponse": "alm:CreateAlertResponse",
+    "CreateAnomalyDetectorRequest": "alm:CreateAnomalyDetectorRequest",
+    "CreateAnomalyDetectorResponse": "alm:CreateAnomalyDetectorResponse",
+    "CreateMetricSetRequest": "alm:CreateMetricSetRequest",
+    "CreateMetricSetResponse": "alm:CreateMetricSetResponse",
+    "CsvFormatDescriptor": "alm:CsvFormatDescriptor",
+    "DataQualityMetric": "alm:DataQualityMetric",
+    "DeactivateAnomalyDetectorRequest": "alm:DeactivateAnomalyDetectorRequest",
+    "DeactivateAnomalyDetectorResponse": "alm:DeactivateAnomalyDetectorResponse",
+    "DeleteAlertRequest": "alm:DeleteAlertRequest",
+    "DeleteAlertResponse": "alm:DeleteAlertResponse",
+    "DeleteAnomalyDetectorRequest": "alm:DeleteAnomalyDetectorRequest",
+    "DeleteAnomalyDetectorResponse": "alm:DeleteAnomalyDetectorResponse",
+    "DescribeAlertRequest": "alm:DescribeAlertRequest",
+    "DescribeAlertResponse": "alm:DescribeAlertResponse",
+    "DescribeAnomalyDetectionExecutionsRequest": "alm:DescribeAnomalyDetectionExecutionsRequest",
+    "DescribeAnomalyDetectionExecutionsResponse": "alm:DescribeAnomalyDetectionExecutionsResponse",
+    "DescribeAnomalyDetectorRequest": "alm:DescribeAnomalyDetectorRequest",
+    "DescribeAnomalyDetectorResponse": "alm:DescribeAnomalyDetectorResponse",
+    "DescribeMetricSetRequest": "alm:DescribeMetricSetRequest",
+    "DescribeMetricSetResponse": "alm:DescribeMetricSetResponse",
+    "DetectMetricSetConfigRequest": "alm:DetectMetricSetConfigRequest",
+    "DetectMetricSetConfigResponse": "alm:DetectMetricSetConfigResponse",
+    "DetectedCsvFormatDescriptor": "alm:DetectedCsvFormatDescriptor",
+    "DetectedField": "alm:DetectedField",
+    "DetectedFileFormatDescriptor": "alm:DetectedFileFormatDescriptor",
+    "DetectedJsonFormatDescriptor": "alm:DetectedJsonFormatDescriptor",
+    "DetectedMetricSetConfig": "alm:DetectedMetricSetConfig",
+    "DetectedMetricSource": "alm:DetectedMetricSource",
+    "DetectedS3SourceConfig": "alm:DetectedS3SourceConfig",
+    "DimensionContribution": "alm:DimensionContribution",
+    "DimensionFilter": "alm:DimensionFilter",
+    "DimensionNameValue": "alm:DimensionNameValue",
+    "DimensionValueContribution": "alm:DimensionValueContribution",
+    "ExecutionStatus": "alm:ExecutionStatus",
+    "FileFormatDescriptor": "alm:FileFormatDescriptor",
+    "Filter": "alm:Filter",
+    "GetAnomalyGroupRequest": "alm:GetAnomalyGroupRequest",
+    "GetAnomalyGroupResponse": "alm:GetAnomalyGroupResponse",
+    "GetDataQualityMetricsRequest": "alm:GetDataQualityMetricsRequest",
+    "GetDataQualityMetricsResponse": "alm:GetDataQualityMetricsResponse",
+    "GetFeedbackRequest": "alm:GetFeedbackRequest",
+    "GetFeedbackResponse": "alm:GetFeedbackResponse",
+    "GetSampleDataRequest": "alm:GetSampleDataRequest",
+    "GetSampleDataResponse": "alm:GetSampleDataResponse",
+    "InterMetricImpactDetails": "alm:InterMetricImpactDetails",
+    "ItemizedMetricStats": "alm:ItemizedMetricStats",
+    "JsonFormatDescriptor": "alm:JsonFormatDescriptor",
+    "LambdaConfiguration": "alm:LambdaConfiguration",
+    "ListAlertsRequest": "alm:ListAlertsRequest",
+    "ListAlertsResponse": "alm:ListAlertsResponse",
+    "ListAnomalyDetectorsRequest": "alm:ListAnomalyDetectorsRequest",
+    "ListAnomalyDetectorsResponse": "alm:ListAnomalyDetectorsResponse",
+    "ListAnomalyGroupRelatedMetricsRequest": "alm:ListAnomalyGroupRelatedMetricsRequest",
+    "ListAnomalyGroupRelatedMetricsResponse": "alm:ListAnomalyGroupRelatedMetricsResponse",
+    "ListAnomalyGroupSummariesRequest": "alm:ListAnomalyGroupSummariesRequest",
+    "ListAnomalyGroupSummariesResponse": "alm:ListAnomalyGroupSummariesResponse",
+    "ListAnomalyGroupTimeSeriesRequest": "alm:ListAnomalyGroupTimeSeriesRequest",
+    "ListAnomalyGroupTimeSeriesResponse": "alm:ListAnomalyGroupTimeSeriesResponse",
+    "ListMetricSetsRequest": "alm:ListMetricSetsRequest",
+    "ListMetricSetsResponse": "alm:ListMetricSetsResponse",
+    "ListTagsForResourceRequest": "alm:ListTagsForResourceRequest",
+    "ListTagsForResourceResponse": "alm:ListTagsForResourceResponse",
+    "Metric": "alm:Metric",
+    "MetricLevelImpact": "alm:MetricLevelImpact",
+    "MetricSetDataQualityMetric": "alm:MetricSetDataQualityMetric",
+    "MetricSetDimensionFilter": "alm:MetricSetDimensionFilter",
+    "MetricSetSummary": "alm:MetricSetSummary",
+    "MetricSource": "alm:MetricSource",
+    "PutFeedbackRequest": "alm:PutFeedbackRequest",
+    "PutFeedbackResponse": "alm:PutFeedbackResponse",
+    "RDSSourceConfig": "alm:RDSSourceConfig",
+    "RedshiftSourceConfig": "alm:RedshiftSourceConfig",
+    "S3SourceConfig": "alm:S3SourceConfig",
+    "SNSConfiguration": "alm:SNSConfiguration",
+    "SampleDataS3SourceConfig": "alm:SampleDataS3SourceConfig",
+    "TagMap": "alm:TagMap",
+    "TagResourceRequest": "alm:TagResourceRequest",
+    "TagResourceResponse": "alm:TagResourceResponse",
+    "TimeSeries": "alm:TimeSeries",
+    "TimeSeriesFeedback": "alm:TimeSeriesFeedback",
+    "TimestampColumn": "alm:TimestampColumn",
+    "UntagResourceRequest": "alm:UntagResourceRequest",
+    "UntagResourceResponse": "alm:UntagResourceResponse",
+    "UpdateAlertRequest": "alm:UpdateAlertRequest",
+    "UpdateAlertResponse": "alm:UpdateAlertResponse",
+    "UpdateAnomalyDetectorRequest": "alm:UpdateAnomalyDetectorRequest",
+    "UpdateAnomalyDetectorResponse": "alm:UpdateAnomalyDetectorResponse",
+    "UpdateMetricSetRequest": "alm:UpdateMetricSetRequest",
+    "UpdateMetricSetResponse": "alm:UpdateMetricSetResponse",
+    "VpcConfiguration": "alm:VpcConfiguration",
+    "AggregationFunction": {
+      "@id": "alm:AggregationFunction"
+    },
+    "AlertArn": {
+      "@id": "alm:AlertArn"
+    },
+    "AlertDescription": {
+      "@id": "alm:AlertDescription"
+    },
+    "AlertName": {
+      "@id": "alm:AlertName"
+    },
+    "AlertSensitivityThreshold": {
+      "@id": "alm:AlertSensitivityThreshold"
+    },
+    "AlertStatus": {
+      "@id": "alm:AlertStatus"
+    },
+    "AlertSummaryList": {
+      "@id": "alm:AlertSummaryList"
+    },
+    "AlertType": {
+      "@id": "alm:AlertType"
+    },
+    "AnomalyDetectorArn": {
+      "@id": "alm:AnomalyDetectorArn"
+    },
+    "AnomalyDetectorDataQualityMetricList": {
+      "@id": "alm:AnomalyDetectorDataQualityMetricList"
+    },
+    "AnomalyDetectorDescription": {
+      "@id": "alm:AnomalyDetectorDescription"
+    },
+    "AnomalyDetectorFrequency": {
+      "@id": "alm:AnomalyDetectorFrequency"
+    },
+    "AnomalyDetectorName": {
+      "@id": "alm:AnomalyDetectorName"
+    },
+    "AnomalyDetectorSummaryList": {
+      "@id": "alm:AnomalyDetectorSummaryList"
+    },
+    "AnomalyGroupId": {
+      "@id": "alm:AnomalyGroupId"
+    },
+    "AnomalyGroupScore": {
+      "@id": "alm:AnomalyGroupScore"
+    },
+    "AnomalyGroupSummaryList": {
+      "@id": "alm:AnomalyGroupSummaryList"
+    },
+    "B": {
+      "@id": "alm:B"
+    },
+    "BS": {
+      "@id": "alm:BS"
+    },
+    "Charset": {
+      "@id": "alm:Charset"
+    },
+    "ClusterIdentifier": {
+      "@id": "alm:ClusterIdentifier"
+    },
+    "ColumnFormat": {
+      "@id": "alm:ColumnFormat"
+    },
+    "ColumnName": {
+      "@id": "alm:ColumnName"
+    },
+    "Confidence": {
+      "@id": "alm:Confidence"
+    },
+    "ContainsHeader": {
+      "@id": "alm:ContainsHeader"
+    },
+    "ContributionPercentage": {
+      "@id": "alm:ContributionPercentage"
+    },
+    "ContributionScore": {
+      "@id": "alm:ContributionScore"
+    },
+    "CreationTime": {
+      "@id": "alm:CreationTime"
+    },
+    "DBInstanceIdentifier": {
+      "@id": "alm:DBInstanceIdentifier"
+    },
+    "DataCatalog": {
+      "@id": "alm:DataCatalog"
+    },
+    "DataQualityMetricList": {
+      "@id": "alm:DataQualityMetricList"
+    },
+    "DatabaseHost": {
+      "@id": "alm:DatabaseHost"
+    },
+    "DatabaseName": {
+      "@id": "alm:DatabaseName"
+    },
+    "DatabasePort": {
+      "@id": "alm:DatabasePort"
+    },
+    "Delimiter": {
+      "@id": "alm:Delimiter"
+    },
+    "DimensionContributionList": {
+      "@id": "alm:DimensionContributionList"
+    },
+    "DimensionFilterList": {
+      "@id": "alm:DimensionFilterList"
+    },
+    "DimensionList": {
+      "@id": "alm:DimensionList"
+    },
+    "DimensionName": {
+      "@id": "alm:DimensionName"
+    },
+    "DimensionValue": {
+      "@id": "alm:DimensionValue"
+    },
+    "DimensionValueContributionList": {
+      "@id": "alm:DimensionValueContributionList"
+    },
+    "DimensionValueList": {
+      "@id": "alm:DimensionValueList"
+    },
+    "EndTime": {
+      "@id": "alm:EndTime"
+    },
+    "EvaluationStartDate": {
+      "@id": "alm:EvaluationStartDate"
+    },
+    "ExecutionList": {
+      "@id": "alm:ExecutionList"
+    },
+    "FailureReason": {
+      "@id": "alm:FailureReason"
+    },
+    "FailureType": {
+      "@id": "alm:FailureType"
+    },
+    "FileCompression": {
+      "@id": "alm:FileCompression"
+    },
+    "FilterList": {
+      "@id": "alm:FilterList"
+    },
+    "FilterOperation": {
+      "@id": "alm:FilterOperation"
+    },
+    "FlowName": {
+      "@id": "alm:FlowName"
+    },
+    "HeaderList": {
+      "@id": "alm:HeaderList"
+    },
+    "HeaderValues": {
+      "@id": "alm:HeaderValues"
+    },
+    "HistoricalDataPathList": {
+      "@id": "alm:HistoricalDataPathList"
+    },
+    "InterMetricImpactList": {
+      "@id": "alm:InterMetricImpactList"
+    },
+    "IsAnomaly": {
+      "@id": "alm:IsAnomaly"
+    },
+    "ItemizedMetricStatsList": {
+      "@id": "alm:ItemizedMetricStatsList"
+    },
+    "KmsKeyArn": {
+      "@id": "alm:KmsKeyArn"
+    },
+    "LambdaArn": {
+      "@id": "alm:LambdaArn"
+    },
+    "LastModificationTime": {
+      "@id": "alm:LastModificationTime"
+    },
+    "MaxResults": {
+      "@id": "alm:MaxResults"
+    },
+    "Message": {
+      "@id": "alm:Message"
+    },
+    "MetricDescription": {
+      "@id": "alm:MetricDescription"
+    },
+    "MetricLevelImpactList": {
+      "@id": "alm:MetricLevelImpactList"
+    },
+    "MetricList": {
+      "@id": "alm:MetricList"
+    },
+    "MetricName": {
+      "@id": "alm:MetricName"
+    },
+    "MetricSetArn": {
+      "@id": "alm:MetricSetArn"
+    },
+    "MetricSetDataQualityMetricList": {
+      "@id": "alm:MetricSetDataQualityMetricList"
+    },
+    "MetricSetDescription": {
+      "@id": "alm:MetricSetDescription"
+    },
+    "MetricSetFrequency": {
+      "@id": "alm:MetricSetFrequency"
+    },
+    "MetricSetName": {
+      "@id": "alm:MetricSetName"
+    },
+    "MetricSetSummaryList": {
+      "@id": "alm:MetricSetSummaryList"
+    },
+    "MetricType": {
+      "@id": "alm:MetricType"
+    },
+    "MetricValue": {
+      "@id": "alm:MetricValue"
+    },
+    "MetricValueList": {
+      "@id": "alm:MetricValueList"
+    },
+    "N": {
+      "@id": "alm:N"
+    },
+    "NS": {
+      "@id": "alm:NS"
+    },
+    "Name": {
+      "@id": "alm:Name"
+    },
+    "Namespace": {
+      "@id": "alm:Namespace"
+    },
+    "NextToken": {
+      "@id": "alm:NextToken"
+    },
+    "NumTimeSeries": {
+      "@id": "alm:NumTimeSeries"
+    },
+    "OccurrenceCount": {
+      "@id": "alm:OccurrenceCount"
+    },
+    "Offset": {
+      "@id": "alm:Offset"
+    },
+    "PrimaryMetricName": {
+      "@id": "alm:PrimaryMetricName"
+    },
+    "QuoteSymbol": {
+      "@id": "alm:QuoteSymbol"
+    },
+    "RelatedColumnName": {
+      "@id": "alm:RelatedColumnName"
+    },
+    "RelationshipType": {
+      "@id": "alm:RelationshipType"
+    },
+    "RelationshipTypeFilter": {
+      "@id": "alm:RelationshipTypeFilter"
+    },
+    "RoleArn": {
+      "@id": "alm:RoleArn"
+    },
+    "RunBackTestMode": {
+      "@id": "alm:RunBackTestMode"
+    },
+    "S": {
+      "@id": "alm:S"
+    },
+    "S3ResultsPath": {
+      "@id": "alm:S3ResultsPath"
+    },
+    "SS": {
+      "@id": "alm:SS"
+    },
+    "SampleRows": {
+      "@id": "alm:SampleRows"
+    },
+    "SecretManagerArn": {
+      "@id": "alm:SecretManagerArn"
+    },
+    "SecurityGroupIdList": {
+      "@id": "alm:SecurityGroupIdList"
+    },
+    "SensitivityThreshold": {
+      "@id": "alm:SensitivityThreshold"
+    },
+    "SnsFormat": {
+      "@id": "alm:SnsFormat"
+    },
+    "SnsTopicArn": {
+      "@id": "alm:SnsTopicArn"
+    },
+    "StartTime": {
+      "@id": "alm:StartTime"
+    },
+    "StartTimestamp": {
+      "@id": "alm:StartTimestamp"
+    },
+    "Status": {
+      "@id": "alm:Status"
+    },
+    "SubnetIdList": {
+      "@id": "alm:SubnetIdList"
+    },
+    "TableName": {
+      "@id": "alm:TableName"
+    },
+    "Tags": {
+      "@id": "alm:Tags"
+    },
+    "TemplatedPathList": {
+      "@id": "alm:TemplatedPathList"
+    },
+    "TimeSeriesId": {
+      "@id": "alm:TimeSeriesId"
+    },
+    "TimeSeriesList": {
+      "@id": "alm:TimeSeriesList"
+    },
+    "Timestamp": {
+      "@id": "alm:Timestamp"
+    },
+    "TimestampList": {
+      "@id": "alm:TimestampList"
+    },
+    "Timezone": {
+      "@id": "alm:Timezone"
+    },
+    "TotalCount": {
+      "@id": "alm:TotalCount"
+    },
+    "Value": {
+      "@id": "alm:Value"
+    },
+    "WorkGroupName": {
+      "@id": "alm:WorkGroupName"
+    }
+  }
+}

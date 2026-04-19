@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-detected-file-format-descriptor-schema.json",
+  "title": "DetectedFileFormatDescriptor",
+  "description": "Properties of an inferred data format.",
+  "type": "object",
+  "properties": {
+    "CsvFormatDescriptor": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DetectedCsvFormatDescriptor"
+        },
+        {
+          "description": "Details about a CSV format."
+        }
+      ]
+    },
+    "JsonFormatDescriptor": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DetectedJsonFormatDescriptor"
+        },
+        {
+          "description": "Details about a JSON format."
+        }
+      ]
+    }
+  }
+}

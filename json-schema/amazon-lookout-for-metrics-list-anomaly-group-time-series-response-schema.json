@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-list-anomaly-group-time-series-response-schema.json",
+  "title": "ListAnomalyGroupTimeSeriesResponse",
+  "description": "ListAnomalyGroupTimeSeriesResponse schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "AnomalyGroupId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UUID"
+        },
+        {
+          "description": "The ID of the anomaly group."
+        }
+      ]
+    },
+    "MetricName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricName"
+        },
+        {
+          "description": "The name of the measure field."
+        }
+      ]
+    },
+    "TimestampList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimestampList"
+        },
+        {
+          "description": "Timestamps for the anomalous metrics."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The pagination token that's included if more results are available."
+        }
+      ]
+    },
+    "TimeSeriesList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeSeriesList"
+        },
+        {
+          "description": "A list of anomalous metrics."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-action-schema.json",
+  "title": "Action",
+  "description": "A configuration that specifies the action to perform when anomalies are detected.",
+  "type": "object",
+  "properties": {
+    "SNSConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SNSConfiguration"
+        },
+        {
+          "description": "A configuration for an Amazon SNS channel."
+        }
+      ]
+    },
+    "LambdaConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LambdaConfiguration"
+        },
+        {
+          "description": "A configuration for an AWS Lambda channel."
+        }
+      ]
+    }
+  }
+}

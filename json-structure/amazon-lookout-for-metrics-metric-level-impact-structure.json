@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-metric-level-impact-structure.json",
+  "name": "MetricLevelImpact",
+  "description": "Details about a measure affected by an anomaly.",
+  "type": "object",
+  "properties": {
+    "MetricName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricName"
+        },
+        {
+          "description": "The name of the measure."
+        }
+      ]
+    },
+    "NumTimeSeries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The number of anomalous metrics for the measure."
+        }
+      ]
+    },
+    "ContributionMatrix": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ContributionMatrix"
+        },
+        {
+          "description": "Details about the dimensions that contributed to the anomaly."
+        }
+      ]
+    }
+  }
+}

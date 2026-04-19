@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-get-anomaly-group-response-structure.json",
+  "name": "GetAnomalyGroupResponse",
+  "description": "GetAnomalyGroupResponse schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "AnomalyGroup": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnomalyGroup"
+        },
+        {
+          "description": "Details about the anomaly group."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-csv-format-descriptor-structure.json",
+  "name": "CsvFormatDescriptor",
+  "description": "Contains information about how a source CSV data file should be analyzed.",
+  "type": "object",
+  "properties": {
+    "FileCompression": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CSVFileCompression"
+        },
+        {
+          "description": "The level of compression of the source CSV file."
+        }
+      ]
+    },
+    "Charset": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Charset"
+        },
+        {
+          "description": "The character set in which the source CSV file is written."
+        }
+      ]
+    },
+    "ContainsHeader": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Whether or not the source CSV file contains a header."
+        }
+      ]
+    },
+    "Delimiter": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Delimiter"
+        },
+        {
+          "description": "The character used to delimit the source CSV file."
+        }
+      ]
+    },
+    "HeaderList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HeaderList"
+        },
+        {
+          "description": "A list of the source CSV file's headers, if any."
+        }
+      ]
+    },
+    "QuoteSymbol": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/QuoteSymbol"
+        },
+        {
+          "description": "The character used as a quote character."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-cloud-watch-config-structure.json",
+  "name": "CloudWatchConfig",
+  "description": "Details about an Amazon CloudWatch datasource.",
+  "type": "object",
+  "properties": {
+    "RoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "An IAM role that gives Amazon Lookout for Metrics permission to access data in Amazon CloudWatch."
+        }
+      ]
+    },
+    "BackTestConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BackTestConfiguration"
+        },
+        {
+          "description": "Settings for backtest mode."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-message-schema.json",
+  "title": "Message",
+  "description": "Message schema from Amazon Lookout for Metrics API",
+  "type": "string"
+}

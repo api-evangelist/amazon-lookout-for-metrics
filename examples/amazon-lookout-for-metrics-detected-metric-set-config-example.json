@@ -1,0 +1,5 @@
+{
+  "Offset": "example-value",
+  "MetricSetFrequency": "PT1H",
+  "MetricSource": "revenue"
+}

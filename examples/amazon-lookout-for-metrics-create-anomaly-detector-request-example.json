@@ -1,0 +1,7 @@
+{
+  "AnomalyDetectorName": "my-anomaly-detector",
+  "AnomalyDetectorDescription": "Automated anomaly detection for business metrics",
+  "AnomalyDetectorConfig": "example-value",
+  "KmsKeyArn": "arn:aws:lookoutmetrics:us-east-1:123456789012:AnomalyDetector:my-detector",
+  "Tags": "example-value"
+}

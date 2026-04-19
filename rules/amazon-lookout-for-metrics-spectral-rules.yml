@@ -1,0 +1,218 @@
+rules:
+
+  # INFO / METADATA
+  info-title-required:
+    description: Info title must be present and start with "Amazon Lookout for Metrics"
+    severity: error
+    given: "$.info"
+    then:
+      field: title
+      function: truthy
+
+  info-description-required:
+    description: Info description must be present
+    severity: warn
+    given: "$.info"
+    then:
+      field: description
+      function: truthy
+
+  info-version-required:
+    description: API version must be defined
+    severity: error
+    given: "$.info"
+    then:
+      field: version
+      function: truthy
+
+  # OPENAPI VERSION
+  openapi-version:
+    description: Must use OpenAPI 3.0.x
+    severity: error
+    given: "$"
+    then:
+      field: openapi
+      function: pattern
+      functionOptions:
+        match: "^3\\.0\\."
+
+  # SERVERS
+  servers-required:
+    description: Servers must be defined
+    severity: error
+    given: "$"
+    then:
+      field: servers
+      function: truthy
+
+  servers-https:
+    description: Server URLs should use HTTPS
+    severity: warn
+    given: "$.servers[*]"
+    then:
+      field: url
+      function: pattern
+      functionOptions:
+        match: "^https://"
+
+  # OPERATIONS
+  operation-operationId-required:
+    description: Every operation must have an operationId
+    severity: error
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: operationId
+      function: truthy
+
+  operation-summary-required:
+    description: Every operation must have a summary
+    severity: warn
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: summary
+      function: truthy
+
+  operation-summary-prefix:
+    description: Operation summaries should start with "Amazon Lookout for Metrics"
+    severity: info
+    given: "$.paths[*][get,post,put,patch,delete].summary"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^Amazon Lookout for Metrics"
+
+  operation-description-required:
+    description: Every operation should have a description
+    severity: warn
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: description
+      function: truthy
+
+  operation-tags-required:
+    description: Every operation must have at least one tag
+    severity: warn
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: tags
+      function: truthy
+
+  # PATHS
+  paths-kebab-case:
+    description: Path segments should use PascalCase (AWS convention for action-based paths)
+    severity: info
+    given: "$.paths"
+    then:
+      field: "@key"
+      function: pattern
+      functionOptions:
+        match: "^/[A-Za-z][A-Za-z0-9]*$"
+
+  # PARAMETERS
+  parameter-description-required:
+    description: All parameters must have descriptions
+    severity: warn
+    given: "$.paths[*][get,post,put,patch,delete].parameters[*]"
+    then:
+      field: description
+      function: truthy
+
+  # RESPONSES
+  response-success-required:
+    description: Operations must have at least one 2xx response
+    severity: error
+    given: "$.paths[*][post]"
+    then:
+      field: responses
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+          minProperties: 1
+
+  response-description-required:
+    description: All responses must have a description
+    severity: warn
+    given: "$.paths[*][get,post,put,patch,delete].responses[*]"
+    then:
+      field: description
+      function: truthy
+
+  response-error-401:
+    description: Operations should document 401 Unauthorized responses
+    severity: info
+    given: "$.paths[*][post]"
+    then:
+      field: responses
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+
+  # SCHEMAS
+  schema-description:
+    description: Top-level schemas in components should have descriptions
+    severity: info
+    given: "$.components.schemas[*]"
+    then:
+      field: description
+      function: truthy
+
+  schema-property-type:
+    description: Schema properties should define a type
+    severity: warn
+    given: "$.components.schemas[*].properties[*]"
+    then:
+      field: type
+      function: truthy
+
+  # SECURITY
+  security-schemes-required:
+    description: Security schemes must be defined
+    severity: error
+    given: "$.components"
+    then:
+      field: securitySchemes
+      function: truthy
+
+  security-aws-sigv4:
+    description: AWS Signature Version 4 security should be documented
+    severity: warn
+    given: "$.components.securitySchemes"
+    then:
+      function: truthy
+
+  # HTTP METHOD CONVENTIONS
+  http-get-no-body:
+    description: GET operations should not have request bodies
+    severity: error
+    given: "$.paths[*].get"
+    then:
+      field: requestBody
+      function: falsy
+
+  http-delete-no-body:
+    description: DELETE operations should not have request bodies
+    severity: warn
+    given: "$.paths[*].delete"
+    then:
+      field: requestBody
+      function: falsy
+
+  # GENERAL QUALITY
+  no-empty-descriptions:
+    description: Descriptions should not be empty strings
+    severity: warn
+    given: "$..description"
+    then:
+      function: pattern
+      functionOptions:
+        match: ".+"
+
+  examples-encouraged:
+    description: Schema properties should include examples
+    severity: info
+    given: "$.components.schemas[*].properties[*]"
+    then:
+      field: example
+      function: truthy

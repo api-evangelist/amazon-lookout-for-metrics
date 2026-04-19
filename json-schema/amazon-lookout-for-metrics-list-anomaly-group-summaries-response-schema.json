@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-list-anomaly-group-summaries-response-schema.json",
+  "title": "ListAnomalyGroupSummariesResponse",
+  "description": "ListAnomalyGroupSummariesResponse schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "AnomalyGroupSummaryList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnomalyGroupSummaryList"
+        },
+        {
+          "description": "A list of anomaly group summaries."
+        }
+      ]
+    },
+    "AnomalyGroupStatistics": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnomalyGroupStatistics"
+        },
+        {
+          "description": "Aggregated details about the anomaly groups."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The pagination token that's included if more results are available."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-vpc-configuration-structure.json",
+  "name": "VpcConfiguration",
+  "description": "Contains configuration information about the Amazon Virtual Private Cloud (VPC).",
+  "type": "object",
+  "properties": {
+    "SubnetIdList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SubnetIdList"
+        },
+        {
+          "description": "An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>."
+        }
+      ]
+    },
+    "SecurityGroupIdList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SecurityGroupIdList"
+        },
+        {
+          "description": "An array of strings containing the list of security groups."
+        }
+      ]
+    }
+  },
+  "required": [
+    "SubnetIdList",
+    "SecurityGroupIdList"
+  ]
+}

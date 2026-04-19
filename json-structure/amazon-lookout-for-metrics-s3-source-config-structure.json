@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-s3-source-config-structure.json",
+  "name": "S3SourceConfig",
+  "description": "Contains information about the configuration of the S3 bucket that contains source files.",
+  "type": "object",
+  "properties": {
+    "RoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of an IAM role that has read and write access permissions to the source S3 bucket."
+        }
+      ]
+    },
+    "TemplatedPathList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TemplatedPathList"
+        },
+        {
+          "description": "A list of templated paths to the source files."
+        }
+      ]
+    },
+    "HistoricalDataPathList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HistoricalDataPathList"
+        },
+        {
+          "description": "A list of paths to the historical data files."
+        }
+      ]
+    },
+    "FileFormatDescriptor": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FileFormatDescriptor"
+        },
+        {
+          "description": "Contains information about a source file's formatting."
+        }
+      ]
+    }
+  }
+}

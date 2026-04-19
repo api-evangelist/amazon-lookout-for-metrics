@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-frequency-structure.json",
+  "name": "Frequency",
+  "description": "Frequency schema from Amazon Lookout for Metrics API",
+  "type": "string",
+  "enum": [
+    "P1D",
+    "PT1H",
+    "PT10M",
+    "PT5M"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "DBInstanceIdentifier": "example-value",
+  "DatabaseHost": "example-value",
+  "DatabasePort": "example-value",
+  "SecretManagerArn": "arn:aws:lookoutmetrics:us-east-1:123456789012:AnomalyDetector:my-detector",
+  "DatabaseName": "my-anomaly-detector",
+  "TableName": "my-anomaly-detector",
+  "RoleArn": "arn:aws:lookoutmetrics:us-east-1:123456789012:AnomalyDetector:my-detector",
+  "VpcConfiguration": "example-value"
+}

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-create-anomaly-detector-request-structure.json",
+  "name": "CreateAnomalyDetectorRequest",
+  "description": "CreateAnomalyDetectorRequest schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "AnomalyDetectorName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnomalyDetectorName"
+        },
+        {
+          "description": "The name of the detector."
+        }
+      ]
+    },
+    "AnomalyDetectorDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnomalyDetectorDescription"
+        },
+        {
+          "description": "A description of the detector."
+        }
+      ]
+    },
+    "AnomalyDetectorConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnomalyDetectorConfig"
+        },
+        {
+          "description": "Contains information about the configuration of the anomaly detector."
+        }
+      ]
+    },
+    "KmsKeyArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/KmsKeyArn"
+        },
+        {
+          "description": "The ARN of the KMS key to use to encrypt your data."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "A list of <a href=\"https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html\">tags</a> to apply to the anomaly detector."
+        }
+      ]
+    }
+  },
+  "required": [
+    "AnomalyDetectorName",
+    "AnomalyDetectorConfig"
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-rds-source-config-structure.json",
+  "name": "RDSSourceConfig",
+  "description": "Contains information about the Amazon Relational Database Service (RDS) configuration.",
+  "type": "object",
+  "properties": {
+    "DBInstanceIdentifier": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RDSDatabaseIdentifier"
+        },
+        {
+          "description": "A string identifying the database instance."
+        }
+      ]
+    },
+    "DatabaseHost": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DatabaseHost"
+        },
+        {
+          "description": "The host name of the database."
+        }
+      ]
+    },
+    "DatabasePort": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DatabasePort"
+        },
+        {
+          "description": "The port number where the database can be accessed."
+        }
+      ]
+    },
+    "SecretManagerArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PoirotSecretManagerArn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the AWS Secrets Manager role."
+        }
+      ]
+    },
+    "DatabaseName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RDSDatabaseName"
+        },
+        {
+          "description": "The name of the RDS database."
+        }
+      ]
+    },
+    "TableName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TableName"
+        },
+        {
+          "description": "The name of the table in the database."
+        }
+      ]
+    },
+    "RoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the role."
+        }
+      ]
+    },
+    "VpcConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VpcConfiguration"
+        },
+        {
+          "description": "An object containing information about the Amazon Virtual Private Cloud (VPC) configuration."
+        }
+      ]
+    }
+  }
+}

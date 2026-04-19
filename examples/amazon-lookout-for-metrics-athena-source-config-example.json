@@ -1,0 +1,9 @@
+{
+  "RoleArn": "arn:aws:lookoutmetrics:us-east-1:123456789012:AnomalyDetector:my-detector",
+  "DatabaseName": "my-anomaly-detector",
+  "DataCatalog": "example-value",
+  "TableName": "my-anomaly-detector",
+  "WorkGroupName": "my-anomaly-detector",
+  "S3ResultsPath": "example-value",
+  "BackTestConfiguration": "example-value"
+}

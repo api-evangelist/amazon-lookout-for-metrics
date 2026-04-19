@@ -1,0 +1,7 @@
+{
+  "StartTime": "example-value",
+  "EndTime": "example-value",
+  "AnomalyGroupId": "500123",
+  "AnomalyGroupScore": "example-value",
+  "PrimaryMetricName": "my-anomaly-detector"
+}

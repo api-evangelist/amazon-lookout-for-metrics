@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-anomaly-detector-summary-schema.json",
+  "title": "AnomalyDetectorSummary",
+  "description": "Contains information about an an anomaly detector.",
+  "type": "object",
+  "properties": {
+    "AnomalyDetectorArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the detector."
+        }
+      ]
+    },
+    "AnomalyDetectorName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnomalyDetectorName"
+        },
+        {
+          "description": "The name of the detector."
+        }
+      ]
+    },
+    "AnomalyDetectorDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnomalyDetectorDescription"
+        },
+        {
+          "description": "A description of the detector."
+        }
+      ]
+    },
+    "CreationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time at which the detector was created."
+        }
+      ]
+    },
+    "LastModificationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time at which the detector was last modified."
+        }
+      ]
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnomalyDetectorStatus"
+        },
+        {
+          "description": "The status of detector."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "The detector's <a href=\"https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html\">tags</a>."
+        }
+      ]
+    }
+  }
+}

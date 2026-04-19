@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-alert-structure.json",
+  "name": "Alert",
+  "description": "A configuration for Amazon SNS-integrated notifications.",
+  "type": "object",
+  "properties": {
+    "Action": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Action"
+        },
+        {
+          "description": "Action that will be triggered when there is an alert."
+        }
+      ]
+    },
+    "AlertDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AlertDescription"
+        },
+        {
+          "description": "A description of the alert."
+        }
+      ]
+    },
+    "AlertArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the alert."
+        }
+      ]
+    },
+    "AnomalyDetectorArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the detector to which the alert is attached."
+        }
+      ]
+    },
+    "AlertName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AlertName"
+        },
+        {
+          "description": "The name of the alert."
+        }
+      ]
+    },
+    "AlertSensitivityThreshold": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SensitivityThreshold"
+        },
+        {
+          "description": "The minimum severity for an anomaly to trigger the alert."
+        }
+      ]
+    },
+    "AlertType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AlertType"
+        },
+        {
+          "description": "The type of the alert."
+        }
+      ]
+    },
+    "AlertStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AlertStatus"
+        },
+        {
+          "description": "The status of the alert."
+        }
+      ]
+    },
+    "LastModificationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time at which the alert was last modified."
+        }
+      ]
+    },
+    "CreationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time at which the alert was created."
+        }
+      ]
+    },
+    "AlertFilters": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AlertFilters"
+        },
+        {
+          "description": "The configuration of the alert filters, containing MetricList and DimensionFilter."
+        }
+      ]
+    }
+  }
+}

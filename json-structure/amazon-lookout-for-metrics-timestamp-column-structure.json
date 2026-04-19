@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-timestamp-column-structure.json",
+  "name": "TimestampColumn",
+  "description": "Contains information about the column used to track time in a source data file.",
+  "type": "object",
+  "properties": {
+    "ColumnName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ColumnName"
+        },
+        {
+          "description": "The name of the timestamp column."
+        }
+      ]
+    },
+    "ColumnFormat": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DateTimeFormat"
+        },
+        {
+          "description": "The format of the timestamp column."
+        }
+      ]
+    }
+  }
+}

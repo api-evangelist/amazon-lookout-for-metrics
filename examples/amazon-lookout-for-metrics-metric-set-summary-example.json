@@ -1,0 +1,9 @@
+{
+  "MetricSetArn": "arn:aws:lookoutmetrics:us-east-1:123456789012:AnomalyDetector:my-detector",
+  "AnomalyDetectorArn": "arn:aws:lookoutmetrics:us-east-1:123456789012:AnomalyDetector:my-detector",
+  "MetricSetDescription": "Automated anomaly detection for business metrics",
+  "MetricSetName": "my-anomaly-detector",
+  "CreationTime": "example-value",
+  "LastModificationTime": "example-value",
+  "Tags": "example-value"
+}

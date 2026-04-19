@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-detected-metric-set-config-structure.json",
+  "name": "DetectedMetricSetConfig",
+  "description": "An inferred dataset configuration.",
+  "type": "object",
+  "properties": {
+    "Offset": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DetectedField"
+        },
+        {
+          "description": "The dataset's offset."
+        }
+      ]
+    },
+    "MetricSetFrequency": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DetectedField"
+        },
+        {
+          "description": "The dataset's interval."
+        }
+      ]
+    },
+    "MetricSource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DetectedMetricSource"
+        },
+        {
+          "description": "The dataset's data source."
+        }
+      ]
+    }
+  }
+}

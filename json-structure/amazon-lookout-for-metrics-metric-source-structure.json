@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-metric-source-structure.json",
+  "name": "MetricSource",
+  "description": "Contains information about source data used to generate metrics.",
+  "type": "object",
+  "properties": {
+    "S3SourceConfig": {
+      "$ref": "#/components/schemas/S3SourceConfig"
+    },
+    "AppFlowConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AppFlowConfig"
+        },
+        {
+          "description": "Details about an AppFlow datasource."
+        }
+      ]
+    },
+    "CloudWatchConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CloudWatchConfig"
+        },
+        {
+          "description": "Details about an Amazon CloudWatch monitoring datasource."
+        }
+      ]
+    },
+    "RDSSourceConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RDSSourceConfig"
+        },
+        {
+          "description": "Details about an Amazon Relational Database Service (RDS) datasource."
+        }
+      ]
+    },
+    "RedshiftSourceConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RedshiftSourceConfig"
+        },
+        {
+          "description": "Details about an Amazon Redshift database datasource."
+        }
+      ]
+    },
+    "AthenaSourceConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AthenaSourceConfig"
+        },
+        {
+          "description": "Details about an Amazon Athena datasource."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-detect-metric-set-config-response-schema.json",
+  "title": "DetectMetricSetConfigResponse",
+  "description": "DetectMetricSetConfigResponse schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "DetectedMetricSetConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DetectedMetricSetConfig"
+        },
+        {
+          "description": "The inferred dataset configuration for the datasource."
+        }
+      ]
+    }
+  }
+}

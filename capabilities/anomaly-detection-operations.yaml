@@ -1,0 +1,285 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Amazon Lookout for Metrics - Anomaly Detection Operations"
+  description: "Workflow capability for data science and operations teams to manage anomaly detectors, monitor metric anomalies, configure alerts, and provide detection feedback using Amazon Lookout for Metrics."
+  tags:
+    - Amazon
+    - Anomaly Detection
+    - Machine Learning
+    - Metrics
+    - Monitoring
+    - Operations
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+      AWS_REGION: AWS_REGION
+
+capability:
+  consumes:
+    - import: lookout-for-metrics
+      location: ./shared/lookout-for-metrics.yaml
+
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: anomaly-detection-api
+      description: "Unified REST API for Amazon Lookout for Metrics anomaly detection operations."
+      resources:
+        - path: /v1/detectors
+          name: detectors
+          description: "Manage anomaly detectors"
+          operations:
+            - method: POST
+              name: create-detector
+              description: "Create a new anomaly detector"
+              call: "lookout-for-metrics.create-anomaly-detector"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: GET
+              name: list-detectors
+              description: "List all anomaly detectors"
+              call: "lookout-for-metrics.list-anomaly-detectors"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/detectors/{id}
+          name: detector
+          description: "Single anomaly detector"
+          operations:
+            - method: GET
+              name: get-detector
+              description: "Get detector details"
+              call: "lookout-for-metrics.describe-anomaly-detector"
+              with:
+                AnomalyDetectorArn: "rest.id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: PUT
+              name: update-detector
+              description: "Update detector configuration"
+              call: "lookout-for-metrics.update-anomaly-detector"
+              with:
+                AnomalyDetectorArn: "rest.id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: DELETE
+              name: delete-detector
+              description: "Delete a detector"
+              call: "lookout-for-metrics.delete-anomaly-detector"
+              with:
+                AnomalyDetectorArn: "rest.id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/anomalies
+          name: anomalies
+          description: "Anomaly group results"
+          operations:
+            - method: GET
+              name: list-anomalies
+              description: "List anomaly group summaries"
+              call: "lookout-for-metrics.list-anomaly-group-summaries"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/anomalies/{id}
+          name: anomaly
+          description: "Single anomaly group"
+          operations:
+            - method: GET
+              name: get-anomaly
+              description: "Get anomaly group details"
+              call: "lookout-for-metrics.get-anomaly-group"
+              with:
+                AnomalyGroupId: "rest.id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/alerts
+          name: alerts
+          description: "Anomaly alerts"
+          operations:
+            - method: POST
+              name: create-alert
+              description: "Create an alert"
+              call: "lookout-for-metrics.create-alert"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: GET
+              name: list-alerts
+              description: "List all alerts"
+              call: "lookout-for-metrics.list-alerts"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/feedback
+          name: feedback
+          description: "Detection feedback"
+          operations:
+            - method: POST
+              name: submit-feedback
+              description: "Submit anomaly feedback"
+              call: "lookout-for-metrics.put-feedback"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: GET
+              name: get-feedback
+              description: "Get anomaly feedback"
+              call: "lookout-for-metrics.get-feedback"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9090
+      namespace: anomaly-detection-mcp
+      transport: http
+      description: "MCP server for AI-assisted anomaly detection and metrics monitoring with Amazon Lookout for Metrics."
+      tools:
+        - name: create-anomaly-detector
+          description: "Create a new anomaly detector for a set of business metrics"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: false
+          call: "lookout-for-metrics.create-anomaly-detector"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-anomaly-detectors
+          description: "List all configured anomaly detectors"
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "lookout-for-metrics.list-anomaly-detectors"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: describe-anomaly-detector
+          description: "Get configuration and status details of an anomaly detector"
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "lookout-for-metrics.describe-anomaly-detector"
+          with:
+            AnomalyDetectorArn: "tools.AnomalyDetectorArn"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: activate-anomaly-detector
+          description: "Activate an anomaly detector to begin monitoring metrics"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: "lookout-for-metrics.activate-anomaly-detector"
+          with:
+            AnomalyDetectorArn: "tools.AnomalyDetectorArn"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: deactivate-anomaly-detector
+          description: "Stop an anomaly detector from monitoring metrics"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: "lookout-for-metrics.deactivate-anomaly-detector"
+          with:
+            AnomalyDetectorArn: "tools.AnomalyDetectorArn"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-anomaly-group-summaries
+          description: "List summaries of detected anomaly groups for investigation"
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "lookout-for-metrics.list-anomaly-group-summaries"
+          with:
+            AnomalyDetectorArn: "tools.AnomalyDetectorArn"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-anomaly-group
+          description: "Get full details of a specific anomaly group including contributing metrics"
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "lookout-for-metrics.get-anomaly-group"
+          with:
+            AnomalyDetectorArn: "tools.AnomalyDetectorArn"
+            AnomalyGroupId: "tools.AnomalyGroupId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-anomaly-group-related-metrics
+          description: "List all metrics that contributed to an anomaly group"
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "lookout-for-metrics.list-anomaly-group-related-metrics"
+          with:
+            AnomalyDetectorArn: "tools.AnomalyDetectorArn"
+            AnomalyGroupId: "tools.AnomalyGroupId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-alert
+          description: "Create an alert to receive notifications when anomalies are detected"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: false
+          call: "lookout-for-metrics.create-alert"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-alerts
+          description: "List all configured anomaly alerts"
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "lookout-for-metrics.list-alerts"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: put-feedback
+          description: "Submit feedback on anomaly detections to improve ML model accuracy"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: false
+          call: "lookout-for-metrics.put-feedback"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-feedback
+          description: "Retrieve previously submitted anomaly detection feedback"
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "lookout-for-metrics.get-feedback"
+          with:
+            AnomalyDetectorArn: "tools.AnomalyDetectorArn"
+          outputParameters:
+            - type: object
+              mapping: "$."

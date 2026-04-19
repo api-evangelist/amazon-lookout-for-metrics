@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-describe-anomaly-detection-executions-response-structure.json",
+  "name": "DescribeAnomalyDetectionExecutionsResponse",
+  "description": "DescribeAnomalyDetectionExecutionsResponse schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "ExecutionList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExecutionList"
+        },
+        {
+          "description": "A list of detection jobs."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The pagination token that's included if more results are available."
+        }
+      ]
+    }
+  }
+}

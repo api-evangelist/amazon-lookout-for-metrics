@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-get-feedback-request-structure.json",
+  "name": "GetFeedbackRequest",
+  "description": "GetFeedbackRequest schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "AnomalyDetectorArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the anomaly detector."
+        }
+      ]
+    },
+    "AnomalyGroupTimeSeriesFeedback": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnomalyGroupTimeSeries"
+        },
+        {
+          "description": "The anomalous metric and group ID."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxResults"
+        },
+        {
+          "description": "The maximum number of results to return."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "Specify the pagination token that's returned by a previous request to retrieve the next page of results."
+        }
+      ]
+    }
+  },
+  "required": [
+    "AnomalyDetectorArn",
+    "AnomalyGroupTimeSeriesFeedback"
+  ]
+}

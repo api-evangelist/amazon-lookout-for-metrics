@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-quote-symbol-structure.json",
+  "name": "QuoteSymbol",
+  "description": "QuoteSymbol schema from Amazon Lookout for Metrics API",
+  "type": "string",
+  "pattern": "[^\\r\\n]|^$",
+  "maxLength": 1
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-sample-data-s3-source-config-structure.json",
+  "name": "SampleDataS3SourceConfig",
+  "description": "Contains information about the source configuration in Amazon S3.",
+  "type": "object",
+  "properties": {
+    "RoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the role."
+        }
+      ]
+    },
+    "TemplatedPathList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TemplatedPathList"
+        },
+        {
+          "description": "An array of strings containing the list of templated paths."
+        }
+      ]
+    },
+    "HistoricalDataPathList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HistoricalDataPathList"
+        },
+        {
+          "description": "An array of strings containing the historical set of data paths."
+        }
+      ]
+    },
+    "FileFormatDescriptor": {
+      "$ref": "#/components/schemas/FileFormatDescriptor"
+    }
+  },
+  "required": [
+    "RoleArn",
+    "FileFormatDescriptor"
+  ]
+}

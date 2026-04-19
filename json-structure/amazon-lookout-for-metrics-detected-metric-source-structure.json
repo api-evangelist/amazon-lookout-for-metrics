@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-detected-metric-source-structure.json",
+  "name": "DetectedMetricSource",
+  "description": "An inferred data source.",
+  "type": "object",
+  "properties": {
+    "S3SourceConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DetectedS3SourceConfig"
+        },
+        {
+          "description": "The data source's source configuration."
+        }
+      ]
+    }
+  }
+}

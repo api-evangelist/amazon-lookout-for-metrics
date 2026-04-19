@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-structure/amazon-lookout-for-metrics-describe-anomaly-detector-response-structure.json",
+  "name": "DescribeAnomalyDetectorResponse",
+  "description": "DescribeAnomalyDetectorResponse schema from Amazon Lookout for Metrics API",
+  "type": "object",
+  "properties": {
+    "AnomalyDetectorArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the detector."
+        }
+      ]
+    },
+    "AnomalyDetectorName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnomalyDetectorName"
+        },
+        {
+          "description": "The name of the detector."
+        }
+      ]
+    },
+    "AnomalyDetectorDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnomalyDetectorDescription"
+        },
+        {
+          "description": "A description of the detector."
+        }
+      ]
+    },
+    "AnomalyDetectorConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnomalyDetectorConfigSummary"
+        },
+        {
+          "description": "Contains information about the detector's configuration."
+        }
+      ]
+    },
+    "CreationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time at which the detector was created."
+        }
+      ]
+    },
+    "LastModificationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time at which the detector was last modified."
+        }
+      ]
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnomalyDetectorStatus"
+        },
+        {
+          "description": "The status of the detector."
+        }
+      ]
+    },
+    "FailureReason": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ErrorMessage"
+        },
+        {
+          "description": "The reason that the detector failed."
+        }
+      ]
+    },
+    "KmsKeyArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/KmsKeyArn"
+        },
+        {
+          "description": "The ARN of the KMS key to use to encrypt your data."
+        }
+      ]
+    },
+    "FailureType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnomalyDetectorFailureType"
+        },
+        {
+          "description": "The process that caused the detector to fail."
+        }
+      ]
+    }
+  }
+}

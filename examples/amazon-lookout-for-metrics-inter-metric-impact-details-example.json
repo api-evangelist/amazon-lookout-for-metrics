@@ -1,0 +1,6 @@
+{
+  "MetricName": "my-anomaly-detector",
+  "AnomalyGroupId": "500123",
+  "RelationshipType": "example-value",
+  "ContributionPercentage": "example-value"
+}

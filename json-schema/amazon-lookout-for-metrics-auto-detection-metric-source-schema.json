@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-auto-detection-metric-source-schema.json",
+  "title": "AutoDetectionMetricSource",
+  "description": "An auto detection metric source.",
+  "type": "object",
+  "properties": {
+    "S3SourceConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AutoDetectionS3SourceConfig"
+        },
+        {
+          "description": "The source's source config."
+        }
+      ]
+    }
+  }
+}

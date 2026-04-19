@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/json-schema/amazon-lookout-for-metrics-alert-filters-schema.json",
+  "title": "AlertFilters",
+  "description": "The configuration of the alert filters.",
+  "type": "object",
+  "properties": {
+    "MetricList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricNameList"
+        },
+        {
+          "description": "The list of measures that you want to get alerts for."
+        }
+      ]
+    },
+    "DimensionFilterList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DimensionFilterList"
+        },
+        {
+          "description": "The list of DimensionFilter objects that are used for dimension-based filtering."
+        }
+      ]
+    }
+  }
+}
