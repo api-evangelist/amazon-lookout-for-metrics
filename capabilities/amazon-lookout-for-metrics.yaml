@@ -1,0 +1,1403 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon Lookout for Metrics
+  description: 'Amazon Lookout for Metrics. 30 operations. Lead operation: Amazon Lookout for Metrics Activate Anomaly Detector.
+    Self-contained Naftiko capability covering one Amazon Lookout For Metrics business surface.'
+  tags:
+  - Amazon Lookout For Metrics
+  - Amazon Lookout for Metrics
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_LOOKOUT_FOR_METRICS_API_KEY: AMAZON_LOOKOUT_FOR_METRICS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-lookout-for-metrics
+    baseUri: http://lookoutmetrics.{region}.amazonaws.com
+    description: Amazon Lookout for Metrics business capability. Self-contained, no shared references.
+    resources:
+    - name: ActivateAnomalyDetector
+      path: /ActivateAnomalyDetector
+      operations:
+      - name: activateanomalydetector
+        method: POST
+        description: Amazon Lookout for Metrics Activate Anomaly Detector
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: BackTestAnomalyDetector
+      path: /BackTestAnomalyDetector
+      operations:
+      - name: backtestanomalydetector
+        method: POST
+        description: Amazon Lookout for Metrics Back Test Anomaly Detector
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: CreateAlert
+      path: /CreateAlert
+      operations:
+      - name: createalert
+        method: POST
+        description: Amazon Lookout for Metrics Create Alert
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: CreateAnomalyDetector
+      path: /CreateAnomalyDetector
+      operations:
+      - name: createanomalydetector
+        method: POST
+        description: Amazon Lookout for Metrics Create Anomaly Detector
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: CreateMetricSet
+      path: /CreateMetricSet
+      operations:
+      - name: createmetricset
+        method: POST
+        description: Amazon Lookout for Metrics Create Metric Set
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: DeactivateAnomalyDetector
+      path: /DeactivateAnomalyDetector
+      operations:
+      - name: deactivateanomalydetector
+        method: POST
+        description: Amazon Lookout for Metrics Deactivate Anomaly Detector
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: DeleteAlert
+      path: /DeleteAlert
+      operations:
+      - name: deletealert
+        method: POST
+        description: Amazon Lookout for Metrics Delete Alert
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: DeleteAnomalyDetector
+      path: /DeleteAnomalyDetector
+      operations:
+      - name: deleteanomalydetector
+        method: POST
+        description: Amazon Lookout for Metrics Delete Anomaly Detector
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: DescribeAlert
+      path: /DescribeAlert
+      operations:
+      - name: describealert
+        method: POST
+        description: Amazon Lookout for Metrics Describe Alert
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: DescribeAnomalyDetectionExecutions
+      path: /DescribeAnomalyDetectionExecutions
+      operations:
+      - name: describeanomalydetectionexecutions
+        method: POST
+        description: Amazon Lookout for Metrics Describe Anomaly Detection Executions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: DescribeAnomalyDetector
+      path: /DescribeAnomalyDetector
+      operations:
+      - name: describeanomalydetector
+        method: POST
+        description: Amazon Lookout for Metrics Describe Anomaly Detector
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: DescribeMetricSet
+      path: /DescribeMetricSet
+      operations:
+      - name: describemetricset
+        method: POST
+        description: Amazon Lookout for Metrics Describe Metric Set
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: DetectMetricSetConfig
+      path: /DetectMetricSetConfig
+      operations:
+      - name: detectmetricsetconfig
+        method: POST
+        description: Amazon Lookout for Metrics Detect Metric Set Config
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: GetAnomalyGroup
+      path: /GetAnomalyGroup
+      operations:
+      - name: getanomalygroup
+        method: POST
+        description: Amazon Lookout for Metrics Get Anomaly Group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: GetDataQualityMetrics
+      path: /GetDataQualityMetrics
+      operations:
+      - name: getdataqualitymetrics
+        method: POST
+        description: Amazon Lookout for Metrics Get Data Quality Metrics
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: GetFeedback
+      path: /GetFeedback
+      operations:
+      - name: getfeedback
+        method: POST
+        description: Amazon Lookout for Metrics Get Feedback
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: GetSampleData
+      path: /GetSampleData
+      operations:
+      - name: getsampledata
+        method: POST
+        description: Amazon Lookout for Metrics Get Sample Data
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ListAlerts
+      path: /ListAlerts
+      operations:
+      - name: listalerts
+        method: POST
+        description: Amazon Lookout for Metrics List Alerts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ListAnomalyDetectors
+      path: /ListAnomalyDetectors
+      operations:
+      - name: listanomalydetectors
+        method: POST
+        description: Amazon Lookout for Metrics List Anomaly Detectors
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ListAnomalyGroupRelatedMetrics
+      path: /ListAnomalyGroupRelatedMetrics
+      operations:
+      - name: listanomalygrouprelatedmetrics
+        method: POST
+        description: Amazon Lookout for Metrics List Anomaly Group Related Metrics
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ListAnomalyGroupSummaries
+      path: /ListAnomalyGroupSummaries
+      operations:
+      - name: listanomalygroupsummaries
+        method: POST
+        description: Amazon Lookout for Metrics List Anomaly Group Summaries
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ListAnomalyGroupTimeSeries
+      path: /ListAnomalyGroupTimeSeries
+      operations:
+      - name: listanomalygrouptimeseries
+        method: POST
+        description: Amazon Lookout for Metrics List Anomaly Group Time Series
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ListMetricSets
+      path: /ListMetricSets
+      operations:
+      - name: listmetricsets
+        method: POST
+        description: Amazon Lookout for Metrics List Metric Sets
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: PutFeedback
+      path: /PutFeedback
+      operations:
+      - name: putfeedback
+        method: POST
+        description: Amazon Lookout for Metrics Put Feedback
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: UpdateAlert
+      path: /UpdateAlert
+      operations:
+      - name: updatealert
+        method: POST
+        description: Amazon Lookout for Metrics Update Alert
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: UpdateAnomalyDetector
+      path: /UpdateAnomalyDetector
+      operations:
+      - name: updateanomalydetector
+        method: POST
+        description: Amazon Lookout for Metrics Update Anomaly Detector
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: UpdateMetricSet
+      path: /UpdateMetricSet
+      operations:
+      - name: updatemetricset
+        method: POST
+        description: Amazon Lookout for Metrics Update Metric Set
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: tags-resourceArn
+      path: /tags/{resourceArn}
+      operations:
+      - name: listtagsforresource
+        method: GET
+        description: Amazon Lookout for Metrics List Tags for Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          description: The resource's Amazon Resource Name (ARN).
+          required: true
+      - name: tagresource
+        method: POST
+        description: Amazon Lookout for Metrics Tag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          description: The resource's Amazon Resource Name (ARN).
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: tags-resourceArn}#tagKeys
+      path: /tags/{resourceArn}#tagKeys
+      operations:
+      - name: untagresource
+        method: DELETE
+        description: Amazon Lookout for Metrics Untag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          description: The resource's Amazon Resource Name (ARN).
+          required: true
+        - name: tagKeys
+          in: query
+          type: array
+          description: Keys to remove from the resource's tags.
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_LOOKOUT_FOR_METRICS_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-lookout-for-metrics-rest
+    port: 8080
+    description: REST adapter for Amazon Lookout for Metrics. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/activateanomalydetector
+      name: activateanomalydetector
+      description: REST surface for ActivateAnomalyDetector.
+      operations:
+      - method: POST
+        name: activateanomalydetector
+        description: Amazon Lookout for Metrics Activate Anomaly Detector
+        call: amazon-lookout-for-metrics.activateanomalydetector
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/backtestanomalydetector
+      name: backtestanomalydetector
+      description: REST surface for BackTestAnomalyDetector.
+      operations:
+      - method: POST
+        name: backtestanomalydetector
+        description: Amazon Lookout for Metrics Back Test Anomaly Detector
+        call: amazon-lookout-for-metrics.backtestanomalydetector
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/createalert
+      name: createalert
+      description: REST surface for CreateAlert.
+      operations:
+      - method: POST
+        name: createalert
+        description: Amazon Lookout for Metrics Create Alert
+        call: amazon-lookout-for-metrics.createalert
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/createanomalydetector
+      name: createanomalydetector
+      description: REST surface for CreateAnomalyDetector.
+      operations:
+      - method: POST
+        name: createanomalydetector
+        description: Amazon Lookout for Metrics Create Anomaly Detector
+        call: amazon-lookout-for-metrics.createanomalydetector
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/createmetricset
+      name: createmetricset
+      description: REST surface for CreateMetricSet.
+      operations:
+      - method: POST
+        name: createmetricset
+        description: Amazon Lookout for Metrics Create Metric Set
+        call: amazon-lookout-for-metrics.createmetricset
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/deactivateanomalydetector
+      name: deactivateanomalydetector
+      description: REST surface for DeactivateAnomalyDetector.
+      operations:
+      - method: POST
+        name: deactivateanomalydetector
+        description: Amazon Lookout for Metrics Deactivate Anomaly Detector
+        call: amazon-lookout-for-metrics.deactivateanomalydetector
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/deletealert
+      name: deletealert
+      description: REST surface for DeleteAlert.
+      operations:
+      - method: POST
+        name: deletealert
+        description: Amazon Lookout for Metrics Delete Alert
+        call: amazon-lookout-for-metrics.deletealert
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/deleteanomalydetector
+      name: deleteanomalydetector
+      description: REST surface for DeleteAnomalyDetector.
+      operations:
+      - method: POST
+        name: deleteanomalydetector
+        description: Amazon Lookout for Metrics Delete Anomaly Detector
+        call: amazon-lookout-for-metrics.deleteanomalydetector
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/describealert
+      name: describealert
+      description: REST surface for DescribeAlert.
+      operations:
+      - method: POST
+        name: describealert
+        description: Amazon Lookout for Metrics Describe Alert
+        call: amazon-lookout-for-metrics.describealert
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/describeanomalydetectionexecutions
+      name: describeanomalydetectionexecutions
+      description: REST surface for DescribeAnomalyDetectionExecutions.
+      operations:
+      - method: POST
+        name: describeanomalydetectionexecutions
+        description: Amazon Lookout for Metrics Describe Anomaly Detection Executions
+        call: amazon-lookout-for-metrics.describeanomalydetectionexecutions
+        with:
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/describeanomalydetector
+      name: describeanomalydetector
+      description: REST surface for DescribeAnomalyDetector.
+      operations:
+      - method: POST
+        name: describeanomalydetector
+        description: Amazon Lookout for Metrics Describe Anomaly Detector
+        call: amazon-lookout-for-metrics.describeanomalydetector
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/describemetricset
+      name: describemetricset
+      description: REST surface for DescribeMetricSet.
+      operations:
+      - method: POST
+        name: describemetricset
+        description: Amazon Lookout for Metrics Describe Metric Set
+        call: amazon-lookout-for-metrics.describemetricset
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/detectmetricsetconfig
+      name: detectmetricsetconfig
+      description: REST surface for DetectMetricSetConfig.
+      operations:
+      - method: POST
+        name: detectmetricsetconfig
+        description: Amazon Lookout for Metrics Detect Metric Set Config
+        call: amazon-lookout-for-metrics.detectmetricsetconfig
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/getanomalygroup
+      name: getanomalygroup
+      description: REST surface for GetAnomalyGroup.
+      operations:
+      - method: POST
+        name: getanomalygroup
+        description: Amazon Lookout for Metrics Get Anomaly Group
+        call: amazon-lookout-for-metrics.getanomalygroup
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/getdataqualitymetrics
+      name: getdataqualitymetrics
+      description: REST surface for GetDataQualityMetrics.
+      operations:
+      - method: POST
+        name: getdataqualitymetrics
+        description: Amazon Lookout for Metrics Get Data Quality Metrics
+        call: amazon-lookout-for-metrics.getdataqualitymetrics
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/getfeedback
+      name: getfeedback
+      description: REST surface for GetFeedback.
+      operations:
+      - method: POST
+        name: getfeedback
+        description: Amazon Lookout for Metrics Get Feedback
+        call: amazon-lookout-for-metrics.getfeedback
+        with:
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/getsampledata
+      name: getsampledata
+      description: REST surface for GetSampleData.
+      operations:
+      - method: POST
+        name: getsampledata
+        description: Amazon Lookout for Metrics Get Sample Data
+        call: amazon-lookout-for-metrics.getsampledata
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/listalerts
+      name: listalerts
+      description: REST surface for ListAlerts.
+      operations:
+      - method: POST
+        name: listalerts
+        description: Amazon Lookout for Metrics List Alerts
+        call: amazon-lookout-for-metrics.listalerts
+        with:
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/listanomalydetectors
+      name: listanomalydetectors
+      description: REST surface for ListAnomalyDetectors.
+      operations:
+      - method: POST
+        name: listanomalydetectors
+        description: Amazon Lookout for Metrics List Anomaly Detectors
+        call: amazon-lookout-for-metrics.listanomalydetectors
+        with:
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/listanomalygrouprelatedmetrics
+      name: listanomalygrouprelatedmetrics
+      description: REST surface for ListAnomalyGroupRelatedMetrics.
+      operations:
+      - method: POST
+        name: listanomalygrouprelatedmetrics
+        description: Amazon Lookout for Metrics List Anomaly Group Related Metrics
+        call: amazon-lookout-for-metrics.listanomalygrouprelatedmetrics
+        with:
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/listanomalygroupsummaries
+      name: listanomalygroupsummaries
+      description: REST surface for ListAnomalyGroupSummaries.
+      operations:
+      - method: POST
+        name: listanomalygroupsummaries
+        description: Amazon Lookout for Metrics List Anomaly Group Summaries
+        call: amazon-lookout-for-metrics.listanomalygroupsummaries
+        with:
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/listanomalygrouptimeseries
+      name: listanomalygrouptimeseries
+      description: REST surface for ListAnomalyGroupTimeSeries.
+      operations:
+      - method: POST
+        name: listanomalygrouptimeseries
+        description: Amazon Lookout for Metrics List Anomaly Group Time Series
+        call: amazon-lookout-for-metrics.listanomalygrouptimeseries
+        with:
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/listmetricsets
+      name: listmetricsets
+      description: REST surface for ListMetricSets.
+      operations:
+      - method: POST
+        name: listmetricsets
+        description: Amazon Lookout for Metrics List Metric Sets
+        call: amazon-lookout-for-metrics.listmetricsets
+        with:
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/putfeedback
+      name: putfeedback
+      description: REST surface for PutFeedback.
+      operations:
+      - method: POST
+        name: putfeedback
+        description: Amazon Lookout for Metrics Put Feedback
+        call: amazon-lookout-for-metrics.putfeedback
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/updatealert
+      name: updatealert
+      description: REST surface for UpdateAlert.
+      operations:
+      - method: POST
+        name: updatealert
+        description: Amazon Lookout for Metrics Update Alert
+        call: amazon-lookout-for-metrics.updatealert
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/updateanomalydetector
+      name: updateanomalydetector
+      description: REST surface for UpdateAnomalyDetector.
+      operations:
+      - method: POST
+        name: updateanomalydetector
+        description: Amazon Lookout for Metrics Update Anomaly Detector
+        call: amazon-lookout-for-metrics.updateanomalydetector
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/updatemetricset
+      name: updatemetricset
+      description: REST surface for UpdateMetricSet.
+      operations:
+      - method: POST
+        name: updatemetricset
+        description: Amazon Lookout for Metrics Update Metric Set
+        call: amazon-lookout-for-metrics.updatemetricset
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/tags/{resourcearn}
+      name: tags-resourcearn
+      description: REST surface for tags-resourceArn.
+      operations:
+      - method: GET
+        name: listtagsforresource
+        description: Amazon Lookout for Metrics List Tags for Resource
+        call: amazon-lookout-for-metrics.listtagsforresource
+        with:
+          resourceArn: rest.resourceArn
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: tagresource
+        description: Amazon Lookout for Metrics Tag Resource
+        call: amazon-lookout-for-metrics.tagresource
+        with:
+          resourceArn: rest.resourceArn
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/tags/resourcearn-tagkeys
+      name: tags-resourcearn-tagkeys
+      description: REST surface for tags-resourceArn}#tagKeys.
+      operations:
+      - method: DELETE
+        name: untagresource
+        description: Amazon Lookout for Metrics Untag Resource
+        call: amazon-lookout-for-metrics.untagresource
+        with:
+          resourceArn: rest.resourceArn
+          tagKeys: rest.tagKeys
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-lookout-for-metrics-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon Lookout for Metrics. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: amazon-lookout-metrics-activate-anomaly
+      description: Amazon Lookout for Metrics Activate Anomaly Detector
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.activateanomalydetector
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-back-test
+      description: Amazon Lookout for Metrics Back Test Anomaly Detector
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.backtestanomalydetector
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-create-alert
+      description: Amazon Lookout for Metrics Create Alert
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.createalert
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-create-anomaly
+      description: Amazon Lookout for Metrics Create Anomaly Detector
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.createanomalydetector
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-create-metric
+      description: Amazon Lookout for Metrics Create Metric Set
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.createmetricset
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-deactivate-anomaly
+      description: Amazon Lookout for Metrics Deactivate Anomaly Detector
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.deactivateanomalydetector
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-delete-alert
+      description: Amazon Lookout for Metrics Delete Alert
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.deletealert
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-delete-anomaly
+      description: Amazon Lookout for Metrics Delete Anomaly Detector
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.deleteanomalydetector
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-describe-alert
+      description: Amazon Lookout for Metrics Describe Alert
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.describealert
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-describe-anomaly
+      description: Amazon Lookout for Metrics Describe Anomaly Detection Executions
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.describeanomalydetectionexecutions
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-describe-anomaly-2
+      description: Amazon Lookout for Metrics Describe Anomaly Detector
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.describeanomalydetector
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-describe-metric
+      description: Amazon Lookout for Metrics Describe Metric Set
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.describemetricset
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-detect-metric
+      description: Amazon Lookout for Metrics Detect Metric Set Config
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.detectmetricsetconfig
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-get-anomaly
+      description: Amazon Lookout for Metrics Get Anomaly Group
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.getanomalygroup
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-get-data
+      description: Amazon Lookout for Metrics Get Data Quality Metrics
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.getdataqualitymetrics
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-get-feedback
+      description: Amazon Lookout for Metrics Get Feedback
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.getfeedback
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-get-sample
+      description: Amazon Lookout for Metrics Get Sample Data
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.getsampledata
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-list-alerts
+      description: Amazon Lookout for Metrics List Alerts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.listalerts
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-list-anomaly
+      description: Amazon Lookout for Metrics List Anomaly Detectors
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.listanomalydetectors
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-list-anomaly-2
+      description: Amazon Lookout for Metrics List Anomaly Group Related Metrics
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.listanomalygrouprelatedmetrics
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-list-anomaly-3
+      description: Amazon Lookout for Metrics List Anomaly Group Summaries
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.listanomalygroupsummaries
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-list-anomaly-4
+      description: Amazon Lookout for Metrics List Anomaly Group Time Series
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.listanomalygrouptimeseries
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-list-metric
+      description: Amazon Lookout for Metrics List Metric Sets
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.listmetricsets
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-put-feedback
+      description: Amazon Lookout for Metrics Put Feedback
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.putfeedback
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-update-alert
+      description: Amazon Lookout for Metrics Update Alert
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.updatealert
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-update-anomaly
+      description: Amazon Lookout for Metrics Update Anomaly Detector
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.updateanomalydetector
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-update-metric
+      description: Amazon Lookout for Metrics Update Metric Set
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.updatemetricset
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-list-tags
+      description: Amazon Lookout for Metrics List Tags for Resource
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-lookout-for-metrics.listtagsforresource
+      with:
+        resourceArn: tools.resourceArn
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-tag-resource
+      description: Amazon Lookout for Metrics Tag Resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-lookout-for-metrics.tagresource
+      with:
+        resourceArn: tools.resourceArn
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-lookout-metrics-untag-resource
+      description: Amazon Lookout for Metrics Untag Resource
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-lookout-for-metrics.untagresource
+      with:
+        resourceArn: tools.resourceArn
+        tagKeys: tools.tagKeys
+      outputParameters:
+      - type: object
+        mapping: $.
