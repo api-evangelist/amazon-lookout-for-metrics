@@ -3,16 +3,10 @@
   "feeds": [
     {
       "source": "https://aws.amazon.com/blogs/machine-learning/tag/amazon-lookout-for-metrics/",
-      "error": "HTTPError"
-    },
-    {
-      "source": "https://aws.amazon.com/premiumsupport/",
-      "feed_url": "https://aws.amazon.com/premiumsupport/",
-      "title": "",
       "saved": 0,
-      "method": "none"
+      "error": "HTTP 404 on listing page"
     }
   ],
   "post_count": 159,
-  "fetched": "2026-06-14T20:42:17Z"
+  "fetched": "2026-06-27T12:20:57Z"
 }
