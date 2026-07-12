@@ -50,6 +50,14 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-lookout-for-metrics.yaml
 common:
+- type: TrustCenter
+  url: security/amazon-lookout-for-metrics-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-lookout-for-metrics-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-lookout-for-metrics-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-lookout-for-metrics-authentication.yml
 - type: Portal
   url: https://aws.amazon.com/lookout-for-metrics/
 - type: Documentation
