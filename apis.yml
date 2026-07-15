@@ -50,6 +50,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-lookout-for-metrics.yaml
 common:
+- type: AgenticAccess
+  url: agentic-access/amazon-lookout-for-metrics-agentic-access.yml
 - type: TrustCenter
   url: security/amazon-lookout-for-metrics-trust-center.yml
 - type: VulnerabilityDisclosure
