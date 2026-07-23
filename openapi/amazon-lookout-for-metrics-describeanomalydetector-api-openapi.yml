@@ -1,0 +1,349 @@
+openapi: 3.0.0
+info:
+  version: 2017-07-25
+  x-release: v4
+  title: Amazon Lookout for Metrics ActivateAnomalyDetector DescribeAnomalyDetector API
+  description: This is the <i>Amazon Lookout for Metrics API Reference</i>. For an introduction to the service with tutorials for getting started, visit <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev">Amazon Lookout for Metrics Developer Guide</a>.
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: lookoutmetrics
+  x-aws-signingName: lookoutmetrics
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/lookoutmetrics-2017-07-25.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://lookoutmetrics.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The LookoutMetrics multi-region endpoint
+- url: https://lookoutmetrics.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The LookoutMetrics multi-region endpoint
+- url: http://lookoutmetrics.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The LookoutMetrics endpoint for China (Beijing) and China (Ningxia)
+- url: https://lookoutmetrics.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The LookoutMetrics endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: DescribeAnomalyDetector
+paths:
+  /DescribeAnomalyDetector:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: DescribeAnomalyDetector
+      description: <p>Describes a detector.</p> <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeAnomalyDetectorResponse'
+        '480':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '481':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '482':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '483':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '484':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - AnomalyDetectorArn
+              properties:
+                AnomalyDetectorArn:
+                  description: The ARN of the detector to describe.
+                  type: string
+                  pattern: arn:([a-z\d-]+):.*:.*:.*:.+
+                  maxLength: 256
+      summary: Amazon Lookout for Metrics Describe Anomaly Detector
+      tags:
+      - DescribeAnomalyDetector
+components:
+  schemas:
+    AnomalyDetectorStatus:
+      type: string
+      enum:
+      - ACTIVE
+      - ACTIVATING
+      - DELETING
+      - FAILED
+      - INACTIVE
+      - LEARNING
+      - BACK_TEST_ACTIVATING
+      - BACK_TEST_ACTIVE
+      - BACK_TEST_COMPLETE
+      - DEACTIVATED
+      - DEACTIVATING
+    DescribeAnomalyDetectorResponse:
+      type: object
+      properties:
+        AnomalyDetectorArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The ARN of the detector.
+        AnomalyDetectorName:
+          allOf:
+          - $ref: '#/components/schemas/AnomalyDetectorName'
+          - description: The name of the detector.
+        AnomalyDetectorDescription:
+          allOf:
+          - $ref: '#/components/schemas/AnomalyDetectorDescription'
+          - description: A description of the detector.
+        AnomalyDetectorConfig:
+          allOf:
+          - $ref: '#/components/schemas/AnomalyDetectorConfigSummary'
+          - description: Contains information about the detector's configuration.
+        CreationTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time at which the detector was created.
+        LastModificationTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time at which the detector was last modified.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/AnomalyDetectorStatus'
+          - description: The status of the detector.
+        FailureReason:
+          allOf:
+          - $ref: '#/components/schemas/ErrorMessage'
+          - description: The reason that the detector failed.
+        KmsKeyArn:
+          allOf:
+          - $ref: '#/components/schemas/KmsKeyArn'
+          - description: The ARN of the KMS key to use to encrypt your data.
+        FailureType:
+          allOf:
+          - $ref: '#/components/schemas/AnomalyDetectorFailureType'
+          - description: The process that caused the detector to fail.
+    ResourceNotFoundException: {}
+    ValidationException: {}
+    Frequency:
+      type: string
+      enum:
+      - P1D
+      - PT1H
+      - PT10M
+      - PT5M
+    ErrorMessage:
+      type: string
+      maxLength: 256
+    AnomalyDetectorDescription:
+      type: string
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 256
+    AnomalyDetectorConfigSummary:
+      type: object
+      properties:
+        AnomalyDetectorFrequency:
+          allOf:
+          - $ref: '#/components/schemas/Frequency'
+          - description: The interval at which the detector analyzes its source data.
+      description: Contains information about a detector's configuration.
+    KmsKeyArn:
+      type: string
+      pattern: arn:aws.*:kms:.*:[0-9]{12}:key/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}
+      minLength: 20
+      maxLength: 2048
+    Arn:
+      type: string
+      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
+      maxLength: 256
+    Timestamp:
+      type: string
+      format: date-time
+    AnomalyDetectorName:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      minLength: 1
+      maxLength: 63
+    AccessDeniedException: {}
+    TooManyRequestsException: {}
+    AnomalyDetectorFailureType:
+      type: string
+      enum:
+      - ACTIVATION_FAILURE
+      - BACK_TEST_ACTIVATION_FAILURE
+      - DELETION_FAILURE
+      - DEACTIVATION_FAILURE
+    InternalServerException: {}
+  parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/lookoutmetrics/
+x-hasEquivalentPaths: true

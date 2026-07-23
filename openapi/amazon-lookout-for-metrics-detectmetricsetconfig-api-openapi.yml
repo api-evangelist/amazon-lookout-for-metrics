@@ -1,0 +1,447 @@
+openapi: 3.0.0
+info:
+  version: 2017-07-25
+  x-release: v4
+  title: Amazon Lookout for Metrics ActivateAnomalyDetector DetectMetricSetConfig API
+  description: This is the <i>Amazon Lookout for Metrics API Reference</i>. For an introduction to the service with tutorials for getting started, visit <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev">Amazon Lookout for Metrics Developer Guide</a>.
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: lookoutmetrics
+  x-aws-signingName: lookoutmetrics
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/lookoutmetrics-2017-07-25.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://lookoutmetrics.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The LookoutMetrics multi-region endpoint
+- url: https://lookoutmetrics.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The LookoutMetrics multi-region endpoint
+- url: http://lookoutmetrics.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The LookoutMetrics endpoint for China (Beijing) and China (Ningxia)
+- url: https://lookoutmetrics.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The LookoutMetrics endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: DetectMetricSetConfig
+paths:
+  /DetectMetricSetConfig:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: DetectMetricSetConfig
+      description: Detects an Amazon S3 dataset's file format, interval, and offset.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DetectMetricSetConfigResponse'
+        '480':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '481':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '482':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '483':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '484':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - AnomalyDetectorArn
+              - AutoDetectionMetricSource
+              properties:
+                AnomalyDetectorArn:
+                  description: An anomaly detector ARN.
+                  type: string
+                  pattern: arn:([a-z\d-]+):.*:.*:.*:.+
+                  maxLength: 256
+                AutoDetectionMetricSource:
+                  description: An auto detection metric source.
+                  type: object
+                  properties:
+                    S3SourceConfig:
+                      allOf:
+                      - $ref: '#/components/schemas/AutoDetectionS3SourceConfig'
+                      - description: The source's source config.
+      summary: Amazon Lookout for Metrics Detect Metric Set Config
+      tags:
+      - DetectMetricSetConfig
+components:
+  schemas:
+    DetectedFileFormatDescriptor:
+      type: object
+      properties:
+        CsvFormatDescriptor:
+          allOf:
+          - $ref: '#/components/schemas/DetectedCsvFormatDescriptor'
+          - description: Details about a CSV format.
+        JsonFormatDescriptor:
+          allOf:
+          - $ref: '#/components/schemas/DetectedJsonFormatDescriptor'
+          - description: Details about a JSON format.
+      description: Properties of an inferred data format.
+    TemplatedPath:
+      type: string
+      pattern: ^s3://[a-zA-Z0-9_\-\/ {}=]+$
+      maxLength: 1024
+    ValidationException: {}
+    ResourceNotFoundException: {}
+    Message:
+      type: string
+    DetectedJsonFormatDescriptor:
+      type: object
+      properties:
+        FileCompression:
+          allOf:
+          - $ref: '#/components/schemas/DetectedField'
+          - description: The format's file compression.
+        Charset:
+          allOf:
+          - $ref: '#/components/schemas/DetectedField'
+          - description: The format's character set.
+      description: A detected JSON format descriptor.
+    DetectedField:
+      type: object
+      properties:
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/AttributeValue'
+          - description: The field's value.
+        Confidence:
+          allOf:
+          - $ref: '#/components/schemas/Confidence'
+          - description: The field's confidence.
+        Message:
+          allOf:
+          - $ref: '#/components/schemas/Message'
+          - description: The field's message.
+      description: An inferred field.
+    BinaryListAttributeValue:
+      type: array
+      items:
+        $ref: '#/components/schemas/BinaryAttributeValue'
+    DetectMetricSetConfigResponse:
+      type: object
+      properties:
+        DetectedMetricSetConfig:
+          allOf:
+          - $ref: '#/components/schemas/DetectedMetricSetConfig'
+          - description: The inferred dataset configuration for the datasource.
+    HistoricalDataPathList:
+      type: array
+      items:
+        $ref: '#/components/schemas/HistoricalDataPath'
+      minItems: 1
+      maxItems: 1
+    DetectedCsvFormatDescriptor:
+      type: object
+      properties:
+        FileCompression:
+          allOf:
+          - $ref: '#/components/schemas/DetectedField'
+          - description: The format's file compression.
+        Charset:
+          allOf:
+          - $ref: '#/components/schemas/DetectedField'
+          - description: The format's charset.
+        ContainsHeader:
+          allOf:
+          - $ref: '#/components/schemas/DetectedField'
+          - description: Whether the format includes a header.
+        Delimiter:
+          allOf:
+          - $ref: '#/components/schemas/DetectedField'
+          - description: The format's delimiter.
+        HeaderList:
+          allOf:
+          - $ref: '#/components/schemas/DetectedField'
+          - description: The format's header list.
+        QuoteSymbol:
+          allOf:
+          - $ref: '#/components/schemas/DetectedField'
+          - description: The format's quote symbol.
+      description: Properties of an inferred CSV format.
+    StringListAttributeValue:
+      type: array
+      items:
+        $ref: '#/components/schemas/StringAttributeValue'
+    AutoDetectionS3SourceConfig:
+      type: object
+      properties:
+        TemplatedPathList:
+          allOf:
+          - $ref: '#/components/schemas/TemplatedPathList'
+          - description: The config's templated path list.
+        HistoricalDataPathList:
+          allOf:
+          - $ref: '#/components/schemas/HistoricalDataPathList'
+          - description: The config's historical data path list.
+      description: An auto detection source config.
+    DetectedS3SourceConfig:
+      type: object
+      properties:
+        FileFormatDescriptor:
+          allOf:
+          - $ref: '#/components/schemas/DetectedFileFormatDescriptor'
+          - description: The source's file format descriptor.
+      description: An inferred source configuration.
+    DetectedMetricSource:
+      type: object
+      properties:
+        S3SourceConfig:
+          allOf:
+          - $ref: '#/components/schemas/DetectedS3SourceConfig'
+          - description: The data source's source configuration.
+      description: An inferred data source.
+    DetectedMetricSetConfig:
+      type: object
+      properties:
+        Offset:
+          allOf:
+          - $ref: '#/components/schemas/DetectedField'
+          - description: The dataset's offset.
+        MetricSetFrequency:
+          allOf:
+          - $ref: '#/components/schemas/DetectedField'
+          - description: The dataset's interval.
+        MetricSource:
+          allOf:
+          - $ref: '#/components/schemas/DetectedMetricSource'
+          - description: The dataset's data source.
+      description: An inferred dataset configuration.
+    NumberListAttributeValue:
+      type: array
+      items:
+        $ref: '#/components/schemas/NumberAttributeValue'
+    AttributeValue:
+      type: object
+      properties:
+        S:
+          allOf:
+          - $ref: '#/components/schemas/StringAttributeValue'
+          - description: A string.
+        N:
+          allOf:
+          - $ref: '#/components/schemas/NumberAttributeValue'
+          - description: A number.
+        B:
+          allOf:
+          - $ref: '#/components/schemas/BinaryAttributeValue'
+          - description: A binary value.
+        SS:
+          allOf:
+          - $ref: '#/components/schemas/StringListAttributeValue'
+          - description: A list of strings.
+        NS:
+          allOf:
+          - $ref: '#/components/schemas/NumberListAttributeValue'
+          - description: A list of numbers.
+        BS:
+          allOf:
+          - $ref: '#/components/schemas/BinaryListAttributeValue'
+          - description: A list of binary values.
+      description: An attribute value.
+    HistoricalDataPath:
+      type: string
+      pattern: ^s3://[a-z0-9].+$
+      maxLength: 1024
+    StringAttributeValue:
+      type: string
+    AccessDeniedException: {}
+    TooManyRequestsException: {}
+    NumberAttributeValue:
+      type: string
+    Confidence:
+      type: string
+      enum:
+      - HIGH
+      - LOW
+      - NONE
+    InternalServerException: {}
+    TemplatedPathList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TemplatedPath'
+      minItems: 1
+      maxItems: 1
+    BinaryAttributeValue:
+      type: string
+  parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/lookoutmetrics/
+x-hasEquivalentPaths: true
