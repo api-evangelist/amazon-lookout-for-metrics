@@ -5,7 +5,20 @@ description: Amazon Lookout for Metrics uses machine learning to automatically d
   sources including Amazon S3, CloudWatch, RDS, Redshift, Athena, and AppFlow, providing root cause analysis and alert notifications
   when anomalies are detected.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-lookout-for-metrics.png
 tags:
 - Anomaly Detection
 - AWS
@@ -18,23 +31,19 @@ created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-api
-  name: Amazon Lookout for Metrics API
-  description: The Amazon Lookout for Metrics API provides programmatic access to create and manage anomaly detectors, anomaly
-    groups, alerts, and datasets for automated anomaly detection in business metrics. Supports detector lifecycle management,
-    metric set configuration, alert creation, anomaly analysis, feedback collection, and resource tagging across 30 operations.
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-activateanomalydetector-api
+  name: Amazon Lookout for Metrics ActivateAnomalyDetector API
+  description: >-
+    The ActivateAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for activateanomalydetector.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
-  - Anomaly Detection
-  - Machine Learning
-  - Metrics
-  - Monitoring
+  - ActivateAnomalyDetector
   properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-activateanomalydetector-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
-  - type: OpenAPI
-    url: openapi/amazon-lookout-for-metrics-openapi-original.yaml
   - type: GettingStarted
     url: https://aws.amazon.com/lookout-for-metrics/getting-started/
   - type: Pricing
@@ -44,12 +53,765 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-backtestanomalydetector-api
+  name: Amazon Lookout for Metrics BackTestAnomalyDetector API
+  description: >-
+    The BackTestAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for backtestanomalydetector.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - BackTestAnomalyDetector
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-backtestanomalydetector-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-createalert-api
+  name: Amazon Lookout for Metrics CreateAlert API
+  description: The CreateAlert API from Amazon Lookout for Metrics — 1 operation(s) for createalert.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - CreateAlert
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-createalert-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-createanomalydetector-api
+  name: Amazon Lookout for Metrics CreateAnomalyDetector API
+  description: >-
+    The CreateAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for createanomalydetector.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - CreateAnomalyDetector
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-createanomalydetector-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-createmetricset-api
+  name: Amazon Lookout for Metrics CreateMetricSet API
+  description: >-
+    The CreateMetricSet API from Amazon Lookout for Metrics — 1 operation(s) for createmetricset.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - CreateMetricSet
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-createmetricset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-deactivateanomalydetector-api
+  name: Amazon Lookout for Metrics DeactivateAnomalyDetector API
+  description: >-
+    The DeactivateAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for deactivateanomalydetector.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - DeactivateAnomalyDetector
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-deactivateanomalydetector-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-deletealert-api
+  name: Amazon Lookout for Metrics DeleteAlert API
+  description: The DeleteAlert API from Amazon Lookout for Metrics — 1 operation(s) for deletealert.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - DeleteAlert
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-deletealert-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-deleteanomalydetector-api
+  name: Amazon Lookout for Metrics DeleteAnomalyDetector API
+  description: >-
+    The DeleteAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for deleteanomalydetector.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - DeleteAnomalyDetector
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-deleteanomalydetector-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-describealert-api
+  name: Amazon Lookout for Metrics DescribeAlert API
+  description: >-
+    The DescribeAlert API from Amazon Lookout for Metrics — 1 operation(s) for describealert.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - DescribeAlert
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-describealert-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: >-
+    amazon-lookout-for-metrics:amazon-lookout-for-metrics-describeanomalydetectionexecutions-api
+  name: Amazon Lookout for Metrics DescribeAnomalyDetectionExecutions API
+  description: >-
+    The DescribeAnomalyDetectionExecutions API from Amazon Lookout for Metrics — 1 operation(s) for describeanomalydetectionexecutions.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - DescribeAnomalyDetectionExecutions
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-describeanomalydetectionexecutions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-describeanomalydetector-api
+  name: Amazon Lookout for Metrics DescribeAnomalyDetector API
+  description: >-
+    The DescribeAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for describeanomalydetector.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - DescribeAnomalyDetector
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-describeanomalydetector-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-describemetricset-api
+  name: Amazon Lookout for Metrics DescribeMetricSet API
+  description: >-
+    The DescribeMetricSet API from Amazon Lookout for Metrics — 1 operation(s) for describemetricset.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - DescribeMetricSet
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-describemetricset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-detectmetricsetconfig-api
+  name: Amazon Lookout for Metrics DetectMetricSetConfig API
+  description: >-
+    The DetectMetricSetConfig API from Amazon Lookout for Metrics — 1 operation(s) for detectmetricsetconfig.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - DetectMetricSetConfig
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-detectmetricsetconfig-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-getanomalygroup-api
+  name: Amazon Lookout for Metrics GetAnomalyGroup API
+  description: >-
+    The GetAnomalyGroup API from Amazon Lookout for Metrics — 1 operation(s) for getanomalygroup.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - GetAnomalyGroup
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-getanomalygroup-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-getdataqualitymetrics-api
+  name: Amazon Lookout for Metrics GetDataQualityMetrics API
+  description: >-
+    The GetDataQualityMetrics API from Amazon Lookout for Metrics — 1 operation(s) for getdataqualitymetrics.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - GetDataQualityMetrics
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-getdataqualitymetrics-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-getfeedback-api
+  name: Amazon Lookout for Metrics GetFeedback API
+  description: The GetFeedback API from Amazon Lookout for Metrics — 1 operation(s) for getfeedback.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - GetFeedback
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-getfeedback-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-getsampledata-api
+  name: Amazon Lookout for Metrics GetSampleData API
+  description: >-
+    The GetSampleData API from Amazon Lookout for Metrics — 1 operation(s) for getsampledata.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - GetSampleData
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-getsampledata-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-listalerts-api
+  name: Amazon Lookout for Metrics ListAlerts API
+  description: The ListAlerts API from Amazon Lookout for Metrics — 1 operation(s) for listalerts.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - ListAlerts
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-listalerts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-listanomalydetectors-api
+  name: Amazon Lookout for Metrics ListAnomalyDetectors API
+  description: >-
+    The ListAnomalyDetectors API from Amazon Lookout for Metrics — 1 operation(s) for listanomalydetectors.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - ListAnomalyDetectors
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-listanomalydetectors-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-listanomalygrouprelatedmetrics-api
+  name: Amazon Lookout for Metrics ListAnomalyGroupRelatedMetrics API
+  description: >-
+    The ListAnomalyGroupRelatedMetrics API from Amazon Lookout for Metrics — 1 operation(s) for listanomalygrouprelatedmetrics.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - ListAnomalyGroupRelatedMetrics
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-listanomalygrouprelatedmetrics-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-listanomalygroupsummaries-api
+  name: Amazon Lookout for Metrics ListAnomalyGroupSummaries API
+  description: >-
+    The ListAnomalyGroupSummaries API from Amazon Lookout for Metrics — 1 operation(s) for listanomalygroupsummaries.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - ListAnomalyGroupSummaries
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-listanomalygroupsummaries-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-listanomalygrouptimeseries-api
+  name: Amazon Lookout for Metrics ListAnomalyGroupTimeSeries API
+  description: >-
+    The ListAnomalyGroupTimeSeries API from Amazon Lookout for Metrics — 1 operation(s) for listanomalygrouptimeseries.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - ListAnomalyGroupTimeSeries
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-listanomalygrouptimeseries-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-listmetricsets-api
+  name: Amazon Lookout for Metrics ListMetricSets API
+  description: >-
+    The ListMetricSets API from Amazon Lookout for Metrics — 1 operation(s) for listmetricsets.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - ListMetricSets
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-listmetricsets-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-putfeedback-api
+  name: Amazon Lookout for Metrics PutFeedback API
+  description: The PutFeedback API from Amazon Lookout for Metrics — 1 operation(s) for putfeedback.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - PutFeedback
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-putfeedback-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-tags-api
+  name: Amazon Lookout for Metrics Tags API
+  description: The Tags API from Amazon Lookout for Metrics — 2 operation(s) for tags.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-updatealert-api
+  name: Amazon Lookout for Metrics UpdateAlert API
+  description: The UpdateAlert API from Amazon Lookout for Metrics — 1 operation(s) for updatealert.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - UpdateAlert
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-updatealert-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-updateanomalydetector-api
+  name: Amazon Lookout for Metrics UpdateAnomalyDetector API
+  description: >-
+    The UpdateAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for updateanomalydetector.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - UpdateAnomalyDetector
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-updateanomalydetector-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-lookout-for-metrics-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-lookout-for-metrics.yaml
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-updatemetricset-api
+  name: Amazon Lookout for Metrics UpdateMetricSet API
+  description: >-
+    The UpdateMetricSet API from Amazon Lookout for Metrics — 1 operation(s) for updatemetricset.
+  humanURL: https://aws.amazon.com/lookout-for-metrics/
+  baseURL: https://lookoutmetrics.amazonaws.com
+  tags:
+  - UpdateMetricSet
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-lookout-for-metrics-updatemetricset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/lookout-for-metrics/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/lookout-for-metrics/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/lookout-for-metrics/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
+  - type: JSONStructure
+    url: >-
+      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
   - type: X-NaftikoCapability
     url: capabilities/amazon-lookout-for-metrics.yaml
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/amazon-lookout-for-metrics/overview
 - type: AgenticAccess
   url: agentic-access/amazon-lookout-for-metrics-agentic-access.yml
 - type: TrustCenter
