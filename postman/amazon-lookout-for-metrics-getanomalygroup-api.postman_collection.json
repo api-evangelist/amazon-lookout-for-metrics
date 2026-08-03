@@ -1,0 +1,620 @@
+{
+  "info": {
+    "_postman_id": "d2321314-d151-4bc2-8453-6f28e736da5f",
+    "name": "Amazon Lookout for Metrics ActivateAnomalyDetector GetAnomalyGroup API",
+    "description": "This is the <i>Amazon Lookout for Metrics API Reference</i>. For an introduction to the service with tutorials for getting started, visit <a href=\"https://docs.aws.amazon.com/lookoutmetrics/latest/dev\">Amazon Lookout for Metrics Developer Guide</a>.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:35:52.000Z",
+    "updatedAt": "2026-07-28T10:35:52.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-d2321314-d151-4bc2-8453-6f28e736da5f"
+  },
+  "item": [
+    {
+      "name": "GetAnomalyGroup",
+      "item": [
+        {
+          "name": "Amazon Lookout for Metrics Get Anomaly Group",
+          "id": "da89e494-65ca-4529-87dd-f3e8ec18121a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AnomalyGroupId\": \"b094oo8f-ur3w-p1l0-2i6d-6764kng7h83f\",\n  \"AnomalyDetectorArn\": \"arn:m:rZ;\\\\~$0tN:S:8s8:NQUA$hKYX\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/GetAnomalyGroup",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "GetAnomalyGroup"
+              ]
+            },
+            "description": "Returns details about a group of anomalous metrics."
+          },
+          "response": [
+            {
+              "id": "7f3f57a7-f04b-4cfd-b699-a757834e9eff",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyGroupId\": \"b094oo8f-ur3w-p1l0-2i6d-6764kng7h83f\",\n  \"AnomalyDetectorArn\": \"arn:m:rZ;\\\\~$0tN:S:8s8:NQUA$hKYX\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/GetAnomalyGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "GetAnomalyGroup"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"AnomalyGroup\": {\n    \"StartTime\": \"2660-12-30T10:32:01+06:09[l/_]]]]]]]\",\n    \"EndTime\": \"1226-11-05T03:11:24Z\",\n    \"AnomalyGroupId\": \"zfcjl2kp-5464-k3a8-1wod-5m0osyox78a1\",\n    \"AnomalyGroupScore\": \"<double>\",\n    \"PrimaryMetricName\": \"hrKGJwfK9Oc\",\n    \"MetricLevelImpactList\": [\n      {\n        \"MetricName\": \"gvqm65_I4W\",\n        \"NumTimeSeries\": \"<integer>\",\n        \"ContributionMatrix\": {\n          \"DimensionContributionList\": [\n            {\n              \"DimensionName\": \"yelki\",\n              \"DimensionValueContributionList\": [\n                {\n                  \"DimensionValue\": \"<string>\",\n                  \"ContributionScore\": \"<double>\"\n                },\n                {\n                  \"DimensionValue\": \"<string>\",\n                  \"ContributionScore\": \"<double>\"\n                }\n              ]\n            },\n            {\n              \"DimensionName\": \"jwrwklU2\",\n              \"DimensionValueContributionList\": [\n                {\n                  \"DimensionValue\": \"<string>\",\n                  \"ContributionScore\": \"<double>\"\n                },\n                {\n                  \"DimensionValue\": \"<string>\",\n                  \"ContributionScore\": \"<double>\"\n                }\n              ]\n            }\n          ]\n        }\n      },\n      {\n        \"MetricName\": \"kKUIj\",\n        \"NumTimeSeries\": \"<integer>\",\n        \"ContributionMatrix\": {\n          \"DimensionContributionList\": [\n            {\n              \"DimensionName\": \"3AH2G8aa\",\n              \"DimensionValueContributionList\": [\n                {\n                  \"DimensionValue\": \"<string>\",\n                  \"ContributionScore\": \"<double>\"\n                },\n                {\n                  \"DimensionValue\": \"<string>\",\n                  \"ContributionScore\": \"<double>\"\n                }\n              ]\n            },\n            {\n              \"DimensionName\": \"jVc9VG\",\n              \"DimensionValueContributionList\": [\n                {\n                  \"DimensionValue\": \"<string>\",\n                  \"ContributionScore\": \"<double>\"\n                },\n                {\n                  \"DimensionValue\": \"<string>\",\n                  \"ContributionScore\": \"<double>\"\n                }\n              ]\n            }\n          ]\n        }\n      }\n    ]\n  }\n}",
+              "createdAt": "2026-07-28T10:35:53.000Z",
+              "updatedAt": "2026-07-28T10:35:53.000Z",
+              "uid": "35240-7f3f57a7-f04b-4cfd-b699-a757834e9eff"
+            },
+            {
+              "id": "9aba4e8c-f3ae-4632-b93f-a56ec4b016f9",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyGroupId\": \"b094oo8f-ur3w-p1l0-2i6d-6764kng7h83f\",\n  \"AnomalyDetectorArn\": \"arn:m:rZ;\\\\~$0tN:S:8s8:NQUA$hKYX\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/GetAnomalyGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "GetAnomalyGroup"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:53.000Z",
+              "updatedAt": "2026-07-28T10:35:53.000Z",
+              "uid": "35240-9aba4e8c-f3ae-4632-b93f-a56ec4b016f9"
+            },
+            {
+              "id": "06fc33ba-e5de-4167-b3c4-4d81d3185d57",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyGroupId\": \"b094oo8f-ur3w-p1l0-2i6d-6764kng7h83f\",\n  \"AnomalyDetectorArn\": \"arn:m:rZ;\\\\~$0tN:S:8s8:NQUA$hKYX\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/GetAnomalyGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "GetAnomalyGroup"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:53.000Z",
+              "updatedAt": "2026-07-28T10:35:53.000Z",
+              "uid": "35240-06fc33ba-e5de-4167-b3c4-4d81d3185d57"
+            },
+            {
+              "id": "3491a456-3214-478f-80a1-411893766a31",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyGroupId\": \"b094oo8f-ur3w-p1l0-2i6d-6764kng7h83f\",\n  \"AnomalyDetectorArn\": \"arn:m:rZ;\\\\~$0tN:S:8s8:NQUA$hKYX\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/GetAnomalyGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "GetAnomalyGroup"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:53.000Z",
+              "updatedAt": "2026-07-28T10:35:53.000Z",
+              "uid": "35240-3491a456-3214-478f-80a1-411893766a31"
+            },
+            {
+              "id": "020991cb-ff46-4f86-8f6d-431bacc7c01b",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyGroupId\": \"b094oo8f-ur3w-p1l0-2i6d-6764kng7h83f\",\n  \"AnomalyDetectorArn\": \"arn:m:rZ;\\\\~$0tN:S:8s8:NQUA$hKYX\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/GetAnomalyGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "GetAnomalyGroup"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:53.000Z",
+              "updatedAt": "2026-07-28T10:35:53.000Z",
+              "uid": "35240-020991cb-ff46-4f86-8f6d-431bacc7c01b"
+            },
+            {
+              "id": "4d2e2db6-6419-439c-9ee6-5649dcccab25",
+              "name": "TooManyRequestsException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyGroupId\": \"b094oo8f-ur3w-p1l0-2i6d-6764kng7h83f\",\n  \"AnomalyDetectorArn\": \"arn:m:rZ;\\\\~$0tN:S:8s8:NQUA$hKYX\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/GetAnomalyGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "GetAnomalyGroup"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:53.000Z",
+              "updatedAt": "2026-07-28T10:35:53.000Z",
+              "uid": "35240-4d2e2db6-6419-439c-9ee6-5649dcccab25"
+            }
+          ],
+          "createdAt": "2026-07-28T10:35:53.000Z",
+          "updatedAt": "2026-07-28T10:35:53.000Z",
+          "uid": "35240-da89e494-65ca-4529-87dd-f3e8ec18121a"
+        }
+      ],
+      "id": "aa90d11e-1f62-427f-885f-2580ef7e79f8",
+      "createdAt": "2026-07-28T10:35:53.000Z",
+      "updatedAt": "2026-07-28T10:35:53.000Z",
+      "uid": "35240-aa90d11e-1f62-427f-885f-2580ef7e79f8"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://lookoutmetrics.{{region}}.amazonaws.com"
+    }
+  ]
+}

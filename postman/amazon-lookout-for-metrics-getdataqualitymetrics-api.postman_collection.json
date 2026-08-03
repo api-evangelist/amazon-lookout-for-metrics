@@ -1,0 +1,620 @@
+{
+  "info": {
+    "_postman_id": "8f34bdbd-c791-4235-88fb-8f8b7d67a06e",
+    "name": "Amazon Lookout for Metrics ActivateAnomalyDetector GetDataQualityMetrics API",
+    "description": "This is the <i>Amazon Lookout for Metrics API Reference</i>. For an introduction to the service with tutorials for getting started, visit <a href=\"https://docs.aws.amazon.com/lookoutmetrics/latest/dev\">Amazon Lookout for Metrics Developer Guide</a>.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:35:53.000Z",
+    "updatedAt": "2026-07-28T10:35:53.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8f34bdbd-c791-4235-88fb-8f8b7d67a06e"
+  },
+  "item": [
+    {
+      "name": "GetDataQualityMetrics",
+      "item": [
+        {
+          "name": "Amazon Lookout for Metrics Get Data Quality Metrics",
+          "id": "9a4dff3b-6013-4b70-8500-87f1ebaaf852",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AnomalyDetectorArn\": \"arn:b8jm2g201wh::r}GL:\\\"B#o1\\\"v.vc:]Fw;LPk&}K|\",\n  \"MetricSetArn\": \"arn:nhdyt:H;: ~@tT]ZC :MVTE:S5f#cKa~\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/GetDataQualityMetrics",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "GetDataQualityMetrics"
+              ]
+            },
+            "description": "Returns details about the requested data quality metrics."
+          },
+          "response": [
+            {
+              "id": "d982d2e3-e10f-4457-a8a8-f13c4b653347",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyDetectorArn\": \"arn:b8jm2g201wh::r}GL:\\\"B#o1\\\"v.vc:]Fw;LPk&}K|\",\n  \"MetricSetArn\": \"arn:nhdyt:H;: ~@tT]ZC :MVTE:S5f#cKa~\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/GetDataQualityMetrics",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "GetDataQualityMetrics"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"AnomalyDetectorDataQualityMetricList\": [\n    {\n      \"StartTimestamp\": \"<dateTime>\",\n      \"MetricSetDataQualityMetricList\": [\n        {\n          \"MetricSetArn\": \"arn:55zlpda:zw%$ f:#g:<u6g2T:zm=vy#!4w*6\",\n          \"DataQualityMetricList\": [\n            {\n              \"MetricType\": \"DIMENSION_UNIQUENESS\",\n              \"MetricDescription\": \"B(E\",\n              \"RelatedColumnName\": \"awohv#Z/<[Y(\",\n              \"MetricValue\": \"<double>\"\n            },\n            {\n              \"MetricType\": \"COLUMN_COMPLETENESS\",\n              \"MetricDescription\": \"`oG%fp5J;T$Rt\",\n              \"RelatedColumnName\": \"2/V/B\",\n              \"MetricValue\": \"<double>\"\n            }\n          ]\n        },\n        {\n          \"MetricSetArn\": \"arn:hzsyes:T0Xvu4,Dq:LxPA*lI::@C\",\n          \"DataQualityMetricList\": [\n            {\n              \"MetricType\": \"ROWS_PROCESSED\",\n              \"MetricDescription\": \"(g)/9xINeIJI\",\n              \"RelatedColumnName\": \"/wDH@c@`kcxIwTB^<NkV\",\n              \"MetricValue\": \"<double>\"\n            },\n            {\n              \"MetricType\": \"BACKTEST_INFERENCE_DATA_START_TIME_STAMP\",\n              \"MetricDescription\": \"ZC>BE=BNk#}qD_W\",\n              \"RelatedColumnName\": \"UGPIgB};n!a;G'1\",\n              \"MetricValue\": \"<double>\"\n            }\n          ]\n        }\n      ]\n    },\n    {\n      \"StartTimestamp\": \"<dateTime>\",\n      \"MetricSetDataQualityMetricList\": [\n        {\n          \"MetricSetArn\": \"arn:zt5n:A/CR:/\\\\i:axb^5a:U1.L/<:fcg6iNF\",\n          \"DataQualityMetricList\": [\n            {\n              \"MetricType\": \"TIME_SERIES_COUNT\",\n              \"MetricDescription\": \"L.}Y\\\"ji(V@2f[?$\\\\-R\",\n              \"RelatedColumnName\": \"J50\",\n              \"MetricValue\": \"<double>\"\n            },\n            {\n              \"MetricType\": \"BACKTEST_INFERENCE_DATA_START_TIME_STAMP\",\n              \"MetricDescription\": \"g3So@\",\n              \"RelatedColumnName\": \"FQY\\\": 69+`8?\",\n              \"MetricValue\": \"<double>\"\n            }\n          ]\n        },\n        {\n          \"MetricSetArn\": \"arn:jcrpo9lrn:NAV~{(::sCompMAP:oap&#S$)>\",\n          \"DataQualityMetricList\": [\n            {\n              \"MetricType\": \"BACKTEST_TRAINING_DATA_START_TIME_STAMP\",\n              \"MetricDescription\": \".,m#dG%\\\"je3\",\n              \"RelatedColumnName\": \"$qOH8)R\",\n              \"MetricValue\": \"<double>\"\n            },\n            {\n              \"MetricType\": \"BACKTEST_TRAINING_DATA_END_TIME_STAMP\",\n              \"MetricDescription\": \"/cdR5dds^-]&0iM\",\n              \"RelatedColumnName\": \"MawN=NWFUn\",\n              \"MetricValue\": \"<double>\"\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T10:35:54.000Z",
+              "updatedAt": "2026-07-28T10:35:54.000Z",
+              "uid": "35240-d982d2e3-e10f-4457-a8a8-f13c4b653347"
+            },
+            {
+              "id": "6ed5d554-2413-4b8f-85a7-3244733d065f",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyDetectorArn\": \"arn:b8jm2g201wh::r}GL:\\\"B#o1\\\"v.vc:]Fw;LPk&}K|\",\n  \"MetricSetArn\": \"arn:nhdyt:H;: ~@tT]ZC :MVTE:S5f#cKa~\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/GetDataQualityMetrics",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "GetDataQualityMetrics"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:54.000Z",
+              "updatedAt": "2026-07-28T10:35:54.000Z",
+              "uid": "35240-6ed5d554-2413-4b8f-85a7-3244733d065f"
+            },
+            {
+              "id": "686d3bc2-efce-475c-94f8-d1a95a25fb2c",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyDetectorArn\": \"arn:b8jm2g201wh::r}GL:\\\"B#o1\\\"v.vc:]Fw;LPk&}K|\",\n  \"MetricSetArn\": \"arn:nhdyt:H;: ~@tT]ZC :MVTE:S5f#cKa~\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/GetDataQualityMetrics",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "GetDataQualityMetrics"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:54.000Z",
+              "updatedAt": "2026-07-28T10:35:54.000Z",
+              "uid": "35240-686d3bc2-efce-475c-94f8-d1a95a25fb2c"
+            },
+            {
+              "id": "f8acf5e6-a4e2-4292-a670-7afae8510a01",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyDetectorArn\": \"arn:b8jm2g201wh::r}GL:\\\"B#o1\\\"v.vc:]Fw;LPk&}K|\",\n  \"MetricSetArn\": \"arn:nhdyt:H;: ~@tT]ZC :MVTE:S5f#cKa~\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/GetDataQualityMetrics",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "GetDataQualityMetrics"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:54.000Z",
+              "updatedAt": "2026-07-28T10:35:54.000Z",
+              "uid": "35240-f8acf5e6-a4e2-4292-a670-7afae8510a01"
+            },
+            {
+              "id": "080d22e8-d5f2-4ed7-a10a-8ffd9f9d8ec7",
+              "name": "TooManyRequestsException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyDetectorArn\": \"arn:b8jm2g201wh::r}GL:\\\"B#o1\\\"v.vc:]Fw;LPk&}K|\",\n  \"MetricSetArn\": \"arn:nhdyt:H;: ~@tT]ZC :MVTE:S5f#cKa~\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/GetDataQualityMetrics",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "GetDataQualityMetrics"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:54.000Z",
+              "updatedAt": "2026-07-28T10:35:54.000Z",
+              "uid": "35240-080d22e8-d5f2-4ed7-a10a-8ffd9f9d8ec7"
+            },
+            {
+              "id": "22f6894d-a5db-426f-bcb2-11bda89ef3e9",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyDetectorArn\": \"arn:b8jm2g201wh::r}GL:\\\"B#o1\\\"v.vc:]Fw;LPk&}K|\",\n  \"MetricSetArn\": \"arn:nhdyt:H;: ~@tT]ZC :MVTE:S5f#cKa~\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/GetDataQualityMetrics",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "GetDataQualityMetrics"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:54.000Z",
+              "updatedAt": "2026-07-28T10:35:54.000Z",
+              "uid": "35240-22f6894d-a5db-426f-bcb2-11bda89ef3e9"
+            }
+          ],
+          "createdAt": "2026-07-28T10:35:54.000Z",
+          "updatedAt": "2026-07-28T10:35:54.000Z",
+          "uid": "35240-9a4dff3b-6013-4b70-8500-87f1ebaaf852"
+        }
+      ],
+      "id": "6f3b17fb-027e-45cf-9426-c1afee4af626",
+      "createdAt": "2026-07-28T10:35:54.000Z",
+      "updatedAt": "2026-07-28T10:35:54.000Z",
+      "uid": "35240-6f3b17fb-027e-45cf-9426-c1afee4af626"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://lookoutmetrics.{{region}}.amazonaws.com"
+    }
+  ]
+}

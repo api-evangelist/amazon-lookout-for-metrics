@@ -1,0 +1,620 @@
+{
+  "info": {
+    "_postman_id": "59f90979-0701-4b2d-91fe-5c7f658c7e88",
+    "name": "Amazon Lookout for Metrics ActivateAnomalyDetector DescribeMetricSet API",
+    "description": "This is the <i>Amazon Lookout for Metrics API Reference</i>. For an introduction to the service with tutorials for getting started, visit <a href=\"https://docs.aws.amazon.com/lookoutmetrics/latest/dev\">Amazon Lookout for Metrics Developer Guide</a>.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:35:48.000Z",
+    "updatedAt": "2026-07-28T10:35:48.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-59f90979-0701-4b2d-91fe-5c7f658c7e88"
+  },
+  "item": [
+    {
+      "name": "DescribeMetricSet",
+      "item": [
+        {
+          "name": "Amazon Lookout for Metrics Describe Metric Set",
+          "id": "4fdfff86-6b00-4eb7-8c7f-b9788d7f2fba",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"MetricSetArn\": \"arn:w:JT:r&vT]t0:QQ>W#B):q\\\\F4\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/DescribeMetricSet",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "DescribeMetricSet"
+              ]
+            },
+            "description": "<p>Describes a dataset.</p> <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>"
+          },
+          "response": [
+            {
+              "id": "d6b1c8d1-0932-4bc7-b5e6-e3bb0e7a4b60",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"MetricSetArn\": \"arn:w:JT:r&vT]t0:QQ>W#B):q\\\\F4\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/DescribeMetricSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DescribeMetricSet"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"MetricSetArn\": \"arn:wvhs::NZQ_NS,:'(6:-\\\"H[l~f1l\",\n  \"AnomalyDetectorArn\": \"arn:17:[k(aLP:K{^y^k\\\":@n:Y#1M\",\n  \"MetricSetName\": \"3ge\",\n  \"MetricSetDescription\": \"My0U=Q\",\n  \"CreationTime\": \"<dateTime>\",\n  \"LastModificationTime\": \"<dateTime>\",\n  \"Offset\": \"<integer>\",\n  \"MetricList\": [\n    {\n      \"MetricName\": \"Gbi\",\n      \"AggregationFunction\": \"SUM\",\n      \"Namespace\": \"DZLs\\\\h\"\n    }\n  ],\n  \"TimestampColumn\": {\n    \"ColumnName\": \"NtR\",\n    \"ColumnFormat\": \"{Ywl[E\"\n  },\n  \"DimensionList\": [\n    \"EIW3zU3tVA\"\n  ],\n  \"MetricSetFrequency\": \"P1D\",\n  \"Timezone\": \"\\\\FwfUKyT&DU(r\\\\^\",\n  \"MetricSource\": {\n    \"S3SourceConfig\": {\n      \"RoleArn\": \"arn:fs8m1ex3l:OQ%:JRsxT.1&'5:ji^\\\"A:ljk)AuYe-{\",\n      \"TemplatedPathList\": [\n        \"s3://7jp=Qo\"\n      ],\n      \"HistoricalDataPathList\": [\n        \"s3://x'G16\"\n      ],\n      \"FileFormatDescriptor\": {\n        \"CsvFormatDescriptor\": {\n          \"FileCompression\": \"NONE\",\n          \"Charset\": \"k7\",\n          \"ContainsHeader\": \"<boolean>\",\n          \"Delimiter\": \"w\",\n          \"HeaderList\": [\n            \"yQB\",\n            \"tn\"\n          ],\n          \"QuoteSymbol\": \"$\"\n        },\n        \"JsonFormatDescriptor\": {\n          \"FileCompression\": \"GZIP\",\n          \"Charset\": \"hzOLJ\"\n        }\n      }\n    },\n    \"AppFlowConfig\": {\n      \"RoleArn\": \"arn:e0tpd6eb:}=):h:U. :wJH8P:T5Rj8fR^\",\n      \"FlowName\": \"3bXf#\"\n    },\n    \"CloudWatchConfig\": {\n      \"RoleArn\": \"arn:nrw:0e:=o6:T|:&^:W\",\n      \"BackTestConfiguration\": {\n        \"RunBackTestMode\": \"<boolean>\"\n      }\n    },\n    \"RDSSourceConfig\": {\n      \"DBInstanceIdentifier\": \"QquGV8trM\",\n      \"DatabaseHost\": \"/2*o4V\",\n      \"DatabasePort\": \"<integer>\",\n      \"SecretManagerArn\": \"arn:d603ov3:t09x0a[f>):a)n:secret:AmazonLookoutMetrics-^ZfyO <8S$G\",\n      \"DatabaseName\": \"yL\",\n      \"TableName\": \"mO8y.y3rST\",\n      \"RoleArn\": \"arn:2vxthy4:zG+,:j]kM:J:$lFT>Z:`\",\n      \"VpcConfiguration\": {\n        \"SubnetIdList\": [\n          \"VXATZm\",\n          \"yCcXSVMd\"\n        ],\n        \"SecurityGroupIdList\": [\n          \"KqV2AoC\",\n          \"A\"\n        ]\n      }\n    },\n    \"RedshiftSourceConfig\": {\n      \"ClusterIdentifier\": \"s33d\",\n      \"DatabaseHost\": \".lyIkZ>fq$^&dSi\",\n      \"DatabasePort\": \"<integer>\",\n      \"SecretManagerArn\": \"arn:0li:qYn:f\\\"tkM\\\\:secret:AmazonLookoutMetrics-^\\\"6Y%^\",\n      \"DatabaseName\": \"4oMaYE\",\n      \"TableName\": \"AR1Io6F3u\",\n      \"RoleArn\": \"arn:30i0-c8yqb:Lu8jt&1xs.:::>awg9\\\\2Hg\",\n      \"VpcConfiguration\": {\n        \"SubnetIdList\": [\n          \"1N\",\n          \"Q3rVkvTGYs\"\n        ],\n        \"SecurityGroupIdList\": [\n          \"nhJsjU1\",\n          \"V\"\n        ]\n      }\n    },\n    \"AthenaSourceConfig\": {\n      \"RoleArn\": \"arn:lbwm:zP)D$zP^&T:f:y:&R3|w$M \",\n      \"DatabaseName\": \"LaB\",\n      \"DataCatalog\": \"<string>\",\n      \"TableName\": \"5d5BsEr37a\",\n      \"WorkGroupName\": \"X1jnVOIcMg31UJzp3rNLFRVYlzebZY3CfqcrQbs1MwBy6WdMT4cbcO8RqF08TapM-PafZlrs79zZ7oYdb0.ew7x\",\n      \"S3ResultsPath\": \"s3://i][dD/>Yrt\",\n      \"BackTestConfiguration\": {\n        \"RunBackTestMode\": \"<boolean>\"\n      }\n    }\n  },\n  \"DimensionFilterList\": [\n    {\n      \"Name\": \"q\",\n      \"FilterList\": [\n        {\n          \"DimensionValue\": \"<string>\",\n          \"FilterOperation\": \"EQUALS\"\n        }\n      ]\n    },\n    {\n      \"Name\": \"zYcuX\",\n      \"FilterList\": [\n        {\n          \"DimensionValue\": \"<string>\",\n          \"FilterOperation\": \"EQUALS\"\n        }\n      ]\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T10:35:49.000Z",
+              "updatedAt": "2026-07-28T10:35:49.000Z",
+              "uid": "35240-d6b1c8d1-0932-4bc7-b5e6-e3bb0e7a4b60"
+            },
+            {
+              "id": "4578a6ae-bef0-4697-b113-60e236aa2f27",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"MetricSetArn\": \"arn:w:JT:r&vT]t0:QQ>W#B):q\\\\F4\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/DescribeMetricSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DescribeMetricSet"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:49.000Z",
+              "updatedAt": "2026-07-28T10:35:49.000Z",
+              "uid": "35240-4578a6ae-bef0-4697-b113-60e236aa2f27"
+            },
+            {
+              "id": "bb350a8b-459a-4300-9f76-4079358877c0",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"MetricSetArn\": \"arn:w:JT:r&vT]t0:QQ>W#B):q\\\\F4\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/DescribeMetricSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DescribeMetricSet"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:49.000Z",
+              "updatedAt": "2026-07-28T10:35:49.000Z",
+              "uid": "35240-bb350a8b-459a-4300-9f76-4079358877c0"
+            },
+            {
+              "id": "3fc2da46-7806-40e5-af34-62d3ae028c7c",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"MetricSetArn\": \"arn:w:JT:r&vT]t0:QQ>W#B):q\\\\F4\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/DescribeMetricSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DescribeMetricSet"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:49.000Z",
+              "updatedAt": "2026-07-28T10:35:49.000Z",
+              "uid": "35240-3fc2da46-7806-40e5-af34-62d3ae028c7c"
+            },
+            {
+              "id": "cec92097-7967-44ab-ac19-4aea5be41275",
+              "name": "TooManyRequestsException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"MetricSetArn\": \"arn:w:JT:r&vT]t0:QQ>W#B):q\\\\F4\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/DescribeMetricSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DescribeMetricSet"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:49.000Z",
+              "updatedAt": "2026-07-28T10:35:49.000Z",
+              "uid": "35240-cec92097-7967-44ab-ac19-4aea5be41275"
+            },
+            {
+              "id": "e6d32f91-73df-455b-a031-538d4441ddc6",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"MetricSetArn\": \"arn:w:JT:r&vT]t0:QQ>W#B):q\\\\F4\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/DescribeMetricSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DescribeMetricSet"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:49.000Z",
+              "updatedAt": "2026-07-28T10:35:49.000Z",
+              "uid": "35240-e6d32f91-73df-455b-a031-538d4441ddc6"
+            }
+          ],
+          "createdAt": "2026-07-28T10:35:49.000Z",
+          "updatedAt": "2026-07-28T10:35:49.000Z",
+          "uid": "35240-4fdfff86-6b00-4eb7-8c7f-b9788d7f2fba"
+        }
+      ],
+      "id": "d56aff4b-060b-4e04-9bc3-930e8d3ca1e7",
+      "createdAt": "2026-07-28T10:35:49.000Z",
+      "updatedAt": "2026-07-28T10:35:49.000Z",
+      "uid": "35240-d56aff4b-060b-4e04-9bc3-930e8d3ca1e7"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://lookoutmetrics.{{region}}.amazonaws.com"
+    }
+  ]
+}

@@ -1,0 +1,784 @@
+{
+  "info": {
+    "_postman_id": "6f8781b4-8710-4ec9-a580-1fc5cefe5672",
+    "name": "Amazon Lookout for Metrics ActivateAnomalyDetector CreateAlert API",
+    "description": "This is the <i>Amazon Lookout for Metrics API Reference</i>. For an introduction to the service with tutorials for getting started, visit <a href=\"https://docs.aws.amazon.com/lookoutmetrics/latest/dev\">Amazon Lookout for Metrics Developer Guide</a>.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:35:32.000Z",
+    "updatedAt": "2026-07-28T10:35:32.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-6f8781b4-8710-4ec9-a580-1fc5cefe5672"
+  },
+  "item": [
+    {
+      "name": "CreateAlert",
+      "item": [
+        {
+          "name": "Amazon Lookout for Metrics Create Alert",
+          "id": "b14757bd-1597-48dc-9827-d08d57a77d03",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AlertName\": \"PnMvIHcm_\",\n  \"AnomalyDetectorArn\": \"arn:9x94xd:G(yUS+w1Se:Y\\\\2B5i:FUNAPV:h5cxK|5A[%9\",\n  \"Action\": {\n    \"SNSConfiguration\": {\n      \"RoleArn\": \"arn:0g2js15:J7ubC[x:?A4@8=,`:,b>D:.jhBt+!yZ\",\n      \"SnsTopicArn\": \"arn:uvpx5o:~c^s:7||40}7P:p!%&XdO)ln:/s+QOLp@_\",\n      \"SnsFormat\": \"LONG_TEXT\"\n    },\n    \"LambdaConfiguration\": {\n      \"RoleArn\": \"arn:pk:9{$Wo!/=O`:4::Bw=\",\n      \"LambdaArn\": \"arn:i4l9ui-::1|:CaD:n,)!AXk\"\n    }\n  },\n  \"AlertSensitivityThreshold\": \"<integer>\",\n  \"AlertDescription\": \"[MM[SJSqCd/(UbZ\",\n  \"Tags\": {\n    \"minim1f\": \"<string>\",\n    \"tempor_da5\": \"<string>\",\n    \"nisi5\": \"<string>\",\n    \"mollit_fca\": \"<string>\",\n    \"in_fd\": \"<string>\",\n    \"et70\": \"<string>\",\n    \"aliquip_a3_\": \"<string>\",\n    \"in__4\": \"<string>\",\n    \"ex_81\": \"<string>\",\n    \"dolor5\": \"<string>\",\n    \"Excepteur_3\": \"<string>\",\n    \"Lorem60\": \"<string>\",\n    \"deserunt4\": \"<string>\",\n    \"est_2_2\": \"<string>\",\n    \"est_3\": \"<string>\",\n    \"sed___b\": \"<string>\",\n    \"adipisicing3e3\": \"<string>\",\n    \"Duis25\": \"<string>\",\n    \"anim_0\": \"<string>\",\n    \"eiusmod0e5\": \"<string>\",\n    \"ada7\": \"<string>\",\n    \"nisib85\": \"<string>\",\n    \"proident88\": \"<string>\",\n    \"nostrud_b\": \"<string>\",\n    \"sit_2\": \"<string>\",\n    \"nisi_5\": \"<string>\",\n    \"qui93\": \"<string>\",\n    \"ut__a1\": \"<string>\",\n    \"officia_979\": \"<string>\",\n    \"officiaa3_\": \"<string>\",\n    \"Duis42\": \"<string>\",\n    \"magna_3\": \"<string>\",\n    \"velit9ca\": \"<string>\",\n    \"inc\": \"<string>\",\n    \"dolore_be\": \"<string>\",\n    \"Duis1\": \"<string>\",\n    \"temporf3\": \"<string>\",\n    \"proident_cd7\": \"<string>\",\n    \"esse7\": \"<string>\",\n    \"quise4\": \"<string>\",\n    \"nulla_5e5\": \"<string>\",\n    \"consequat01\": \"<string>\"\n  },\n  \"AlertFilters\": {\n    \"MetricList\": [\n      \"BD0U2YVN\"\n    ],\n    \"DimensionFilterList\": [\n      {\n        \"DimensionName\": \"tr\",\n        \"DimensionValueList\": [\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/CreateAlert",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "CreateAlert"
+              ]
+            },
+            "description": "Creates an alert for an anomaly detector."
+          },
+          "response": [
+            {
+              "id": "b5b20bb6-7df9-48c6-90ce-9b5dc6655f37",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AlertName\": \"PnMvIHcm_\",\n  \"AnomalyDetectorArn\": \"arn:9x94xd:G(yUS+w1Se:Y\\\\2B5i:FUNAPV:h5cxK|5A[%9\",\n  \"Action\": {\n    \"SNSConfiguration\": {\n      \"RoleArn\": \"arn:0g2js15:J7ubC[x:?A4@8=,`:,b>D:.jhBt+!yZ\",\n      \"SnsTopicArn\": \"arn:uvpx5o:~c^s:7||40}7P:p!%&XdO)ln:/s+QOLp@_\",\n      \"SnsFormat\": \"LONG_TEXT\"\n    },\n    \"LambdaConfiguration\": {\n      \"RoleArn\": \"arn:pk:9{$Wo!/=O`:4::Bw=\",\n      \"LambdaArn\": \"arn:i4l9ui-::1|:CaD:n,)!AXk\"\n    }\n  },\n  \"AlertSensitivityThreshold\": \"<integer>\",\n  \"AlertDescription\": \"[MM[SJSqCd/(UbZ\",\n  \"Tags\": {\n    \"minim1f\": \"<string>\",\n    \"tempor_da5\": \"<string>\",\n    \"nisi5\": \"<string>\",\n    \"mollit_fca\": \"<string>\",\n    \"in_fd\": \"<string>\",\n    \"et70\": \"<string>\",\n    \"aliquip_a3_\": \"<string>\",\n    \"in__4\": \"<string>\",\n    \"ex_81\": \"<string>\",\n    \"dolor5\": \"<string>\",\n    \"Excepteur_3\": \"<string>\",\n    \"Lorem60\": \"<string>\",\n    \"deserunt4\": \"<string>\",\n    \"est_2_2\": \"<string>\",\n    \"est_3\": \"<string>\",\n    \"sed___b\": \"<string>\",\n    \"adipisicing3e3\": \"<string>\",\n    \"Duis25\": \"<string>\",\n    \"anim_0\": \"<string>\",\n    \"eiusmod0e5\": \"<string>\",\n    \"ada7\": \"<string>\",\n    \"nisib85\": \"<string>\",\n    \"proident88\": \"<string>\",\n    \"nostrud_b\": \"<string>\",\n    \"sit_2\": \"<string>\",\n    \"nisi_5\": \"<string>\",\n    \"qui93\": \"<string>\",\n    \"ut__a1\": \"<string>\",\n    \"officia_979\": \"<string>\",\n    \"officiaa3_\": \"<string>\",\n    \"Duis42\": \"<string>\",\n    \"magna_3\": \"<string>\",\n    \"velit9ca\": \"<string>\",\n    \"inc\": \"<string>\",\n    \"dolore_be\": \"<string>\",\n    \"Duis1\": \"<string>\",\n    \"temporf3\": \"<string>\",\n    \"proident_cd7\": \"<string>\",\n    \"esse7\": \"<string>\",\n    \"quise4\": \"<string>\",\n    \"nulla_5e5\": \"<string>\",\n    \"consequat01\": \"<string>\"\n  },\n  \"AlertFilters\": {\n    \"MetricList\": [\n      \"BD0U2YVN\"\n    ],\n    \"DimensionFilterList\": [\n      {\n        \"DimensionName\": \"tr\",\n        \"DimensionValueList\": [\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/CreateAlert",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "CreateAlert"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"AlertArn\": \"arn:1lac4elps:Ib:+>'ly8Q:]A,:WXeo`6\"\n}",
+              "createdAt": "2026-07-28T10:35:33.000Z",
+              "updatedAt": "2026-07-28T10:35:33.000Z",
+              "uid": "35240-b5b20bb6-7df9-48c6-90ce-9b5dc6655f37"
+            },
+            {
+              "id": "9d30d5cc-6733-4d24-b400-70e9b46e7e04",
+              "name": "ConflictException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AlertName\": \"PnMvIHcm_\",\n  \"AnomalyDetectorArn\": \"arn:9x94xd:G(yUS+w1Se:Y\\\\2B5i:FUNAPV:h5cxK|5A[%9\",\n  \"Action\": {\n    \"SNSConfiguration\": {\n      \"RoleArn\": \"arn:0g2js15:J7ubC[x:?A4@8=,`:,b>D:.jhBt+!yZ\",\n      \"SnsTopicArn\": \"arn:uvpx5o:~c^s:7||40}7P:p!%&XdO)ln:/s+QOLp@_\",\n      \"SnsFormat\": \"LONG_TEXT\"\n    },\n    \"LambdaConfiguration\": {\n      \"RoleArn\": \"arn:pk:9{$Wo!/=O`:4::Bw=\",\n      \"LambdaArn\": \"arn:i4l9ui-::1|:CaD:n,)!AXk\"\n    }\n  },\n  \"AlertSensitivityThreshold\": \"<integer>\",\n  \"AlertDescription\": \"[MM[SJSqCd/(UbZ\",\n  \"Tags\": {\n    \"minim1f\": \"<string>\",\n    \"tempor_da5\": \"<string>\",\n    \"nisi5\": \"<string>\",\n    \"mollit_fca\": \"<string>\",\n    \"in_fd\": \"<string>\",\n    \"et70\": \"<string>\",\n    \"aliquip_a3_\": \"<string>\",\n    \"in__4\": \"<string>\",\n    \"ex_81\": \"<string>\",\n    \"dolor5\": \"<string>\",\n    \"Excepteur_3\": \"<string>\",\n    \"Lorem60\": \"<string>\",\n    \"deserunt4\": \"<string>\",\n    \"est_2_2\": \"<string>\",\n    \"est_3\": \"<string>\",\n    \"sed___b\": \"<string>\",\n    \"adipisicing3e3\": \"<string>\",\n    \"Duis25\": \"<string>\",\n    \"anim_0\": \"<string>\",\n    \"eiusmod0e5\": \"<string>\",\n    \"ada7\": \"<string>\",\n    \"nisib85\": \"<string>\",\n    \"proident88\": \"<string>\",\n    \"nostrud_b\": \"<string>\",\n    \"sit_2\": \"<string>\",\n    \"nisi_5\": \"<string>\",\n    \"qui93\": \"<string>\",\n    \"ut__a1\": \"<string>\",\n    \"officia_979\": \"<string>\",\n    \"officiaa3_\": \"<string>\",\n    \"Duis42\": \"<string>\",\n    \"magna_3\": \"<string>\",\n    \"velit9ca\": \"<string>\",\n    \"inc\": \"<string>\",\n    \"dolore_be\": \"<string>\",\n    \"Duis1\": \"<string>\",\n    \"temporf3\": \"<string>\",\n    \"proident_cd7\": \"<string>\",\n    \"esse7\": \"<string>\",\n    \"quise4\": \"<string>\",\n    \"nulla_5e5\": \"<string>\",\n    \"consequat01\": \"<string>\"\n  },\n  \"AlertFilters\": {\n    \"MetricList\": [\n      \"BD0U2YVN\"\n    ],\n    \"DimensionFilterList\": [\n      {\n        \"DimensionName\": \"tr\",\n        \"DimensionValueList\": [\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/CreateAlert",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "CreateAlert"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:33.000Z",
+              "updatedAt": "2026-07-28T10:35:33.000Z",
+              "uid": "35240-9d30d5cc-6733-4d24-b400-70e9b46e7e04"
+            },
+            {
+              "id": "a3a6c967-51b8-4c58-8301-2e3f0cbb3662",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AlertName\": \"PnMvIHcm_\",\n  \"AnomalyDetectorArn\": \"arn:9x94xd:G(yUS+w1Se:Y\\\\2B5i:FUNAPV:h5cxK|5A[%9\",\n  \"Action\": {\n    \"SNSConfiguration\": {\n      \"RoleArn\": \"arn:0g2js15:J7ubC[x:?A4@8=,`:,b>D:.jhBt+!yZ\",\n      \"SnsTopicArn\": \"arn:uvpx5o:~c^s:7||40}7P:p!%&XdO)ln:/s+QOLp@_\",\n      \"SnsFormat\": \"LONG_TEXT\"\n    },\n    \"LambdaConfiguration\": {\n      \"RoleArn\": \"arn:pk:9{$Wo!/=O`:4::Bw=\",\n      \"LambdaArn\": \"arn:i4l9ui-::1|:CaD:n,)!AXk\"\n    }\n  },\n  \"AlertSensitivityThreshold\": \"<integer>\",\n  \"AlertDescription\": \"[MM[SJSqCd/(UbZ\",\n  \"Tags\": {\n    \"minim1f\": \"<string>\",\n    \"tempor_da5\": \"<string>\",\n    \"nisi5\": \"<string>\",\n    \"mollit_fca\": \"<string>\",\n    \"in_fd\": \"<string>\",\n    \"et70\": \"<string>\",\n    \"aliquip_a3_\": \"<string>\",\n    \"in__4\": \"<string>\",\n    \"ex_81\": \"<string>\",\n    \"dolor5\": \"<string>\",\n    \"Excepteur_3\": \"<string>\",\n    \"Lorem60\": \"<string>\",\n    \"deserunt4\": \"<string>\",\n    \"est_2_2\": \"<string>\",\n    \"est_3\": \"<string>\",\n    \"sed___b\": \"<string>\",\n    \"adipisicing3e3\": \"<string>\",\n    \"Duis25\": \"<string>\",\n    \"anim_0\": \"<string>\",\n    \"eiusmod0e5\": \"<string>\",\n    \"ada7\": \"<string>\",\n    \"nisib85\": \"<string>\",\n    \"proident88\": \"<string>\",\n    \"nostrud_b\": \"<string>\",\n    \"sit_2\": \"<string>\",\n    \"nisi_5\": \"<string>\",\n    \"qui93\": \"<string>\",\n    \"ut__a1\": \"<string>\",\n    \"officia_979\": \"<string>\",\n    \"officiaa3_\": \"<string>\",\n    \"Duis42\": \"<string>\",\n    \"magna_3\": \"<string>\",\n    \"velit9ca\": \"<string>\",\n    \"inc\": \"<string>\",\n    \"dolore_be\": \"<string>\",\n    \"Duis1\": \"<string>\",\n    \"temporf3\": \"<string>\",\n    \"proident_cd7\": \"<string>\",\n    \"esse7\": \"<string>\",\n    \"quise4\": \"<string>\",\n    \"nulla_5e5\": \"<string>\",\n    \"consequat01\": \"<string>\"\n  },\n  \"AlertFilters\": {\n    \"MetricList\": [\n      \"BD0U2YVN\"\n    ],\n    \"DimensionFilterList\": [\n      {\n        \"DimensionName\": \"tr\",\n        \"DimensionValueList\": [\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/CreateAlert",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "CreateAlert"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:33.000Z",
+              "updatedAt": "2026-07-28T10:35:33.000Z",
+              "uid": "35240-a3a6c967-51b8-4c58-8301-2e3f0cbb3662"
+            },
+            {
+              "id": "3f0b77fb-54d6-41ef-8c8e-20be2e219907",
+              "name": "ServiceQuotaExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AlertName\": \"PnMvIHcm_\",\n  \"AnomalyDetectorArn\": \"arn:9x94xd:G(yUS+w1Se:Y\\\\2B5i:FUNAPV:h5cxK|5A[%9\",\n  \"Action\": {\n    \"SNSConfiguration\": {\n      \"RoleArn\": \"arn:0g2js15:J7ubC[x:?A4@8=,`:,b>D:.jhBt+!yZ\",\n      \"SnsTopicArn\": \"arn:uvpx5o:~c^s:7||40}7P:p!%&XdO)ln:/s+QOLp@_\",\n      \"SnsFormat\": \"LONG_TEXT\"\n    },\n    \"LambdaConfiguration\": {\n      \"RoleArn\": \"arn:pk:9{$Wo!/=O`:4::Bw=\",\n      \"LambdaArn\": \"arn:i4l9ui-::1|:CaD:n,)!AXk\"\n    }\n  },\n  \"AlertSensitivityThreshold\": \"<integer>\",\n  \"AlertDescription\": \"[MM[SJSqCd/(UbZ\",\n  \"Tags\": {\n    \"minim1f\": \"<string>\",\n    \"tempor_da5\": \"<string>\",\n    \"nisi5\": \"<string>\",\n    \"mollit_fca\": \"<string>\",\n    \"in_fd\": \"<string>\",\n    \"et70\": \"<string>\",\n    \"aliquip_a3_\": \"<string>\",\n    \"in__4\": \"<string>\",\n    \"ex_81\": \"<string>\",\n    \"dolor5\": \"<string>\",\n    \"Excepteur_3\": \"<string>\",\n    \"Lorem60\": \"<string>\",\n    \"deserunt4\": \"<string>\",\n    \"est_2_2\": \"<string>\",\n    \"est_3\": \"<string>\",\n    \"sed___b\": \"<string>\",\n    \"adipisicing3e3\": \"<string>\",\n    \"Duis25\": \"<string>\",\n    \"anim_0\": \"<string>\",\n    \"eiusmod0e5\": \"<string>\",\n    \"ada7\": \"<string>\",\n    \"nisib85\": \"<string>\",\n    \"proident88\": \"<string>\",\n    \"nostrud_b\": \"<string>\",\n    \"sit_2\": \"<string>\",\n    \"nisi_5\": \"<string>\",\n    \"qui93\": \"<string>\",\n    \"ut__a1\": \"<string>\",\n    \"officia_979\": \"<string>\",\n    \"officiaa3_\": \"<string>\",\n    \"Duis42\": \"<string>\",\n    \"magna_3\": \"<string>\",\n    \"velit9ca\": \"<string>\",\n    \"inc\": \"<string>\",\n    \"dolore_be\": \"<string>\",\n    \"Duis1\": \"<string>\",\n    \"temporf3\": \"<string>\",\n    \"proident_cd7\": \"<string>\",\n    \"esse7\": \"<string>\",\n    \"quise4\": \"<string>\",\n    \"nulla_5e5\": \"<string>\",\n    \"consequat01\": \"<string>\"\n  },\n  \"AlertFilters\": {\n    \"MetricList\": [\n      \"BD0U2YVN\"\n    ],\n    \"DimensionFilterList\": [\n      {\n        \"DimensionName\": \"tr\",\n        \"DimensionValueList\": [\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/CreateAlert",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "CreateAlert"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:33.000Z",
+              "updatedAt": "2026-07-28T10:35:33.000Z",
+              "uid": "35240-3f0b77fb-54d6-41ef-8c8e-20be2e219907"
+            },
+            {
+              "id": "bc816cf2-7f83-4578-a192-b58c4b8fe5b4",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AlertName\": \"PnMvIHcm_\",\n  \"AnomalyDetectorArn\": \"arn:9x94xd:G(yUS+w1Se:Y\\\\2B5i:FUNAPV:h5cxK|5A[%9\",\n  \"Action\": {\n    \"SNSConfiguration\": {\n      \"RoleArn\": \"arn:0g2js15:J7ubC[x:?A4@8=,`:,b>D:.jhBt+!yZ\",\n      \"SnsTopicArn\": \"arn:uvpx5o:~c^s:7||40}7P:p!%&XdO)ln:/s+QOLp@_\",\n      \"SnsFormat\": \"LONG_TEXT\"\n    },\n    \"LambdaConfiguration\": {\n      \"RoleArn\": \"arn:pk:9{$Wo!/=O`:4::Bw=\",\n      \"LambdaArn\": \"arn:i4l9ui-::1|:CaD:n,)!AXk\"\n    }\n  },\n  \"AlertSensitivityThreshold\": \"<integer>\",\n  \"AlertDescription\": \"[MM[SJSqCd/(UbZ\",\n  \"Tags\": {\n    \"minim1f\": \"<string>\",\n    \"tempor_da5\": \"<string>\",\n    \"nisi5\": \"<string>\",\n    \"mollit_fca\": \"<string>\",\n    \"in_fd\": \"<string>\",\n    \"et70\": \"<string>\",\n    \"aliquip_a3_\": \"<string>\",\n    \"in__4\": \"<string>\",\n    \"ex_81\": \"<string>\",\n    \"dolor5\": \"<string>\",\n    \"Excepteur_3\": \"<string>\",\n    \"Lorem60\": \"<string>\",\n    \"deserunt4\": \"<string>\",\n    \"est_2_2\": \"<string>\",\n    \"est_3\": \"<string>\",\n    \"sed___b\": \"<string>\",\n    \"adipisicing3e3\": \"<string>\",\n    \"Duis25\": \"<string>\",\n    \"anim_0\": \"<string>\",\n    \"eiusmod0e5\": \"<string>\",\n    \"ada7\": \"<string>\",\n    \"nisib85\": \"<string>\",\n    \"proident88\": \"<string>\",\n    \"nostrud_b\": \"<string>\",\n    \"sit_2\": \"<string>\",\n    \"nisi_5\": \"<string>\",\n    \"qui93\": \"<string>\",\n    \"ut__a1\": \"<string>\",\n    \"officia_979\": \"<string>\",\n    \"officiaa3_\": \"<string>\",\n    \"Duis42\": \"<string>\",\n    \"magna_3\": \"<string>\",\n    \"velit9ca\": \"<string>\",\n    \"inc\": \"<string>\",\n    \"dolore_be\": \"<string>\",\n    \"Duis1\": \"<string>\",\n    \"temporf3\": \"<string>\",\n    \"proident_cd7\": \"<string>\",\n    \"esse7\": \"<string>\",\n    \"quise4\": \"<string>\",\n    \"nulla_5e5\": \"<string>\",\n    \"consequat01\": \"<string>\"\n  },\n  \"AlertFilters\": {\n    \"MetricList\": [\n      \"BD0U2YVN\"\n    ],\n    \"DimensionFilterList\": [\n      {\n        \"DimensionName\": \"tr\",\n        \"DimensionValueList\": [\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/CreateAlert",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "CreateAlert"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:33.000Z",
+              "updatedAt": "2026-07-28T10:35:33.000Z",
+              "uid": "35240-bc816cf2-7f83-4578-a192-b58c4b8fe5b4"
+            },
+            {
+              "id": "6226c0d1-e6f0-4365-a6ec-2ca31788fb07",
+              "name": "TooManyRequestsException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AlertName\": \"PnMvIHcm_\",\n  \"AnomalyDetectorArn\": \"arn:9x94xd:G(yUS+w1Se:Y\\\\2B5i:FUNAPV:h5cxK|5A[%9\",\n  \"Action\": {\n    \"SNSConfiguration\": {\n      \"RoleArn\": \"arn:0g2js15:J7ubC[x:?A4@8=,`:,b>D:.jhBt+!yZ\",\n      \"SnsTopicArn\": \"arn:uvpx5o:~c^s:7||40}7P:p!%&XdO)ln:/s+QOLp@_\",\n      \"SnsFormat\": \"LONG_TEXT\"\n    },\n    \"LambdaConfiguration\": {\n      \"RoleArn\": \"arn:pk:9{$Wo!/=O`:4::Bw=\",\n      \"LambdaArn\": \"arn:i4l9ui-::1|:CaD:n,)!AXk\"\n    }\n  },\n  \"AlertSensitivityThreshold\": \"<integer>\",\n  \"AlertDescription\": \"[MM[SJSqCd/(UbZ\",\n  \"Tags\": {\n    \"minim1f\": \"<string>\",\n    \"tempor_da5\": \"<string>\",\n    \"nisi5\": \"<string>\",\n    \"mollit_fca\": \"<string>\",\n    \"in_fd\": \"<string>\",\n    \"et70\": \"<string>\",\n    \"aliquip_a3_\": \"<string>\",\n    \"in__4\": \"<string>\",\n    \"ex_81\": \"<string>\",\n    \"dolor5\": \"<string>\",\n    \"Excepteur_3\": \"<string>\",\n    \"Lorem60\": \"<string>\",\n    \"deserunt4\": \"<string>\",\n    \"est_2_2\": \"<string>\",\n    \"est_3\": \"<string>\",\n    \"sed___b\": \"<string>\",\n    \"adipisicing3e3\": \"<string>\",\n    \"Duis25\": \"<string>\",\n    \"anim_0\": \"<string>\",\n    \"eiusmod0e5\": \"<string>\",\n    \"ada7\": \"<string>\",\n    \"nisib85\": \"<string>\",\n    \"proident88\": \"<string>\",\n    \"nostrud_b\": \"<string>\",\n    \"sit_2\": \"<string>\",\n    \"nisi_5\": \"<string>\",\n    \"qui93\": \"<string>\",\n    \"ut__a1\": \"<string>\",\n    \"officia_979\": \"<string>\",\n    \"officiaa3_\": \"<string>\",\n    \"Duis42\": \"<string>\",\n    \"magna_3\": \"<string>\",\n    \"velit9ca\": \"<string>\",\n    \"inc\": \"<string>\",\n    \"dolore_be\": \"<string>\",\n    \"Duis1\": \"<string>\",\n    \"temporf3\": \"<string>\",\n    \"proident_cd7\": \"<string>\",\n    \"esse7\": \"<string>\",\n    \"quise4\": \"<string>\",\n    \"nulla_5e5\": \"<string>\",\n    \"consequat01\": \"<string>\"\n  },\n  \"AlertFilters\": {\n    \"MetricList\": [\n      \"BD0U2YVN\"\n    ],\n    \"DimensionFilterList\": [\n      {\n        \"DimensionName\": \"tr\",\n        \"DimensionValueList\": [\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/CreateAlert",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "CreateAlert"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:33.000Z",
+              "updatedAt": "2026-07-28T10:35:33.000Z",
+              "uid": "35240-6226c0d1-e6f0-4365-a6ec-2ca31788fb07"
+            },
+            {
+              "id": "1cc54c83-3541-4929-83a6-452ca05d864b",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AlertName\": \"PnMvIHcm_\",\n  \"AnomalyDetectorArn\": \"arn:9x94xd:G(yUS+w1Se:Y\\\\2B5i:FUNAPV:h5cxK|5A[%9\",\n  \"Action\": {\n    \"SNSConfiguration\": {\n      \"RoleArn\": \"arn:0g2js15:J7ubC[x:?A4@8=,`:,b>D:.jhBt+!yZ\",\n      \"SnsTopicArn\": \"arn:uvpx5o:~c^s:7||40}7P:p!%&XdO)ln:/s+QOLp@_\",\n      \"SnsFormat\": \"LONG_TEXT\"\n    },\n    \"LambdaConfiguration\": {\n      \"RoleArn\": \"arn:pk:9{$Wo!/=O`:4::Bw=\",\n      \"LambdaArn\": \"arn:i4l9ui-::1|:CaD:n,)!AXk\"\n    }\n  },\n  \"AlertSensitivityThreshold\": \"<integer>\",\n  \"AlertDescription\": \"[MM[SJSqCd/(UbZ\",\n  \"Tags\": {\n    \"minim1f\": \"<string>\",\n    \"tempor_da5\": \"<string>\",\n    \"nisi5\": \"<string>\",\n    \"mollit_fca\": \"<string>\",\n    \"in_fd\": \"<string>\",\n    \"et70\": \"<string>\",\n    \"aliquip_a3_\": \"<string>\",\n    \"in__4\": \"<string>\",\n    \"ex_81\": \"<string>\",\n    \"dolor5\": \"<string>\",\n    \"Excepteur_3\": \"<string>\",\n    \"Lorem60\": \"<string>\",\n    \"deserunt4\": \"<string>\",\n    \"est_2_2\": \"<string>\",\n    \"est_3\": \"<string>\",\n    \"sed___b\": \"<string>\",\n    \"adipisicing3e3\": \"<string>\",\n    \"Duis25\": \"<string>\",\n    \"anim_0\": \"<string>\",\n    \"eiusmod0e5\": \"<string>\",\n    \"ada7\": \"<string>\",\n    \"nisib85\": \"<string>\",\n    \"proident88\": \"<string>\",\n    \"nostrud_b\": \"<string>\",\n    \"sit_2\": \"<string>\",\n    \"nisi_5\": \"<string>\",\n    \"qui93\": \"<string>\",\n    \"ut__a1\": \"<string>\",\n    \"officia_979\": \"<string>\",\n    \"officiaa3_\": \"<string>\",\n    \"Duis42\": \"<string>\",\n    \"magna_3\": \"<string>\",\n    \"velit9ca\": \"<string>\",\n    \"inc\": \"<string>\",\n    \"dolore_be\": \"<string>\",\n    \"Duis1\": \"<string>\",\n    \"temporf3\": \"<string>\",\n    \"proident_cd7\": \"<string>\",\n    \"esse7\": \"<string>\",\n    \"quise4\": \"<string>\",\n    \"nulla_5e5\": \"<string>\",\n    \"consequat01\": \"<string>\"\n  },\n  \"AlertFilters\": {\n    \"MetricList\": [\n      \"BD0U2YVN\"\n    ],\n    \"DimensionFilterList\": [\n      {\n        \"DimensionName\": \"tr\",\n        \"DimensionValueList\": [\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/CreateAlert",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "CreateAlert"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:33.000Z",
+              "updatedAt": "2026-07-28T10:35:33.000Z",
+              "uid": "35240-1cc54c83-3541-4929-83a6-452ca05d864b"
+            },
+            {
+              "id": "c725a42a-ef19-40aa-a8a2-27527d981a79",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AlertName\": \"PnMvIHcm_\",\n  \"AnomalyDetectorArn\": \"arn:9x94xd:G(yUS+w1Se:Y\\\\2B5i:FUNAPV:h5cxK|5A[%9\",\n  \"Action\": {\n    \"SNSConfiguration\": {\n      \"RoleArn\": \"arn:0g2js15:J7ubC[x:?A4@8=,`:,b>D:.jhBt+!yZ\",\n      \"SnsTopicArn\": \"arn:uvpx5o:~c^s:7||40}7P:p!%&XdO)ln:/s+QOLp@_\",\n      \"SnsFormat\": \"LONG_TEXT\"\n    },\n    \"LambdaConfiguration\": {\n      \"RoleArn\": \"arn:pk:9{$Wo!/=O`:4::Bw=\",\n      \"LambdaArn\": \"arn:i4l9ui-::1|:CaD:n,)!AXk\"\n    }\n  },\n  \"AlertSensitivityThreshold\": \"<integer>\",\n  \"AlertDescription\": \"[MM[SJSqCd/(UbZ\",\n  \"Tags\": {\n    \"minim1f\": \"<string>\",\n    \"tempor_da5\": \"<string>\",\n    \"nisi5\": \"<string>\",\n    \"mollit_fca\": \"<string>\",\n    \"in_fd\": \"<string>\",\n    \"et70\": \"<string>\",\n    \"aliquip_a3_\": \"<string>\",\n    \"in__4\": \"<string>\",\n    \"ex_81\": \"<string>\",\n    \"dolor5\": \"<string>\",\n    \"Excepteur_3\": \"<string>\",\n    \"Lorem60\": \"<string>\",\n    \"deserunt4\": \"<string>\",\n    \"est_2_2\": \"<string>\",\n    \"est_3\": \"<string>\",\n    \"sed___b\": \"<string>\",\n    \"adipisicing3e3\": \"<string>\",\n    \"Duis25\": \"<string>\",\n    \"anim_0\": \"<string>\",\n    \"eiusmod0e5\": \"<string>\",\n    \"ada7\": \"<string>\",\n    \"nisib85\": \"<string>\",\n    \"proident88\": \"<string>\",\n    \"nostrud_b\": \"<string>\",\n    \"sit_2\": \"<string>\",\n    \"nisi_5\": \"<string>\",\n    \"qui93\": \"<string>\",\n    \"ut__a1\": \"<string>\",\n    \"officia_979\": \"<string>\",\n    \"officiaa3_\": \"<string>\",\n    \"Duis42\": \"<string>\",\n    \"magna_3\": \"<string>\",\n    \"velit9ca\": \"<string>\",\n    \"inc\": \"<string>\",\n    \"dolore_be\": \"<string>\",\n    \"Duis1\": \"<string>\",\n    \"temporf3\": \"<string>\",\n    \"proident_cd7\": \"<string>\",\n    \"esse7\": \"<string>\",\n    \"quise4\": \"<string>\",\n    \"nulla_5e5\": \"<string>\",\n    \"consequat01\": \"<string>\"\n  },\n  \"AlertFilters\": {\n    \"MetricList\": [\n      \"BD0U2YVN\"\n    ],\n    \"DimensionFilterList\": [\n      {\n        \"DimensionName\": \"tr\",\n        \"DimensionValueList\": [\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/CreateAlert",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "CreateAlert"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:33.000Z",
+              "updatedAt": "2026-07-28T10:35:33.000Z",
+              "uid": "35240-c725a42a-ef19-40aa-a8a2-27527d981a79"
+            }
+          ],
+          "createdAt": "2026-07-28T10:35:33.000Z",
+          "updatedAt": "2026-07-28T10:35:33.000Z",
+          "uid": "35240-b14757bd-1597-48dc-9827-d08d57a77d03"
+        }
+      ],
+      "id": "88052256-887b-448d-b47e-ad272abc1bf1",
+      "createdAt": "2026-07-28T10:35:33.000Z",
+      "updatedAt": "2026-07-28T10:35:33.000Z",
+      "uid": "35240-88052256-887b-448d-b47e-ad272abc1bf1"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://lookoutmetrics.{{region}}.amazonaws.com"
+    }
+  ]
+}

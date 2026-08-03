@@ -1,0 +1,620 @@
+{
+  "info": {
+    "_postman_id": "d1289db1-9cde-4eb5-b3b0-9f9eab99afdb",
+    "name": "Amazon Lookout for Metrics ActivateAnomalyDetector GetSampleData API",
+    "description": "This is the <i>Amazon Lookout for Metrics API Reference</i>. For an introduction to the service with tutorials for getting started, visit <a href=\"https://docs.aws.amazon.com/lookoutmetrics/latest/dev\">Amazon Lookout for Metrics Developer Guide</a>.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:36:32.000Z",
+    "updatedAt": "2026-07-28T10:36:32.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-d1289db1-9cde-4eb5-b3b0-9f9eab99afdb"
+  },
+  "item": [
+    {
+      "name": "GetSampleData",
+      "item": [
+        {
+          "name": "Amazon Lookout for Metrics Get Sample Data",
+          "id": "9886964b-d889-4fc6-b0a9-124de87dd3c1",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"S3SourceConfig\": {\n    \"RoleArn\": \"arn:b:IN%^(D+ ;::arS:o6h;z7:Mf.rw_FPLh\\\\\",\n    \"TemplatedPathList\": [\n      \"s3://o=0_ZG6\"\n    ],\n    \"HistoricalDataPathList\": [\n      \"s3://4]W#/*\"\n    ],\n    \"FileFormatDescriptor\": {\n      \"CsvFormatDescriptor\": {\n        \"FileCompression\": \"NONE\",\n        \"Charset\": \"bF0J\",\n        \"ContainsHeader\": \"<boolean>\",\n        \"Delimiter\": \"9\",\n        \"HeaderList\": [\n          \"hFlgzc4y\",\n          \"S\"\n        ],\n        \"QuoteSymbol\": \"\"\n      },\n      \"JsonFormatDescriptor\": {\n        \"FileCompression\": \"GZIP\",\n        \"Charset\": \"PcWU\"\n      }\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/GetSampleData",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "GetSampleData"
+              ]
+            },
+            "description": "Returns a selection of sample records from an Amazon S3 datasource."
+          },
+          "response": [
+            {
+              "id": "9082a5ac-a315-438f-8222-c9ee7f6d039a",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"S3SourceConfig\": {\n    \"RoleArn\": \"arn:b:IN%^(D+ ;::arS:o6h;z7:Mf.rw_FPLh\\\\\",\n    \"TemplatedPathList\": [\n      \"s3://o=0_ZG6\"\n    ],\n    \"HistoricalDataPathList\": [\n      \"s3://4]W#/*\"\n    ],\n    \"FileFormatDescriptor\": {\n      \"CsvFormatDescriptor\": {\n        \"FileCompression\": \"NONE\",\n        \"Charset\": \"bF0J\",\n        \"ContainsHeader\": \"<boolean>\",\n        \"Delimiter\": \"9\",\n        \"HeaderList\": [\n          \"hFlgzc4y\",\n          \"S\"\n        ],\n        \"QuoteSymbol\": \"\"\n      },\n      \"JsonFormatDescriptor\": {\n        \"FileCompression\": \"GZIP\",\n        \"Charset\": \"PcWU\"\n      }\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/GetSampleData",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "GetSampleData"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"HeaderValues\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"SampleRows\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ]\n}",
+              "createdAt": "2026-07-28T10:36:33.000Z",
+              "updatedAt": "2026-07-28T10:36:33.000Z",
+              "uid": "35240-9082a5ac-a315-438f-8222-c9ee7f6d039a"
+            },
+            {
+              "id": "4a9f0a02-63f2-4356-bdf1-8becd3104a09",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"S3SourceConfig\": {\n    \"RoleArn\": \"arn:b:IN%^(D+ ;::arS:o6h;z7:Mf.rw_FPLh\\\\\",\n    \"TemplatedPathList\": [\n      \"s3://o=0_ZG6\"\n    ],\n    \"HistoricalDataPathList\": [\n      \"s3://4]W#/*\"\n    ],\n    \"FileFormatDescriptor\": {\n      \"CsvFormatDescriptor\": {\n        \"FileCompression\": \"NONE\",\n        \"Charset\": \"bF0J\",\n        \"ContainsHeader\": \"<boolean>\",\n        \"Delimiter\": \"9\",\n        \"HeaderList\": [\n          \"hFlgzc4y\",\n          \"S\"\n        ],\n        \"QuoteSymbol\": \"\"\n      },\n      \"JsonFormatDescriptor\": {\n        \"FileCompression\": \"GZIP\",\n        \"Charset\": \"PcWU\"\n      }\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/GetSampleData",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "GetSampleData"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:36:33.000Z",
+              "updatedAt": "2026-07-28T10:36:33.000Z",
+              "uid": "35240-4a9f0a02-63f2-4356-bdf1-8becd3104a09"
+            },
+            {
+              "id": "e9eb5e36-e790-4e30-830a-b3f79ead2afc",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"S3SourceConfig\": {\n    \"RoleArn\": \"arn:b:IN%^(D+ ;::arS:o6h;z7:Mf.rw_FPLh\\\\\",\n    \"TemplatedPathList\": [\n      \"s3://o=0_ZG6\"\n    ],\n    \"HistoricalDataPathList\": [\n      \"s3://4]W#/*\"\n    ],\n    \"FileFormatDescriptor\": {\n      \"CsvFormatDescriptor\": {\n        \"FileCompression\": \"NONE\",\n        \"Charset\": \"bF0J\",\n        \"ContainsHeader\": \"<boolean>\",\n        \"Delimiter\": \"9\",\n        \"HeaderList\": [\n          \"hFlgzc4y\",\n          \"S\"\n        ],\n        \"QuoteSymbol\": \"\"\n      },\n      \"JsonFormatDescriptor\": {\n        \"FileCompression\": \"GZIP\",\n        \"Charset\": \"PcWU\"\n      }\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/GetSampleData",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "GetSampleData"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:36:33.000Z",
+              "updatedAt": "2026-07-28T10:36:33.000Z",
+              "uid": "35240-e9eb5e36-e790-4e30-830a-b3f79ead2afc"
+            },
+            {
+              "id": "f0733875-e5e5-4dde-8c60-31463674974b",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"S3SourceConfig\": {\n    \"RoleArn\": \"arn:b:IN%^(D+ ;::arS:o6h;z7:Mf.rw_FPLh\\\\\",\n    \"TemplatedPathList\": [\n      \"s3://o=0_ZG6\"\n    ],\n    \"HistoricalDataPathList\": [\n      \"s3://4]W#/*\"\n    ],\n    \"FileFormatDescriptor\": {\n      \"CsvFormatDescriptor\": {\n        \"FileCompression\": \"NONE\",\n        \"Charset\": \"bF0J\",\n        \"ContainsHeader\": \"<boolean>\",\n        \"Delimiter\": \"9\",\n        \"HeaderList\": [\n          \"hFlgzc4y\",\n          \"S\"\n        ],\n        \"QuoteSymbol\": \"\"\n      },\n      \"JsonFormatDescriptor\": {\n        \"FileCompression\": \"GZIP\",\n        \"Charset\": \"PcWU\"\n      }\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/GetSampleData",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "GetSampleData"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:36:33.000Z",
+              "updatedAt": "2026-07-28T10:36:33.000Z",
+              "uid": "35240-f0733875-e5e5-4dde-8c60-31463674974b"
+            },
+            {
+              "id": "609eca66-d99c-4447-bef6-df6c7e1f7e70",
+              "name": "TooManyRequestsException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"S3SourceConfig\": {\n    \"RoleArn\": \"arn:b:IN%^(D+ ;::arS:o6h;z7:Mf.rw_FPLh\\\\\",\n    \"TemplatedPathList\": [\n      \"s3://o=0_ZG6\"\n    ],\n    \"HistoricalDataPathList\": [\n      \"s3://4]W#/*\"\n    ],\n    \"FileFormatDescriptor\": {\n      \"CsvFormatDescriptor\": {\n        \"FileCompression\": \"NONE\",\n        \"Charset\": \"bF0J\",\n        \"ContainsHeader\": \"<boolean>\",\n        \"Delimiter\": \"9\",\n        \"HeaderList\": [\n          \"hFlgzc4y\",\n          \"S\"\n        ],\n        \"QuoteSymbol\": \"\"\n      },\n      \"JsonFormatDescriptor\": {\n        \"FileCompression\": \"GZIP\",\n        \"Charset\": \"PcWU\"\n      }\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/GetSampleData",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "GetSampleData"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:36:33.000Z",
+              "updatedAt": "2026-07-28T10:36:33.000Z",
+              "uid": "35240-609eca66-d99c-4447-bef6-df6c7e1f7e70"
+            },
+            {
+              "id": "d3b9b323-3b85-4000-8b19-e7f6bbd26003",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"S3SourceConfig\": {\n    \"RoleArn\": \"arn:b:IN%^(D+ ;::arS:o6h;z7:Mf.rw_FPLh\\\\\",\n    \"TemplatedPathList\": [\n      \"s3://o=0_ZG6\"\n    ],\n    \"HistoricalDataPathList\": [\n      \"s3://4]W#/*\"\n    ],\n    \"FileFormatDescriptor\": {\n      \"CsvFormatDescriptor\": {\n        \"FileCompression\": \"NONE\",\n        \"Charset\": \"bF0J\",\n        \"ContainsHeader\": \"<boolean>\",\n        \"Delimiter\": \"9\",\n        \"HeaderList\": [\n          \"hFlgzc4y\",\n          \"S\"\n        ],\n        \"QuoteSymbol\": \"\"\n      },\n      \"JsonFormatDescriptor\": {\n        \"FileCompression\": \"GZIP\",\n        \"Charset\": \"PcWU\"\n      }\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/GetSampleData",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "GetSampleData"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:36:33.000Z",
+              "updatedAt": "2026-07-28T10:36:33.000Z",
+              "uid": "35240-d3b9b323-3b85-4000-8b19-e7f6bbd26003"
+            }
+          ],
+          "createdAt": "2026-07-28T10:36:33.000Z",
+          "updatedAt": "2026-07-28T10:36:33.000Z",
+          "uid": "35240-9886964b-d889-4fc6-b0a9-124de87dd3c1"
+        }
+      ],
+      "id": "51c02e14-dca6-4198-a633-531ca6b24263",
+      "createdAt": "2026-07-28T10:36:33.000Z",
+      "updatedAt": "2026-07-28T10:36:33.000Z",
+      "uid": "35240-51c02e14-dca6-4198-a633-531ca6b24263"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://lookoutmetrics.{{region}}.amazonaws.com"
+    }
+  ]
+}

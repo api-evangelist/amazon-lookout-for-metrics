@@ -1,0 +1,620 @@
+{
+  "info": {
+    "_postman_id": "3bf3866c-b7b4-4bb2-8544-203eb04f8fcc",
+    "name": "Amazon Lookout for Metrics ActivateAnomalyDetector DetectMetricSetConfig API",
+    "description": "This is the <i>Amazon Lookout for Metrics API Reference</i>. For an introduction to the service with tutorials for getting started, visit <a href=\"https://docs.aws.amazon.com/lookoutmetrics/latest/dev\">Amazon Lookout for Metrics Developer Guide</a>.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:35:49.000Z",
+    "updatedAt": "2026-07-28T10:35:49.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-3bf3866c-b7b4-4bb2-8544-203eb04f8fcc"
+  },
+  "item": [
+    {
+      "name": "DetectMetricSetConfig",
+      "item": [
+        {
+          "name": "Amazon Lookout for Metrics Detect Metric Set Config",
+          "id": "85e4cee5-9c59-4d7c-bbda-15a0636fc7e3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AnomalyDetectorArn\": \"arn:-men7ks1b:.Sg:]\\\"Y ::|l;X\",\n  \"AutoDetectionMetricSource\": {\n    \"S3SourceConfig\": {\n      \"TemplatedPathList\": [\n        \"s3://3DS\"\n      ],\n      \"HistoricalDataPathList\": [\n        \"s3://mw&\"\n      ]\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/DetectMetricSetConfig",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "DetectMetricSetConfig"
+              ]
+            },
+            "description": "Detects an Amazon S3 dataset's file format, interval, and offset."
+          },
+          "response": [
+            {
+              "id": "83ed92c3-8e0f-4607-bd2f-0e40f5829ed2",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyDetectorArn\": \"arn:-men7ks1b:.Sg:]\\\"Y ::|l;X\",\n  \"AutoDetectionMetricSource\": {\n    \"S3SourceConfig\": {\n      \"TemplatedPathList\": [\n        \"s3://3DS\"\n      ],\n      \"HistoricalDataPathList\": [\n        \"s3://mw&\"\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/DetectMetricSetConfig",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DetectMetricSetConfig"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"DetectedMetricSetConfig\": {\n    \"Offset\": {\n      \"Value\": {\n        \"S\": \"<string>\",\n        \"N\": \"<string>\",\n        \"B\": \"<string>\",\n        \"SS\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"NS\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"BS\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"Confidence\": \"NONE\",\n      \"Message\": \"<string>\"\n    },\n    \"MetricSetFrequency\": {\n      \"Value\": {\n        \"S\": \"<string>\",\n        \"N\": \"<string>\",\n        \"B\": \"<string>\",\n        \"SS\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"NS\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"BS\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"Confidence\": \"LOW\",\n      \"Message\": \"<string>\"\n    },\n    \"MetricSource\": {\n      \"S3SourceConfig\": {\n        \"FileFormatDescriptor\": {\n          \"CsvFormatDescriptor\": {\n            \"FileCompression\": {\n              \"Value\": {\n                \"S\": \"<string>\",\n                \"N\": \"<string>\",\n                \"B\": \"<string>\",\n                \"SS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ],\n                \"NS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ],\n                \"BS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ]\n              },\n              \"Confidence\": \"HIGH\",\n              \"Message\": \"<string>\"\n            },\n            \"Charset\": {\n              \"Value\": {\n                \"S\": \"<string>\",\n                \"N\": \"<string>\",\n                \"B\": \"<string>\",\n                \"SS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ],\n                \"NS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ],\n                \"BS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ]\n              },\n              \"Confidence\": \"NONE\",\n              \"Message\": \"<string>\"\n            },\n            \"ContainsHeader\": {\n              \"Value\": {\n                \"S\": \"<string>\",\n                \"N\": \"<string>\",\n                \"B\": \"<string>\",\n                \"SS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ],\n                \"NS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ],\n                \"BS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ]\n              },\n              \"Confidence\": \"HIGH\",\n              \"Message\": \"<string>\"\n            },\n            \"Delimiter\": {\n              \"Value\": {\n                \"S\": \"<string>\",\n                \"N\": \"<string>\",\n                \"B\": \"<string>\",\n                \"SS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ],\n                \"NS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ],\n                \"BS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ]\n              },\n              \"Confidence\": \"HIGH\",\n              \"Message\": \"<string>\"\n            },\n            \"HeaderList\": {\n              \"Value\": {\n                \"S\": \"<string>\",\n                \"N\": \"<string>\",\n                \"B\": \"<string>\",\n                \"SS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ],\n                \"NS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ],\n                \"BS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ]\n              },\n              \"Confidence\": \"NONE\",\n              \"Message\": \"<string>\"\n            },\n            \"QuoteSymbol\": {\n              \"Value\": {\n                \"S\": \"<string>\",\n                \"N\": \"<string>\",\n                \"B\": \"<string>\",\n                \"SS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ],\n                \"NS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ],\n                \"BS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ]\n              },\n              \"Confidence\": \"HIGH\",\n              \"Message\": \"<string>\"\n            }\n          },\n          \"JsonFormatDescriptor\": {\n            \"FileCompression\": {\n              \"Value\": {\n                \"S\": \"<string>\",\n                \"N\": \"<string>\",\n                \"B\": \"<string>\",\n                \"SS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ],\n                \"NS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ],\n                \"BS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ]\n              },\n              \"Confidence\": \"LOW\",\n              \"Message\": \"<string>\"\n            },\n            \"Charset\": {\n              \"Value\": {\n                \"S\": \"<string>\",\n                \"N\": \"<string>\",\n                \"B\": \"<string>\",\n                \"SS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ],\n                \"NS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ],\n                \"BS\": [\n                  \"<string>\",\n                  \"<string>\"\n                ]\n              },\n              \"Confidence\": \"NONE\",\n              \"Message\": \"<string>\"\n            }\n          }\n        }\n      }\n    }\n  }\n}",
+              "createdAt": "2026-07-28T10:35:50.000Z",
+              "updatedAt": "2026-07-28T10:35:50.000Z",
+              "uid": "35240-83ed92c3-8e0f-4607-bd2f-0e40f5829ed2"
+            },
+            {
+              "id": "dbc472a7-2893-4fa7-bbc3-151886df5495",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyDetectorArn\": \"arn:-men7ks1b:.Sg:]\\\"Y ::|l;X\",\n  \"AutoDetectionMetricSource\": {\n    \"S3SourceConfig\": {\n      \"TemplatedPathList\": [\n        \"s3://3DS\"\n      ],\n      \"HistoricalDataPathList\": [\n        \"s3://mw&\"\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/DetectMetricSetConfig",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DetectMetricSetConfig"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:50.000Z",
+              "updatedAt": "2026-07-28T10:35:50.000Z",
+              "uid": "35240-dbc472a7-2893-4fa7-bbc3-151886df5495"
+            },
+            {
+              "id": "8ce9346e-c90a-4d1a-a526-6da1a6870b1f",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyDetectorArn\": \"arn:-men7ks1b:.Sg:]\\\"Y ::|l;X\",\n  \"AutoDetectionMetricSource\": {\n    \"S3SourceConfig\": {\n      \"TemplatedPathList\": [\n        \"s3://3DS\"\n      ],\n      \"HistoricalDataPathList\": [\n        \"s3://mw&\"\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/DetectMetricSetConfig",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DetectMetricSetConfig"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:50.000Z",
+              "updatedAt": "2026-07-28T10:35:50.000Z",
+              "uid": "35240-8ce9346e-c90a-4d1a-a526-6da1a6870b1f"
+            },
+            {
+              "id": "7c00e391-63e5-43cf-b098-b05655641949",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyDetectorArn\": \"arn:-men7ks1b:.Sg:]\\\"Y ::|l;X\",\n  \"AutoDetectionMetricSource\": {\n    \"S3SourceConfig\": {\n      \"TemplatedPathList\": [\n        \"s3://3DS\"\n      ],\n      \"HistoricalDataPathList\": [\n        \"s3://mw&\"\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/DetectMetricSetConfig",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DetectMetricSetConfig"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:50.000Z",
+              "updatedAt": "2026-07-28T10:35:50.000Z",
+              "uid": "35240-7c00e391-63e5-43cf-b098-b05655641949"
+            },
+            {
+              "id": "502efa76-a10c-4de5-8dbd-845a32b8decc",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyDetectorArn\": \"arn:-men7ks1b:.Sg:]\\\"Y ::|l;X\",\n  \"AutoDetectionMetricSource\": {\n    \"S3SourceConfig\": {\n      \"TemplatedPathList\": [\n        \"s3://3DS\"\n      ],\n      \"HistoricalDataPathList\": [\n        \"s3://mw&\"\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/DetectMetricSetConfig",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DetectMetricSetConfig"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:50.000Z",
+              "updatedAt": "2026-07-28T10:35:50.000Z",
+              "uid": "35240-502efa76-a10c-4de5-8dbd-845a32b8decc"
+            },
+            {
+              "id": "9af640b2-21fc-4b37-a11e-08a06ce2e71d",
+              "name": "TooManyRequestsException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyDetectorArn\": \"arn:-men7ks1b:.Sg:]\\\"Y ::|l;X\",\n  \"AutoDetectionMetricSource\": {\n    \"S3SourceConfig\": {\n      \"TemplatedPathList\": [\n        \"s3://3DS\"\n      ],\n      \"HistoricalDataPathList\": [\n        \"s3://mw&\"\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/DetectMetricSetConfig",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DetectMetricSetConfig"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:35:50.000Z",
+              "updatedAt": "2026-07-28T10:35:50.000Z",
+              "uid": "35240-9af640b2-21fc-4b37-a11e-08a06ce2e71d"
+            }
+          ],
+          "createdAt": "2026-07-28T10:35:50.000Z",
+          "updatedAt": "2026-07-28T10:35:50.000Z",
+          "uid": "35240-85e4cee5-9c59-4d7c-bbda-15a0636fc7e3"
+        }
+      ],
+      "id": "e9900a42-1b64-4a14-91ce-595a996b24af",
+      "createdAt": "2026-07-28T10:35:50.000Z",
+      "updatedAt": "2026-07-28T10:35:50.000Z",
+      "uid": "35240-e9900a42-1b64-4a14-91ce-595a996b24af"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://lookoutmetrics.{{region}}.amazonaws.com"
+    }
+  ]
+}
