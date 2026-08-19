@@ -1,0 +1,948 @@
+{
+  "item": [
+    {
+      "id": "9d0fbde0-933d-491a-97c4-b1a67344c089",
+      "name": "CreateMetricSet",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "36c979c0-7c6f-4f1e-8911-47e0dcba79c8",
+          "name": "Amazon Lookout for Metrics Create Metric Set",
+          "request": {
+            "name": "Amazon Lookout for Metrics Create Metric Set",
+            "description": {
+              "content": "Creates a dataset.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "CreateMetricSet"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AnomalyDetectorArn\": \"<string>\",\n  \"MetricSetName\": \"<string>\",\n  \"MetricList\": [\n    {\n      \"MetricName\": \"<string>\",\n      \"AggregationFunction\": \"<string>\",\n      \"Namespace\": \"<string>\"\n    }\n  ],\n  \"MetricSource\": {\n    \"S3SourceConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"TemplatedPathList\": [\n        \"<string>\"\n      ],\n      \"HistoricalDataPathList\": [\n        \"<string>\"\n      ],\n      \"FileFormatDescriptor\": {\n        \"CsvFormatDescriptor\": {\n          \"FileCompression\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Charset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ContainsHeader\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Delimiter\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"HeaderList\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"QuoteSymbol\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"JsonFormatDescriptor\": {\n          \"FileCompression\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Charset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    },\n    \"AppFlowConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"FlowName\": \"<string>\"\n    },\n    \"CloudWatchConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"BackTestConfiguration\": {\n        \"RunBackTestMode\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"Run a backtest instead of monitoring new data.\"\n        }\n      }\n    },\n    \"RDSSourceConfig\": {\n      \"DBInstanceIdentifier\": \"<string>\",\n      \"DatabaseHost\": \"<string>\",\n      \"DatabasePort\": \"<integer>\",\n      \"SecretManagerArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"RoleArn\": \"<string>\",\n      \"VpcConfiguration\": {\n        \"SubnetIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.\"\n        },\n        \"SecurityGroupIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the list of security groups.\"\n        }\n      }\n    },\n    \"RedshiftSourceConfig\": {\n      \"ClusterIdentifier\": \"<string>\",\n      \"DatabaseHost\": \"<string>\",\n      \"DatabasePort\": \"<integer>\",\n      \"SecretManagerArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"RoleArn\": \"<string>\",\n      \"VpcConfiguration\": {\n        \"SubnetIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.\"\n        },\n        \"SecurityGroupIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the list of security groups.\"\n        }\n      }\n    },\n    \"AthenaSourceConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"DataCatalog\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"WorkGroupName\": \"<string>\",\n      \"S3ResultsPath\": \"<string>\",\n      \"BackTestConfiguration\": {\n        \"RunBackTestMode\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"Run a backtest instead of monitoring new data.\"\n        }\n      }\n    }\n  },\n  \"MetricSetDescription\": \"<string>\",\n  \"Offset\": \"<integer>\",\n  \"TimestampColumn\": {\n    \"ColumnName\": \"<string>\",\n    \"ColumnFormat\": \"<string>\"\n  },\n  \"DimensionList\": [\n    \"<string>\"\n  ],\n  \"MetricSetFrequency\": \"<string>\",\n  \"Timezone\": \"<string>\",\n  \"Tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\",\n    \"key_11\": \"<string>\",\n    \"key_12\": \"<string>\",\n    \"key_13\": \"<string>\",\n    \"key_14\": \"<string>\",\n    \"key_15\": \"<string>\",\n    \"key_16\": \"<string>\",\n    \"key_17\": \"<string>\",\n    \"key_18\": \"<string>\",\n    \"key_19\": \"<string>\",\n    \"key_20\": \"<string>\",\n    \"key_21\": \"<string>\",\n    \"key_22\": \"<string>\",\n    \"key_23\": \"<string>\",\n    \"key_24\": \"<string>\",\n    \"key_25\": \"<string>\"\n  },\n  \"DimensionFilterList\": [\n    {\n      \"Name\": \"<string>\",\n      \"FilterList\": [\n        {\n          \"DimensionValue\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"FilterOperation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"FilterList\": [\n        {\n          \"DimensionValue\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"FilterOperation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bf806768-12d1-4591-b9ff-0efdb09150f8",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "CreateMetricSet"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyDetectorArn\": \"<string>\",\n  \"MetricSetName\": \"<string>\",\n  \"MetricList\": [\n    {\n      \"MetricName\": \"<string>\",\n      \"AggregationFunction\": \"<string>\",\n      \"Namespace\": \"<string>\"\n    }\n  ],\n  \"MetricSource\": {\n    \"S3SourceConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"TemplatedPathList\": [\n        \"<string>\"\n      ],\n      \"HistoricalDataPathList\": [\n        \"<string>\"\n      ],\n      \"FileFormatDescriptor\": {\n        \"CsvFormatDescriptor\": {\n          \"FileCompression\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Charset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ContainsHeader\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Delimiter\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"HeaderList\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"QuoteSymbol\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"JsonFormatDescriptor\": {\n          \"FileCompression\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Charset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    },\n    \"AppFlowConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"FlowName\": \"<string>\"\n    },\n    \"CloudWatchConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"BackTestConfiguration\": {\n        \"RunBackTestMode\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"Run a backtest instead of monitoring new data.\"\n        }\n      }\n    },\n    \"RDSSourceConfig\": {\n      \"DBInstanceIdentifier\": \"<string>\",\n      \"DatabaseHost\": \"<string>\",\n      \"DatabasePort\": \"<integer>\",\n      \"SecretManagerArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"RoleArn\": \"<string>\",\n      \"VpcConfiguration\": {\n        \"SubnetIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.\"\n        },\n        \"SecurityGroupIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the list of security groups.\"\n        }\n      }\n    },\n    \"RedshiftSourceConfig\": {\n      \"ClusterIdentifier\": \"<string>\",\n      \"DatabaseHost\": \"<string>\",\n      \"DatabasePort\": \"<integer>\",\n      \"SecretManagerArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"RoleArn\": \"<string>\",\n      \"VpcConfiguration\": {\n        \"SubnetIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.\"\n        },\n        \"SecurityGroupIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the list of security groups.\"\n        }\n      }\n    },\n    \"AthenaSourceConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"DataCatalog\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"WorkGroupName\": \"<string>\",\n      \"S3ResultsPath\": \"<string>\",\n      \"BackTestConfiguration\": {\n        \"RunBackTestMode\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"Run a backtest instead of monitoring new data.\"\n        }\n      }\n    }\n  },\n  \"MetricSetDescription\": \"<string>\",\n  \"Offset\": \"<integer>\",\n  \"TimestampColumn\": {\n    \"ColumnName\": \"<string>\",\n    \"ColumnFormat\": \"<string>\"\n  },\n  \"DimensionList\": [\n    \"<string>\"\n  ],\n  \"MetricSetFrequency\": \"<string>\",\n  \"Timezone\": \"<string>\",\n  \"Tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\",\n    \"key_11\": \"<string>\",\n    \"key_12\": \"<string>\",\n    \"key_13\": \"<string>\",\n    \"key_14\": \"<string>\",\n    \"key_15\": \"<string>\",\n    \"key_16\": \"<string>\",\n    \"key_17\": \"<string>\",\n    \"key_18\": \"<string>\",\n    \"key_19\": \"<string>\",\n    \"key_20\": \"<string>\",\n    \"key_21\": \"<string>\",\n    \"key_22\": \"<string>\",\n    \"key_23\": \"<string>\",\n    \"key_24\": \"<string>\",\n    \"key_25\": \"<string>\",\n    \"key_26\": \"<string>\",\n    \"key_27\": \"<string>\",\n    \"key_28\": \"<string>\",\n    \"key_29\": \"<string>\",\n    \"key_30\": \"<string>\",\n    \"key_31\": \"<string>\",\n    \"key_32\": \"<string>\"\n  },\n  \"DimensionFilterList\": [\n    {\n      \"Name\": \"<string>\",\n      \"FilterList\": [\n        {\n          \"DimensionValue\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"FilterOperation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"FilterList\": [\n        {\n          \"DimensionValue\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"FilterOperation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"MetricSetArn\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "514e9bb5-78eb-481e-b4d2-b2417b26de45",
+              "name": "ConflictException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "CreateMetricSet"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyDetectorArn\": \"<string>\",\n  \"MetricSetName\": \"<string>\",\n  \"MetricList\": [\n    {\n      \"MetricName\": \"<string>\",\n      \"AggregationFunction\": \"<string>\",\n      \"Namespace\": \"<string>\"\n    }\n  ],\n  \"MetricSource\": {\n    \"S3SourceConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"TemplatedPathList\": [\n        \"<string>\"\n      ],\n      \"HistoricalDataPathList\": [\n        \"<string>\"\n      ],\n      \"FileFormatDescriptor\": {\n        \"CsvFormatDescriptor\": {\n          \"FileCompression\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Charset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ContainsHeader\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Delimiter\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"HeaderList\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"QuoteSymbol\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"JsonFormatDescriptor\": {\n          \"FileCompression\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Charset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    },\n    \"AppFlowConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"FlowName\": \"<string>\"\n    },\n    \"CloudWatchConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"BackTestConfiguration\": {\n        \"RunBackTestMode\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"Run a backtest instead of monitoring new data.\"\n        }\n      }\n    },\n    \"RDSSourceConfig\": {\n      \"DBInstanceIdentifier\": \"<string>\",\n      \"DatabaseHost\": \"<string>\",\n      \"DatabasePort\": \"<integer>\",\n      \"SecretManagerArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"RoleArn\": \"<string>\",\n      \"VpcConfiguration\": {\n        \"SubnetIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.\"\n        },\n        \"SecurityGroupIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the list of security groups.\"\n        }\n      }\n    },\n    \"RedshiftSourceConfig\": {\n      \"ClusterIdentifier\": \"<string>\",\n      \"DatabaseHost\": \"<string>\",\n      \"DatabasePort\": \"<integer>\",\n      \"SecretManagerArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"RoleArn\": \"<string>\",\n      \"VpcConfiguration\": {\n        \"SubnetIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.\"\n        },\n        \"SecurityGroupIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the list of security groups.\"\n        }\n      }\n    },\n    \"AthenaSourceConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"DataCatalog\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"WorkGroupName\": \"<string>\",\n      \"S3ResultsPath\": \"<string>\",\n      \"BackTestConfiguration\": {\n        \"RunBackTestMode\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"Run a backtest instead of monitoring new data.\"\n        }\n      }\n    }\n  },\n  \"MetricSetDescription\": \"<string>\",\n  \"Offset\": \"<integer>\",\n  \"TimestampColumn\": {\n    \"ColumnName\": \"<string>\",\n    \"ColumnFormat\": \"<string>\"\n  },\n  \"DimensionList\": [\n    \"<string>\"\n  ],\n  \"MetricSetFrequency\": \"<string>\",\n  \"Timezone\": \"<string>\",\n  \"Tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\",\n    \"key_11\": \"<string>\",\n    \"key_12\": \"<string>\",\n    \"key_13\": \"<string>\",\n    \"key_14\": \"<string>\",\n    \"key_15\": \"<string>\",\n    \"key_16\": \"<string>\",\n    \"key_17\": \"<string>\",\n    \"key_18\": \"<string>\",\n    \"key_19\": \"<string>\",\n    \"key_20\": \"<string>\",\n    \"key_21\": \"<string>\",\n    \"key_22\": \"<string>\",\n    \"key_23\": \"<string>\",\n    \"key_24\": \"<string>\",\n    \"key_25\": \"<string>\",\n    \"key_26\": \"<string>\",\n    \"key_27\": \"<string>\",\n    \"key_28\": \"<string>\",\n    \"key_29\": \"<string>\",\n    \"key_30\": \"<string>\",\n    \"key_31\": \"<string>\",\n    \"key_32\": \"<string>\"\n  },\n  \"DimensionFilterList\": [\n    {\n      \"Name\": \"<string>\",\n      \"FilterList\": [\n        {\n          \"DimensionValue\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"FilterOperation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"FilterList\": [\n        {\n          \"DimensionValue\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"FilterOperation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "41525255-47fb-4c03-a349-83a1d54d4301",
+              "name": "ValidationException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "CreateMetricSet"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyDetectorArn\": \"<string>\",\n  \"MetricSetName\": \"<string>\",\n  \"MetricList\": [\n    {\n      \"MetricName\": \"<string>\",\n      \"AggregationFunction\": \"<string>\",\n      \"Namespace\": \"<string>\"\n    }\n  ],\n  \"MetricSource\": {\n    \"S3SourceConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"TemplatedPathList\": [\n        \"<string>\"\n      ],\n      \"HistoricalDataPathList\": [\n        \"<string>\"\n      ],\n      \"FileFormatDescriptor\": {\n        \"CsvFormatDescriptor\": {\n          \"FileCompression\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Charset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ContainsHeader\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Delimiter\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"HeaderList\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"QuoteSymbol\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"JsonFormatDescriptor\": {\n          \"FileCompression\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Charset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    },\n    \"AppFlowConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"FlowName\": \"<string>\"\n    },\n    \"CloudWatchConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"BackTestConfiguration\": {\n        \"RunBackTestMode\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"Run a backtest instead of monitoring new data.\"\n        }\n      }\n    },\n    \"RDSSourceConfig\": {\n      \"DBInstanceIdentifier\": \"<string>\",\n      \"DatabaseHost\": \"<string>\",\n      \"DatabasePort\": \"<integer>\",\n      \"SecretManagerArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"RoleArn\": \"<string>\",\n      \"VpcConfiguration\": {\n        \"SubnetIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.\"\n        },\n        \"SecurityGroupIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the list of security groups.\"\n        }\n      }\n    },\n    \"RedshiftSourceConfig\": {\n      \"ClusterIdentifier\": \"<string>\",\n      \"DatabaseHost\": \"<string>\",\n      \"DatabasePort\": \"<integer>\",\n      \"SecretManagerArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"RoleArn\": \"<string>\",\n      \"VpcConfiguration\": {\n        \"SubnetIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.\"\n        },\n        \"SecurityGroupIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the list of security groups.\"\n        }\n      }\n    },\n    \"AthenaSourceConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"DataCatalog\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"WorkGroupName\": \"<string>\",\n      \"S3ResultsPath\": \"<string>\",\n      \"BackTestConfiguration\": {\n        \"RunBackTestMode\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"Run a backtest instead of monitoring new data.\"\n        }\n      }\n    }\n  },\n  \"MetricSetDescription\": \"<string>\",\n  \"Offset\": \"<integer>\",\n  \"TimestampColumn\": {\n    \"ColumnName\": \"<string>\",\n    \"ColumnFormat\": \"<string>\"\n  },\n  \"DimensionList\": [\n    \"<string>\"\n  ],\n  \"MetricSetFrequency\": \"<string>\",\n  \"Timezone\": \"<string>\",\n  \"Tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\",\n    \"key_11\": \"<string>\",\n    \"key_12\": \"<string>\",\n    \"key_13\": \"<string>\",\n    \"key_14\": \"<string>\",\n    \"key_15\": \"<string>\",\n    \"key_16\": \"<string>\",\n    \"key_17\": \"<string>\",\n    \"key_18\": \"<string>\",\n    \"key_19\": \"<string>\",\n    \"key_20\": \"<string>\",\n    \"key_21\": \"<string>\",\n    \"key_22\": \"<string>\",\n    \"key_23\": \"<string>\",\n    \"key_24\": \"<string>\",\n    \"key_25\": \"<string>\",\n    \"key_26\": \"<string>\",\n    \"key_27\": \"<string>\",\n    \"key_28\": \"<string>\",\n    \"key_29\": \"<string>\",\n    \"key_30\": \"<string>\",\n    \"key_31\": \"<string>\",\n    \"key_32\": \"<string>\"\n  },\n  \"DimensionFilterList\": [\n    {\n      \"Name\": \"<string>\",\n      \"FilterList\": [\n        {\n          \"DimensionValue\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"FilterOperation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"FilterList\": [\n        {\n          \"DimensionValue\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"FilterOperation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "24165367-e5cb-4ca9-b18e-cf1766211ba8",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "CreateMetricSet"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyDetectorArn\": \"<string>\",\n  \"MetricSetName\": \"<string>\",\n  \"MetricList\": [\n    {\n      \"MetricName\": \"<string>\",\n      \"AggregationFunction\": \"<string>\",\n      \"Namespace\": \"<string>\"\n    }\n  ],\n  \"MetricSource\": {\n    \"S3SourceConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"TemplatedPathList\": [\n        \"<string>\"\n      ],\n      \"HistoricalDataPathList\": [\n        \"<string>\"\n      ],\n      \"FileFormatDescriptor\": {\n        \"CsvFormatDescriptor\": {\n          \"FileCompression\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Charset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ContainsHeader\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Delimiter\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"HeaderList\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"QuoteSymbol\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"JsonFormatDescriptor\": {\n          \"FileCompression\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Charset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    },\n    \"AppFlowConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"FlowName\": \"<string>\"\n    },\n    \"CloudWatchConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"BackTestConfiguration\": {\n        \"RunBackTestMode\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"Run a backtest instead of monitoring new data.\"\n        }\n      }\n    },\n    \"RDSSourceConfig\": {\n      \"DBInstanceIdentifier\": \"<string>\",\n      \"DatabaseHost\": \"<string>\",\n      \"DatabasePort\": \"<integer>\",\n      \"SecretManagerArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"RoleArn\": \"<string>\",\n      \"VpcConfiguration\": {\n        \"SubnetIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.\"\n        },\n        \"SecurityGroupIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the list of security groups.\"\n        }\n      }\n    },\n    \"RedshiftSourceConfig\": {\n      \"ClusterIdentifier\": \"<string>\",\n      \"DatabaseHost\": \"<string>\",\n      \"DatabasePort\": \"<integer>\",\n      \"SecretManagerArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"RoleArn\": \"<string>\",\n      \"VpcConfiguration\": {\n        \"SubnetIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.\"\n        },\n        \"SecurityGroupIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the list of security groups.\"\n        }\n      }\n    },\n    \"AthenaSourceConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"DataCatalog\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"WorkGroupName\": \"<string>\",\n      \"S3ResultsPath\": \"<string>\",\n      \"BackTestConfiguration\": {\n        \"RunBackTestMode\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"Run a backtest instead of monitoring new data.\"\n        }\n      }\n    }\n  },\n  \"MetricSetDescription\": \"<string>\",\n  \"Offset\": \"<integer>\",\n  \"TimestampColumn\": {\n    \"ColumnName\": \"<string>\",\n    \"ColumnFormat\": \"<string>\"\n  },\n  \"DimensionList\": [\n    \"<string>\"\n  ],\n  \"MetricSetFrequency\": \"<string>\",\n  \"Timezone\": \"<string>\",\n  \"Tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\",\n    \"key_11\": \"<string>\",\n    \"key_12\": \"<string>\",\n    \"key_13\": \"<string>\",\n    \"key_14\": \"<string>\",\n    \"key_15\": \"<string>\",\n    \"key_16\": \"<string>\",\n    \"key_17\": \"<string>\",\n    \"key_18\": \"<string>\",\n    \"key_19\": \"<string>\",\n    \"key_20\": \"<string>\",\n    \"key_21\": \"<string>\",\n    \"key_22\": \"<string>\",\n    \"key_23\": \"<string>\",\n    \"key_24\": \"<string>\",\n    \"key_25\": \"<string>\",\n    \"key_26\": \"<string>\",\n    \"key_27\": \"<string>\",\n    \"key_28\": \"<string>\",\n    \"key_29\": \"<string>\",\n    \"key_30\": \"<string>\",\n    \"key_31\": \"<string>\",\n    \"key_32\": \"<string>\"\n  },\n  \"DimensionFilterList\": [\n    {\n      \"Name\": \"<string>\",\n      \"FilterList\": [\n        {\n          \"DimensionValue\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"FilterOperation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"FilterList\": [\n        {\n          \"DimensionValue\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"FilterOperation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e004cca7-980d-4939-a9b6-e54681d5c025",
+              "name": "ServiceQuotaExceededException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "CreateMetricSet"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyDetectorArn\": \"<string>\",\n  \"MetricSetName\": \"<string>\",\n  \"MetricList\": [\n    {\n      \"MetricName\": \"<string>\",\n      \"AggregationFunction\": \"<string>\",\n      \"Namespace\": \"<string>\"\n    }\n  ],\n  \"MetricSource\": {\n    \"S3SourceConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"TemplatedPathList\": [\n        \"<string>\"\n      ],\n      \"HistoricalDataPathList\": [\n        \"<string>\"\n      ],\n      \"FileFormatDescriptor\": {\n        \"CsvFormatDescriptor\": {\n          \"FileCompression\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Charset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ContainsHeader\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Delimiter\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"HeaderList\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"QuoteSymbol\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"JsonFormatDescriptor\": {\n          \"FileCompression\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Charset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    },\n    \"AppFlowConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"FlowName\": \"<string>\"\n    },\n    \"CloudWatchConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"BackTestConfiguration\": {\n        \"RunBackTestMode\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"Run a backtest instead of monitoring new data.\"\n        }\n      }\n    },\n    \"RDSSourceConfig\": {\n      \"DBInstanceIdentifier\": \"<string>\",\n      \"DatabaseHost\": \"<string>\",\n      \"DatabasePort\": \"<integer>\",\n      \"SecretManagerArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"RoleArn\": \"<string>\",\n      \"VpcConfiguration\": {\n        \"SubnetIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.\"\n        },\n        \"SecurityGroupIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the list of security groups.\"\n        }\n      }\n    },\n    \"RedshiftSourceConfig\": {\n      \"ClusterIdentifier\": \"<string>\",\n      \"DatabaseHost\": \"<string>\",\n      \"DatabasePort\": \"<integer>\",\n      \"SecretManagerArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"RoleArn\": \"<string>\",\n      \"VpcConfiguration\": {\n        \"SubnetIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.\"\n        },\n        \"SecurityGroupIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the list of security groups.\"\n        }\n      }\n    },\n    \"AthenaSourceConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"DataCatalog\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"WorkGroupName\": \"<string>\",\n      \"S3ResultsPath\": \"<string>\",\n      \"BackTestConfiguration\": {\n        \"RunBackTestMode\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"Run a backtest instead of monitoring new data.\"\n        }\n      }\n    }\n  },\n  \"MetricSetDescription\": \"<string>\",\n  \"Offset\": \"<integer>\",\n  \"TimestampColumn\": {\n    \"ColumnName\": \"<string>\",\n    \"ColumnFormat\": \"<string>\"\n  },\n  \"DimensionList\": [\n    \"<string>\"\n  ],\n  \"MetricSetFrequency\": \"<string>\",\n  \"Timezone\": \"<string>\",\n  \"Tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\",\n    \"key_11\": \"<string>\",\n    \"key_12\": \"<string>\",\n    \"key_13\": \"<string>\",\n    \"key_14\": \"<string>\",\n    \"key_15\": \"<string>\",\n    \"key_16\": \"<string>\",\n    \"key_17\": \"<string>\",\n    \"key_18\": \"<string>\",\n    \"key_19\": \"<string>\",\n    \"key_20\": \"<string>\",\n    \"key_21\": \"<string>\",\n    \"key_22\": \"<string>\",\n    \"key_23\": \"<string>\",\n    \"key_24\": \"<string>\",\n    \"key_25\": \"<string>\",\n    \"key_26\": \"<string>\",\n    \"key_27\": \"<string>\",\n    \"key_28\": \"<string>\",\n    \"key_29\": \"<string>\",\n    \"key_30\": \"<string>\",\n    \"key_31\": \"<string>\",\n    \"key_32\": \"<string>\"\n  },\n  \"DimensionFilterList\": [\n    {\n      \"Name\": \"<string>\",\n      \"FilterList\": [\n        {\n          \"DimensionValue\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"FilterOperation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"FilterList\": [\n        {\n          \"DimensionValue\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"FilterOperation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 483,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "301d54d7-cb85-4b70-b8f5-1008d6ee7f67",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "CreateMetricSet"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyDetectorArn\": \"<string>\",\n  \"MetricSetName\": \"<string>\",\n  \"MetricList\": [\n    {\n      \"MetricName\": \"<string>\",\n      \"AggregationFunction\": \"<string>\",\n      \"Namespace\": \"<string>\"\n    }\n  ],\n  \"MetricSource\": {\n    \"S3SourceConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"TemplatedPathList\": [\n        \"<string>\"\n      ],\n      \"HistoricalDataPathList\": [\n        \"<string>\"\n      ],\n      \"FileFormatDescriptor\": {\n        \"CsvFormatDescriptor\": {\n          \"FileCompression\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Charset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ContainsHeader\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Delimiter\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"HeaderList\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"QuoteSymbol\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"JsonFormatDescriptor\": {\n          \"FileCompression\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Charset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    },\n    \"AppFlowConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"FlowName\": \"<string>\"\n    },\n    \"CloudWatchConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"BackTestConfiguration\": {\n        \"RunBackTestMode\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"Run a backtest instead of monitoring new data.\"\n        }\n      }\n    },\n    \"RDSSourceConfig\": {\n      \"DBInstanceIdentifier\": \"<string>\",\n      \"DatabaseHost\": \"<string>\",\n      \"DatabasePort\": \"<integer>\",\n      \"SecretManagerArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"RoleArn\": \"<string>\",\n      \"VpcConfiguration\": {\n        \"SubnetIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.\"\n        },\n        \"SecurityGroupIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the list of security groups.\"\n        }\n      }\n    },\n    \"RedshiftSourceConfig\": {\n      \"ClusterIdentifier\": \"<string>\",\n      \"DatabaseHost\": \"<string>\",\n      \"DatabasePort\": \"<integer>\",\n      \"SecretManagerArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"RoleArn\": \"<string>\",\n      \"VpcConfiguration\": {\n        \"SubnetIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.\"\n        },\n        \"SecurityGroupIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the list of security groups.\"\n        }\n      }\n    },\n    \"AthenaSourceConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"DataCatalog\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"WorkGroupName\": \"<string>\",\n      \"S3ResultsPath\": \"<string>\",\n      \"BackTestConfiguration\": {\n        \"RunBackTestMode\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"Run a backtest instead of monitoring new data.\"\n        }\n      }\n    }\n  },\n  \"MetricSetDescription\": \"<string>\",\n  \"Offset\": \"<integer>\",\n  \"TimestampColumn\": {\n    \"ColumnName\": \"<string>\",\n    \"ColumnFormat\": \"<string>\"\n  },\n  \"DimensionList\": [\n    \"<string>\"\n  ],\n  \"MetricSetFrequency\": \"<string>\",\n  \"Timezone\": \"<string>\",\n  \"Tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\",\n    \"key_11\": \"<string>\",\n    \"key_12\": \"<string>\",\n    \"key_13\": \"<string>\",\n    \"key_14\": \"<string>\",\n    \"key_15\": \"<string>\",\n    \"key_16\": \"<string>\",\n    \"key_17\": \"<string>\",\n    \"key_18\": \"<string>\",\n    \"key_19\": \"<string>\",\n    \"key_20\": \"<string>\",\n    \"key_21\": \"<string>\",\n    \"key_22\": \"<string>\",\n    \"key_23\": \"<string>\",\n    \"key_24\": \"<string>\",\n    \"key_25\": \"<string>\",\n    \"key_26\": \"<string>\",\n    \"key_27\": \"<string>\",\n    \"key_28\": \"<string>\",\n    \"key_29\": \"<string>\",\n    \"key_30\": \"<string>\",\n    \"key_31\": \"<string>\",\n    \"key_32\": \"<string>\"\n  },\n  \"DimensionFilterList\": [\n    {\n      \"Name\": \"<string>\",\n      \"FilterList\": [\n        {\n          \"DimensionValue\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"FilterOperation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"FilterList\": [\n        {\n          \"DimensionValue\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"FilterOperation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 484,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cb64ffb3-4274-45c9-8ac3-1c4a19825100",
+              "name": "TooManyRequestsException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "CreateMetricSet"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyDetectorArn\": \"<string>\",\n  \"MetricSetName\": \"<string>\",\n  \"MetricList\": [\n    {\n      \"MetricName\": \"<string>\",\n      \"AggregationFunction\": \"<string>\",\n      \"Namespace\": \"<string>\"\n    }\n  ],\n  \"MetricSource\": {\n    \"S3SourceConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"TemplatedPathList\": [\n        \"<string>\"\n      ],\n      \"HistoricalDataPathList\": [\n        \"<string>\"\n      ],\n      \"FileFormatDescriptor\": {\n        \"CsvFormatDescriptor\": {\n          \"FileCompression\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Charset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ContainsHeader\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Delimiter\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"HeaderList\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"QuoteSymbol\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"JsonFormatDescriptor\": {\n          \"FileCompression\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Charset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    },\n    \"AppFlowConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"FlowName\": \"<string>\"\n    },\n    \"CloudWatchConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"BackTestConfiguration\": {\n        \"RunBackTestMode\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"Run a backtest instead of monitoring new data.\"\n        }\n      }\n    },\n    \"RDSSourceConfig\": {\n      \"DBInstanceIdentifier\": \"<string>\",\n      \"DatabaseHost\": \"<string>\",\n      \"DatabasePort\": \"<integer>\",\n      \"SecretManagerArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"RoleArn\": \"<string>\",\n      \"VpcConfiguration\": {\n        \"SubnetIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.\"\n        },\n        \"SecurityGroupIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the list of security groups.\"\n        }\n      }\n    },\n    \"RedshiftSourceConfig\": {\n      \"ClusterIdentifier\": \"<string>\",\n      \"DatabaseHost\": \"<string>\",\n      \"DatabasePort\": \"<integer>\",\n      \"SecretManagerArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"RoleArn\": \"<string>\",\n      \"VpcConfiguration\": {\n        \"SubnetIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.\"\n        },\n        \"SecurityGroupIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the list of security groups.\"\n        }\n      }\n    },\n    \"AthenaSourceConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"DataCatalog\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"WorkGroupName\": \"<string>\",\n      \"S3ResultsPath\": \"<string>\",\n      \"BackTestConfiguration\": {\n        \"RunBackTestMode\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"Run a backtest instead of monitoring new data.\"\n        }\n      }\n    }\n  },\n  \"MetricSetDescription\": \"<string>\",\n  \"Offset\": \"<integer>\",\n  \"TimestampColumn\": {\n    \"ColumnName\": \"<string>\",\n    \"ColumnFormat\": \"<string>\"\n  },\n  \"DimensionList\": [\n    \"<string>\"\n  ],\n  \"MetricSetFrequency\": \"<string>\",\n  \"Timezone\": \"<string>\",\n  \"Tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\",\n    \"key_11\": \"<string>\",\n    \"key_12\": \"<string>\",\n    \"key_13\": \"<string>\",\n    \"key_14\": \"<string>\",\n    \"key_15\": \"<string>\",\n    \"key_16\": \"<string>\",\n    \"key_17\": \"<string>\",\n    \"key_18\": \"<string>\",\n    \"key_19\": \"<string>\",\n    \"key_20\": \"<string>\",\n    \"key_21\": \"<string>\",\n    \"key_22\": \"<string>\",\n    \"key_23\": \"<string>\",\n    \"key_24\": \"<string>\",\n    \"key_25\": \"<string>\",\n    \"key_26\": \"<string>\",\n    \"key_27\": \"<string>\",\n    \"key_28\": \"<string>\",\n    \"key_29\": \"<string>\",\n    \"key_30\": \"<string>\",\n    \"key_31\": \"<string>\",\n    \"key_32\": \"<string>\"\n  },\n  \"DimensionFilterList\": [\n    {\n      \"Name\": \"<string>\",\n      \"FilterList\": [\n        {\n          \"DimensionValue\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"FilterOperation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"FilterList\": [\n        {\n          \"DimensionValue\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"FilterOperation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 485,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8f78ea8b-b386-4e93-a2c4-faa9ea3eecdb",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "CreateMetricSet"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AnomalyDetectorArn\": \"<string>\",\n  \"MetricSetName\": \"<string>\",\n  \"MetricList\": [\n    {\n      \"MetricName\": \"<string>\",\n      \"AggregationFunction\": \"<string>\",\n      \"Namespace\": \"<string>\"\n    }\n  ],\n  \"MetricSource\": {\n    \"S3SourceConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"TemplatedPathList\": [\n        \"<string>\"\n      ],\n      \"HistoricalDataPathList\": [\n        \"<string>\"\n      ],\n      \"FileFormatDescriptor\": {\n        \"CsvFormatDescriptor\": {\n          \"FileCompression\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Charset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ContainsHeader\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Delimiter\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"HeaderList\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"QuoteSymbol\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"JsonFormatDescriptor\": {\n          \"FileCompression\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"Charset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    },\n    \"AppFlowConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"FlowName\": \"<string>\"\n    },\n    \"CloudWatchConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"BackTestConfiguration\": {\n        \"RunBackTestMode\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"Run a backtest instead of monitoring new data.\"\n        }\n      }\n    },\n    \"RDSSourceConfig\": {\n      \"DBInstanceIdentifier\": \"<string>\",\n      \"DatabaseHost\": \"<string>\",\n      \"DatabasePort\": \"<integer>\",\n      \"SecretManagerArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"RoleArn\": \"<string>\",\n      \"VpcConfiguration\": {\n        \"SubnetIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.\"\n        },\n        \"SecurityGroupIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the list of security groups.\"\n        }\n      }\n    },\n    \"RedshiftSourceConfig\": {\n      \"ClusterIdentifier\": \"<string>\",\n      \"DatabaseHost\": \"<string>\",\n      \"DatabasePort\": \"<integer>\",\n      \"SecretManagerArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"RoleArn\": \"<string>\",\n      \"VpcConfiguration\": {\n        \"SubnetIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.\"\n        },\n        \"SecurityGroupIdList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"An array of strings containing the list of security groups.\"\n        }\n      }\n    },\n    \"AthenaSourceConfig\": {\n      \"RoleArn\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"DataCatalog\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"WorkGroupName\": \"<string>\",\n      \"S3ResultsPath\": \"<string>\",\n      \"BackTestConfiguration\": {\n        \"RunBackTestMode\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n          \"description\": \"Run a backtest instead of monitoring new data.\"\n        }\n      }\n    }\n  },\n  \"MetricSetDescription\": \"<string>\",\n  \"Offset\": \"<integer>\",\n  \"TimestampColumn\": {\n    \"ColumnName\": \"<string>\",\n    \"ColumnFormat\": \"<string>\"\n  },\n  \"DimensionList\": [\n    \"<string>\"\n  ],\n  \"MetricSetFrequency\": \"<string>\",\n  \"Timezone\": \"<string>\",\n  \"Tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\",\n    \"key_11\": \"<string>\",\n    \"key_12\": \"<string>\",\n    \"key_13\": \"<string>\",\n    \"key_14\": \"<string>\",\n    \"key_15\": \"<string>\",\n    \"key_16\": \"<string>\",\n    \"key_17\": \"<string>\",\n    \"key_18\": \"<string>\",\n    \"key_19\": \"<string>\",\n    \"key_20\": \"<string>\",\n    \"key_21\": \"<string>\",\n    \"key_22\": \"<string>\",\n    \"key_23\": \"<string>\",\n    \"key_24\": \"<string>\",\n    \"key_25\": \"<string>\",\n    \"key_26\": \"<string>\",\n    \"key_27\": \"<string>\",\n    \"key_28\": \"<string>\",\n    \"key_29\": \"<string>\",\n    \"key_30\": \"<string>\",\n    \"key_31\": \"<string>\",\n    \"key_32\": \"<string>\"\n  },\n  \"DimensionFilterList\": [\n    {\n      \"Name\": \"<string>\",\n      \"FilterList\": [\n        {\n          \"DimensionValue\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"FilterOperation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    },\n    {\n      \"Name\": \"<string>\",\n      \"FilterList\": [\n        {\n          \"DimensionValue\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"FilterOperation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 486,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "us-east-1",
+      "key": "region"
+    },
+    {
+      "type": "string",
+      "value": "http://lookoutmetrics.{{region}}.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a2be088b-88d9-4684-bd85-b8c6de021b36",
+    "name": "Amazon Lookout for Metrics ActivateAnomalyDetector CreateMetricSet API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This is the <i>Amazon Lookout for Metrics API Reference</i>. For an introduction to the service with tutorials for getting started, visit <a href=\"https://docs.aws.amazon.com/lookoutmetrics/latest/dev\">Amazon Lookout for Metrics Developer Guide</a>.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+      "type": "text/plain"
+    }
+  }
+}
