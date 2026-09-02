@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: Amazon Lookout for Metrics ActivateAnomalyDetector DescribeAnomalyDetector API
+  title: Amazon Lookout for Metrics ActivateAnomalyDetector Describe Anomaly Detector API
   description: This is the <i>Amazon Lookout for Metrics API Reference</i>. For an introduction to the service with tutorials for getting started, visit <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev">Amazon Lookout for Metrics Developer Guide</a>.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -183,20 +183,29 @@ paths:
       - DescribeAnomalyDetector
 components:
   schemas:
-    AnomalyDetectorStatus:
+    ValidationException: {}
+    InternalServerException: {}
+    AnomalyDetectorFailureType:
       type: string
       enum:
-      - ACTIVE
-      - ACTIVATING
-      - DELETING
-      - FAILED
-      - INACTIVE
-      - LEARNING
-      - BACK_TEST_ACTIVATING
-      - BACK_TEST_ACTIVE
-      - BACK_TEST_COMPLETE
-      - DEACTIVATED
-      - DEACTIVATING
+      - ACTIVATION_FAILURE
+      - BACK_TEST_ACTIVATION_FAILURE
+      - DELETION_FAILURE
+      - DEACTIVATION_FAILURE
+    AccessDeniedException: {}
+    Timestamp:
+      type: string
+      format: date-time
+    AnomalyDetectorDescription:
+      type: string
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 256
+    AnomalyDetectorName:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      minLength: 1
+      maxLength: 63
     DescribeAnomalyDetectorResponse:
       type: object
       properties:
@@ -240,8 +249,9 @@ components:
           allOf:
           - $ref: '#/components/schemas/AnomalyDetectorFailureType'
           - description: The process that caused the detector to fail.
-    ResourceNotFoundException: {}
-    ValidationException: {}
+    ErrorMessage:
+      type: string
+      maxLength: 256
     Frequency:
       type: string
       enum:
@@ -249,14 +259,25 @@ components:
       - PT1H
       - PT10M
       - PT5M
-    ErrorMessage:
+    TooManyRequestsException: {}
+    Arn:
       type: string
+      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
       maxLength: 256
-    AnomalyDetectorDescription:
+    AnomalyDetectorStatus:
       type: string
-      pattern: .*\S.*
-      minLength: 1
-      maxLength: 256
+      enum:
+      - ACTIVE
+      - ACTIVATING
+      - DELETING
+      - FAILED
+      - INACTIVE
+      - LEARNING
+      - BACK_TEST_ACTIVATING
+      - BACK_TEST_ACTIVE
+      - BACK_TEST_COMPLETE
+      - DEACTIVATED
+      - DEACTIVATING
     AnomalyDetectorConfigSummary:
       type: object
       properties:
@@ -270,55 +291,16 @@ components:
       pattern: arn:aws.*:kms:.*:[0-9]{12}:key/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}
       minLength: 20
       maxLength: 2048
-    Arn:
-      type: string
-      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
-      maxLength: 256
-    Timestamp:
-      type: string
-      format: date-time
-    AnomalyDetectorName:
-      type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
-      minLength: 1
-      maxLength: 63
-    AccessDeniedException: {}
-    TooManyRequestsException: {}
-    AnomalyDetectorFailureType:
-      type: string
-      enum:
-      - ACTIVATION_FAILURE
-      - BACK_TEST_ACTIVATION_FAILURE
-      - DELETION_FAILURE
-      - DEACTIVATION_FAILURE
-    InternalServerException: {}
+    ResourceNotFoundException: {}
   parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -329,8 +311,26 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string

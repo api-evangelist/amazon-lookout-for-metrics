@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: Amazon Lookout for Metrics ActivateAnomalyDetector ListMetricSets API
+  title: Amazon Lookout for Metrics ActivateAnomalyDetector List Metric Sets API
   description: This is the <i>Amazon Lookout for Metrics API Reference</i>. For an introduction to the service with tutorials for getting started, visit <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev">Amazon Lookout for Metrics Developer Guide</a>.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -203,68 +203,9 @@ paths:
       tags:
       - ListMetricSets
 components:
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
     ValidationException: {}
-    ListMetricSetsResponse:
-      type: object
-      properties:
-        MetricSetSummaryList:
-          allOf:
-          - $ref: '#/components/schemas/MetricSetSummaryList'
-          - description: A list of the datasets in the AWS Region, with configuration details for each.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: 'If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. '
-    ResourceNotFoundException: {}
-    MetricSetName:
-      type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
-      minLength: 1
-      maxLength: 63
+    InternalServerException: {}
     MetricSetSummary:
       type: object
       properties:
@@ -297,39 +238,98 @@ components:
           - $ref: '#/components/schemas/TagMap'
           - description: The dataset's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.
       description: Contains information about a dataset.
-    MetricSetSummaryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetricSetSummary'
-    NextToken:
+    AccessDeniedException: {}
+    ListMetricSetsResponse:
+      type: object
+      properties:
+        MetricSetSummaryList:
+          allOf:
+          - $ref: '#/components/schemas/MetricSetSummaryList'
+          - description: A list of the datasets in the AWS Region, with configuration details for each.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: 'If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. '
+    Timestamp:
       type: string
-      pattern: .*\S.*
-      minLength: 1
-      maxLength: 3000
+      format: date-time
     MetricSetDescription:
       type: string
       pattern: .*\S.*
       minLength: 1
       maxLength: 256
+    NextToken:
+      type: string
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 3000
+    MetricSetSummaryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetricSetSummary'
+    TagValue:
+      type: string
+      maxLength: 256
+    TooManyRequestsException: {}
     Arn:
       type: string
       pattern: arn:([a-z\d-]+):.*:.*:.*:.+
       maxLength: 256
-    Timestamp:
+    MetricSetName:
       type: string
-      format: date-time
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      minLength: 1
+      maxLength: 63
     TagMap:
       type: object
       minProperties: 1
       maxProperties: 50
       additionalProperties:
         $ref: '#/components/schemas/TagValue'
-    AccessDeniedException: {}
-    TooManyRequestsException: {}
-    TagValue:
-      type: string
-      maxLength: 256
-    InternalServerException: {}
+    ResourceNotFoundException: {}
+  parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

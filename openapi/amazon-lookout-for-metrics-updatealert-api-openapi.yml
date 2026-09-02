@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: Amazon Lookout for Metrics ActivateAnomalyDetector UpdateAlert API
+  title: Amazon Lookout for Metrics ActivateAnomalyDetector Update Alert API
   description: This is the <i>Amazon Lookout for Metrics API Reference</i>. For an introduction to the service with tutorials for getting started, visit <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev">Amazon Lookout for Metrics Developer Guide</a>.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -216,52 +216,72 @@ paths:
       tags:
       - UpdateAlert
 components:
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    ResourceNotFoundException: {}
     ValidationException: {}
+    InternalServerException: {}
+    AccessDeniedException: {}
+    DimensionValueList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DimensionValue'
+      minItems: 1
+      maxItems: 10
+    ColumnName:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      minLength: 1
+      maxLength: 63
+    LambdaConfiguration:
+      type: object
+      required:
+      - RoleArn
+      - LambdaArn
+      properties:
+        RoleArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The ARN of an IAM role that has permission to invoke the Lambda function.
+        LambdaArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The ARN of the Lambda function.
+      description: Contains information about a Lambda configuration.
+    DimensionFilter:
+      type: object
+      properties:
+        DimensionName:
+          allOf:
+          - $ref: '#/components/schemas/ColumnName'
+          - description: The name of the dimension to filter on.
+        DimensionValueList:
+          allOf:
+          - $ref: '#/components/schemas/DimensionValueList'
+          - description: The list of values for the dimension specified in DimensionName that you want to filter on.
+      description: The dimension filter, containing DimensionName and DimensionValueList.
+    DimensionFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DimensionFilter'
+      minItems: 1
+      maxItems: 5
+    TooManyRequestsException: {}
+    Arn:
+      type: string
+      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
+      maxLength: 256
+    MetricNameList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetricName'
+      minItems: 1
+      maxItems: 5
+    SnsFormat:
+      type: string
+      enum:
+      - LONG_TEXT
+      - SHORT_TEXT
+      - JSON
+    ResourceNotFoundException: {}
     DimensionValue:
       type: string
     MetricName:
@@ -287,39 +307,6 @@ components:
           - $ref: '#/components/schemas/SnsFormat'
           - description: <p>The format of the SNS topic.</p> <ul> <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li> <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li> </ul>
       description: Contains information about the SNS topic to which you want to send your alerts and the IAM role that has access to that topic.
-    DimensionFilter:
-      type: object
-      properties:
-        DimensionName:
-          allOf:
-          - $ref: '#/components/schemas/ColumnName'
-          - description: The name of the dimension to filter on.
-        DimensionValueList:
-          allOf:
-          - $ref: '#/components/schemas/DimensionValueList'
-          - description: The list of values for the dimension specified in DimensionName that you want to filter on.
-      description: The dimension filter, containing DimensionName and DimensionValueList.
-    MetricNameList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetricName'
-      minItems: 1
-      maxItems: 5
-    ColumnName:
-      type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
-      minLength: 1
-      maxLength: 63
-    DimensionValueList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DimensionValue'
-      minItems: 1
-      maxItems: 10
-    Arn:
-      type: string
-      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
-      maxLength: 256
     UpdateAlertResponse:
       type: object
       properties:
@@ -327,36 +314,49 @@ components:
           allOf:
           - $ref: '#/components/schemas/Arn'
           - description: The ARN of the updated alert.
-    SnsFormat:
-      type: string
-      enum:
-      - LONG_TEXT
-      - SHORT_TEXT
-      - JSON
-    LambdaConfiguration:
-      type: object
-      required:
-      - RoleArn
-      - LambdaArn
-      properties:
-        RoleArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The ARN of an IAM role that has permission to invoke the Lambda function.
-        LambdaArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The ARN of the Lambda function.
-      description: Contains information about a Lambda configuration.
-    DimensionFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DimensionFilter'
-      minItems: 1
-      maxItems: 5
-    AccessDeniedException: {}
-    TooManyRequestsException: {}
-    InternalServerException: {}
+  parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

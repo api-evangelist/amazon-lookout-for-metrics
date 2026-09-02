@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: Amazon Lookout for Metrics ActivateAnomalyDetector ListAnomalyGroupRelatedMetrics API
+  title: Amazon Lookout for Metrics ActivateAnomalyDetector List Anomaly Group Related Metrics API
   description: This is the <i>Amazon Lookout for Metrics API Reference</i>. For an introduction to the service with tutorials for getting started, visit <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev">Amazon Lookout for Metrics Developer Guide</a>.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -218,36 +218,8 @@ paths:
       - ListAnomalyGroupRelatedMetrics
 components:
   schemas:
-    ListAnomalyGroupRelatedMetricsResponse:
-      type: object
-      properties:
-        InterMetricImpactList:
-          allOf:
-          - $ref: '#/components/schemas/InterMetricImpactList'
-          - description: Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The pagination token that's included if more results are available.
-    ResourceNotFoundException: {}
     ValidationException: {}
-    UUID:
-      type: string
-      pattern: '[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}'
-      maxLength: 63
-    MetricName:
-      type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
-      maxLength: 256
-    InterMetricImpactList:
-      type: array
-      items:
-        $ref: '#/components/schemas/InterMetricImpactDetails'
-    RelationshipType:
-      type: string
-      enum:
-      - CAUSE_OF_INPUT_ANOMALY_GROUP
-      - EFFECT_OF_INPUT_ANOMALY_GROUP
+    InternalServerException: {}
     InterMetricImpactDetails:
       type: object
       properties:
@@ -268,46 +240,56 @@ components:
           - $ref: '#/components/schemas/MetricChangePercentage'
           - description: For potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), the percentage contribution the measure has in causing the anomalies.
       description: <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p> <p/>
-    NextToken:
+    RelationshipType:
       type: string
-      pattern: .*\S.*
-      minLength: 1
-      maxLength: 3000
+      enum:
+      - CAUSE_OF_INPUT_ANOMALY_GROUP
+      - EFFECT_OF_INPUT_ANOMALY_GROUP
+    AccessDeniedException: {}
     MetricChangePercentage:
       type: number
       format: double
       minimum: 0
       maximum: 100
-    AccessDeniedException: {}
+    NextToken:
+      type: string
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 3000
     TooManyRequestsException: {}
-    InternalServerException: {}
+    ListAnomalyGroupRelatedMetricsResponse:
+      type: object
+      properties:
+        InterMetricImpactList:
+          allOf:
+          - $ref: '#/components/schemas/InterMetricImpactList'
+          - description: Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination token that's included if more results are available.
+    InterMetricImpactList:
+      type: array
+      items:
+        $ref: '#/components/schemas/InterMetricImpactDetails'
+    UUID:
+      type: string
+      pattern: '[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}'
+      maxLength: 63
+    ResourceNotFoundException: {}
+    MetricName:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      maxLength: 256
   parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -318,8 +300,26 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
