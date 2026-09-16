@@ -1,9 +1,9 @@
 aid: amazon-lookout-for-metrics
 name: Amazon Lookout for Metrics
-description: Amazon Lookout for Metrics uses machine learning to automatically detect anomalies in business and operational
-  metrics such as revenue performance, customer engagement, and user activity. It continuously monitors data from various
-  sources including Amazon S3, CloudWatch, RDS, Redshift, Athena, and AppFlow, providing root cause analysis and alert notifications
-  when anomalies are detected.
+description: Amazon Lookout for Metrics uses machine learning to automatically detect anomalies in business
+  and operational metrics such as revenue performance, customer engagement, and user activity. It continuously
+  monitors data from various sources including Amazon S3, CloudWatch, RDS, Redshift, Athena, and AppFlow,
+  providing root cause analysis and alert notifications when anomalies are detected.
 type: Index
 deliveryModel:
   model: saas
@@ -48,13 +48,12 @@ tags_raw:
 - Monitoring
 url: https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-05-19'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-activateanomalydetector-api
   name: Amazon Lookout for Metrics ActivateAnomalyDetector API
-  description: >-
-    The ActivateAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for activateanomalydetector.
+  description: The ActivateAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for activateanomalydetector.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
@@ -73,14 +72,12 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-backtestanomalydetector-api
   name: Amazon Lookout for Metrics BackTestAnomalyDetector API
-  description: >-
-    The BackTestAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for backtestanomalydetector.
+  description: The BackTestAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for backtestanomalydetector.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
@@ -99,8 +96,7 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-createalert-api
@@ -124,14 +120,12 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-createanomalydetector-api
   name: Amazon Lookout for Metrics CreateAnomalyDetector API
-  description: >-
-    The CreateAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for createanomalydetector.
+  description: The CreateAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for createanomalydetector.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
@@ -150,14 +144,12 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-createmetricset-api
   name: Amazon Lookout for Metrics CreateMetricSet API
-  description: >-
-    The CreateMetricSet API from Amazon Lookout for Metrics — 1 operation(s) for createmetricset.
+  description: The CreateMetricSet API from Amazon Lookout for Metrics — 1 operation(s) for createmetricset.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
@@ -176,14 +168,13 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-deactivateanomalydetector-api
   name: Amazon Lookout for Metrics DeactivateAnomalyDetector API
-  description: >-
-    The DeactivateAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for deactivateanomalydetector.
+  description: The DeactivateAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for
+    deactivateanomalydetector.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
@@ -202,8 +193,7 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-deletealert-api
@@ -227,14 +217,12 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-deleteanomalydetector-api
   name: Amazon Lookout for Metrics DeleteAnomalyDetector API
-  description: >-
-    The DeleteAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for deleteanomalydetector.
+  description: The DeleteAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for deleteanomalydetector.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
@@ -253,14 +241,12 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-describealert-api
   name: Amazon Lookout for Metrics DescribeAlert API
-  description: >-
-    The DescribeAlert API from Amazon Lookout for Metrics — 1 operation(s) for describealert.
+  description: The DescribeAlert API from Amazon Lookout for Metrics — 1 operation(s) for describealert.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
@@ -279,15 +265,13 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
-- aid: >-
-    amazon-lookout-for-metrics:amazon-lookout-for-metrics-describeanomalydetectionexecutions-api
+- aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-describeanomalydetectionexecutions-api
   name: Amazon Lookout for Metrics DescribeAnomalyDetectionExecutions API
-  description: >-
-    The DescribeAnomalyDetectionExecutions API from Amazon Lookout for Metrics — 1 operation(s) for describeanomalydetectionexecutions.
+  description: The DescribeAnomalyDetectionExecutions API from Amazon Lookout for Metrics — 1 operation(s)
+    for describeanomalydetectionexecutions.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
@@ -306,14 +290,12 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-describeanomalydetector-api
   name: Amazon Lookout for Metrics DescribeAnomalyDetector API
-  description: >-
-    The DescribeAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for describeanomalydetector.
+  description: The DescribeAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for describeanomalydetector.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
@@ -332,14 +314,12 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-describemetricset-api
   name: Amazon Lookout for Metrics DescribeMetricSet API
-  description: >-
-    The DescribeMetricSet API from Amazon Lookout for Metrics — 1 operation(s) for describemetricset.
+  description: The DescribeMetricSet API from Amazon Lookout for Metrics — 1 operation(s) for describemetricset.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
@@ -358,14 +338,12 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-detectmetricsetconfig-api
   name: Amazon Lookout for Metrics DetectMetricSetConfig API
-  description: >-
-    The DetectMetricSetConfig API from Amazon Lookout for Metrics — 1 operation(s) for detectmetricsetconfig.
+  description: The DetectMetricSetConfig API from Amazon Lookout for Metrics — 1 operation(s) for detectmetricsetconfig.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
@@ -384,14 +362,12 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-getanomalygroup-api
   name: Amazon Lookout for Metrics GetAnomalyGroup API
-  description: >-
-    The GetAnomalyGroup API from Amazon Lookout for Metrics — 1 operation(s) for getanomalygroup.
+  description: The GetAnomalyGroup API from Amazon Lookout for Metrics — 1 operation(s) for getanomalygroup.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
@@ -410,14 +386,12 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-getdataqualitymetrics-api
   name: Amazon Lookout for Metrics GetDataQualityMetrics API
-  description: >-
-    The GetDataQualityMetrics API from Amazon Lookout for Metrics — 1 operation(s) for getdataqualitymetrics.
+  description: The GetDataQualityMetrics API from Amazon Lookout for Metrics — 1 operation(s) for getdataqualitymetrics.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
@@ -436,8 +410,7 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-getfeedback-api
@@ -461,14 +434,12 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-getsampledata-api
   name: Amazon Lookout for Metrics GetSampleData API
-  description: >-
-    The GetSampleData API from Amazon Lookout for Metrics — 1 operation(s) for getsampledata.
+  description: The GetSampleData API from Amazon Lookout for Metrics — 1 operation(s) for getsampledata.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
@@ -487,8 +458,7 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-listalerts-api
@@ -512,14 +482,12 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-listanomalydetectors-api
   name: Amazon Lookout for Metrics ListAnomalyDetectors API
-  description: >-
-    The ListAnomalyDetectors API from Amazon Lookout for Metrics — 1 operation(s) for listanomalydetectors.
+  description: The ListAnomalyDetectors API from Amazon Lookout for Metrics — 1 operation(s) for listanomalydetectors.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
@@ -538,14 +506,13 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-listanomalygrouprelatedmetrics-api
   name: Amazon Lookout for Metrics ListAnomalyGroupRelatedMetrics API
-  description: >-
-    The ListAnomalyGroupRelatedMetrics API from Amazon Lookout for Metrics — 1 operation(s) for listanomalygrouprelatedmetrics.
+  description: The ListAnomalyGroupRelatedMetrics API from Amazon Lookout for Metrics — 1 operation(s)
+    for listanomalygrouprelatedmetrics.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
@@ -564,14 +531,13 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-listanomalygroupsummaries-api
   name: Amazon Lookout for Metrics ListAnomalyGroupSummaries API
-  description: >-
-    The ListAnomalyGroupSummaries API from Amazon Lookout for Metrics — 1 operation(s) for listanomalygroupsummaries.
+  description: The ListAnomalyGroupSummaries API from Amazon Lookout for Metrics — 1 operation(s) for
+    listanomalygroupsummaries.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
@@ -590,14 +556,13 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-listanomalygrouptimeseries-api
   name: Amazon Lookout for Metrics ListAnomalyGroupTimeSeries API
-  description: >-
-    The ListAnomalyGroupTimeSeries API from Amazon Lookout for Metrics — 1 operation(s) for listanomalygrouptimeseries.
+  description: The ListAnomalyGroupTimeSeries API from Amazon Lookout for Metrics — 1 operation(s) for
+    listanomalygrouptimeseries.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
@@ -616,14 +581,12 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-listmetricsets-api
   name: Amazon Lookout for Metrics ListMetricSets API
-  description: >-
-    The ListMetricSets API from Amazon Lookout for Metrics — 1 operation(s) for listmetricsets.
+  description: The ListMetricSets API from Amazon Lookout for Metrics — 1 operation(s) for listmetricsets.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
@@ -642,8 +605,7 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-putfeedback-api
@@ -667,8 +629,7 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-tags-api
@@ -692,8 +653,7 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-updatealert-api
@@ -717,14 +677,12 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-updateanomalydetector-api
   name: Amazon Lookout for Metrics UpdateAnomalyDetector API
-  description: >-
-    The UpdateAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for updateanomalydetector.
+  description: The UpdateAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for updateanomalydetector.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
@@ -743,14 +701,12 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 - aid: amazon-lookout-for-metrics:amazon-lookout-for-metrics-updatemetricset-api
   name: Amazon Lookout for Metrics UpdateMetricSet API
-  description: >-
-    The UpdateMetricSet API from Amazon Lookout for Metrics — 1 operation(s) for updatemetricset.
+  description: The UpdateMetricSet API from Amazon Lookout for Metrics — 1 operation(s) for updatemetricset.
   humanURL: https://aws.amazon.com/lookout-for-metrics/
   baseURL: https://lookoutmetrics.amazonaws.com
   tags:
@@ -769,11 +725,12 @@ apis:
   - type: JSONSchema
     url: json-schema/amazon-lookout-for-metrics-activate-anomaly-detector-response-schema.json
   - type: JSONStructure
-    url: >-
-      json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
+    url: json-structure/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure.json
   - type: JSONLD
     url: json-ld/amazon-lookout-for-metrics-context.jsonld
 common:
+- type: Website
+  url: https://amazon.com
 - type: CapabilityMap
   url: capabilities/amazon-lookout-for-metrics-capability-edges.yml
   name: Amazon Lookout for Metrics Business Capability Map
@@ -820,7 +777,8 @@ common:
 - type: Features
   data:
   - name: Automated Anomaly Detection
-    description: Uses ML to automatically detect anomalies in business and operational metrics without requiring ML expertise.
+    description: Uses ML to automatically detect anomalies in business and operational metrics without
+      requiring ML expertise.
   - name: Root Cause Analysis
     description: Identifies the top contributors to each anomaly to help determine root causes quickly.
   - name: Multi-Source Data Ingestion
@@ -836,15 +794,20 @@ common:
 - type: UseCases
   data:
   - name: Revenue Anomaly Detection
-    description: Monitor revenue metrics and detect unexpected drops or spikes that could indicate fraud or system issues.
+    description: Monitor revenue metrics and detect unexpected drops or spikes that could indicate fraud
+      or system issues.
   - name: Customer Engagement Monitoring
-    description: Track customer engagement metrics and alert teams when patterns deviate from expected ranges.
+    description: Track customer engagement metrics and alert teams when patterns deviate from expected
+      ranges.
   - name: Operational Metrics Monitoring
-    description: Monitor operational metrics such as system performance, error rates, and throughput for anomalies.
+    description: Monitor operational metrics such as system performance, error rates, and throughput for
+      anomalies.
   - name: E-Commerce Performance
-    description: Detect anomalies in e-commerce metrics like conversion rates, cart abandonment, and sales volume.
+    description: Detect anomalies in e-commerce metrics like conversion rates, cart abandonment, and sales
+      volume.
   - name: User Activity Analysis
-    description: Analyze user activity patterns and detect unusual behavior that may indicate security incidents.
+    description: Analyze user activity patterns and detect unusual behavior that may indicate security
+      incidents.
 - type: Integrations
   data:
   - name: Amazon S3
