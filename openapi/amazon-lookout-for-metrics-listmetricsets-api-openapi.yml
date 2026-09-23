@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2017-07-25
   x-release: v4
-  title: Amazon Lookout for Metrics ActivateAnomalyDetector List Metric Sets API
-  description: This is the <i>Amazon Lookout for Metrics API Reference</i>. For an introduction to the service with tutorials for getting started, visit <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev">Amazon Lookout for Metrics Developer Guide</a>.
+  title: Amazon Lookout for Metrics List Metric Sets API
+  description: This is the Amazon Lookout for Metrics API Reference. For an introduction to the service with tutorials for getting started, visit Amazon Lookout for Metrics Developer Guide.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/lookoutmetrics-2017-07-25.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -125,7 +126,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: ListMetricSets
-      description: <p>Lists the datasets in the current AWS Region.</p> <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
+      description: 'Lists the datasets in the current AWS Region.
+
+
+        Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.'
       responses:
         '200':
           description: Success
@@ -203,9 +207,82 @@ paths:
       tags:
       - ListMetricSets
 components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    ValidationException: {}
     InternalServerException: {}
+    MetricSetSummaryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetricSetSummary'
+    MetricSetDescription:
+      type: string
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 256
+    ValidationException: {}
+    ListMetricSetsResponse:
+      type: object
+      properties:
+        MetricSetSummaryList:
+          allOf:
+          - $ref: '#/components/schemas/MetricSetSummaryList'
+          - description: A list of the datasets in the AWS Region, with configuration details for each.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: 'If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. '
+    TagValue:
+      type: string
+      maxLength: 256
+    Timestamp:
+      type: string
+      format: date-time
+    Arn:
+      type: string
+      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
+      maxLength: 256
     MetricSetSummary:
       type: object
       properties:
@@ -238,98 +315,25 @@ components:
           - $ref: '#/components/schemas/TagMap'
           - description: The dataset's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.
       description: Contains information about a dataset.
-    AccessDeniedException: {}
-    ListMetricSetsResponse:
-      type: object
-      properties:
-        MetricSetSummaryList:
-          allOf:
-          - $ref: '#/components/schemas/MetricSetSummaryList'
-          - description: A list of the datasets in the AWS Region, with configuration details for each.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: 'If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. '
-    Timestamp:
-      type: string
-      format: date-time
-    MetricSetDescription:
-      type: string
-      pattern: .*\S.*
-      minLength: 1
-      maxLength: 256
-    NextToken:
-      type: string
-      pattern: .*\S.*
-      minLength: 1
-      maxLength: 3000
-    MetricSetSummaryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetricSetSummary'
-    TagValue:
-      type: string
-      maxLength: 256
-    TooManyRequestsException: {}
-    Arn:
-      type: string
-      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
-      maxLength: 256
     MetricSetName:
       type: string
       pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
       minLength: 1
       maxLength: 63
+    ResourceNotFoundException: {}
+    AccessDeniedException: {}
+    TooManyRequestsException: {}
+    NextToken:
+      type: string
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 3000
     TagMap:
       type: object
       minProperties: 1
       maxProperties: 50
       additionalProperties:
         $ref: '#/components/schemas/TagValue'
-    ResourceNotFoundException: {}
-  parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

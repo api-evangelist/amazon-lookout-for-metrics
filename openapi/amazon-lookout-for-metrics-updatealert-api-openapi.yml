@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2017-07-25
   x-release: v4
-  title: Amazon Lookout for Metrics ActivateAnomalyDetector Update Alert API
-  description: This is the <i>Amazon Lookout for Metrics API Reference</i>. For an introduction to the service with tutorials for getting started, visit <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev">Amazon Lookout for Metrics Developer Guide</a>.
+  title: Amazon Lookout for Metrics Update Alert API
+  description: This is the Amazon Lookout for Metrics API Reference. For an introduction to the service with tutorials for getting started, visit Amazon Lookout for Metrics Developer Guide.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/lookoutmetrics-2017-07-25.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -216,107 +217,9 @@ paths:
       tags:
       - UpdateAlert
 components:
-  schemas:
-    ValidationException: {}
-    InternalServerException: {}
-    AccessDeniedException: {}
-    DimensionValueList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DimensionValue'
-      minItems: 1
-      maxItems: 10
-    ColumnName:
-      type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
-      minLength: 1
-      maxLength: 63
-    LambdaConfiguration:
-      type: object
-      required:
-      - RoleArn
-      - LambdaArn
-      properties:
-        RoleArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The ARN of an IAM role that has permission to invoke the Lambda function.
-        LambdaArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The ARN of the Lambda function.
-      description: Contains information about a Lambda configuration.
-    DimensionFilter:
-      type: object
-      properties:
-        DimensionName:
-          allOf:
-          - $ref: '#/components/schemas/ColumnName'
-          - description: The name of the dimension to filter on.
-        DimensionValueList:
-          allOf:
-          - $ref: '#/components/schemas/DimensionValueList'
-          - description: The list of values for the dimension specified in DimensionName that you want to filter on.
-      description: The dimension filter, containing DimensionName and DimensionValueList.
-    DimensionFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DimensionFilter'
-      minItems: 1
-      maxItems: 5
-    TooManyRequestsException: {}
-    Arn:
-      type: string
-      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
-      maxLength: 256
-    MetricNameList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetricName'
-      minItems: 1
-      maxItems: 5
-    SnsFormat:
-      type: string
-      enum:
-      - LONG_TEXT
-      - SHORT_TEXT
-      - JSON
-    ResourceNotFoundException: {}
-    DimensionValue:
-      type: string
-    MetricName:
-      type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
-      maxLength: 256
-    SNSConfiguration:
-      type: object
-      required:
-      - RoleArn
-      - SnsTopicArn
-      properties:
-        RoleArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The ARN of the IAM role that has access to the target SNS topic.
-        SnsTopicArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The ARN of the target SNS topic.
-        SnsFormat:
-          allOf:
-          - $ref: '#/components/schemas/SnsFormat'
-          - description: <p>The format of the SNS topic.</p> <ul> <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li> <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li> </ul>
-      description: Contains information about the SNS topic to which you want to send your alerts and the IAM role that has access to that topic.
-    UpdateAlertResponse:
-      type: object
-      properties:
-        AlertArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The ARN of the updated alert.
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -327,8 +230,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -351,12 +260,104 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
+  schemas:
+    ColumnName:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      minLength: 1
+      maxLength: 63
+    UpdateAlertResponse:
+      type: object
+      properties:
+        AlertArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The ARN of the updated alert.
+    InternalServerException: {}
+    MetricName:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      maxLength: 256
+    ValidationException: {}
+    SNSConfiguration:
+      type: object
+      required:
+      - RoleArn
+      - SnsTopicArn
+      properties:
+        RoleArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The ARN of the IAM role that has access to the target SNS topic.
+        SnsTopicArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The ARN of the target SNS topic.
+        SnsFormat:
+          allOf:
+          - $ref: '#/components/schemas/SnsFormat'
+          - description: <p>The format of the SNS topic.</p> <ul> <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li> <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li> </ul>
+      description: Contains information about the SNS topic to which you want to send your alerts and the IAM role that has access to that topic.
+    DimensionValue:
+      type: string
+    DimensionFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DimensionFilter'
+      minItems: 1
+      maxItems: 5
+    LambdaConfiguration:
+      type: object
+      required:
+      - RoleArn
+      - LambdaArn
+      properties:
+        RoleArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The ARN of an IAM role that has permission to invoke the Lambda function.
+        LambdaArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The ARN of the Lambda function.
+      description: Contains information about a Lambda configuration.
+    Arn:
+      type: string
+      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
+      maxLength: 256
+    MetricNameList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetricName'
+      minItems: 1
+      maxItems: 5
+    DimensionFilter:
+      type: object
+      properties:
+        DimensionName:
+          allOf:
+          - $ref: '#/components/schemas/ColumnName'
+          - description: The name of the dimension to filter on.
+        DimensionValueList:
+          allOf:
+          - $ref: '#/components/schemas/DimensionValueList'
+          - description: The list of values for the dimension specified in DimensionName that you want to filter on.
+      description: The dimension filter, containing DimensionName and DimensionValueList.
+    ResourceNotFoundException: {}
+    AccessDeniedException: {}
+    SnsFormat:
+      type: string
+      enum:
+      - LONG_TEXT
+      - SHORT_TEXT
+      - JSON
+    DimensionValueList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DimensionValue'
+      minItems: 1
+      maxItems: 10
+    TooManyRequestsException: {}
   securitySchemes:
     hmac:
       type: apiKey

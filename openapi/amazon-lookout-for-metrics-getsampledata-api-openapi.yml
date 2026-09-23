@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2017-07-25
   x-release: v4
-  title: Amazon Lookout for Metrics ActivateAnomalyDetector Get Sample Data API
-  description: This is the <i>Amazon Lookout for Metrics API Reference</i>. For an introduction to the service with tutorials for getting started, visit <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev">Amazon Lookout for Metrics Developer Guide</a>.
+  title: Amazon Lookout for Metrics Get Sample Data API
+  description: This is the Amazon Lookout for Metrics API Reference. For an introduction to the service with tutorials for getting started, visit Amazon Lookout for Metrics Developer Guide.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/lookoutmetrics-2017-07-25.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -193,102 +194,75 @@ paths:
       tags:
       - GetSampleData
 components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    HeaderValueList:
-      type: array
-      items:
-        $ref: '#/components/schemas/HeaderValue'
-    ValidationException: {}
-    FileFormatDescriptor:
-      type: object
-      properties:
-        CsvFormatDescriptor:
-          allOf:
-          - $ref: '#/components/schemas/CsvFormatDescriptor'
-          - description: Contains information about how a source CSV data file should be analyzed.
-        JsonFormatDescriptor:
-          allOf:
-          - $ref: '#/components/schemas/JsonFormatDescriptor'
-          - description: Contains information about how a source JSON data file should be analyzed.
-      description: Contains information about a source file's formatting.
-    InternalServerException: {}
-    Delimiter:
-      type: string
-      pattern: '[^\r\n]'
-      maxLength: 1
-    Charset:
-      type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
-      maxLength: 63
-    QuoteSymbol:
-      type: string
-      pattern: '[^\r\n]|^$'
-      maxLength: 1
-    HeaderList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ColumnName'
-    AccessDeniedException: {}
-    Boolean:
-      type: boolean
-    TemplatedPath:
-      type: string
-      pattern: ^s3://[a-zA-Z0-9_\-\/ {}=]+$
-      maxLength: 1024
-    DataItem:
-      type: string
-    GetSampleDataResponse:
-      type: object
-      properties:
-        HeaderValues:
-          allOf:
-          - $ref: '#/components/schemas/HeaderValueList'
-          - description: A list of header labels for the records.
-        SampleRows:
-          allOf:
-          - $ref: '#/components/schemas/SampleRows'
-          - description: A list of records.
-    SampleRow:
-      type: array
-      items:
-        $ref: '#/components/schemas/DataItem'
     ColumnName:
       type: string
       pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
       minLength: 1
       maxLength: 63
-    HistoricalDataPath:
+    Boolean:
+      type: boolean
+    Delimiter:
       type: string
-      pattern: ^s3://[a-z0-9].+$
-      maxLength: 1024
-    CSVFileCompression:
-      type: string
-      enum:
-      - NONE
-      - GZIP
-    TooManyRequestsException: {}
-    Arn:
-      type: string
-      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
-      maxLength: 256
-    JsonFileCompression:
-      type: string
-      enum:
-      - NONE
-      - GZIP
-    HistoricalDataPathList:
+      pattern: '[^\r\n]'
+      maxLength: 1
+    HeaderList:
       type: array
       items:
-        $ref: '#/components/schemas/HistoricalDataPath'
-      minItems: 1
-      maxItems: 1
-    SampleRows:
+        $ref: '#/components/schemas/ColumnName'
+    InternalServerException: {}
+    HeaderValueList:
       type: array
       items:
-        $ref: '#/components/schemas/SampleRow'
-    ResourceNotFoundException: {}
-    HeaderValue:
-      type: string
+        $ref: '#/components/schemas/HeaderValue'
+    SampleRow:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataItem'
+    ValidationException: {}
     CsvFormatDescriptor:
       type: object
       properties:
@@ -317,12 +291,71 @@ components:
           - $ref: '#/components/schemas/QuoteSymbol'
           - description: The character used as a quote character.
       description: Contains information about how a source CSV data file should be analyzed.
+    CSVFileCompression:
+      type: string
+      enum:
+      - NONE
+      - GZIP
+    HistoricalDataPath:
+      type: string
+      pattern: ^s3://[a-z0-9].+$
+      maxLength: 1024
+    JsonFileCompression:
+      type: string
+      enum:
+      - NONE
+      - GZIP
+    SampleRows:
+      type: array
+      items:
+        $ref: '#/components/schemas/SampleRow'
+    GetSampleDataResponse:
+      type: object
+      properties:
+        HeaderValues:
+          allOf:
+          - $ref: '#/components/schemas/HeaderValueList'
+          - description: A list of header labels for the records.
+        SampleRows:
+          allOf:
+          - $ref: '#/components/schemas/SampleRows'
+          - description: A list of records.
+    Arn:
+      type: string
+      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
+      maxLength: 256
+    DataItem:
+      type: string
+    HistoricalDataPathList:
+      type: array
+      items:
+        $ref: '#/components/schemas/HistoricalDataPath'
+      minItems: 1
+      maxItems: 1
     TemplatedPathList:
       type: array
       items:
         $ref: '#/components/schemas/TemplatedPath'
       minItems: 1
       maxItems: 1
+    ResourceNotFoundException: {}
+    TemplatedPath:
+      type: string
+      pattern: ^s3://[a-zA-Z0-9_\-\/ {}=]+$
+      maxLength: 1024
+    AccessDeniedException: {}
+    FileFormatDescriptor:
+      type: object
+      properties:
+        CsvFormatDescriptor:
+          allOf:
+          - $ref: '#/components/schemas/CsvFormatDescriptor'
+          - description: Contains information about how a source CSV data file should be analyzed.
+        JsonFormatDescriptor:
+          allOf:
+          - $ref: '#/components/schemas/JsonFormatDescriptor'
+          - description: Contains information about how a source JSON data file should be analyzed.
+      description: Contains information about a source file's formatting.
     JsonFormatDescriptor:
       type: object
       properties:
@@ -335,49 +368,17 @@ components:
           - $ref: '#/components/schemas/Charset'
           - description: The character set in which the source JSON file is written.
       description: Contains information about how a source JSON data file should be analyzed.
-  parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
+    HeaderValue:
+      type: string
+    Charset:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      maxLength: 63
+    TooManyRequestsException: {}
+    QuoteSymbol:
+      type: string
+      pattern: '[^\r\n]|^$'
+      maxLength: 1
   securitySchemes:
     hmac:
       type: apiKey

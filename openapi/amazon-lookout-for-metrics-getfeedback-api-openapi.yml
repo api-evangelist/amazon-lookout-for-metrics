@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2017-07-25
   x-release: v4
-  title: Amazon Lookout for Metrics ActivateAnomalyDetector Get Feedback API
-  description: This is the <i>Amazon Lookout for Metrics API Reference</i>. For an introduction to the service with tutorials for getting started, visit <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev">Amazon Lookout for Metrics Developer Guide</a>.
+  title: Amazon Lookout for Metrics Get Feedback API
+  description: This is the Amazon Lookout for Metrics API Reference. For an introduction to the service with tutorials for getting started, visit Amazon Lookout for Metrics Developer Guide.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/lookoutmetrics-2017-07-25.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -218,57 +219,9 @@ paths:
       tags:
       - GetFeedback
 components:
-  schemas:
-    ValidationException: {}
-    TimeSeriesFeedback:
-      type: object
-      properties:
-        TimeSeriesId:
-          allOf:
-          - $ref: '#/components/schemas/TimeSeriesId'
-          - description: The ID of the metric.
-        IsAnomaly:
-          allOf:
-          - $ref: '#/components/schemas/Boolean'
-          - description: Feedback on whether the metric is a legitimate anomaly.
-      description: Details about feedback submitted for an anomalous metric.
-    GetFeedbackResponse:
-      type: object
-      properties:
-        AnomalyGroupTimeSeriesFeedback:
-          allOf:
-          - $ref: '#/components/schemas/TimeSeriesFeedbackList'
-          - description: Feedback for an anomalous metric.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The pagination token that's included if more results are available.
-    InternalServerException: {}
-    TimeSeriesId:
-      type: string
-      pattern: .*\S.*
-      maxLength: 520
-    AccessDeniedException: {}
-    Boolean:
-      type: boolean
-    TimeSeriesFeedbackList:
-      type: array
-      items:
-        $ref: '#/components/schemas/TimeSeriesFeedback'
-    NextToken:
-      type: string
-      pattern: .*\S.*
-      minLength: 1
-      maxLength: 3000
-    TooManyRequestsException: {}
-    UUID:
-      type: string
-      pattern: '[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}'
-      maxLength: 63
-    ResourceNotFoundException: {}
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -279,8 +232,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -303,12 +262,54 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
+  schemas:
+    Boolean:
+      type: boolean
+    UUID:
+      type: string
+      pattern: '[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}'
+      maxLength: 63
+    InternalServerException: {}
+    ValidationException: {}
+    TimeSeriesId:
+      type: string
+      pattern: .*\S.*
+      maxLength: 520
+    TimeSeriesFeedbackList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TimeSeriesFeedback'
+    GetFeedbackResponse:
+      type: object
+      properties:
+        AnomalyGroupTimeSeriesFeedback:
+          allOf:
+          - $ref: '#/components/schemas/TimeSeriesFeedbackList'
+          - description: Feedback for an anomalous metric.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination token that's included if more results are available.
+    TimeSeriesFeedback:
+      type: object
+      properties:
+        TimeSeriesId:
+          allOf:
+          - $ref: '#/components/schemas/TimeSeriesId'
+          - description: The ID of the metric.
+        IsAnomaly:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Feedback on whether the metric is a legitimate anomaly.
+      description: Details about feedback submitted for an anomalous metric.
+    ResourceNotFoundException: {}
+    AccessDeniedException: {}
+    TooManyRequestsException: {}
+    NextToken:
+      type: string
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 3000
   securitySchemes:
     hmac:
       type: apiKey
