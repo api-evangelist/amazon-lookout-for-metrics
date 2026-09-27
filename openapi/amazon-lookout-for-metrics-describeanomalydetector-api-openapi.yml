@@ -186,86 +186,17 @@ paths:
       tags:
       - DescribeAnomalyDetector
 components:
-  parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    KmsKeyArn:
-      type: string
-      pattern: arn:aws.*:kms:.*:[0-9]{12}:key/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}
-      minLength: 20
-      maxLength: 2048
-    InternalServerException: {}
-    AnomalyDetectorStatus:
+    AnomalyDetectorFailureType:
       type: string
       enum:
-      - ACTIVE
-      - ACTIVATING
-      - DELETING
-      - FAILED
-      - INACTIVE
-      - LEARNING
-      - BACK_TEST_ACTIVATING
-      - BACK_TEST_ACTIVE
-      - BACK_TEST_COMPLETE
-      - DEACTIVATED
-      - DEACTIVATING
-    ValidationException: {}
-    AnomalyDetectorDescription:
+      - ACTIVATION_FAILURE
+      - BACK_TEST_ACTIVATION_FAILURE
+      - DELETION_FAILURE
+      - DEACTIVATION_FAILURE
+    Timestamp:
       type: string
-      pattern: .*\S.*
-      minLength: 1
-      maxLength: 256
-    Frequency:
-      type: string
-      enum:
-      - P1D
-      - PT1H
-      - PT10M
-      - PT5M
-    ErrorMessage:
-      type: string
-      maxLength: 256
+      format: date-time
     DescribeAnomalyDetectorResponse:
       type: object
       properties:
@@ -309,6 +240,22 @@ components:
           allOf:
           - $ref: '#/components/schemas/AnomalyDetectorFailureType'
           - description: The process that caused the detector to fail.
+    Arn:
+      type: string
+      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
+      maxLength: 256
+    AccessDeniedException: {}
+    ErrorMessage:
+      type: string
+      maxLength: 256
+    TooManyRequestsException: {}
+    Frequency:
+      type: string
+      enum:
+      - P1D
+      - PT1H
+      - PT10M
+      - PT5M
     AnomalyDetectorConfigSummary:
       type: object
       properties:
@@ -317,28 +264,81 @@ components:
           - $ref: '#/components/schemas/Frequency'
           - description: The interval at which the detector analyzes its source data.
       description: Contains information about a detector's configuration.
-    Timestamp:
-      type: string
-      format: date-time
-    Arn:
-      type: string
-      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
-      maxLength: 256
-    ResourceNotFoundException: {}
-    AnomalyDetectorFailureType:
+    AnomalyDetectorStatus:
       type: string
       enum:
-      - ACTIVATION_FAILURE
-      - BACK_TEST_ACTIVATION_FAILURE
-      - DELETION_FAILURE
-      - DEACTIVATION_FAILURE
-    AccessDeniedException: {}
-    TooManyRequestsException: {}
+      - ACTIVE
+      - ACTIVATING
+      - DELETING
+      - FAILED
+      - INACTIVE
+      - LEARNING
+      - BACK_TEST_ACTIVATING
+      - BACK_TEST_ACTIVE
+      - BACK_TEST_COMPLETE
+      - DEACTIVATED
+      - DEACTIVATING
+    AnomalyDetectorDescription:
+      type: string
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 256
+    InternalServerException: {}
+    ResourceNotFoundException: {}
+    KmsKeyArn:
+      type: string
+      pattern: arn:aws.*:kms:.*:[0-9]{12}:key/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}
+      minLength: 20
+      maxLength: 2048
     AnomalyDetectorName:
       type: string
       pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
       minLength: 1
       maxLength: 63
+    ValidationException: {}
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

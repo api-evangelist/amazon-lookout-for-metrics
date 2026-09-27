@@ -192,96 +192,7 @@ paths:
       tags:
       - DetectMetricSetConfig
 components:
-  parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    DetectMetricSetConfigResponse:
-      type: object
-      properties:
-        DetectedMetricSetConfig:
-          allOf:
-          - $ref: '#/components/schemas/DetectedMetricSetConfig'
-          - description: The inferred dataset configuration for the datasource.
-    Message:
-      type: string
-    DetectedS3SourceConfig:
-      type: object
-      properties:
-        FileFormatDescriptor:
-          allOf:
-          - $ref: '#/components/schemas/DetectedFileFormatDescriptor'
-          - description: The source's file format descriptor.
-      description: An inferred source configuration.
-    InternalServerException: {}
-    DetectedCsvFormatDescriptor:
-      type: object
-      properties:
-        FileCompression:
-          allOf:
-          - $ref: '#/components/schemas/DetectedField'
-          - description: The format's file compression.
-        Charset:
-          allOf:
-          - $ref: '#/components/schemas/DetectedField'
-          - description: The format's charset.
-        ContainsHeader:
-          allOf:
-          - $ref: '#/components/schemas/DetectedField'
-          - description: Whether the format includes a header.
-        Delimiter:
-          allOf:
-          - $ref: '#/components/schemas/DetectedField'
-          - description: The format's delimiter.
-        HeaderList:
-          allOf:
-          - $ref: '#/components/schemas/DetectedField'
-          - description: The format's header list.
-        QuoteSymbol:
-          allOf:
-          - $ref: '#/components/schemas/DetectedField'
-          - description: The format's quote symbol.
-      description: Properties of an inferred CSV format.
     DetectedMetricSource:
       type: object
       properties:
@@ -290,7 +201,8 @@ components:
           - $ref: '#/components/schemas/DetectedS3SourceConfig'
           - description: The data source's source configuration.
       description: An inferred data source.
-    ValidationException: {}
+    BinaryAttributeValue:
+      type: string
     AttributeValue:
       type: object
       properties:
@@ -319,8 +231,6 @@ components:
           - $ref: '#/components/schemas/BinaryListAttributeValue'
           - description: A list of binary values.
       description: An attribute value.
-    StringAttributeValue:
-      type: string
     DetectedJsonFormatDescriptor:
       type: object
       properties:
@@ -333,57 +243,17 @@ components:
           - $ref: '#/components/schemas/DetectedField'
           - description: The format's character set.
       description: A detected JSON format descriptor.
-    NumberAttributeValue:
+    StringListAttributeValue:
+      type: array
+      items:
+        $ref: '#/components/schemas/StringAttributeValue'
+    StringAttributeValue:
       type: string
-    HistoricalDataPath:
-      type: string
-      pattern: ^s3://[a-z0-9].+$
-      maxLength: 1024
-    HistoricalDataPathList:
+    AccessDeniedException: {}
+    BinaryListAttributeValue:
       type: array
       items:
-        $ref: '#/components/schemas/HistoricalDataPath'
-      minItems: 1
-      maxItems: 1
-    TemplatedPathList:
-      type: array
-      items:
-        $ref: '#/components/schemas/TemplatedPath'
-      minItems: 1
-      maxItems: 1
-    NumberListAttributeValue:
-      type: array
-      items:
-        $ref: '#/components/schemas/NumberAttributeValue'
-    DetectedFileFormatDescriptor:
-      type: object
-      properties:
-        CsvFormatDescriptor:
-          allOf:
-          - $ref: '#/components/schemas/DetectedCsvFormatDescriptor'
-          - description: Details about a CSV format.
-        JsonFormatDescriptor:
-          allOf:
-          - $ref: '#/components/schemas/DetectedJsonFormatDescriptor'
-          - description: Details about a JSON format.
-      description: Properties of an inferred data format.
-    ResourceNotFoundException: {}
-    DetectedMetricSetConfig:
-      type: object
-      properties:
-        Offset:
-          allOf:
-          - $ref: '#/components/schemas/DetectedField'
-          - description: The dataset's offset.
-        MetricSetFrequency:
-          allOf:
-          - $ref: '#/components/schemas/DetectedField'
-          - description: The dataset's interval.
-        MetricSource:
-          allOf:
-          - $ref: '#/components/schemas/DetectedMetricSource'
-          - description: The dataset's data source.
-      description: An inferred dataset configuration.
+        $ref: '#/components/schemas/BinaryAttributeValue'
     DetectedField:
       type: object
       properties:
@@ -400,28 +270,55 @@ components:
           - $ref: '#/components/schemas/Message'
           - description: The field's message.
       description: An inferred field.
-    TemplatedPath:
+    DetectedCsvFormatDescriptor:
+      type: object
+      properties:
+        FileCompression:
+          allOf:
+          - $ref: '#/components/schemas/DetectedField'
+          - description: The format's file compression.
+        Charset:
+          allOf:
+          - $ref: '#/components/schemas/DetectedField'
+          - description: The format's charset.
+        ContainsHeader:
+          allOf:
+          - $ref: '#/components/schemas/DetectedField'
+          - description: Whether the format includes a header.
+        Delimiter:
+          allOf:
+          - $ref: '#/components/schemas/DetectedField'
+          - description: The format's delimiter.
+        HeaderList:
+          allOf:
+          - $ref: '#/components/schemas/DetectedField'
+          - description: The format's header list.
+        QuoteSymbol:
+          allOf:
+          - $ref: '#/components/schemas/DetectedField'
+          - description: The format's quote symbol.
+      description: Properties of an inferred CSV format.
+    TooManyRequestsException: {}
+    Message:
       type: string
-      pattern: ^s3://[a-zA-Z0-9_\-\/ {}=]+$
-      maxLength: 1024
-    BinaryAttributeValue:
-      type: string
+    TemplatedPathList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TemplatedPath'
+      minItems: 1
+      maxItems: 1
     Confidence:
       type: string
       enum:
       - HIGH
       - LOW
       - NONE
-    BinaryListAttributeValue:
+    HistoricalDataPathList:
       type: array
       items:
-        $ref: '#/components/schemas/BinaryAttributeValue'
-    AccessDeniedException: {}
-    StringListAttributeValue:
-      type: array
-      items:
-        $ref: '#/components/schemas/StringAttributeValue'
-    TooManyRequestsException: {}
+        $ref: '#/components/schemas/HistoricalDataPath'
+      minItems: 1
+      maxItems: 1
     AutoDetectionS3SourceConfig:
       type: object
       properties:
@@ -434,6 +331,109 @@ components:
           - $ref: '#/components/schemas/HistoricalDataPathList'
           - description: The config's historical data path list.
       description: An auto detection source config.
+    NumberAttributeValue:
+      type: string
+    DetectedS3SourceConfig:
+      type: object
+      properties:
+        FileFormatDescriptor:
+          allOf:
+          - $ref: '#/components/schemas/DetectedFileFormatDescriptor'
+          - description: The source's file format descriptor.
+      description: An inferred source configuration.
+    DetectMetricSetConfigResponse:
+      type: object
+      properties:
+        DetectedMetricSetConfig:
+          allOf:
+          - $ref: '#/components/schemas/DetectedMetricSetConfig'
+          - description: The inferred dataset configuration for the datasource.
+    HistoricalDataPath:
+      type: string
+      pattern: ^s3://[a-z0-9].+$
+      maxLength: 1024
+    InternalServerException: {}
+    ResourceNotFoundException: {}
+    DetectedFileFormatDescriptor:
+      type: object
+      properties:
+        CsvFormatDescriptor:
+          allOf:
+          - $ref: '#/components/schemas/DetectedCsvFormatDescriptor'
+          - description: Details about a CSV format.
+        JsonFormatDescriptor:
+          allOf:
+          - $ref: '#/components/schemas/DetectedJsonFormatDescriptor'
+          - description: Details about a JSON format.
+      description: Properties of an inferred data format.
+    NumberListAttributeValue:
+      type: array
+      items:
+        $ref: '#/components/schemas/NumberAttributeValue'
+    DetectedMetricSetConfig:
+      type: object
+      properties:
+        Offset:
+          allOf:
+          - $ref: '#/components/schemas/DetectedField'
+          - description: The dataset's offset.
+        MetricSetFrequency:
+          allOf:
+          - $ref: '#/components/schemas/DetectedField'
+          - description: The dataset's interval.
+        MetricSource:
+          allOf:
+          - $ref: '#/components/schemas/DetectedMetricSource'
+          - description: The dataset's data source.
+      description: An inferred dataset configuration.
+    ValidationException: {}
+    TemplatedPath:
+      type: string
+      pattern: ^s3://[a-zA-Z0-9_\-\/ {}=]+$
+      maxLength: 1024
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

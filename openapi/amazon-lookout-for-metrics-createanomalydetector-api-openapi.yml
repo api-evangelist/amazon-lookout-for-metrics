@@ -225,7 +225,21 @@ paths:
       - CreateAnomalyDetector
 components:
   schemas:
+    TooManyRequestsException: {}
     AccessDeniedException: {}
+    TagValue:
+      type: string
+      maxLength: 256
+    Frequency:
+      type: string
+      enum:
+      - P1D
+      - PT1H
+      - PT10M
+      - PT5M
+    ValidationException: {}
+    InternalServerException: {}
+    ConflictException: {}
     CreateAnomalyDetectorResponse:
       type: object
       properties:
@@ -238,23 +252,9 @@ components:
       type: string
       pattern: arn:([a-z\d-]+):.*:.*:.*:.+
       maxLength: 256
-    Frequency:
-      type: string
-      enum:
-      - P1D
-      - PT1H
-      - PT10M
-      - PT5M
-    TooManyRequestsException: {}
-    ConflictException: {}
-    InternalServerException: {}
-    ValidationException: {}
-    TagValue:
-      type: string
-      maxLength: 256
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -265,8 +265,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -277,20 +277,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
     X-Amz-Date:
       name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

@@ -219,27 +219,37 @@ paths:
       - ListAnomalyGroupRelatedMetrics
 components:
   schemas:
-    InterMetricImpactList:
-      type: array
-      items:
-        $ref: '#/components/schemas/InterMetricImpactDetails'
+    UUID:
+      type: string
+      pattern: '[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}'
+      maxLength: 63
     MetricChangePercentage:
       type: number
       format: double
       minimum: 0
       maximum: 100
-    UUID:
+    AccessDeniedException: {}
+    RelationshipType:
       type: string
-      pattern: '[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}'
-      maxLength: 63
-    InternalServerException: {}
+      enum:
+      - CAUSE_OF_INPUT_ANOMALY_GROUP
+      - EFFECT_OF_INPUT_ANOMALY_GROUP
+    NextToken:
+      type: string
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 3000
+    TooManyRequestsException: {}
     MetricName:
       type: string
       pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
       maxLength: 256
-    ValidationException: {}
+    InternalServerException: {}
     ResourceNotFoundException: {}
-    AccessDeniedException: {}
+    InterMetricImpactList:
+      type: array
+      items:
+        $ref: '#/components/schemas/InterMetricImpactDetails'
     InterMetricImpactDetails:
       type: object
       properties:
@@ -260,7 +270,7 @@ components:
           - $ref: '#/components/schemas/MetricChangePercentage'
           - description: For potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), the percentage contribution the measure has in causing the anomalies.
       description: <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p> <p/>
-    TooManyRequestsException: {}
+    ValidationException: {}
     ListAnomalyGroupRelatedMetricsResponse:
       type: object
       properties:
@@ -272,25 +282,15 @@ components:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: The pagination token that's included if more results are available.
-    NextToken:
-      type: string
-      pattern: .*\S.*
-      minLength: 1
-      maxLength: 3000
-    RelationshipType:
-      type: string
-      enum:
-      - CAUSE_OF_INPUT_ANOMALY_GROUP
-      - EFFECT_OF_INPUT_ANOMALY_GROUP
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -307,20 +307,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Date:
       name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string

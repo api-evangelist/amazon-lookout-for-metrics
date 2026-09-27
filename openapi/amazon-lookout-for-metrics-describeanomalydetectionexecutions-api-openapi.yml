@@ -211,49 +211,6 @@ paths:
       tags:
       - DescribeAnomalyDetectionExecutions
 components:
-  parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
     ExecutionStatus:
       type: object
@@ -271,12 +228,12 @@ components:
           - $ref: '#/components/schemas/AnomalyDetectionTaskStatusMessage'
           - description: The reason that the run failed, if applicable.
       description: The status of an anomaly detector run.
-    InternalServerException: {}
-    ExecutionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ExecutionStatus'
-    ValidationException: {}
+    AnomalyDetectionTaskStatusMessage:
+      type: string
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 256
+    AccessDeniedException: {}
     AnomalyDetectionTaskStatus:
       type: string
       enum:
@@ -285,23 +242,19 @@ components:
       - COMPLETED
       - FAILED
       - FAILED_TO_SCHEDULE
-    ResourceNotFoundException: {}
-    TimestampString:
-      type: string
-      pattern: ^([12]\d{3})-(1[0-2]|0[1-9])-(0[1-9]|[12]\d|3[01])T([01]\d|2[0-3]):([0-5]\d):([0-5]\d)(Z|(\+|\-)(0\d|1[0-2]):([0-5]\d)(\[[[:alnum:]\/\_]+\])?)$
-      maxLength: 60
-    AnomalyDetectionTaskStatusMessage:
-      type: string
-      pattern: .*\S.*
-      minLength: 1
-      maxLength: 256
-    AccessDeniedException: {}
-    TooManyRequestsException: {}
     NextToken:
       type: string
       pattern: .*\S.*
       minLength: 1
       maxLength: 3000
+    TooManyRequestsException: {}
+    InternalServerException: {}
+    ExecutionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ExecutionStatus'
+    ResourceNotFoundException: {}
+    ValidationException: {}
     DescribeAnomalyDetectionExecutionsResponse:
       type: object
       properties:
@@ -313,6 +266,53 @@ components:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: The pagination token that's included if more results are available.
+    TimestampString:
+      type: string
+      pattern: ^([12]\d{3})-(1[0-2]|0[1-9])-(0[1-9]|[12]\d|3[01])T([01]\d|2[0-3]):([0-5]\d):([0-5]\d)(Z|(\+|\-)(0\d|1[0-2]):([0-5]\d)(\[[[:alnum:]\/\_]+\])?)$
+      maxLength: 60
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

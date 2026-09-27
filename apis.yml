@@ -36,9 +36,10 @@ tags:
 - Anomaly Detection
 - AWS
 - Business Intelligence
-- Machine-Learning
+- Machine Learning
 - Metrics
 - Monitoring
+- Defunct
 tags_raw:
 - Anomaly Detection
 - AWS
@@ -46,6 +47,8 @@ tags_raw:
 - Machine Learning
 - Metrics
 - Monitoring
+- Machine-Learning
+- Defunct
 url: https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/apis.yml
 created: '2026-03-16'
 modified: '2026-09-16'
@@ -841,5 +844,8 @@ integrations:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
-x-parent: aws
+x-parent: amazon-web-services
 x-relationship: product
+x-status: defunct
+x-status-detail: 'AWS service support ended 2025-10-10 (AWS, Services in Full Shutdown).'
+x-status-source: https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html

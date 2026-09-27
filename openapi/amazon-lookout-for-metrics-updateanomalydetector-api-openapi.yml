@@ -204,18 +204,8 @@ paths:
       - UpdateAnomalyDetector
 components:
   schemas:
+    TooManyRequestsException: {}
     AccessDeniedException: {}
-    UpdateAnomalyDetectorResponse:
-      type: object
-      properties:
-        AnomalyDetectorArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The ARN of the updated detector.
-    Arn:
-      type: string
-      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
-      maxLength: 256
     Frequency:
       type: string
       enum:
@@ -223,25 +213,29 @@ components:
       - PT1H
       - PT10M
       - PT5M
-    TooManyRequestsException: {}
+    UpdateAnomalyDetectorResponse:
+      type: object
+      properties:
+        AnomalyDetectorArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The ARN of the updated detector.
+    ValidationException: {}
     InternalServerException: {}
     ResourceNotFoundException: {}
-    ValidationException: {}
+    Arn:
+      type: string
+      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
+      maxLength: 256
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -252,8 +246,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -264,8 +264,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string

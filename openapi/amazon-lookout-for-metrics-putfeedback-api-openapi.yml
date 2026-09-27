@@ -201,9 +201,11 @@ paths:
       - PutFeedback
 components:
   schemas:
-    PutFeedbackResponse:
-      type: object
-      properties: {}
+    TooManyRequestsException: {}
+    TimeSeriesId:
+      type: string
+      pattern: .*\S.*
+      maxLength: 520
     AccessDeniedException: {}
     Boolean:
       type: boolean
@@ -211,29 +213,21 @@ components:
       type: string
       pattern: '[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}'
       maxLength: 63
-    TooManyRequestsException: {}
+    PutFeedbackResponse:
+      type: object
+      properties: {}
+    ValidationException: {}
     InternalServerException: {}
     ResourceNotFoundException: {}
-    ValidationException: {}
-    TimeSeriesId:
-      type: string
-      pattern: .*\S.*
-      maxLength: 520
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -244,8 +238,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -256,8 +256,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
