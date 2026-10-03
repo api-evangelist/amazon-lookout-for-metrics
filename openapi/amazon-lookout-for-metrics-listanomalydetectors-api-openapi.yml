@@ -203,20 +203,7 @@ paths:
       - ListAnomalyDetectors
 components:
   schemas:
-    Timestamp:
-      type: string
-      format: date-time
-    ListAnomalyDetectorsResponse:
-      type: object
-      properties:
-        AnomalyDetectorSummaryList:
-          allOf:
-          - $ref: '#/components/schemas/AnomalyDetectorSummaryList'
-          - description: A list of anomaly detectors in the account in the current region.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: If the response is truncated, the service returns this token. To retrieve the next set of results, use the token in the next request.
+    AccessDeniedException: {}
     AnomalyDetectorSummary:
       type: object
       properties:
@@ -249,27 +236,47 @@ components:
           - $ref: '#/components/schemas/TagMap'
           - description: The detector's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.
       description: Contains information about an an anomaly detector.
-    Arn:
+    AnomalyDetectorName:
       type: string
-      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      minLength: 1
+      maxLength: 63
+    AnomalyDetectorSummaryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AnomalyDetectorSummary'
+    InternalServerException: {}
+    TagValue:
+      type: string
       maxLength: 256
-    AccessDeniedException: {}
+    TooManyRequestsException: {}
+    ResourceNotFoundException: {}
+    ListAnomalyDetectorsResponse:
+      type: object
+      properties:
+        AnomalyDetectorSummaryList:
+          allOf:
+          - $ref: '#/components/schemas/AnomalyDetectorSummaryList'
+          - description: A list of anomaly detectors in the account in the current region.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: If the response is truncated, the service returns this token. To retrieve the next set of results, use the token in the next request.
+    AnomalyDetectorDescription:
+      type: string
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 256
+    ValidationException: {}
     TagMap:
       type: object
       minProperties: 1
       maxProperties: 50
       additionalProperties:
         $ref: '#/components/schemas/TagValue'
-    NextToken:
+    Timestamp:
       type: string
-      pattern: .*\S.*
-      minLength: 1
-      maxLength: 3000
-    TooManyRequestsException: {}
-    AnomalyDetectorSummaryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/AnomalyDetectorSummary'
+      format: date-time
     AnomalyDetectorStatus:
       type: string
       enum:
@@ -284,41 +291,16 @@ components:
       - BACK_TEST_COMPLETE
       - DEACTIVATED
       - DEACTIVATING
-    AnomalyDetectorDescription:
+    Arn:
+      type: string
+      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
+      maxLength: 256
+    NextToken:
       type: string
       pattern: .*\S.*
       minLength: 1
-      maxLength: 256
-    InternalServerException: {}
-    ResourceNotFoundException: {}
-    AnomalyDetectorName:
-      type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
-      minLength: 1
-      maxLength: 63
-    TagValue:
-      type: string
-      maxLength: 256
-    ValidationException: {}
+      maxLength: 3000
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -331,8 +313,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string

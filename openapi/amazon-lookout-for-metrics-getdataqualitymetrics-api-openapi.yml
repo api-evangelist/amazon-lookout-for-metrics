@@ -189,33 +189,6 @@ paths:
       - GetDataQualityMetrics
 components:
   schemas:
-    Timestamp:
-      type: string
-      format: date-time
-    MetricSetDataQualityMetricList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetricSetDataQualityMetric'
-    DataQualityMetricList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DataQualityMetric'
-    GetDataQualityMetricsResponse:
-      type: object
-      properties:
-        AnomalyDetectorDataQualityMetricList:
-          allOf:
-          - $ref: '#/components/schemas/AnomalyDetectorDataQualityMetricList'
-          - description: A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you requested.
-    Double:
-      type: number
-      format: double
-    Arn:
-      type: string
-      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
-      maxLength: 256
-    AccessDeniedException: {}
-    TooManyRequestsException: {}
     AnomalyDetectorDataQualityMetric:
       type: object
       properties:
@@ -228,6 +201,16 @@ components:
           - $ref: '#/components/schemas/MetricSetDataQualityMetricList'
           - description: An array of <code>DataQualityMetricList</code> objects. Each object in the array contains information about a data quality metric.
       description: Aggregated details about the data quality metrics collected for the <code>AnomalyDetectorArn</code> provided in the <a>GetDataQualityMetrics</a> object.
+    MetricSetDataQualityMetricList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetricSetDataQualityMetric'
+    RelatedColumnName:
+      type: string
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 256
+    AccessDeniedException: {}
     MetricSetDataQualityMetric:
       type: object
       properties:
@@ -240,22 +223,19 @@ components:
           - $ref: '#/components/schemas/DataQualityMetricList'
           - description: The array of data quality metrics contained in the data quality metric set.
       description: An array of <code>DataQualityMetric</code> objects that describes one or more data quality metrics.
+    GetDataQualityMetricsResponse:
+      type: object
+      properties:
+        AnomalyDetectorDataQualityMetricList:
+          allOf:
+          - $ref: '#/components/schemas/AnomalyDetectorDataQualityMetricList'
+          - description: A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you requested.
+    Double:
+      type: number
+      format: double
     InternalServerException: {}
+    TooManyRequestsException: {}
     ResourceNotFoundException: {}
-    AnomalyDetectorDataQualityMetricList:
-      type: array
-      items:
-        $ref: '#/components/schemas/AnomalyDetectorDataQualityMetric'
-    DataQualityMetricDescription:
-      type: string
-      pattern: .*\S.*
-      minLength: 1
-      maxLength: 256
-    RelatedColumnName:
-      type: string
-      pattern: .*\S.*
-      minLength: 1
-      maxLength: 256
     DataQualityMetric:
       type: object
       properties:
@@ -290,25 +270,27 @@ components:
       - BACKTEST_TRAINING_DATA_END_TIME_STAMP
       - BACKTEST_INFERENCE_DATA_START_TIME_STAMP
       - BACKTEST_INFERENCE_DATA_END_TIME_STAMP
+    DataQualityMetricList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataQualityMetric'
+    Timestamp:
+      type: string
+      format: date-time
+    AnomalyDetectorDataQualityMetricList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AnomalyDetectorDataQualityMetric'
+    DataQualityMetricDescription:
+      type: string
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 256
+    Arn:
+      type: string
+      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
+      maxLength: 256
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -321,8 +303,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string

@@ -211,78 +211,7 @@ paths:
       tags:
       - DescribeAnomalyDetectionExecutions
 components:
-  schemas:
-    ExecutionStatus:
-      type: object
-      properties:
-        Timestamp:
-          allOf:
-          - $ref: '#/components/schemas/TimestampString'
-          - description: The run's timestamp.
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/AnomalyDetectionTaskStatus'
-          - description: The run's status.
-        FailureReason:
-          allOf:
-          - $ref: '#/components/schemas/AnomalyDetectionTaskStatusMessage'
-          - description: The reason that the run failed, if applicable.
-      description: The status of an anomaly detector run.
-    AnomalyDetectionTaskStatusMessage:
-      type: string
-      pattern: .*\S.*
-      minLength: 1
-      maxLength: 256
-    AccessDeniedException: {}
-    AnomalyDetectionTaskStatus:
-      type: string
-      enum:
-      - PENDING
-      - IN_PROGRESS
-      - COMPLETED
-      - FAILED
-      - FAILED_TO_SCHEDULE
-    NextToken:
-      type: string
-      pattern: .*\S.*
-      minLength: 1
-      maxLength: 3000
-    TooManyRequestsException: {}
-    InternalServerException: {}
-    ExecutionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ExecutionStatus'
-    ResourceNotFoundException: {}
-    ValidationException: {}
-    DescribeAnomalyDetectionExecutionsResponse:
-      type: object
-      properties:
-        ExecutionList:
-          allOf:
-          - $ref: '#/components/schemas/ExecutionList'
-          - description: A list of detection jobs.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The pagination token that's included if more results are available.
-    TimestampString:
-      type: string
-      pattern: ^([12]\d{3})-(1[0-2]|0[1-9])-(0[1-9]|[12]\d|3[01])T([01]\d|2[0-3]):([0-5]\d):([0-5]\d)(Z|(\+|\-)(0\d|1[0-2]):([0-5]\d)(\[[[:alnum:]\/\_]+\])?)$
-      maxLength: 60
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
@@ -301,8 +230,20 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -313,6 +254,65 @@ components:
       schema:
         type: string
       required: false
+  schemas:
+    DescribeAnomalyDetectionExecutionsResponse:
+      type: object
+      properties:
+        ExecutionList:
+          allOf:
+          - $ref: '#/components/schemas/ExecutionList'
+          - description: A list of detection jobs.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination token that's included if more results are available.
+    AccessDeniedException: {}
+    ExecutionStatus:
+      type: object
+      properties:
+        Timestamp:
+          allOf:
+          - $ref: '#/components/schemas/TimestampString'
+          - description: The run's timestamp.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/AnomalyDetectionTaskStatus'
+          - description: The run's status.
+        FailureReason:
+          allOf:
+          - $ref: '#/components/schemas/AnomalyDetectionTaskStatusMessage'
+          - description: The reason that the run failed, if applicable.
+      description: The status of an anomaly detector run.
+    ExecutionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ExecutionStatus'
+    AnomalyDetectionTaskStatus:
+      type: string
+      enum:
+      - PENDING
+      - IN_PROGRESS
+      - COMPLETED
+      - FAILED
+      - FAILED_TO_SCHEDULE
+    InternalServerException: {}
+    TooManyRequestsException: {}
+    ResourceNotFoundException: {}
+    ValidationException: {}
+    AnomalyDetectionTaskStatusMessage:
+      type: string
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 256
+    NextToken:
+      type: string
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 3000
+    TimestampString:
+      type: string
+      pattern: ^([12]\d{3})-(1[0-2]|0[1-9])-(0[1-9]|[12]\d|3[01])T([01]\d|2[0-3]):([0-5]\d):([0-5]\d)(Z|(\+|\-)(0\d|1[0-2]):([0-5]\d)(\[[[:alnum:]\/\_]+\])?)$
+      maxLength: 60
   securitySchemes:
     hmac:
       type: apiKey

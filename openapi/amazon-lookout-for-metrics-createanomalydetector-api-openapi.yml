@@ -225,10 +225,19 @@ paths:
       - CreateAnomalyDetector
 components:
   schemas:
-    TooManyRequestsException: {}
+    ConflictException: {}
+    ServiceQuotaExceededException: {}
+    CreateAnomalyDetectorResponse:
+      type: object
+      properties:
+        AnomalyDetectorArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The ARN of the detector.
     AccessDeniedException: {}
-    TagValue:
+    Arn:
       type: string
+      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
       maxLength: 256
     Frequency:
       type: string
@@ -237,24 +246,21 @@ components:
       - PT1H
       - PT10M
       - PT5M
-    ValidationException: {}
     InternalServerException: {}
-    ConflictException: {}
-    CreateAnomalyDetectorResponse:
-      type: object
-      properties:
-        AnomalyDetectorArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The ARN of the detector.
-    ServiceQuotaExceededException: {}
-    Arn:
+    TagValue:
       type: string
-      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
       maxLength: 256
+    ValidationException: {}
+    TooManyRequestsException: {}
   parameters:
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -265,20 +271,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -291,6 +285,12 @@ components:
       required: false
     X-Amz-Date:
       name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string

@@ -218,42 +218,17 @@ paths:
       - UpdateAlert
 components:
   schemas:
-    DimensionFilter:
-      type: object
-      properties:
-        DimensionName:
-          allOf:
-          - $ref: '#/components/schemas/ColumnName'
-          - description: The name of the dimension to filter on.
-        DimensionValueList:
-          allOf:
-          - $ref: '#/components/schemas/DimensionValueList'
-          - description: The list of values for the dimension specified in DimensionName that you want to filter on.
-      description: The dimension filter, containing DimensionName and DimensionValueList.
-    DimensionValueList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DimensionValue'
-      minItems: 1
-      maxItems: 10
-    Arn:
+    SnsFormat:
       type: string
-      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
-      maxLength: 256
-    MetricNameList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetricName'
-      minItems: 1
-      maxItems: 5
+      enum:
+      - LONG_TEXT
+      - SHORT_TEXT
+      - JSON
     AccessDeniedException: {}
-    UpdateAlertResponse:
-      type: object
-      properties:
-        AlertArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The ARN of the updated alert.
+    MetricName:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      maxLength: 256
     SNSConfiguration:
       type: object
       required:
@@ -273,16 +248,39 @@ components:
           - $ref: '#/components/schemas/SnsFormat'
           - description: <p>The format of the SNS topic.</p> <ul> <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li> <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li> </ul>
       description: Contains information about the SNS topic to which you want to send your alerts and the IAM role that has access to that topic.
+    DimensionValue:
+      type: string
+    UpdateAlertResponse:
+      type: object
+      properties:
+        AlertArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The ARN of the updated alert.
+    DimensionFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DimensionFilter'
+      minItems: 1
+      maxItems: 5
+    DimensionFilter:
+      type: object
+      properties:
+        DimensionName:
+          allOf:
+          - $ref: '#/components/schemas/ColumnName'
+          - description: The name of the dimension to filter on.
+        DimensionValueList:
+          allOf:
+          - $ref: '#/components/schemas/DimensionValueList'
+          - description: The list of values for the dimension specified in DimensionName that you want to filter on.
+      description: The dimension filter, containing DimensionName and DimensionValueList.
+    InternalServerException: {}
     ColumnName:
       type: string
       pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
       minLength: 1
       maxLength: 63
-    TooManyRequestsException: {}
-    MetricName:
-      type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
-      maxLength: 256
     LambdaConfiguration:
       type: object
       required:
@@ -298,42 +296,26 @@ components:
           - $ref: '#/components/schemas/Arn'
           - description: The ARN of the Lambda function.
       description: Contains information about a Lambda configuration.
-    DimensionFilterList:
+    TooManyRequestsException: {}
+    ResourceNotFoundException: {}
+    MetricNameList:
       type: array
       items:
-        $ref: '#/components/schemas/DimensionFilter'
+        $ref: '#/components/schemas/MetricName'
       minItems: 1
       maxItems: 5
-    InternalServerException: {}
-    ResourceNotFoundException: {}
-    DimensionValue:
-      type: string
-    SnsFormat:
-      type: string
-      enum:
-      - LONG_TEXT
-      - SHORT_TEXT
-      - JSON
     ValidationException: {}
+    DimensionValueList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DimensionValue'
+      minItems: 1
+      maxItems: 10
+    Arn:
+      type: string
+      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
+      maxLength: 256
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -346,8 +328,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string

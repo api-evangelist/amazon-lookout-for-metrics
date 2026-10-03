@@ -220,29 +220,7 @@ paths:
       - GetFeedback
 components:
   schemas:
-    GetFeedbackResponse:
-      type: object
-      properties:
-        AnomalyGroupTimeSeriesFeedback:
-          allOf:
-          - $ref: '#/components/schemas/TimeSeriesFeedbackList'
-          - description: Feedback for an anomalous metric.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The pagination token that's included if more results are available.
-    UUID:
-      type: string
-      pattern: '[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}'
-      maxLength: 63
     AccessDeniedException: {}
-    Boolean:
-      type: boolean
-    NextToken:
-      type: string
-      pattern: .*\S.*
-      minLength: 1
-      maxLength: 3000
     TimeSeriesFeedback:
       type: object
       properties:
@@ -255,37 +233,41 @@ components:
           - $ref: '#/components/schemas/Boolean'
           - description: Feedback on whether the metric is a legitimate anomaly.
       description: Details about feedback submitted for an anomalous metric.
-    TooManyRequestsException: {}
     InternalServerException: {}
+    TooManyRequestsException: {}
+    GetFeedbackResponse:
+      type: object
+      properties:
+        AnomalyGroupTimeSeriesFeedback:
+          allOf:
+          - $ref: '#/components/schemas/TimeSeriesFeedbackList'
+          - description: Feedback for an anomalous metric.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination token that's included if more results are available.
     ResourceNotFoundException: {}
+    ValidationException: {}
     TimeSeriesFeedbackList:
       type: array
       items:
         $ref: '#/components/schemas/TimeSeriesFeedback'
+    UUID:
+      type: string
+      pattern: '[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}'
+      maxLength: 63
     TimeSeriesId:
       type: string
       pattern: .*\S.*
       maxLength: 520
-    ValidationException: {}
+    Boolean:
+      type: boolean
+    NextToken:
+      type: string
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 3000
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -298,8 +280,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string

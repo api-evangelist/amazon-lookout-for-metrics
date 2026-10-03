@@ -213,6 +213,48 @@ paths:
       - ListAnomalyGroupSummaries
 components:
   schemas:
+    AccessDeniedException: {}
+    AnomalyGroupSummaryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AnomalyGroupSummary'
+    MetricName:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      maxLength: 256
+    Integer:
+      type: integer
+    Score:
+      type: number
+      format: double
+      minimum: 0
+      maximum: 100
+    ListAnomalyGroupSummariesResponse:
+      type: object
+      properties:
+        AnomalyGroupSummaryList:
+          allOf:
+          - $ref: '#/components/schemas/AnomalyGroupSummaryList'
+          - description: A list of anomaly group summaries.
+        AnomalyGroupStatistics:
+          allOf:
+          - $ref: '#/components/schemas/AnomalyGroupStatistics'
+          - description: Aggregated details about the anomaly groups.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination token that's included if more results are available.
+    InternalServerException: {}
+    ColumnName:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      minLength: 1
+      maxLength: 63
+    TooManyRequestsException: {}
+    ItemizedMetricStatsList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ItemizedMetricStats'
     AnomalyGroupStatistics:
       type: object
       properties:
@@ -229,44 +271,8 @@ components:
           - $ref: '#/components/schemas/ItemizedMetricStatsList'
           - description: Statistics for individual metrics within the group.
       description: Aggregated statistics for a group of anomalous metrics.
-    UUID:
-      type: string
-      pattern: '[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}'
-      maxLength: 63
-    ListAnomalyGroupSummariesResponse:
-      type: object
-      properties:
-        AnomalyGroupSummaryList:
-          allOf:
-          - $ref: '#/components/schemas/AnomalyGroupSummaryList'
-          - description: A list of anomaly group summaries.
-        AnomalyGroupStatistics:
-          allOf:
-          - $ref: '#/components/schemas/AnomalyGroupStatistics'
-          - description: Aggregated details about the anomaly groups.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The pagination token that's included if more results are available.
-    Score:
-      type: number
-      format: double
-      minimum: 0
-      maximum: 100
-    AccessDeniedException: {}
-    Integer:
-      type: integer
-    ColumnName:
-      type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
-      minLength: 1
-      maxLength: 63
-    NextToken:
-      type: string
-      pattern: .*\S.*
-      minLength: 1
-      maxLength: 3000
-    TooManyRequestsException: {}
+    ResourceNotFoundException: {}
+    ValidationException: {}
     ItemizedMetricStats:
       type: object
       properties:
@@ -279,20 +285,10 @@ components:
           - $ref: '#/components/schemas/Integer'
           - description: The number of times that the measure appears.
       description: Aggregated statistics about a measure affected by an anomaly.
-    MetricName:
+    UUID:
       type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
-      maxLength: 256
-    AnomalyGroupSummaryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/AnomalyGroupSummary'
-    InternalServerException: {}
-    ResourceNotFoundException: {}
-    ItemizedMetricStatsList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ItemizedMetricStats'
+      pattern: '[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}'
+      maxLength: 63
     AnomalyGroupSummary:
       type: object
       properties:
@@ -317,30 +313,16 @@ components:
           - $ref: '#/components/schemas/MetricName'
           - description: The name of the primary affected measure for the group.
       description: Details about a group of anomalous metrics.
-    ValidationException: {}
+    NextToken:
+      type: string
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 3000
     TimestampString:
       type: string
       pattern: ^([12]\d{3})-(1[0-2]|0[1-9])-(0[1-9]|[12]\d|3[01])T([01]\d|2[0-3]):([0-5]\d):([0-5]\d)(Z|(\+|\-)(0\d|1[0-2]):([0-5]\d)(\[[[:alnum:]\/\_]+\])?)$
       maxLength: 60
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -353,8 +335,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string

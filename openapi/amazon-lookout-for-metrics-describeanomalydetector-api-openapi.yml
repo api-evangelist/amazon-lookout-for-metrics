@@ -187,16 +187,40 @@ paths:
       - DescribeAnomalyDetector
 components:
   schemas:
-    AnomalyDetectorFailureType:
+    KmsKeyArn:
+      type: string
+      pattern: arn:aws.*:kms:.*:[0-9]{12}:key/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}
+      minLength: 20
+      maxLength: 2048
+    AccessDeniedException: {}
+    AnomalyDetectorName:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      minLength: 1
+      maxLength: 63
+    AnomalyDetectorConfigSummary:
+      type: object
+      properties:
+        AnomalyDetectorFrequency:
+          allOf:
+          - $ref: '#/components/schemas/Frequency'
+          - description: The interval at which the detector analyzes its source data.
+      description: Contains information about a detector's configuration.
+    Frequency:
       type: string
       enum:
-      - ACTIVATION_FAILURE
-      - BACK_TEST_ACTIVATION_FAILURE
-      - DELETION_FAILURE
-      - DEACTIVATION_FAILURE
-    Timestamp:
+      - P1D
+      - PT1H
+      - PT10M
+      - PT5M
+    InternalServerException: {}
+    TooManyRequestsException: {}
+    ResourceNotFoundException: {}
+    AnomalyDetectorDescription:
       type: string
-      format: date-time
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 256
     DescribeAnomalyDetectorResponse:
       type: object
       properties:
@@ -240,30 +264,20 @@ components:
           allOf:
           - $ref: '#/components/schemas/AnomalyDetectorFailureType'
           - description: The process that caused the detector to fail.
-    Arn:
+    AnomalyDetectorFailureType:
       type: string
-      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
-      maxLength: 256
-    AccessDeniedException: {}
+      enum:
+      - ACTIVATION_FAILURE
+      - BACK_TEST_ACTIVATION_FAILURE
+      - DELETION_FAILURE
+      - DEACTIVATION_FAILURE
+    ValidationException: {}
+    Timestamp:
+      type: string
+      format: date-time
     ErrorMessage:
       type: string
       maxLength: 256
-    TooManyRequestsException: {}
-    Frequency:
-      type: string
-      enum:
-      - P1D
-      - PT1H
-      - PT10M
-      - PT5M
-    AnomalyDetectorConfigSummary:
-      type: object
-      properties:
-        AnomalyDetectorFrequency:
-          allOf:
-          - $ref: '#/components/schemas/Frequency'
-          - description: The interval at which the detector analyzes its source data.
-      description: Contains information about a detector's configuration.
     AnomalyDetectorStatus:
       type: string
       enum:
@@ -278,43 +292,11 @@ components:
       - BACK_TEST_COMPLETE
       - DEACTIVATED
       - DEACTIVATING
-    AnomalyDetectorDescription:
+    Arn:
       type: string
-      pattern: .*\S.*
-      minLength: 1
+      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
       maxLength: 256
-    InternalServerException: {}
-    ResourceNotFoundException: {}
-    KmsKeyArn:
-      type: string
-      pattern: arn:aws.*:kms:.*:[0-9]{12}:key/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}
-      minLength: 20
-      maxLength: 2048
-    AnomalyDetectorName:
-      type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
-      minLength: 1
-      maxLength: 63
-    ValidationException: {}
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -327,8 +309,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
