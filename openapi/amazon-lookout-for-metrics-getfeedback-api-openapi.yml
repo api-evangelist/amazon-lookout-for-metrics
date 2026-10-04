@@ -220,20 +220,10 @@ paths:
       - GetFeedback
 components:
   schemas:
-    AccessDeniedException: {}
-    TimeSeriesFeedback:
-      type: object
-      properties:
-        TimeSeriesId:
-          allOf:
-          - $ref: '#/components/schemas/TimeSeriesId'
-          - description: The ID of the metric.
-        IsAnomaly:
-          allOf:
-          - $ref: '#/components/schemas/Boolean'
-          - description: Feedback on whether the metric is a legitimate anomaly.
-      description: Details about feedback submitted for an anomalous metric.
-    InternalServerException: {}
+    UUID:
+      type: string
+      pattern: '[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}'
+      maxLength: 63
     TooManyRequestsException: {}
     GetFeedbackResponse:
       type: object
@@ -246,48 +236,46 @@ components:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: The pagination token that's included if more results are available.
-    ResourceNotFoundException: {}
-    ValidationException: {}
     TimeSeriesFeedbackList:
       type: array
       items:
         $ref: '#/components/schemas/TimeSeriesFeedback'
-    UUID:
-      type: string
-      pattern: '[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}'
-      maxLength: 63
-    TimeSeriesId:
-      type: string
-      pattern: .*\S.*
-      maxLength: 520
-    Boolean:
-      type: boolean
+    TimeSeriesFeedback:
+      type: object
+      properties:
+        TimeSeriesId:
+          allOf:
+          - $ref: '#/components/schemas/TimeSeriesId'
+          - description: The ID of the metric.
+        IsAnomaly:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Feedback on whether the metric is a legitimate anomaly.
+      description: Details about feedback submitted for an anomalous metric.
+    ValidationException: {}
+    AccessDeniedException: {}
     NextToken:
       type: string
       pattern: .*\S.*
       minLength: 1
       maxLength: 3000
+    InternalServerException: {}
+    TimeSeriesId:
+      type: string
+      pattern: .*\S.*
+      maxLength: 520
+    ResourceNotFoundException: {}
+    Boolean:
+      type: boolean
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -298,14 +286,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

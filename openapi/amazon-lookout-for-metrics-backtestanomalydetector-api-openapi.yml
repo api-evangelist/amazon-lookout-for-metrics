@@ -184,23 +184,17 @@ paths:
       - BackTestAnomalyDetector
 components:
   schemas:
-    ResourceNotFoundException: {}
-    AccessDeniedException: {}
+    TooManyRequestsException: {}
+    ValidationException: {}
     BackTestAnomalyDetectorResponse:
       type: object
       properties: {}
+    AccessDeniedException: {}
     InternalServerException: {}
-    ValidationException: {}
-    TooManyRequestsException: {}
+    ResourceNotFoundException: {}
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -211,14 +205,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -229,8 +223,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

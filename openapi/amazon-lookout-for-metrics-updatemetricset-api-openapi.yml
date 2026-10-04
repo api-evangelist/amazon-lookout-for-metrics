@@ -264,49 +264,61 @@ paths:
       - UpdateMetricSet
 components:
   schemas:
-    HistoricalDataPath:
-      type: string
-      pattern: ^s3://[a-z0-9].+$
-      maxLength: 1024
-    FilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Filter'
-      minItems: 1
-    ServiceQuotaExceededException: {}
-    AthenaSourceConfig:
+    CloudWatchConfig:
       type: object
       properties:
         RoleArn:
           allOf:
           - $ref: '#/components/schemas/Arn'
-          - description: An IAM role that gives Amazon Lookout for Metrics permission to access the data.
-        DatabaseName:
-          allOf:
-          - $ref: '#/components/schemas/AthenaDatabaseName'
-          - description: The database's name.
-        DataCatalog:
-          allOf:
-          - $ref: '#/components/schemas/AthenaDataCatalog'
-          - description: The database's data catalog.
-        TableName:
-          allOf:
-          - $ref: '#/components/schemas/AthenaTableName'
-          - description: The database's table name.
-        WorkGroupName:
-          allOf:
-          - $ref: '#/components/schemas/AthenaWorkGroupName'
-          - description: The database's work group name.
-        S3ResultsPath:
-          allOf:
-          - $ref: '#/components/schemas/AthenaS3ResultsPath'
-          - description: The database's results path.
+          - description: An IAM role that gives Amazon Lookout for Metrics permission to access data in Amazon CloudWatch.
         BackTestConfiguration:
           allOf:
           - $ref: '#/components/schemas/BackTestConfiguration'
           - description: Settings for backtest mode.
-      description: Details about an Amazon Athena datasource.
-    AccessDeniedException: {}
+      description: Details about an Amazon CloudWatch datasource.
+    Filter:
+      type: object
+      properties:
+        DimensionValue:
+          allOf:
+          - $ref: '#/components/schemas/DimensionValue'
+          - description: The value that you want to include in the filter.
+        FilterOperation:
+          allOf:
+          - $ref: '#/components/schemas/FilterOperation'
+          - description: The condition to apply.
+      description: Describes a filter for choosing a subset of dimension values. Each filter consists of the dimension that you want to include and the condition statement. The condition statement is specified in the <code>FilterOperation</code> object.
+    VpcConfiguration:
+      type: object
+      required:
+      - SubnetIdList
+      - SecurityGroupIdList
+      properties:
+        SubnetIdList:
+          allOf:
+          - $ref: '#/components/schemas/SubnetIdList'
+          - description: An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.
+        SecurityGroupIdList:
+          allOf:
+          - $ref: '#/components/schemas/SecurityGroupIdList'
+          - description: An array of strings containing the list of security groups.
+      description: Contains configuration information about the Amazon Virtual Private Cloud (VPC).
+    SubnetId:
+      type: string
+      pattern: '[\-0-9a-zA-Z]+'
+      maxLength: 255
+    MetricSetDimensionFilter:
+      type: object
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ColumnName'
+          - description: The dimension that you want to filter on.
+        FilterList:
+          allOf:
+          - $ref: '#/components/schemas/FilterList'
+          - description: The list of filters that you are applying.
+      description: 'Describes a list of filters for choosing a subset of dimension values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation. '
     RedshiftSourceConfig:
       type: object
       properties:
@@ -343,6 +355,161 @@ components:
           - $ref: '#/components/schemas/VpcConfiguration'
           - description: Contains information about the Amazon Virtual Private Cloud (VPC) configuration.
       description: Provides information about the Amazon Redshift database configuration.
+    TemplatedPathList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TemplatedPath'
+      minItems: 1
+      maxItems: 1
+    RedshiftDatabaseName:
+      type: string
+      pattern: '[a-zA-Z0-9_.]+'
+      minLength: 1
+      maxLength: 100
+    FilterOperation:
+      type: string
+      enum:
+      - EQUALS
+    RDSDatabaseName:
+      type: string
+      pattern: '[a-zA-Z0-9_.]+'
+      minLength: 1
+      maxLength: 64
+    HeaderList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ColumnName'
+    ColumnName:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      minLength: 1
+      maxLength: 63
+    Delimiter:
+      type: string
+      pattern: '[^\r\n]'
+      maxLength: 1
+    Metric:
+      type: object
+      required:
+      - MetricName
+      - AggregationFunction
+      properties:
+        MetricName:
+          allOf:
+          - $ref: '#/components/schemas/ColumnName'
+          - description: The name of the metric.
+        AggregationFunction:
+          allOf:
+          - $ref: '#/components/schemas/AggregationFunction'
+          - description: The function with which the metric is calculated.
+        Namespace:
+          allOf:
+          - $ref: '#/components/schemas/Namespace'
+          - description: The namespace for the metric.
+      description: A calculation made by contrasting a measure and a dimension from your source data.
+    AggregationFunction:
+      type: string
+      enum:
+      - AVG
+      - SUM
+    HistoricalDataPath:
+      type: string
+      pattern: ^s3://[a-z0-9].+$
+      maxLength: 1024
+    QuoteSymbol:
+      type: string
+      pattern: '[^\r\n]|^$'
+      maxLength: 1
+    HistoricalDataPathList:
+      type: array
+      items:
+        $ref: '#/components/schemas/HistoricalDataPath'
+      minItems: 1
+      maxItems: 1
+    PoirotSecretManagerArn:
+      type: string
+      pattern: arn:([a-z\d-]+):.*:.*:secret:AmazonLookoutMetrics-.+
+      maxLength: 256
+    TableName:
+      type: string
+      pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+      minLength: 1
+      maxLength: 100
+    TooManyRequestsException: {}
+    DatabasePort:
+      type: integer
+      minimum: 1
+      maximum: 65535
+    Arn:
+      type: string
+      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
+      maxLength: 256
+    ServiceQuotaExceededException: {}
+    CSVFileCompression:
+      type: string
+      enum:
+      - NONE
+      - GZIP
+    JsonFileCompression:
+      type: string
+      enum:
+      - NONE
+      - GZIP
+    AthenaSourceConfig:
+      type: object
+      properties:
+        RoleArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: An IAM role that gives Amazon Lookout for Metrics permission to access the data.
+        DatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/AthenaDatabaseName'
+          - description: The database's name.
+        DataCatalog:
+          allOf:
+          - $ref: '#/components/schemas/AthenaDataCatalog'
+          - description: The database's data catalog.
+        TableName:
+          allOf:
+          - $ref: '#/components/schemas/AthenaTableName'
+          - description: The database's table name.
+        WorkGroupName:
+          allOf:
+          - $ref: '#/components/schemas/AthenaWorkGroupName'
+          - description: The database's work group name.
+        S3ResultsPath:
+          allOf:
+          - $ref: '#/components/schemas/AthenaS3ResultsPath'
+          - description: The database's results path.
+        BackTestConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/BackTestConfiguration'
+          - description: Settings for backtest mode.
+      description: Details about an Amazon Athena datasource.
+    RDSDatabaseIdentifier:
+      type: string
+      pattern: ^[a-zA-Z](?!.*--)(?!.*-$)[0-9a-zA-Z\-]*$
+      minLength: 1
+      maxLength: 63
+    TemplatedPath:
+      type: string
+      pattern: ^s3://[a-zA-Z0-9_\-\/ {}=]+$
+      maxLength: 1024
+    Charset:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      maxLength: 63
+    FilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Filter'
+      minItems: 1
+    AthenaWorkGroupName:
+      type: string
+      pattern: '[a-zA-Z0-9._-]{1,128}'
+      minLength: 1
+      maxLength: 128
     UpdateMetricSetResponse:
       type: object
       properties:
@@ -350,6 +517,48 @@ components:
           allOf:
           - $ref: '#/components/schemas/Arn'
           - description: The ARN of the dataset.
+    ValidationException: {}
+    DimensionValue:
+      type: string
+    AccessDeniedException: {}
+    BackTestConfiguration:
+      type: object
+      required:
+      - RunBackTestMode
+      properties:
+        RunBackTestMode:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Run a backtest instead of monitoring new data.
+      description: Settings for backtest mode.
+    DatabaseHost:
+      type: string
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 253
+    InternalServerException: {}
+    SecurityGroupId:
+      type: string
+      pattern: '[-0-9a-zA-Z]+'
+      minLength: 1
+      maxLength: 255
+    DateTimeFormat:
+      type: string
+      pattern: .*\S.*
+      maxLength: 63
+    ResourceNotFoundException: {}
+    AppFlowConfig:
+      type: object
+      properties:
+        RoleArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: An IAM role that gives Amazon Lookout for Metrics permission to access the flow.
+        FlowName:
+          allOf:
+          - $ref: '#/components/schemas/FlowName'
+          - description: ' name of the flow.'
+      description: Details about an Amazon AppFlow flow datasource.
     S3SourceConfig:
       type: object
       properties:
@@ -370,6 +579,23 @@ components:
           - $ref: '#/components/schemas/FileFormatDescriptor'
           - description: Contains information about a source file's formatting.
       description: Contains information about the configuration of the S3 bucket that contains source files.
+    AthenaDataCatalog:
+      type: string
+      minLength: 1
+      maxLength: 256
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    FileFormatDescriptor:
+      type: object
+      properties:
+        CsvFormatDescriptor:
+          allOf:
+          - $ref: '#/components/schemas/CsvFormatDescriptor'
+          - description: Contains information about how a source CSV data file should be analyzed.
+        JsonFormatDescriptor:
+          allOf:
+          - $ref: '#/components/schemas/JsonFormatDescriptor'
+          - description: Contains information about how a source JSON data file should be analyzed.
+      description: Contains information about a source file's formatting.
     CsvFormatDescriptor:
       type: object
       properties:
@@ -398,46 +624,11 @@ components:
           - $ref: '#/components/schemas/QuoteSymbol'
           - description: The character used as a quote character.
       description: Contains information about how a source CSV data file should be analyzed.
-    Charset:
-      type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
-      maxLength: 63
-    FlowName:
-      type: string
-      pattern: '[a-zA-Z0-9][\w!@#.-]+'
-      maxLength: 256
-    CSVFileCompression:
-      type: string
-      enum:
-      - NONE
-      - GZIP
-    Delimiter:
-      type: string
-      pattern: '[^\r\n]'
-      maxLength: 1
-    FilterOperation:
-      type: string
-      enum:
-      - EQUALS
     Namespace:
       type: string
       pattern: '[^:].*'
       minLength: 1
       maxLength: 255
-    FileFormatDescriptor:
-      type: object
-      properties:
-        CsvFormatDescriptor:
-          allOf:
-          - $ref: '#/components/schemas/CsvFormatDescriptor'
-          - description: Contains information about how a source CSV data file should be analyzed.
-        JsonFormatDescriptor:
-          allOf:
-          - $ref: '#/components/schemas/JsonFormatDescriptor'
-          - description: Contains information about how a source JSON data file should be analyzed.
-      description: Contains information about a source file's formatting.
-    DimensionValue:
-      type: string
     JsonFormatDescriptor:
       type: object
       properties:
@@ -450,101 +641,6 @@ components:
           - $ref: '#/components/schemas/Charset'
           - description: The character set in which the source JSON file is written.
       description: Contains information about how a source JSON data file should be analyzed.
-    RedshiftClusterIdentifier:
-      type: string
-      pattern: ^[a-z](?!.*--)(?!.*-$)[0-9a-z\-]*$
-      minLength: 1
-      maxLength: 63
-    AthenaDataCatalog:
-      type: string
-      minLength: 1
-      maxLength: 256
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    SecurityGroupIdList:
-      type: array
-      items:
-        $ref: '#/components/schemas/SecurityGroupId'
-    InternalServerException: {}
-    SubnetId:
-      type: string
-      pattern: '[\-0-9a-zA-Z]+'
-      maxLength: 255
-    SubnetIdList:
-      type: array
-      items:
-        $ref: '#/components/schemas/SubnetId'
-    AggregationFunction:
-      type: string
-      enum:
-      - AVG
-      - SUM
-    ColumnName:
-      type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
-      minLength: 1
-      maxLength: 63
-    TooManyRequestsException: {}
-    VpcConfiguration:
-      type: object
-      required:
-      - SubnetIdList
-      - SecurityGroupIdList
-      properties:
-        SubnetIdList:
-          allOf:
-          - $ref: '#/components/schemas/SubnetIdList'
-          - description: An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.
-        SecurityGroupIdList:
-          allOf:
-          - $ref: '#/components/schemas/SecurityGroupIdList'
-          - description: An array of strings containing the list of security groups.
-      description: Contains configuration information about the Amazon Virtual Private Cloud (VPC).
-    RedshiftDatabaseName:
-      type: string
-      pattern: '[a-zA-Z0-9_.]+'
-      minLength: 1
-      maxLength: 100
-    Filter:
-      type: object
-      properties:
-        DimensionValue:
-          allOf:
-          - $ref: '#/components/schemas/DimensionValue'
-          - description: The value that you want to include in the filter.
-        FilterOperation:
-          allOf:
-          - $ref: '#/components/schemas/FilterOperation'
-          - description: The condition to apply.
-      description: Describes a filter for choosing a subset of dimension values. Each filter consists of the dimension that you want to include and the condition statement. The condition statement is specified in the <code>FilterOperation</code> object.
-    DateTimeFormat:
-      type: string
-      pattern: .*\S.*
-      maxLength: 63
-    ResourceNotFoundException: {}
-    AthenaDatabaseName:
-      type: string
-      pattern: '[a-zA-Z0-9_]+'
-      minLength: 1
-      maxLength: 255
-    Metric:
-      type: object
-      required:
-      - MetricName
-      - AggregationFunction
-      properties:
-        MetricName:
-          allOf:
-          - $ref: '#/components/schemas/ColumnName'
-          - description: The name of the metric.
-        AggregationFunction:
-          allOf:
-          - $ref: '#/components/schemas/AggregationFunction'
-          - description: The function with which the metric is calculated.
-        Namespace:
-          allOf:
-          - $ref: '#/components/schemas/Namespace'
-          - description: The namespace for the metric.
-      description: A calculation made by contrasting a measure and a dimension from your source data.
     RDSSourceConfig:
       type: object
       properties:
@@ -581,156 +677,48 @@ components:
           - $ref: '#/components/schemas/VpcConfiguration'
           - description: An object containing information about the Amazon Virtual Private Cloud (VPC) configuration.
       description: Contains information about the Amazon Relational Database Service (RDS) configuration.
-    HeaderList:
+    SecurityGroupIdList:
       type: array
       items:
-        $ref: '#/components/schemas/ColumnName'
-    RDSDatabaseName:
+        $ref: '#/components/schemas/SecurityGroupId'
+    AthenaS3ResultsPath:
       type: string
-      pattern: '[a-zA-Z0-9_.]+'
-      minLength: 1
-      maxLength: 64
-    TableName:
-      type: string
-      pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
-      minLength: 1
-      maxLength: 100
-    DatabasePort:
-      type: integer
-      minimum: 1
-      maximum: 65535
-    ValidationException: {}
-    JsonFileCompression:
-      type: string
-      enum:
-      - NONE
-      - GZIP
-    BackTestConfiguration:
-      type: object
-      required:
-      - RunBackTestMode
-      properties:
-        RunBackTestMode:
-          allOf:
-          - $ref: '#/components/schemas/Boolean'
-          - description: Run a backtest instead of monitoring new data.
-      description: Settings for backtest mode.
-    AppFlowConfig:
-      type: object
-      properties:
-        RoleArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: An IAM role that gives Amazon Lookout for Metrics permission to access the flow.
-        FlowName:
-          allOf:
-          - $ref: '#/components/schemas/FlowName'
-          - description: ' name of the flow.'
-      description: Details about an Amazon AppFlow flow datasource.
-    RDSDatabaseIdentifier:
-      type: string
-      pattern: ^[a-zA-Z](?!.*--)(?!.*-$)[0-9a-zA-Z\-]*$
-      minLength: 1
-      maxLength: 63
-    QuoteSymbol:
-      type: string
-      pattern: '[^\r\n]|^$'
-      maxLength: 1
-    HistoricalDataPathList:
+      pattern: ^s3://[a-z0-9].+$
+      maxLength: 1024
+    SubnetIdList:
       type: array
       items:
-        $ref: '#/components/schemas/HistoricalDataPath'
-      minItems: 1
-      maxItems: 1
+        $ref: '#/components/schemas/SubnetId'
+    AthenaDatabaseName:
+      type: string
+      pattern: '[a-zA-Z0-9_]+'
+      minLength: 1
+      maxLength: 255
     AthenaTableName:
       type: string
       pattern: '[a-zA-Z0-9_]+'
       minLength: 1
       maxLength: 128
-    SecurityGroupId:
+    RedshiftClusterIdentifier:
       type: string
-      pattern: '[-0-9a-zA-Z]+'
+      pattern: ^[a-z](?!.*--)(?!.*-$)[0-9a-z\-]*$
       minLength: 1
-      maxLength: 255
-    PoirotSecretManagerArn:
+      maxLength: 63
+    FlowName:
       type: string
-      pattern: arn:([a-z\d-]+):.*:.*:secret:AmazonLookoutMetrics-.+
+      pattern: '[a-zA-Z0-9][\w!@#.-]+'
       maxLength: 256
-    CloudWatchConfig:
-      type: object
-      properties:
-        RoleArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: An IAM role that gives Amazon Lookout for Metrics permission to access data in Amazon CloudWatch.
-        BackTestConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/BackTestConfiguration'
-          - description: Settings for backtest mode.
-      description: Details about an Amazon CloudWatch datasource.
-    DatabaseHost:
-      type: string
-      pattern: .*\S.*
-      minLength: 1
-      maxLength: 253
-    TemplatedPathList:
-      type: array
-      items:
-        $ref: '#/components/schemas/TemplatedPath'
-      minItems: 1
-      maxItems: 1
     Boolean:
       type: boolean
-    AthenaWorkGroupName:
-      type: string
-      pattern: '[a-zA-Z0-9._-]{1,128}'
-      minLength: 1
-      maxLength: 128
-    Arn:
-      type: string
-      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
-      maxLength: 256
-    TemplatedPath:
-      type: string
-      pattern: ^s3://[a-zA-Z0-9_\-\/ {}=]+$
-      maxLength: 1024
-    MetricSetDimensionFilter:
-      type: object
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/ColumnName'
-          - description: The dimension that you want to filter on.
-        FilterList:
-          allOf:
-          - $ref: '#/components/schemas/FilterList'
-          - description: The list of filters that you are applying.
-      description: 'Describes a list of filters for choosing a subset of dimension values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation. '
-    AthenaS3ResultsPath:
-      type: string
-      pattern: ^s3://[a-z0-9].+$
-      maxLength: 1024
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -741,14 +729,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

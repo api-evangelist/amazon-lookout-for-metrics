@@ -189,18 +189,9 @@ paths:
       - GetDataQualityMetrics
 components:
   schemas:
-    AnomalyDetectorDataQualityMetric:
-      type: object
-      properties:
-        StartTimestamp:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The start time for the data quality metrics collection.
-        MetricSetDataQualityMetricList:
-          allOf:
-          - $ref: '#/components/schemas/MetricSetDataQualityMetricList'
-          - description: An array of <code>DataQualityMetricList</code> objects. Each object in the array contains information about a data quality metric.
-      description: Aggregated details about the data quality metrics collected for the <code>AnomalyDetectorArn</code> provided in the <a>GetDataQualityMetrics</a> object.
+    Double:
+      type: number
+      format: double
     MetricSetDataQualityMetricList:
       type: array
       items:
@@ -210,32 +201,15 @@ components:
       pattern: .*\S.*
       minLength: 1
       maxLength: 256
-    AccessDeniedException: {}
-    MetricSetDataQualityMetric:
-      type: object
-      properties:
-        MetricSetArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The Amazon Resource Name (ARN) of the data quality metric array.
-        DataQualityMetricList:
-          allOf:
-          - $ref: '#/components/schemas/DataQualityMetricList'
-          - description: The array of data quality metrics contained in the data quality metric set.
-      description: An array of <code>DataQualityMetric</code> objects that describes one or more data quality metrics.
-    GetDataQualityMetricsResponse:
-      type: object
-      properties:
-        AnomalyDetectorDataQualityMetricList:
-          allOf:
-          - $ref: '#/components/schemas/AnomalyDetectorDataQualityMetricList'
-          - description: A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you requested.
-    Double:
-      type: number
-      format: double
-    InternalServerException: {}
     TooManyRequestsException: {}
-    ResourceNotFoundException: {}
+    Arn:
+      type: string
+      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
+      maxLength: 256
+    DataQualityMetricList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataQualityMetric'
     DataQualityMetric:
       type: object
       properties:
@@ -270,47 +244,61 @@ components:
       - BACKTEST_TRAINING_DATA_END_TIME_STAMP
       - BACKTEST_INFERENCE_DATA_START_TIME_STAMP
       - BACKTEST_INFERENCE_DATA_END_TIME_STAMP
-    DataQualityMetricList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DataQualityMetric'
-    Timestamp:
-      type: string
-      format: date-time
+    AccessDeniedException: {}
+    InternalServerException: {}
+    AnomalyDetectorDataQualityMetric:
+      type: object
+      properties:
+        StartTimestamp:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The start time for the data quality metrics collection.
+        MetricSetDataQualityMetricList:
+          allOf:
+          - $ref: '#/components/schemas/MetricSetDataQualityMetricList'
+          - description: An array of <code>DataQualityMetricList</code> objects. Each object in the array contains information about a data quality metric.
+      description: Aggregated details about the data quality metrics collected for the <code>AnomalyDetectorArn</code> provided in the <a>GetDataQualityMetrics</a> object.
     AnomalyDetectorDataQualityMetricList:
       type: array
       items:
         $ref: '#/components/schemas/AnomalyDetectorDataQualityMetric'
+    ResourceNotFoundException: {}
+    Timestamp:
+      type: string
+      format: date-time
+    MetricSetDataQualityMetric:
+      type: object
+      properties:
+        MetricSetArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of the data quality metric array.
+        DataQualityMetricList:
+          allOf:
+          - $ref: '#/components/schemas/DataQualityMetricList'
+          - description: The array of data quality metrics contained in the data quality metric set.
+      description: An array of <code>DataQualityMetric</code> objects that describes one or more data quality metrics.
+    GetDataQualityMetricsResponse:
+      type: object
+      properties:
+        AnomalyDetectorDataQualityMetricList:
+          allOf:
+          - $ref: '#/components/schemas/AnomalyDetectorDataQualityMetricList'
+          - description: A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you requested.
     DataQualityMetricDescription:
       type: string
       pattern: .*\S.*
       minLength: 1
       maxLength: 256
-    Arn:
-      type: string
-      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
-      maxLength: 256
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -321,14 +309,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

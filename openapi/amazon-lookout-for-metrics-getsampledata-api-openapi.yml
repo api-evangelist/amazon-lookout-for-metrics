@@ -195,19 +195,101 @@ paths:
       - GetSampleData
 components:
   schemas:
-    HistoricalDataPath:
-      type: string
-      pattern: ^s3://[a-z0-9].+$
-      maxLength: 1024
-    DataItem:
-      type: string
     SampleRow:
       type: array
       items:
         $ref: '#/components/schemas/DataItem'
+    GetSampleDataResponse:
+      type: object
+      properties:
+        HeaderValues:
+          allOf:
+          - $ref: '#/components/schemas/HeaderValueList'
+          - description: A list of header labels for the records.
+        SampleRows:
+          allOf:
+          - $ref: '#/components/schemas/SampleRows'
+          - description: A list of records.
+    TemplatedPathList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TemplatedPath'
+      minItems: 1
+      maxItems: 1
+    HeaderList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ColumnName'
+    ColumnName:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      minLength: 1
+      maxLength: 63
+    Delimiter:
+      type: string
+      pattern: '[^\r\n]'
+      maxLength: 1
+    HistoricalDataPath:
+      type: string
+      pattern: ^s3://[a-z0-9].+$
+      maxLength: 1024
+    QuoteSymbol:
+      type: string
+      pattern: '[^\r\n]|^$'
+      maxLength: 1
+    HistoricalDataPathList:
+      type: array
+      items:
+        $ref: '#/components/schemas/HistoricalDataPath'
+      minItems: 1
+      maxItems: 1
+    DataItem:
+      type: string
+    TooManyRequestsException: {}
+    Arn:
+      type: string
+      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
+      maxLength: 256
+    CSVFileCompression:
+      type: string
+      enum:
+      - NONE
+      - GZIP
+    JsonFileCompression:
+      type: string
+      enum:
+      - NONE
+      - GZIP
+    TemplatedPath:
+      type: string
+      pattern: ^s3://[a-zA-Z0-9_\-\/ {}=]+$
+      maxLength: 1024
+    Charset:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      maxLength: 63
+    ValidationException: {}
+    AccessDeniedException: {}
+    InternalServerException: {}
+    SampleRows:
+      type: array
+      items:
+        $ref: '#/components/schemas/SampleRow'
     HeaderValue:
       type: string
-    AccessDeniedException: {}
+    ResourceNotFoundException: {}
+    FileFormatDescriptor:
+      type: object
+      properties:
+        CsvFormatDescriptor:
+          allOf:
+          - $ref: '#/components/schemas/CsvFormatDescriptor'
+          - description: Contains information about how a source CSV data file should be analyzed.
+        JsonFormatDescriptor:
+          allOf:
+          - $ref: '#/components/schemas/JsonFormatDescriptor'
+          - description: Contains information about how a source JSON data file should be analyzed.
+      description: Contains information about a source file's formatting.
     HeaderValueList:
       type: array
       items:
@@ -240,42 +322,6 @@ components:
           - $ref: '#/components/schemas/QuoteSymbol'
           - description: The character used as a quote character.
       description: Contains information about how a source CSV data file should be analyzed.
-    Charset:
-      type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
-      maxLength: 63
-    CSVFileCompression:
-      type: string
-      enum:
-      - NONE
-      - GZIP
-    Delimiter:
-      type: string
-      pattern: '[^\r\n]'
-      maxLength: 1
-    GetSampleDataResponse:
-      type: object
-      properties:
-        HeaderValues:
-          allOf:
-          - $ref: '#/components/schemas/HeaderValueList'
-          - description: A list of header labels for the records.
-        SampleRows:
-          allOf:
-          - $ref: '#/components/schemas/SampleRows'
-          - description: A list of records.
-    FileFormatDescriptor:
-      type: object
-      properties:
-        CsvFormatDescriptor:
-          allOf:
-          - $ref: '#/components/schemas/CsvFormatDescriptor'
-          - description: Contains information about how a source CSV data file should be analyzed.
-        JsonFormatDescriptor:
-          allOf:
-          - $ref: '#/components/schemas/JsonFormatDescriptor'
-          - description: Contains information about how a source JSON data file should be analyzed.
-      description: Contains information about a source file's formatting.
     JsonFormatDescriptor:
       type: object
       properties:
@@ -288,75 +334,17 @@ components:
           - $ref: '#/components/schemas/Charset'
           - description: The character set in which the source JSON file is written.
       description: Contains information about how a source JSON data file should be analyzed.
-    InternalServerException: {}
-    ColumnName:
-      type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
-      minLength: 1
-      maxLength: 63
-    TooManyRequestsException: {}
-    ResourceNotFoundException: {}
-    HeaderList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ColumnName'
-    SampleRows:
-      type: array
-      items:
-        $ref: '#/components/schemas/SampleRow'
-    ValidationException: {}
-    JsonFileCompression:
-      type: string
-      enum:
-      - NONE
-      - GZIP
-    QuoteSymbol:
-      type: string
-      pattern: '[^\r\n]|^$'
-      maxLength: 1
-    HistoricalDataPathList:
-      type: array
-      items:
-        $ref: '#/components/schemas/HistoricalDataPath'
-      minItems: 1
-      maxItems: 1
-    TemplatedPathList:
-      type: array
-      items:
-        $ref: '#/components/schemas/TemplatedPath'
-      minItems: 1
-      maxItems: 1
     Boolean:
       type: boolean
-    Arn:
-      type: string
-      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
-      maxLength: 256
-    TemplatedPath:
-      type: string
-      pattern: ^s3://[a-zA-Z0-9_\-\/ {}=]+$
-      maxLength: 1024
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -367,14 +355,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

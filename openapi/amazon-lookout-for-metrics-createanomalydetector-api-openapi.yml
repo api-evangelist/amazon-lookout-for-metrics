@@ -225,7 +225,24 @@ paths:
       - CreateAnomalyDetector
 components:
   schemas:
-    ConflictException: {}
+    Frequency:
+      type: string
+      enum:
+      - P1D
+      - PT1H
+      - PT10M
+      - PT5M
+    TooManyRequestsException: {}
+    ValidationException: {}
+    Arn:
+      type: string
+      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
+      maxLength: 256
+    TagValue:
+      type: string
+      maxLength: 256
+    AccessDeniedException: {}
+    InternalServerException: {}
     ServiceQuotaExceededException: {}
     CreateAnomalyDetectorResponse:
       type: object
@@ -234,33 +251,10 @@ components:
           allOf:
           - $ref: '#/components/schemas/Arn'
           - description: The ARN of the detector.
-    AccessDeniedException: {}
-    Arn:
-      type: string
-      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
-      maxLength: 256
-    Frequency:
-      type: string
-      enum:
-      - P1D
-      - PT1H
-      - PT10M
-      - PT5M
-    InternalServerException: {}
-    TagValue:
-      type: string
-      maxLength: 256
-    ValidationException: {}
-    TooManyRequestsException: {}
+    ConflictException: {}
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -271,14 +265,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -289,8 +283,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
