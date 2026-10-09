@@ -1,17 +1,30 @@
-generated: '2026-07-15'
+generated: '2026-09-23'
 method: generated
-source: openapi/amazon-lookout-for-metrics-openapi-original.yaml
+source: openapi/amazon-lookout-for-metrics-activateanomalydetector-api-openapi.yml, openapi/amazon-lookout-for-metrics-backtestanomalydetector-api-openapi.yml,
+  openapi/amazon-lookout-for-metrics-createalert-api-openapi.yml, openapi/amazon-lookout-for-metrics-createanomalydetector-api-openapi.yml,
+  openapi/amazon-lookout-for-metrics-createmetricset-api-openapi.yml, openapi/amazon-lookout-for-metrics-deactivateanomalydetector-api-openapi.yml,
+  openapi/amazon-lookout-for-metrics-deletealert-api-openapi.yml, openapi/amazon-lookout-for-metrics-deleteanomalydetector-api-openapi.yml,
+  openapi/amazon-lookout-for-metrics-describealert-api-openapi.yml, openapi/amazon-lookout-for-metrics-describeanomalydetectionexecutions-api-openapi.yml,
+  openapi/amazon-lookout-for-metrics-describeanomalydetector-api-openapi.yml, openapi/amazon-lookout-for-metrics-describemetricset-api-openapi.yml,
+  openapi/amazon-lookout-for-metrics-detectmetricsetconfig-api-openapi.yml, openapi/amazon-lookout-for-metrics-getanomalygroup-api-openapi.yml,
+  openapi/amazon-lookout-for-metrics-getdataqualitymetrics-api-openapi.yml, openapi/amazon-lookout-for-metrics-getfeedback-api-openapi.yml,
+  openapi/amazon-lookout-for-metrics-getsampledata-api-openapi.yml, openapi/amazon-lookout-for-metrics-listalerts-api-openapi.yml,
+  openapi/amazon-lookout-for-metrics-listanomalydetectors-api-openapi.yml, openapi/amazon-lookout-for-metrics-listanomalygrouprelatedmetrics-api-openapi.yml,
+  openapi/amazon-lookout-for-metrics-listanomalygroupsummaries-api-openapi.yml, openapi/amazon-lookout-for-metrics-listanomalygrouptimeseries-api-openapi.yml,
+  openapi/amazon-lookout-for-metrics-listmetricsets-api-openapi.yml, openapi/amazon-lookout-for-metrics-putfeedback-api-openapi.yml,
+  openapi/amazon-lookout-for-metrics-tags-api-openapi.yml, openapi/amazon-lookout-for-metrics-updatealert-api-openapi.yml,
+  openapi/amazon-lookout-for-metrics-updateanomalydetector-api-openapi.yml, openapi/amazon-lookout-for-metrics-updatemetricset-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
   operations: 30
   by_action_class:
-    acting: 29
-    connected: 1
+    acting: 19
+    connected: 11
   by_consequence:
-    write: 29
-    read: 1
+    write: 19
+    read: 11
   human_in_the_loop_required: 0
 operations:
 - path: /ActivateAnomalyDetector
@@ -226,149 +239,105 @@ operations:
   method: post
   operationId: GetAnomalyGroup
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /GetDataQualityMetrics
   method: post
   operationId: GetDataQualityMetrics
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /GetFeedback
   method: post
   operationId: GetFeedback
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /GetSampleData
   method: post
   operationId: GetSampleData
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /ListAlerts
   method: post
   operationId: ListAlerts
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /ListAnomalyDetectors
   method: post
   operationId: ListAnomalyDetectors
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /ListAnomalyGroupRelatedMetrics
   method: post
   operationId: ListAnomalyGroupRelatedMetrics
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /ListAnomalyGroupSummaries
   method: post
   operationId: ListAnomalyGroupSummaries
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /ListAnomalyGroupTimeSeries
   method: post
   operationId: ListAnomalyGroupTimeSeries
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /ListMetricSets
   method: post
   operationId: ListMetricSets
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /PutFeedback
+  method: post
+  operationId: PutFeedback
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -395,22 +364,6 @@ operations:
 - path: /tags/{resourceArn}
   method: post
   operationId: TagResource
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /PutFeedback
-  method: post
-  operationId: PutFeedback
   x-agentic-access:
     action-class: acting
     consequence: write
