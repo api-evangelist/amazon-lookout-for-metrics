@@ -219,18 +219,31 @@ paths:
       - ListAnomalyGroupTimeSeries
 components:
   schemas:
-    UUID:
-      type: string
-      pattern: '[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}'
-      maxLength: 63
     ColumnName:
       type: string
       pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
       minLength: 1
       maxLength: 63
-    MetricValue:
-      type: number
-      format: double
+    TimeSeries:
+      type: object
+      required:
+      - TimeSeriesId
+      - DimensionList
+      - MetricValueList
+      properties:
+        TimeSeriesId:
+          allOf:
+          - $ref: '#/components/schemas/TimeSeriesId'
+          - description: The ID of the metric.
+        DimensionList:
+          allOf:
+          - $ref: '#/components/schemas/DimensionNameValueList'
+          - description: The dimensions of the metric.
+        MetricValueList:
+          allOf:
+          - $ref: '#/components/schemas/MetricValueList'
+          - description: The values for the metric.
+      description: Details about a metric. A metric is an aggregation of the values of a measure for a dimension value, such as <i>availability</i> in the <i>us-east-1</i> Region.
     TimestampString:
       type: string
       pattern: ^([12]\d{3})-(1[0-2]|0[1-9])-(0[1-9]|[12]\d|3[01])T([01]\d|2[0-3]):([0-5]\d):([0-5]\d)(Z|(\+|\-)(0\d|1[0-2]):([0-5]\d)(\[[[:alnum:]\/\_]+\])?)$
@@ -259,6 +272,15 @@ components:
           allOf:
           - $ref: '#/components/schemas/TimeSeriesList'
           - description: A list of anomalous metrics.
+    UUID:
+      type: string
+      pattern: '[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}'
+      maxLength: 63
+    InternalServerException: {}
+    TimestampList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TimestampString'
     DimensionNameValue:
       type: object
       required:
@@ -274,70 +296,66 @@ components:
           - $ref: '#/components/schemas/DimensionValue'
           - description: The value of the dimension.
       description: A dimension name and value.
-    ValidationException: {}
-    DimensionValue:
-      type: string
-    TimestampList:
-      type: array
-      items:
-        $ref: '#/components/schemas/TimestampString'
-    AccessDeniedException: {}
     MetricValueList:
       type: array
       items:
         $ref: '#/components/schemas/MetricValue'
+    TimeSeriesId:
+      type: string
+      pattern: .*\S.*
+      maxLength: 520
+    AccessDeniedException: {}
     NextToken:
       type: string
       pattern: .*\S.*
       minLength: 1
       maxLength: 3000
-    InternalServerException: {}
-    MetricName:
-      type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
-      maxLength: 256
-    DimensionNameValueList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DimensionNameValue'
-    TimeSeriesId:
-      type: string
-      pattern: .*\S.*
-      maxLength: 520
-    ResourceNotFoundException: {}
-    TimeSeries:
-      type: object
-      required:
-      - TimeSeriesId
-      - DimensionList
-      - MetricValueList
-      properties:
-        TimeSeriesId:
-          allOf:
-          - $ref: '#/components/schemas/TimeSeriesId'
-          - description: The ID of the metric.
-        DimensionList:
-          allOf:
-          - $ref: '#/components/schemas/DimensionNameValueList'
-          - description: The dimensions of the metric.
-        MetricValueList:
-          allOf:
-          - $ref: '#/components/schemas/MetricValueList'
-          - description: The values for the metric.
-      description: Details about a metric. A metric is an aggregation of the values of a measure for a dimension value, such as <i>availability</i> in the <i>us-east-1</i> Region.
     TimeSeriesList:
       type: array
       items:
         $ref: '#/components/schemas/TimeSeries'
+    ResourceNotFoundException: {}
+    ValidationException: {}
+    DimensionNameValueList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DimensionNameValue'
+    DimensionValue:
+      type: string
+    MetricName:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      maxLength: 256
+    MetricValue:
+      type: number
+      format: double
   parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -350,24 +368,6 @@ components:
       required: false
     X-Amz-Date:
       name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string

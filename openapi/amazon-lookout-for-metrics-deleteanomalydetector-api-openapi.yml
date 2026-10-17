@@ -190,24 +190,18 @@ paths:
       - DeleteAnomalyDetector
 components:
   schemas:
-    TooManyRequestsException: {}
-    ValidationException: {}
-    AccessDeniedException: {}
     InternalServerException: {}
+    ValidationException: {}
+    ConflictException: {}
     DeleteAnomalyDetectorResponse:
       type: object
       properties: {}
-    ConflictException: {}
+    AccessDeniedException: {}
     ResourceNotFoundException: {}
+    TooManyRequestsException: {}
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -218,14 +212,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -236,8 +224,20 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

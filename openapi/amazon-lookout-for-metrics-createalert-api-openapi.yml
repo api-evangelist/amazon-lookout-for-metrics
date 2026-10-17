@@ -245,31 +245,17 @@ paths:
       - CreateAlert
 components:
   schemas:
+    ColumnName:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      minLength: 1
+      maxLength: 63
     DimensionValueList:
       type: array
       items:
         $ref: '#/components/schemas/DimensionValue'
       minItems: 1
       maxItems: 10
-    ColumnName:
-      type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
-      minLength: 1
-      maxLength: 63
-    CreateAlertResponse:
-      type: object
-      properties:
-        AlertArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The ARN of the alert.
-    DimensionFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DimensionFilter'
-      minItems: 1
-      maxItems: 5
-    TooManyRequestsException: {}
     SNSConfiguration:
       type: object
       required:
@@ -289,22 +275,37 @@ components:
           - $ref: '#/components/schemas/SnsFormat'
           - description: <p>The format of the SNS topic.</p> <ul> <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li> <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li> </ul>
       description: Contains information about the SNS topic to which you want to send your alerts and the IAM role that has access to that topic.
-    Arn:
-      type: string
-      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
-      maxLength: 256
+    ConflictException: {}
+    DimensionFilter:
+      type: object
+      properties:
+        DimensionName:
+          allOf:
+          - $ref: '#/components/schemas/ColumnName'
+          - description: The name of the dimension to filter on.
+        DimensionValueList:
+          allOf:
+          - $ref: '#/components/schemas/DimensionValueList'
+          - description: The list of values for the dimension specified in DimensionName that you want to filter on.
+      description: The dimension filter, containing DimensionName and DimensionValueList.
+    CreateAlertResponse:
+      type: object
+      properties:
+        AlertArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The ARN of the alert.
+    ServiceQuotaExceededException: {}
+    TooManyRequestsException: {}
     TagValue:
       type: string
       maxLength: 256
-    ServiceQuotaExceededException: {}
-    ValidationException: {}
-    DimensionValue:
-      type: string
-    AccessDeniedException: {}
-    MetricName:
-      type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
-      maxLength: 256
+    DimensionFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DimensionFilter'
+      minItems: 1
+      maxItems: 5
     InternalServerException: {}
     LambdaConfiguration:
       type: object
@@ -321,41 +322,58 @@ components:
           - $ref: '#/components/schemas/Arn'
           - description: The ARN of the Lambda function.
       description: Contains information about a Lambda configuration.
-    ConflictException: {}
-    ResourceNotFoundException: {}
+    Arn:
+      type: string
+      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
+      maxLength: 256
     MetricNameList:
       type: array
       items:
         $ref: '#/components/schemas/MetricName'
       minItems: 1
       maxItems: 5
+    AccessDeniedException: {}
+    ResourceNotFoundException: {}
+    ValidationException: {}
     SnsFormat:
       type: string
       enum:
       - LONG_TEXT
       - SHORT_TEXT
       - JSON
-    DimensionFilter:
-      type: object
-      properties:
-        DimensionName:
-          allOf:
-          - $ref: '#/components/schemas/ColumnName'
-          - description: The name of the dimension to filter on.
-        DimensionValueList:
-          allOf:
-          - $ref: '#/components/schemas/DimensionValueList'
-          - description: The list of values for the dimension specified in DimensionName that you want to filter on.
-      description: The dimension filter, containing DimensionName and DimensionValueList.
+    DimensionValue:
+      type: string
+    MetricName:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      maxLength: 256
   parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -368,24 +386,6 @@ components:
       required: false
     X-Amz-Date:
       name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string

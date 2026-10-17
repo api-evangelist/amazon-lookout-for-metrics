@@ -225,6 +225,18 @@ paths:
       - CreateAnomalyDetector
 components:
   schemas:
+    InternalServerException: {}
+    ValidationException: {}
+    TagValue:
+      type: string
+      maxLength: 256
+    ConflictException: {}
+    Arn:
+      type: string
+      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
+      maxLength: 256
+    TooManyRequestsException: {}
+    AccessDeniedException: {}
     Frequency:
       type: string
       enum:
@@ -232,18 +244,6 @@ components:
       - PT1H
       - PT10M
       - PT5M
-    TooManyRequestsException: {}
-    ValidationException: {}
-    Arn:
-      type: string
-      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
-      maxLength: 256
-    TagValue:
-      type: string
-      maxLength: 256
-    AccessDeniedException: {}
-    InternalServerException: {}
-    ServiceQuotaExceededException: {}
     CreateAnomalyDetectorResponse:
       type: object
       properties:
@@ -251,10 +251,10 @@ components:
           allOf:
           - $ref: '#/components/schemas/Arn'
           - description: The ARN of the detector.
-    ConflictException: {}
+    ServiceQuotaExceededException: {}
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -265,8 +265,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -279,18 +291,6 @@ components:
       required: false
     X-Amz-Date:
       name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string

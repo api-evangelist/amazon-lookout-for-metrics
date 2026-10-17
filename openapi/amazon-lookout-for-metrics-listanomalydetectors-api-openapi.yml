@@ -202,13 +202,80 @@ paths:
       tags:
       - ListAnomalyDetectors
 components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    TagMap:
+    ListAnomalyDetectorsResponse:
       type: object
-      minProperties: 1
-      maxProperties: 50
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
+      properties:
+        AnomalyDetectorSummaryList:
+          allOf:
+          - $ref: '#/components/schemas/AnomalyDetectorSummaryList'
+          - description: A list of anomaly detectors in the account in the current region.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: If the response is truncated, the service returns this token. To retrieve the next set of results, use the token in the next request.
+    AnomalyDetectorStatus:
+      type: string
+      enum:
+      - ACTIVE
+      - ACTIVATING
+      - DELETING
+      - FAILED
+      - INACTIVE
+      - LEARNING
+      - BACK_TEST_ACTIVATING
+      - BACK_TEST_ACTIVE
+      - BACK_TEST_COMPLETE
+      - DEACTIVATED
+      - DEACTIVATING
+    TooManyRequestsException: {}
+    TagValue:
+      type: string
+      maxLength: 256
+    InternalServerException: {}
     AnomalyDetectorSummary:
       type: object
       properties:
@@ -241,108 +308,41 @@ components:
           - $ref: '#/components/schemas/TagMap'
           - description: The detector's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.
       description: Contains information about an an anomaly detector.
-    ListAnomalyDetectorsResponse:
-      type: object
-      properties:
-        AnomalyDetectorSummaryList:
-          allOf:
-          - $ref: '#/components/schemas/AnomalyDetectorSummaryList'
-          - description: A list of anomaly detectors in the account in the current region.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: If the response is truncated, the service returns this token. To retrieve the next set of results, use the token in the next request.
-    AnomalyDetectorSummaryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/AnomalyDetectorSummary'
-    TooManyRequestsException: {}
+    Timestamp:
+      type: string
+      format: date-time
     Arn:
       type: string
       pattern: arn:([a-z\d-]+):.*:.*:.*:.+
       maxLength: 256
-    TagValue:
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    NextToken:
       type: string
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 3000
+    AnomalyDetectorSummaryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AnomalyDetectorSummary'
+    AccessDeniedException: {}
+    ResourceNotFoundException: {}
+    ValidationException: {}
+    AnomalyDetectorDescription:
+      type: string
+      pattern: .*\S.*
+      minLength: 1
       maxLength: 256
     AnomalyDetectorName:
       type: string
       pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
       minLength: 1
       maxLength: 63
-    ValidationException: {}
-    AccessDeniedException: {}
-    NextToken:
-      type: string
-      pattern: .*\S.*
-      minLength: 1
-      maxLength: 3000
-    InternalServerException: {}
-    AnomalyDetectorStatus:
-      type: string
-      enum:
-      - ACTIVE
-      - ACTIVATING
-      - DELETING
-      - FAILED
-      - INACTIVE
-      - LEARNING
-      - BACK_TEST_ACTIVATING
-      - BACK_TEST_ACTIVE
-      - BACK_TEST_COMPLETE
-      - DEACTIVATED
-      - DEACTIVATING
-    ResourceNotFoundException: {}
-    Timestamp:
-      type: string
-      format: date-time
-    AnomalyDetectorDescription:
-      type: string
-      pattern: .*\S.*
-      minLength: 1
-      maxLength: 256
-  parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

@@ -204,6 +204,7 @@ paths:
       - UpdateAnomalyDetector
 components:
   schemas:
+    InternalServerException: {}
     UpdateAnomalyDetectorResponse:
       type: object
       properties:
@@ -211,6 +212,14 @@ components:
           allOf:
           - $ref: '#/components/schemas/Arn'
           - description: The ARN of the updated detector.
+    ValidationException: {}
+    Arn:
+      type: string
+      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
+      maxLength: 256
+    TooManyRequestsException: {}
+    AccessDeniedException: {}
+    ResourceNotFoundException: {}
     Frequency:
       type: string
       enum:
@@ -218,24 +227,9 @@ components:
       - PT1H
       - PT10M
       - PT5M
-    TooManyRequestsException: {}
-    ValidationException: {}
-    AccessDeniedException: {}
-    Arn:
-      type: string
-      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
-      maxLength: 256
-    InternalServerException: {}
-    ResourceNotFoundException: {}
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -246,14 +240,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -264,8 +252,20 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

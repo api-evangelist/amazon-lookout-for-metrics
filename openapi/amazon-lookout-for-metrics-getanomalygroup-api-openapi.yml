@@ -190,26 +190,6 @@ paths:
       - GetAnomalyGroup
 components:
   schemas:
-    MetricLevelImpact:
-      type: object
-      properties:
-        MetricName:
-          allOf:
-          - $ref: '#/components/schemas/MetricName'
-          - description: The name of the measure.
-        NumTimeSeries:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The number of anomalous metrics for the measure.
-        ContributionMatrix:
-          allOf:
-          - $ref: '#/components/schemas/ContributionMatrix'
-          - description: Details about the dimensions that contributed to the anomaly.
-      description: Details about a measure affected by an anomaly.
-    UUID:
-      type: string
-      pattern: '[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}'
-      maxLength: 63
     ColumnName:
       type: string
       pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
@@ -217,23 +197,37 @@ components:
       maxLength: 63
     Integer:
       type: integer
-    DimensionContribution:
-      type: object
-      properties:
-        DimensionName:
-          allOf:
-          - $ref: '#/components/schemas/ColumnName'
-          - description: The name of the dimension.
-        DimensionValueContributionList:
-          allOf:
-          - $ref: '#/components/schemas/DimensionValueContributionList'
-          - description: A list of dimension values that contributed to the anomaly.
-      description: Details about a dimension that contributed to an anomaly.
+    DimensionContributionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DimensionContribution'
     TimestampString:
       type: string
       pattern: ^([12]\d{3})-(1[0-2]|0[1-9])-(0[1-9]|[12]\d|3[01])T([01]\d|2[0-3]):([0-5]\d):([0-5]\d)(Z|(\+|\-)(0\d|1[0-2]):([0-5]\d)(\[[[:alnum:]\/\_]+\])?)$
       maxLength: 60
     TooManyRequestsException: {}
+    ContributionMatrix:
+      type: object
+      properties:
+        DimensionContributionList:
+          allOf:
+          - $ref: '#/components/schemas/DimensionContributionList'
+          - description: A list of contributing dimensions.
+      description: Details about dimensions that contributed to an anomaly.
+    Score:
+      type: number
+      format: double
+      minimum: 0
+      maximum: 100
+    UUID:
+      type: string
+      pattern: '[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}'
+      maxLength: 63
+    MetricLevelImpactList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetricLevelImpact'
+    InternalServerException: {}
     AnomalyGroup:
       type: object
       properties:
@@ -262,24 +256,34 @@ components:
           - $ref: '#/components/schemas/MetricLevelImpactList'
           - description: A list of measures affected by the anomaly.
       description: A group of anomalous metrics
-    MetricLevelImpactList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetricLevelImpact'
-    Score:
-      type: number
-      format: double
-      minimum: 0
-      maximum: 100
-    DimensionValue:
-      type: string
-    ValidationException: {}
-    AccessDeniedException: {}
-    InternalServerException: {}
-    MetricName:
-      type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
-      maxLength: 256
+    MetricLevelImpact:
+      type: object
+      properties:
+        MetricName:
+          allOf:
+          - $ref: '#/components/schemas/MetricName'
+          - description: The name of the measure.
+        NumTimeSeries:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The number of anomalous metrics for the measure.
+        ContributionMatrix:
+          allOf:
+          - $ref: '#/components/schemas/ContributionMatrix'
+          - description: Details about the dimensions that contributed to the anomaly.
+      description: Details about a measure affected by an anomaly.
+    DimensionContribution:
+      type: object
+      properties:
+        DimensionName:
+          allOf:
+          - $ref: '#/components/schemas/ColumnName'
+          - description: The name of the dimension.
+        DimensionValueContributionList:
+          allOf:
+          - $ref: '#/components/schemas/DimensionValueContributionList'
+          - description: A list of dimension values that contributed to the anomaly.
+      description: Details about a dimension that contributed to an anomaly.
     GetAnomalyGroupResponse:
       type: object
       properties:
@@ -287,23 +291,11 @@ components:
           allOf:
           - $ref: '#/components/schemas/AnomalyGroup'
           - description: Details about the anomaly group.
+    AccessDeniedException: {}
     ResourceNotFoundException: {}
-    DimensionValueContributionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DimensionValueContribution'
-    DimensionContributionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DimensionContribution'
-    ContributionMatrix:
-      type: object
-      properties:
-        DimensionContributionList:
-          allOf:
-          - $ref: '#/components/schemas/DimensionContributionList'
-          - description: A list of contributing dimensions.
-      description: Details about dimensions that contributed to an anomaly.
+    ValidationException: {}
+    DimensionValue:
+      type: string
     DimensionValueContribution:
       type: object
       properties:
@@ -316,15 +308,41 @@ components:
           - $ref: '#/components/schemas/Score'
           - description: The severity score of the value.
       description: The severity of a value of a dimension that contributed to an anomaly.
+    MetricName:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      maxLength: 256
+    DimensionValueContributionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DimensionValueContribution'
   parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -337,24 +355,6 @@ components:
       required: false
     X-Amz-Date:
       name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string

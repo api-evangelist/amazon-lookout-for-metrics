@@ -208,16 +208,19 @@ paths:
       - ListAlerts
 components:
   schemas:
-    TagMap:
-      type: object
-      minProperties: 1
-      maxProperties: 50
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
+    AlertName:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+      minLength: 1
+      maxLength: 63
     SensitivityThreshold:
       type: integer
       minimum: 0
       maximum: 100
+    TooManyRequestsException: {}
+    TagValue:
+      type: string
+      maxLength: 256
     AlertSummary:
       type: object
       properties:
@@ -258,19 +261,7 @@ components:
           - $ref: '#/components/schemas/TagMap'
           - description: The alert's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.
       description: Provides a summary of an alert's configuration.
-    AlertName:
-      type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
-      minLength: 1
-      maxLength: 63
-    TooManyRequestsException: {}
-    Arn:
-      type: string
-      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
-      maxLength: 256
-    TagValue:
-      type: string
-      maxLength: 256
+    InternalServerException: {}
     ListAlertsResponse:
       type: object
       properties:
@@ -282,41 +273,68 @@ components:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: If the response is truncated, the service returns this token. To retrieve the next set of results, use this token in the next request.
-    ValidationException: {}
+    Timestamp:
+      type: string
+      format: date-time
+    Arn:
+      type: string
+      pattern: arn:([a-z\d-]+):.*:.*:.*:.+
+      maxLength: 256
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
     AccessDeniedException: {}
     NextToken:
       type: string
       pattern: .*\S.*
       minLength: 1
       maxLength: 3000
-    InternalServerException: {}
-    AlertStatus:
-      type: string
-      enum:
-      - ACTIVE
-      - INACTIVE
     ResourceNotFoundException: {}
-    Timestamp:
-      type: string
-      format: date-time
-    AlertSummaryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/AlertSummary'
     AlertType:
       type: string
       enum:
       - SNS
       - LAMBDA
+    ValidationException: {}
+    AlertSummaryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AlertSummary'
+    AlertStatus:
+      type: string
+      enum:
+      - ACTIVE
+      - INACTIVE
   parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -329,24 +347,6 @@ components:
       required: false
     X-Amz-Date:
       name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string
