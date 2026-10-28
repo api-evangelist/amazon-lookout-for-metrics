@@ -1,4 +1,4 @@
-# Amazon Lookout for Metrics (amazon-lookout-for-metrics)
+# Amazon Lookout for Metrics
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,141 +64,252 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
+> **No longer operating.** This company or product has shut down, been discontinued, or been deprecated. This profile is kept as a historical record and is not maintained or rated.
+
 Amazon Lookout for Metrics uses machine learning to automatically detect anomalies in business and operational metrics such as revenue performance, customer engagement, and user activity. It continuously monitors data from various sources including Amazon S3, CloudWatch, RDS, Redshift, Athena, and AppFlow, providing root cause analysis and alert notifications when anomalies are detected.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/amazon-lookout-for-metrics/refs/heads/main/apis.yml)
+**Areas:** Anomaly Detection · AWS · Business Intelligence · Machine Learning · Metrics · Monitoring · Defunct
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Amazon Lookout for Metrics on APIs.io (historical record)
 
-## Tags:
+Everything profiled for Amazon Lookout for Metrics is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-lookout-for-metrics/](https://apis.io/providers/amazon-lookout-for-metrics/)** — or go straight to one of the APIs or properties below.
 
- - Anomaly Detection, AWS, Business Intelligence, Machine Learning, Metrics, Monitoring
+### APIs (28)
 
-## Timestamps
+- [Amazon Lookout for Metrics ActivateAnomalyDetector API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-activateanomalydetector-api/) — The ActivateAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for activateanomalydetector.
+- [Amazon Lookout for Metrics BackTestAnomalyDetector API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-backtestanomalydetector-api/) — The BackTestAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for backtestanomalydetector.
+- [Amazon Lookout for Metrics CreateAlert API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-createalert-api/) — The CreateAlert API from Amazon Lookout for Metrics — 1 operation(s) for createalert.
+- [Amazon Lookout for Metrics CreateAnomalyDetector API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-createanomalydetector-api/) — The CreateAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for createanomalydetector.
+- [Amazon Lookout for Metrics CreateMetricSet API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-createmetricset-api/) — The CreateMetricSet API from Amazon Lookout for Metrics — 1 operation(s) for createmetricset.
+- [Amazon Lookout for Metrics DeactivateAnomalyDetector API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-deactivateanomalydetector-api/) — The DeactivateAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for deactivateanomalydetector.
+- [Amazon Lookout for Metrics DeleteAlert API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-deletealert-api/) — The DeleteAlert API from Amazon Lookout for Metrics — 1 operation(s) for deletealert.
+- [Amazon Lookout for Metrics DeleteAnomalyDetector API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-deleteanomalydetector-api/) — The DeleteAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for deleteanomalydetector.
+- [Amazon Lookout for Metrics DescribeAlert API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-describealert-api/) — The DescribeAlert API from Amazon Lookout for Metrics — 1 operation(s) for describealert.
+- [Amazon Lookout for Metrics DescribeAnomalyDetectionExecutions API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-describeanomalydetectionexecutions-api/) — The DescribeAnomalyDetectionExecutions API from Amazon Lookout for Metrics — 1 operation(s) for describeanomalydetectionexecutions.
+- [Amazon Lookout for Metrics DescribeAnomalyDetector API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-describeanomalydetector-api/) — The DescribeAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for describeanomalydetector.
+- [Amazon Lookout for Metrics DescribeMetricSet API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-describemetricset-api/) — The DescribeMetricSet API from Amazon Lookout for Metrics — 1 operation(s) for describemetricset.
+- [Amazon Lookout for Metrics DetectMetricSetConfig API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-detectmetricsetconfig-api/) — The DetectMetricSetConfig API from Amazon Lookout for Metrics — 1 operation(s) for detectmetricsetconfig.
+- [Amazon Lookout for Metrics GetAnomalyGroup API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-getanomalygroup-api/) — The GetAnomalyGroup API from Amazon Lookout for Metrics — 1 operation(s) for getanomalygroup.
+- [Amazon Lookout for Metrics GetDataQualityMetrics API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-getdataqualitymetrics-api/) — The GetDataQualityMetrics API from Amazon Lookout for Metrics — 1 operation(s) for getdataqualitymetrics.
+- [Amazon Lookout for Metrics GetFeedback API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-getfeedback-api/) — The GetFeedback API from Amazon Lookout for Metrics — 1 operation(s) for getfeedback.
+- [Amazon Lookout for Metrics GetSampleData API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-getsampledata-api/) — The GetSampleData API from Amazon Lookout for Metrics — 1 operation(s) for getsampledata.
+- [Amazon Lookout for Metrics ListAlerts API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-listalerts-api/) — The ListAlerts API from Amazon Lookout for Metrics — 1 operation(s) for listalerts.
+- [Amazon Lookout for Metrics ListAnomalyDetectors API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-listanomalydetectors-api/) — The ListAnomalyDetectors API from Amazon Lookout for Metrics — 1 operation(s) for listanomalydetectors.
+- [Amazon Lookout for Metrics ListAnomalyGroupRelatedMetrics API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-listanomalygrouprelatedmetrics-api/) — The ListAnomalyGroupRelatedMetrics API from Amazon Lookout for Metrics — 1 operation(s) for listanomalygrouprelatedmetrics.
+- [Amazon Lookout for Metrics ListAnomalyGroupSummaries API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-listanomalygroupsummaries-api/) — The ListAnomalyGroupSummaries API from Amazon Lookout for Metrics — 1 operation(s) for listanomalygroupsummaries.
+- [Amazon Lookout for Metrics ListAnomalyGroupTimeSeries API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-listanomalygrouptimeseries-api/) — The ListAnomalyGroupTimeSeries API from Amazon Lookout for Metrics — 1 operation(s) for listanomalygrouptimeseries.
+- [Amazon Lookout for Metrics ListMetricSets API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-listmetricsets-api/) — The ListMetricSets API from Amazon Lookout for Metrics — 1 operation(s) for listmetricsets.
+- [Amazon Lookout for Metrics PutFeedback API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-putfeedback-api/) — The PutFeedback API from Amazon Lookout for Metrics — 1 operation(s) for putfeedback.
+- [Amazon Lookout for Metrics Tags API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-tags-api/) — The Tags API from Amazon Lookout for Metrics — 2 operation(s) for tags.
+- [Amazon Lookout for Metrics UpdateAlert API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-updatealert-api/) — The UpdateAlert API from Amazon Lookout for Metrics — 1 operation(s) for updatealert.
+- [Amazon Lookout for Metrics UpdateAnomalyDetector API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-updateanomalydetector-api/) — The UpdateAnomalyDetector API from Amazon Lookout for Metrics — 1 operation(s) for updateanomalydetector.
+- [Amazon Lookout for Metrics UpdateMetricSet API](https://apis.io/apis/amazon-lookout-for-metrics/amazon-lookout-for-metrics-updatemetricset-api/) — The UpdateMetricSet API from Amazon Lookout for Metrics — 1 operation(s) for updatemetricset.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Amazon Lookout for Metrics API
-The Amazon Lookout for Metrics API provides programmatic access to create and manage anomaly detectors, anomaly groups, alerts, and datasets for automated anomaly detection in business metrics. Supports detector lifecycle management, metric set configuration, alert creation, anomaly analysis, feedback collection, and resource tagging across 30 operations.
+#### Agentic access (1)
 
-**Human URL:** [https://aws.amazon.com/lookout-for-metrics/](https://aws.amazon.com/lookout-for-metrics/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags:
+- [Amazon Lookout For Metrics Agentic Access](https://apis.io/agentic-access/amazon-lookout-for-metrics/amazon-lookout-for-metrics-agentic-access/)
 
- - Anomaly Detection, Machine Learning, Metrics, Monitoring
+#### JSON Schema (229)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://docs.aws.amazon.com/lookoutmetrics/latest/api/Welcome.html)
-- [OpenAPI](openapi/amazon-lookout-for-metrics-openapi-original.yaml)
-- [GettingStarted](https://aws.amazon.com/lookout-for-metrics/getting-started/)
-- [Pricing](https://aws.amazon.com/lookout-for-metrics/pricing/)
-- [FAQ](https://aws.amazon.com/lookout-for-metrics/faqs/)
+- [Action](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-action/)
+- [ActivateAnomalyDetectorRequest](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-activate-anomaly-detector-request/)
+- [ActivateAnomalyDetectorResponse](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-activate-anomaly-detector-response/)
+- [AggregationFunction](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-aggregation-function/)
+- [Alert](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert/)
+- [AlertDescription](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-description/)
+- [AlertFilters](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-filters/)
+- [AlertName](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-name/)
+- [AlertStatus](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-status/)
+- [AlertSummary](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-summary/)
+- [AlertSummaryList](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-summary-list/)
+- [AlertType](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-type/)
+- [AnomalyDetectionTaskStatus](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detection-task-status/)
+- [AnomalyDetectionTaskStatusMessage](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detection-task-status-message/)
+- [AnomalyDetectorConfig](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-config/)
+- [AnomalyDetectorConfigSummary](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-config-summary/)
+- [AnomalyDetectorDataQualityMetric](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-data-quality-metric/)
+- [AnomalyDetectorDataQualityMetricList](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-data-quality-metric-list/)
+- [AnomalyDetectorDescription](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-description/)
+- [AnomalyDetectorFailureType](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-failure-type/)
+- [AnomalyDetectorName](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-name/)
+- [AnomalyDetectorStatus](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-status/)
+- [AnomalyDetectorSummary](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-summary/)
+- [AnomalyDetectorSummaryList](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-summary-list/)
+- [AnomalyGroup](https://apis.io/schemas/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-group/)
+- …and 204 more published on APIs.io
 
-## Common Properties
+#### JSON Structure (229)
 
-- [Portal](https://aws.amazon.com/lookout-for-metrics/)
+Data models expressed in JSON Structure.
+
+- [Amazon Lookout For Metrics Action Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-action-structure/)
+- [Amazon Lookout For Metrics Activate Anomaly Detector Request Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-activate-anomaly-detector-request-structure/)
+- [Amazon Lookout For Metrics Activate Anomaly Detector Response Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-activate-anomaly-detector-response-structure/)
+- [Amazon Lookout For Metrics Aggregation Function Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-aggregation-function-structure/)
+- [Amazon Lookout For Metrics Alert Description Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-description-structure/)
+- [Amazon Lookout For Metrics Alert Filters Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-filters-structure/)
+- [Amazon Lookout For Metrics Alert Name Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-name-structure/)
+- [Amazon Lookout For Metrics Alert Status Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-status-structure/)
+- [Amazon Lookout For Metrics Alert Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-structure/)
+- [Amazon Lookout For Metrics Alert Summary List Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-summary-list-structure/)
+- [Amazon Lookout For Metrics Alert Summary Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-summary-structure/)
+- [Amazon Lookout For Metrics Alert Type Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-type-structure/)
+- [Amazon Lookout For Metrics Anomaly Detection Task Status Message Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detection-task-status-message-structure/)
+- [Amazon Lookout For Metrics Anomaly Detection Task Status Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detection-task-status-structure/)
+- [Amazon Lookout For Metrics Anomaly Detector Config Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-config-structure/)
+- [Amazon Lookout For Metrics Anomaly Detector Config Summary Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-config-summary-structure/)
+- [Amazon Lookout For Metrics Anomaly Detector Data Quality Metric List Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-data-quality-metric-list-structure/)
+- [Amazon Lookout For Metrics Anomaly Detector Data Quality Metric Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-data-quality-metric-structure/)
+- [Amazon Lookout For Metrics Anomaly Detector Description Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-description-structure/)
+- [Amazon Lookout For Metrics Anomaly Detector Failure Type Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-failure-type-structure/)
+- [Amazon Lookout For Metrics Anomaly Detector Name Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-name-structure/)
+- [Amazon Lookout For Metrics Anomaly Detector Status Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-status-structure/)
+- [Amazon Lookout For Metrics Anomaly Detector Summary List Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-summary-list-structure/)
+- [Amazon Lookout For Metrics Anomaly Detector Summary Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-summary-structure/)
+- [Amazon Lookout For Metrics Anomaly Group Statistics Structure](https://apis.io/json-structure/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-group-statistics-structure/)
+- …and 204 more published on APIs.io
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Lookout For Metrics Context](https://apis.io/jsonld/amazon-lookout-for-metrics/amazon-lookout-for-metrics-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Lookout For Metrics Vocabulary](https://apis.io/vocabularies/amazon-lookout-for-metrics/amazon-lookout-for-metrics-vocabulary/)
+
+#### Examples (229)
+
+Example requests and responses.
+
+- [Amazon Lookout For Metrics Action Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-action-example/)
+- [Amazon Lookout For Metrics Activate Anomaly Detector Request Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-activate-anomaly-detector-request-example/)
+- [Amazon Lookout For Metrics Activate Anomaly Detector Response Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-activate-anomaly-detector-response-example/)
+- [Amazon Lookout For Metrics Aggregation Function Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-aggregation-function-example/)
+- [Amazon Lookout For Metrics Alert Description Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-description-example/)
+- [Amazon Lookout For Metrics Alert Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-example/)
+- [Amazon Lookout For Metrics Alert Filters Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-filters-example/)
+- [Amazon Lookout For Metrics Alert Name Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-name-example/)
+- [Amazon Lookout For Metrics Alert Status Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-status-example/)
+- [Amazon Lookout For Metrics Alert Summary Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-summary-example/)
+- [Amazon Lookout For Metrics Alert Summary List Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-summary-list-example/)
+- [Amazon Lookout For Metrics Alert Type Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-alert-type-example/)
+- [Amazon Lookout For Metrics Anomaly Detection Task Status Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detection-task-status-example/)
+- [Amazon Lookout For Metrics Anomaly Detection Task Status Message Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detection-task-status-message-example/)
+- [Amazon Lookout For Metrics Anomaly Detector Config Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-config-example/)
+- [Amazon Lookout For Metrics Anomaly Detector Config Summary Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-config-summary-example/)
+- [Amazon Lookout For Metrics Anomaly Detector Data Quality Metric Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-data-quality-metric-example/)
+- [Amazon Lookout For Metrics Anomaly Detector Data Quality Metric List Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-data-quality-metric-list-example/)
+- [Amazon Lookout For Metrics Anomaly Detector Description Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-description-example/)
+- [Amazon Lookout For Metrics Anomaly Detector Failure Type Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-failure-type-example/)
+- [Amazon Lookout For Metrics Anomaly Detector Name Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-name-example/)
+- [Amazon Lookout For Metrics Anomaly Detector Status Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-status-example/)
+- [Amazon Lookout For Metrics Anomaly Detector Summary Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-summary-example/)
+- [Amazon Lookout For Metrics Anomaly Detector Summary List Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-detector-summary-list-example/)
+- [Amazon Lookout For Metrics Anomaly Group Example](https://apis.io/examples/amazon-lookout-for-metrics/amazon-lookout-for-metrics-anomaly-group-example/)
+- …and 204 more published on APIs.io
+
+#### Collections (56)
+
+Postman and Open Collection request collections.
+
+- [Amazon Lookout for Metrics ActivateAnomalyDetector API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-activateanomalydetector-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector BackTestAnomalyDetector API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-backtestanomalydetector-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector CreateAlert API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-createalert-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector CreateAnomalyDetector API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-createanomalydetector-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector CreateMetricSet API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-createmetricset-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector DeactivateAnomalyDetector API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-deactivateanomalydetector-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector DeleteAlert API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-deletealert-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector DeleteAnomalyDetector API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-deleteanomalydetector-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector DescribeAlert API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-describealert-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector DescribeAnomalyDetectionExecutions API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-describeanomalydetectionexecutions-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector DescribeAnomalyDetector API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-describeanomalydetector-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector DescribeMetricSet API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-describemetricset-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector DetectMetricSetConfig API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-detectmetricsetconfig-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector GetAnomalyGroup API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-getanomalygroup-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector GetDataQualityMetrics API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-getdataqualitymetrics-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector GetFeedback API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-getfeedback-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector GetSampleData API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-getsampledata-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector ListAlerts API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-listalerts-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector ListAnomalyDetectors API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-listanomalydetectors-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector ListAnomalyGroupRelatedMetrics API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-listanomalygrouprelatedmetrics-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector ListAnomalyGroupSummaries API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-listanomalygroupsummaries-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector ListAnomalyGroupTimeSeries API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-listanomalygrouptimeseries-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector ListMetricSets API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-listmetricsets-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector PutFeedback API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-putfeedback-api/)
+- [Amazon Lookout for Metrics ActivateAnomalyDetector Tags API](https://apis.io/collections/amazon-lookout-for-metrics/open-amazon-lookout-for-metrics-tags-api/)
+- …and 31 more published on APIs.io
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon Lookout for Metrics — jsonschema rules](https://apis.io/rules/amazon-lookout-for-metrics/amazon-lookout-for-metrics-jsonschema-spectral-rules/)
+- [Amazon Lookout for Metrics API Rules](https://apis.io/rules/amazon-lookout-for-metrics/amazon-lookout-for-metrics-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Lookout For Metrics Authentication](https://apis.io/security/amazon-lookout-for-metrics/amazon-lookout-for-metrics-authentication/)
+- [Amazon Lookout For Metrics Domain Security](https://apis.io/security/amazon-lookout-for-metrics/amazon-lookout-for-metrics-domain-security/)
+- [Amazon Lookout For Metrics Trust Center](https://apis.io/security/amazon-lookout-for-metrics/amazon-lookout-for-metrics-trust-center/)
+- [Amazon Lookout For Metrics Vulnerability Disclosure](https://apis.io/security/amazon-lookout-for-metrics/amazon-lookout-for-metrics-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amazon Lookout For Metrics Plans Pricing](https://apis.io/plans/amazon-lookout-for-metrics/amazon-lookout-for-metrics-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Lookout For Metrics Rate Limits](https://apis.io/rate-limits/amazon-lookout-for-metrics/amazon-lookout-for-metrics-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amazon Lookout For Metrics Finops](https://apis.io/finops/amazon-lookout-for-metrics/amazon-lookout-for-metrics-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://amazon.com)
 - [Documentation](https://docs.aws.amazon.com/lookoutmetrics/)
-- [TermsOfService](https://aws.amazon.com/service-terms/)
-- [PrivacyPolicy](https://aws.amazon.com/privacy/)
 - [Support](https://aws.amazon.com/premiumsupport/)
 - [Blog](https://aws.amazon.com/blogs/machine-learning/tag/amazon-lookout-for-metrics/)
-- [GitHubOrganization](https://github.com/aws)
-- [Console](https://console.aws.amazon.com/lookoutmetrics/)
-- [SignUp](https://portal.aws.amazon.com/billing/signup)
-- [Login](https://signin.aws.amazon.com/)
-- [StatusPage](https://health.aws.amazon.com/health/status)
-- [Contact](https://aws.amazon.com/contact-us/)
-- [SpectralRules](rules/amazon-lookout-for-metrics-spectral-rules.yml)
-- [Vocabulary](vocabulary/amazon-lookout-for-metrics-vocabulary.yaml)
-- [NaftikoCapability](capabilities/anomaly-detection-operations.yaml)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Automated Anomaly Detection | Uses ML to automatically detect anomalies in business and operational metrics without requiring ML expertise. |
-| Root Cause Analysis | Identifies the top contributors to each anomaly to help determine root causes quickly. |
-| Multi-Source Data Ingestion | Connects to Amazon S3, CloudWatch, RDS, Redshift, Athena, and AppFlow as data sources. |
-| Continuous Monitoring | Continuously monitors metrics and sends real-time alerts when anomalies are detected. |
-| Alert Configuration | Configure alerts via Amazon SNS, Lambda, or other AWS services when anomalies occur. |
-| Anomaly Feedback | Provide feedback on detected anomalies to improve future detection accuracy. |
-| Resource Tagging | Tag anomaly detectors and related resources for cost allocation and organization. |
+**Not rated** — this company is recorded as no longer operating, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
 
-## Use Cases
+## How this profile is made
 
-| Name | Description |
-|------|-------------|
-| Revenue Anomaly Detection | Monitor revenue metrics and detect unexpected drops or spikes that could indicate fraud or system issues. |
-| Customer Engagement Monitoring | Track customer engagement metrics and alert teams when patterns deviate from expected ranges. |
-| Operational Metrics Monitoring | Monitor operational metrics such as system performance, error rates, and throughput for anomalies. |
-| E-Commerce Performance | Detect anomalies in e-commerce metrics like conversion rates, cart abandonment, and sales volume. |
-| User Activity Analysis | Analyze user activity patterns and detect unusual behavior that may indicate security incidents. |
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-## Integrations
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon Lookout for Metrics: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-| Name | Description |
-|------|-------------|
-| Amazon S3 | Use S3 buckets as a data source for metric data in CSV or JSON format. |
-| Amazon CloudWatch | Ingest CloudWatch metrics directly for anomaly detection. |
-| Amazon RDS | Connect to RDS databases to retrieve metric data for analysis. |
-| Amazon Redshift | Use Redshift data warehouse as a source for business metrics. |
-| Amazon Athena | Query Athena tables to feed metric data into anomaly detectors. |
-| AWS AppFlow | Use AppFlow connectors to ingest data from SaaS applications. |
-| Amazon SNS | Send alert notifications via SNS topics when anomalies are detected. |
-| AWS Lambda | Trigger Lambda functions in response to detected anomalies for custom workflows. |
+## Open an issue
 
-## Artifacts
-
-Machine-readable API specifications organized by format.
-
-### OpenAPI
-
-- [Amazon Lookout for Metrics OpenAPI](openapi/amazon-lookout-for-metrics-openapi-original.yaml)
-
-### JSON Schema
-
-229 schema files available in the [json-schema/](json-schema/) directory.
-
-### JSON Structure
-
-229 structure files available in the [json-structure/](json-structure/) directory.
-
-### JSON-LD
-
-- [Amazon Lookout for Metrics Context](json-ld/amazon-lookout-for-metrics-context.jsonld)
-
-### Examples
-
-229 example files available in the [examples/](examples/) directory.
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Shared Per-API Definitions
-
-- [Amazon Lookout for Metrics](capabilities/shared/lookout-for-metrics.yaml) — 20 operations for anomaly detection, alerting, and feedback
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Anomaly Detection Operations](capabilities/anomaly-detection-operations.yaml) | Amazon Lookout for Metrics | 12 | Data Scientist, Operations Engineer |
-
-## Vocabulary
-
-- [Amazon Lookout for Metrics Vocabulary](vocabulary/amazon-lookout-for-metrics-vocabulary.yaml) — Unified taxonomy mapping 7 resources, 10 actions, 1 workflow, and 2 personas across operational (OpenAPI) and capability (Naftiko) dimensions
-
-## Rules
-
-- [Amazon Lookout for Metrics Spectral Rules](rules/amazon-lookout-for-metrics-spectral-rules.yml) — 22 rules across 8 categories enforcing Amazon Lookout for Metrics API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-lookout-for-metrics/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
