@@ -2535,9 +2535,6 @@ artifacts:
   security/amazon-lookout-for-metrics-vulnerability-disclosure.yml:
     method: searched
     evidence: declared in the artifact
-  sla/amazon-lookout-for-metrics-sla.yml:
-    method: generated
-    evidence: declared in the artifact
   terms/amazon-lookout-for-metrics-terms-of-service.yml:
     method: harvested
     evidence: declared in the artifact
